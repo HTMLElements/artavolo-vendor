@@ -5,7 +5,7 @@
         'type' => 'application',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '3b4a430315b426df48959a9d883de74b1ee972fc',
+        'reference' => 'ef74d1a3997100d6e0ee62ddf71f319588435c0a',
         'name' => 'artavolo/cms',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'application',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '3b4a430315b426df48959a9d883de74b1ee972fc',
+            'reference' => 'ef74d1a3997100d6e0ee62ddf71f319588435c0a',
             'dev_requirement' => false,
         ),
         'bacon/bacon-qr-code' => array(
@@ -35,6 +35,15 @@
             'install_path' => __DIR__ . '/../box/spout',
             'aliases' => array(),
             'reference' => '9bdb027d312b732515b884a341c0ad70372c6295',
+            'dev_requirement' => false,
+        ),
+        'braintree/braintree_php' => array(
+            'pretty_version' => '6.9.0',
+            'version' => '6.9.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../braintree/braintree_php',
+            'aliases' => array(),
+            'reference' => '096984f01c03e47e053703fb159721cb77793587',
             'dev_requirement' => false,
         ),
         'clue/stream-filter' => array(

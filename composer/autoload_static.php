@@ -99,6 +99,7 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         ),
         'B' => 
         array (
+            'Braintree\\' => 10,
             'Box\\Spout\\' => 10,
             'BaconQrCode\\' => 12,
         ),
@@ -262,6 +263,10 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         'Clue\\StreamFilter\\' => 
         array (
             0 => __DIR__ . '/..' . '/clue/stream-filter/src',
+        ),
+        'Braintree\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/braintree/braintree_php/lib/Braintree',
         ),
         'Box\\Spout\\' => 
         array (

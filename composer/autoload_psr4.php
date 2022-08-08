@@ -45,6 +45,7 @@ return array(
     'DASPRiD\\Enum\\' => array($vendorDir . '/dasprid/enum/src'),
     'Complex\\' => array($vendorDir . '/markbaker/complex/classes/src'),
     'Clue\\StreamFilter\\' => array($vendorDir . '/clue/stream-filter/src'),
+    'Braintree\\' => array($vendorDir . '/braintree/braintree_php/lib/Braintree'),
     'Box\\Spout\\' => array($vendorDir . '/box/spout/src/Spout'),
     'BaconQrCode\\' => array($vendorDir . '/bacon/bacon-qr-code/src'),
 );
