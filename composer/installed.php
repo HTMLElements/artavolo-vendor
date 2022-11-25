@@ -5,7 +5,7 @@
         'type' => 'application',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'ef74d1a3997100d6e0ee62ddf71f319588435c0a',
+        'reference' => '5763d1c88e27182421410f71a9c3966c0a746cd1',
         'name' => 'artavolo/cms',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'application',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'ef74d1a3997100d6e0ee62ddf71f319588435c0a',
+            'reference' => '5763d1c88e27182421410f71a9c3966c0a746cd1',
             'dev_requirement' => false,
         ),
         'bacon/bacon-qr-code' => array(
@@ -491,6 +491,15 @@
             'install_path' => __DIR__ . '/../symfony/polyfill-mbstring',
             'aliases' => array(),
             'reference' => '0abb51d2f102e00a4eefcf46ba7fec406d245825',
+            'dev_requirement' => false,
+        ),
+        'twilio/sdk' => array(
+            'pretty_version' => '6.43.0',
+            'version' => '6.43.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../twilio/sdk',
+            'aliases' => array(),
+            'reference' => '687245ed07dc807eec94389f715323cf13c1e316',
             'dev_requirement' => false,
         ),
         'workerman/workerman' => array(

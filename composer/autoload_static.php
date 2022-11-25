@@ -34,6 +34,10 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         array (
             'Workerman\\' => 10,
         ),
+        'T' => 
+        array (
+            'Twilio\\' => 7,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
@@ -117,6 +121,10 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         'Workerman\\' => 
         array (
             0 => __DIR__ . '/..' . '/workerman/workerman',
+        ),
+        'Twilio\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/twilio/sdk/src/Twilio',
         ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
