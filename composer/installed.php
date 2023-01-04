@@ -5,7 +5,7 @@
         'type' => 'application',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '5763d1c88e27182421410f71a9c3966c0a746cd1',
+        'reference' => 'b89ec4c5577b81cd518e54691f133175d65ead94',
         'name' => 'artavolo/cms',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'application',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '5763d1c88e27182421410f71a9c3966c0a746cd1',
+            'reference' => 'b89ec4c5577b81cd518e54691f133175d65ead94',
             'dev_requirement' => false,
         ),
         'bacon/bacon-qr-code' => array(
@@ -101,12 +101,12 @@
             'dev_requirement' => false,
         ),
         'google/apiclient' => array(
-            'pretty_version' => 'v2.12.4',
-            'version' => '2.12.4.0',
+            'pretty_version' => 'v2.13.0',
+            'version' => '2.13.0.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../google/apiclient',
             'aliases' => array(),
-            'reference' => '702eed9ae7022ba20dc7118c8161060cb50ee9f8',
+            'reference' => 'b653a338c5a658adf6df4bb2f44c2cc02fe7eb1d',
             'dev_requirement' => false,
         ),
         'google/apiclient-services' => array(
