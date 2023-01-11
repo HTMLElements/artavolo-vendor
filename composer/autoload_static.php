@@ -42,6 +42,8 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\HttpFoundation\\' => 33,
+            'Stevenmaguire\\OAuth2\\Client\\' => 28,
+            'Spatie\\Dropbox\\' => 15,
             'Securimage\\' => 11,
         ),
         'P' => 
@@ -70,6 +72,10 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
             'Matrix\\' => 7,
             'MailchimpMarketing\\' => 19,
         ),
+        'L' => 
+        array (
+            'League\\OAuth2\\Client\\' => 21,
+        ),
         'H' => 
         array (
             'Http\\Promise\\' => 13,
@@ -83,6 +89,7 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
             'GuzzleHttp\\Psr7\\' => 16,
             'GuzzleHttp\\Promise\\' => 19,
             'GuzzleHttp\\' => 11,
+            'GrahamCampbell\\GuzzleFactory\\' => 29,
             'Google\\Service\\' => 15,
             'Google\\Auth\\' => 12,
             'Google\\' => 7,
@@ -133,6 +140,14 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         'Symfony\\Component\\HttpFoundation\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/http-foundation',
+        ),
+        'Stevenmaguire\\OAuth2\\Client\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/stevenmaguire/oauth2-dropbox/src',
+        ),
+        'Spatie\\Dropbox\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/dropbox-api/src',
         ),
         'Securimage\\' => 
         array (
@@ -207,6 +222,10 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         array (
             0 => __DIR__ . '/..' . '/mailchimp/marketing/lib',
         ),
+        'League\\OAuth2\\Client\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/league/oauth2-client/src',
+        ),
         'Http\\Promise\\' => 
         array (
             0 => __DIR__ . '/..' . '/php-http/promise/src',
@@ -239,6 +258,10 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         'GuzzleHttp\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
+        ),
+        'GrahamCampbell\\GuzzleFactory\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/graham-campbell/guzzle-factory/src',
         ),
         'Google\\Service\\' => 
         array (
