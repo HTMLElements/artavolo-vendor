@@ -69,12 +69,17 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
             'MyCLabs\\Enum\\' => 13,
             'Monolog\\' => 8,
             'Money\\' => 6,
+            'Microsoft\\Graph\\' => 16,
             'Matrix\\' => 7,
             'MailchimpMarketing\\' => 19,
         ),
         'L' => 
         array (
             'League\\OAuth2\\Client\\' => 21,
+        ),
+        'K' => 
+        array (
+            'Krizalys\\Onedrive\\' => 18,
         ),
         'H' => 
         array (
@@ -112,6 +117,7 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         array (
             'Braintree\\' => 10,
             'Box\\Spout\\' => 10,
+            'Beta\\Microsoft\\Graph\\' => 21,
             'BaconQrCode\\' => 12,
         ),
     );
@@ -214,6 +220,10 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         array (
             0 => __DIR__ . '/..' . '/moneyphp/money/src',
         ),
+        'Microsoft\\Graph\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/microsoft/microsoft-graph/src',
+        ),
         'Matrix\\' => 
         array (
             0 => __DIR__ . '/..' . '/markbaker/matrix/classes/src',
@@ -225,6 +235,10 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         'League\\OAuth2\\Client\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/oauth2-client/src',
+        ),
+        'Krizalys\\Onedrive\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/krizalys/onedrive-php-sdk/src',
         ),
         'Http\\Promise\\' => 
         array (
@@ -302,6 +316,10 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         'Box\\Spout\\' => 
         array (
             0 => __DIR__ . '/..' . '/box/spout/src/Spout',
+        ),
+        'Beta\\Microsoft\\Graph\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/microsoft/microsoft-graph/src/Beta/Microsoft/Graph',
         ),
         'BaconQrCode\\' => 
         array (

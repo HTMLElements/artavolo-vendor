@@ -30,9 +30,11 @@ return array(
     'MyCLabs\\Enum\\' => array($vendorDir . '/myclabs/php-enum/src'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
     'Money\\' => array($vendorDir . '/moneyphp/money/src'),
+    'Microsoft\\Graph\\' => array($vendorDir . '/microsoft/microsoft-graph/src'),
     'Matrix\\' => array($vendorDir . '/markbaker/matrix/classes/src'),
     'MailchimpMarketing\\' => array($vendorDir . '/mailchimp/marketing/lib'),
     'League\\OAuth2\\Client\\' => array($vendorDir . '/league/oauth2-client/src'),
+    'Krizalys\\Onedrive\\' => array($vendorDir . '/krizalys/onedrive-php-sdk/src'),
     'Http\\Promise\\' => array($vendorDir . '/php-http/promise/src'),
     'Http\\Message\\' => array($vendorDir . '/php-http/message/src', $vendorDir . '/php-http/message-factory/src'),
     'Http\\Discovery\\' => array($vendorDir . '/php-http/discovery/src'),
@@ -52,5 +54,6 @@ return array(
     'Clue\\StreamFilter\\' => array($vendorDir . '/clue/stream-filter/src'),
     'Braintree\\' => array($vendorDir . '/braintree/braintree_php/lib/Braintree'),
     'Box\\Spout\\' => array($vendorDir . '/box/spout/src/Spout'),
+    'Beta\\Microsoft\\Graph\\' => array($vendorDir . '/microsoft/microsoft-graph/src/Beta/Microsoft/Graph'),
     'BaconQrCode\\' => array($vendorDir . '/bacon/bacon-qr-code/src'),
 );
