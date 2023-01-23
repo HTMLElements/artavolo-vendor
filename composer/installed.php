@@ -5,7 +5,7 @@
         'type' => 'application',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '0b40696fae82defcb389b69a0a1dfb6937dfae26',
+        'reference' => '20c39c93110560251c6a9b3d1c6e3b633c7ce8e6',
         'name' => 'artavolo/cms',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'application',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '0b40696fae82defcb389b69a0a1dfb6937dfae26',
+            'reference' => '20c39c93110560251c6a9b3d1c6e3b633c7ce8e6',
             'dev_requirement' => false,
         ),
         'bacon/bacon-qr-code' => array(
@@ -56,12 +56,12 @@
             'dev_requirement' => false,
         ),
         'dapphp/securimage' => array(
-            'pretty_version' => '4.0.2',
-            'version' => '4.0.2.0',
+            'pretty_version' => 'dev-plumtex-fixes',
+            'version' => 'dev-plumtex-fixes',
             'type' => 'library',
             'install_path' => __DIR__ . '/../dapphp/securimage',
             'aliases' => array(),
-            'reference' => 'aabde76d839d75a238970661187f83312c2eeda7',
+            'reference' => '87857e7c2f6121a71f571cbf396d6bcb5825621d',
             'dev_requirement' => false,
         ),
         'dasprid/enum' => array(
@@ -71,6 +71,15 @@
             'install_path' => __DIR__ . '/../dasprid/enum',
             'aliases' => array(),
             'reference' => '5abf82f213618696dda8e3bf6f64dd042d8542b2',
+            'dev_requirement' => false,
+        ),
+        'developermarius/simple-router' => array(
+            'pretty_version' => 'dev-plumtex-fixes',
+            'version' => 'dev-plumtex-fixes',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../developermarius/simple-router',
+            'aliases' => array(),
+            'reference' => 'b226d7a0957b121723597db53e1d8fedc504459c',
             'dev_requirement' => false,
         ),
         'ezyang/htmlpurifier' => array(
@@ -298,15 +307,6 @@
             'reference' => '996434e5492cb4c3edcb9168db6fbb1359ef965a',
             'dev_requirement' => false,
         ),
-        'pecee/simple-router' => array(
-            'pretty_version' => '4.3.7.2',
-            'version' => '4.3.7.2',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../pecee/simple-router',
-            'aliases' => array(),
-            'reference' => '032a2ae7e0e2d876599758f85b61bc965a63ea7c',
-            'dev_requirement' => false,
-        ),
         'php-http/async-client-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
@@ -500,6 +500,15 @@
             'install_path' => __DIR__ . '/../ralouphie/getallheaders',
             'aliases' => array(),
             'reference' => '120b605dfeb996808c31b6477290a714d356e822',
+            'dev_requirement' => false,
+        ),
+        'somnambulist/validation' => array(
+            'pretty_version' => '1.6.0',
+            'version' => '1.6.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../somnambulist/validation',
+            'aliases' => array(),
+            'reference' => '6b20a6123504f6703d8efefba89e588908d91a6c',
             'dev_requirement' => false,
         ),
         'spatie/dropbox-api' => array(

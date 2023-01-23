@@ -44,6 +44,7 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
             'Symfony\\Component\\HttpFoundation\\' => 33,
             'Stevenmaguire\\OAuth2\\Client\\' => 28,
             'Spatie\\Dropbox\\' => 15,
+            'Somnambulist\\Components\\Validation\\' => 35,
             'Securimage\\' => 11,
         ),
         'P' => 
@@ -155,6 +156,10 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         array (
             0 => __DIR__ . '/..' . '/spatie/dropbox-api/src',
         ),
+        'Somnambulist\\Components\\Validation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/somnambulist/validation/src',
+        ),
         'Securimage\\' => 
         array (
             0 => __DIR__ . '/..' . '/dapphp/securimage',
@@ -190,7 +195,7 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         ),
         'Pecee\\' => 
         array (
-            0 => __DIR__ . '/..' . '/pecee/simple-router/src/Pecee',
+            0 => __DIR__ . '/..' . '/developermarius/simple-router/src/Pecee',
         ),
         'ParagonIE\\ConstantTime\\' => 
         array (

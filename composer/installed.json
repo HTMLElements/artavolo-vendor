@@ -257,17 +257,17 @@
         },
         {
             "name": "dapphp/securimage",
-            "version": "4.0.2",
-            "version_normalized": "4.0.2.0",
+            "version": "dev-plumtex-fixes",
+            "version_normalized": "dev-plumtex-fixes",
             "source": {
                 "type": "git",
-                "url": "https://github.com/dapphp/securimage.git",
-                "reference": "aabde76d839d75a238970661187f83312c2eeda7"
+                "url": "https://github.com/PYovchevski/securimage.git",
+                "reference": "87857e7c2f6121a71f571cbf396d6bcb5825621d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dapphp/securimage/zipball/aabde76d839d75a238970661187f83312c2eeda7",
-                "reference": "aabde76d839d75a238970661187f83312c2eeda7",
+                "url": "https://api.github.com/repos/PYovchevski/securimage/zipball/87857e7c2f6121a71f571cbf396d6bcb5825621d",
+                "reference": "87857e7c2f6121a71f571cbf396d6bcb5825621d",
                 "shasum": ""
             },
             "require": {
@@ -279,18 +279,17 @@
                 "ext-pdo_mysql": "For MySQL database support",
                 "ext-pdo_sqlite": "For SQLite3 database support"
             },
-            "time": "2020-05-30T10:05:48+00:00",
+            "time": "2023-01-23T09:20:41+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
-                "psr-4": {
-                    "Securimage\\": "./"
-                },
                 "classmap": [
                     "securimage.php"
-                ]
+                ],
+                "psr-4": {
+                    "Securimage\\": "./"
+                }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause"
             ],
@@ -303,16 +302,14 @@
             "description": "PHP CAPTCHA Library",
             "homepage": "https://www.phpcaptcha.org",
             "keywords": [
-                "Forms",
                 "anti-spam",
                 "captcha",
+                "forms",
                 "security"
             ],
             "support": {
-                "issues": "https://github.com/dapphp/securimage/issues",
-                "source": "https://github.com/dapphp/securimage/tree/4.0.2"
+                "source": "https://github.com/PYovchevski/securimage/tree/plumtex-fixes"
             },
-            "abandoned": true,
             "install-path": "../dapphp/securimage"
         },
         {
@@ -364,6 +361,83 @@
                 "source": "https://github.com/DASPRiD/Enum/tree/1.0.3"
             },
             "install-path": "../dasprid/enum"
+        },
+        {
+            "name": "developermarius/simple-router",
+            "version": "dev-plumtex-fixes",
+            "version_normalized": "dev-plumtex-fixes",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PYovchevski/simple-php-router.git",
+                "reference": "b226d7a0957b121723597db53e1d8fedc504459c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PYovchevski/simple-php-router/zipball/b226d7a0957b121723597db53e1d8fedc504459c",
+                "reference": "b226d7a0957b121723597db53e1d8fedc504459c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "php": "^8.0.3",
+                "somnambulist/validation": "^1.4"
+            },
+            "require-dev": {
+                "erusev/parsedown": "^1.7",
+                "mockery/mockery": "^1",
+                "phpstan/phpstan": "^0",
+                "phpstan/phpstan-deprecation-rules": "^0",
+                "phpstan/phpstan-phpunit": "^0",
+                "phpstan/phpstan-strict-rules": "^0",
+                "phpunit/phpunit": "^9.5"
+            },
+            "time": "2023-01-20T13:28:31+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Pecee\\": "src/Pecee/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "phpunit tests"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Simon Sessingø",
+                    "email": "simon.sessingoe@gmail.com"
+                },
+                {
+                    "name": "Marius Karstedt",
+                    "email": "info@marius-karstedt.de"
+                }
+            ],
+            "description": "Simple, fast PHP router that is easy to get integrated and in almost any project. Heavily inspired by the Laravel router.",
+            "keywords": [
+                "framework",
+                "input-handler",
+                "laravel",
+                "pecee",
+                "php",
+                "request-handler",
+                "route",
+                "router",
+                "router",
+                "routing",
+                "routing-engine",
+                "simple-php-router",
+                "url-handling"
+            ],
+            "support": {
+                "source": "https://github.com/DeveloperMarius/simple-php-router/issues"
+            },
+            "install-path": "../developermarius/simple-router"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -2177,72 +2251,6 @@
             "install-path": "../paragonie/random_compat"
         },
         {
-            "name": "pecee/simple-router",
-            "version": "4.3.7.2",
-            "version_normalized": "4.3.7.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/skipperbent/simple-php-router.git",
-                "reference": "032a2ae7e0e2d876599758f85b61bc965a63ea7c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/skipperbent/simple-php-router/zipball/032a2ae7e0e2d876599758f85b61bc965a63ea7c",
-                "reference": "032a2ae7e0e2d876599758f85b61bc965a63ea7c",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "php": ">=7.1"
-            },
-            "require-dev": {
-                "mockery/mockery": "^1",
-                "phpstan/phpstan": "^0",
-                "phpstan/phpstan-deprecation-rules": "^0",
-                "phpstan/phpstan-phpunit": "^0",
-                "phpstan/phpstan-strict-rules": "^0",
-                "phpunit/phpunit": "^7"
-            },
-            "time": "2021-07-17T23:45:36+00:00",
-            "type": "library",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Pecee\\": "src/Pecee/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Simon Sessingø",
-                    "email": "simon.sessingoe@gmail.com"
-                }
-            ],
-            "description": "Simple, fast PHP router that is easy to get integrated and in almost any project. Heavily inspired by the Laravel router.",
-            "keywords": [
-                "framework",
-                "input-handler",
-                "laravel",
-                "pecee",
-                "php",
-                "request-handler",
-                "route",
-                "router",
-                "routing",
-                "routing-engine",
-                "simple-php-router",
-                "url-handling"
-            ],
-            "support": {
-                "issues": "https://github.com/skipperbent/simple-php-router/issues",
-                "source": "https://github.com/skipperbent/simple-php-router/issues"
-            },
-            "install-path": "../pecee/simple-router"
-        },
-        {
             "name": "php-http/discovery",
             "version": "1.14.1",
             "version_normalized": "1.14.1.0",
@@ -3366,6 +3374,61 @@
                 "source": "https://github.com/ralouphie/getallheaders/tree/develop"
             },
             "install-path": "../ralouphie/getallheaders"
+        },
+        {
+            "name": "somnambulist/validation",
+            "version": "1.6.0",
+            "version_normalized": "1.6.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/somnambulist-tech/validation.git",
+                "reference": "6b20a6123504f6703d8efefba89e588908d91a6c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/somnambulist-tech/validation/zipball/6b20a6123504f6703d8efefba89e588908d91a6c",
+                "reference": "6b20a6123504f6703d8efefba89e588908d91a6c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": ">=8.0"
+            },
+            "require-dev": {
+                "doctrine/dbal": "^3.1.0",
+                "phpunit/phpunit": "^9.5",
+                "ramsey/uuid": "^4.3",
+                "symfony/var-dumper": "^6.0"
+            },
+            "time": "2023-01-12T18:29:01+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Somnambulist\\Components\\Validation\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dave Redfern",
+                    "email": "info@somnambulist.tech"
+                }
+            ],
+            "description": "A re-write of rakit/validation providing Laravel like validation as a standalone library",
+            "keywords": [
+                "php",
+                "symfony",
+                "validation"
+            ],
+            "support": {
+                "issues": "https://github.com/somnambulist-tech/validation/issues",
+                "source": "https://github.com/somnambulist-tech/validation/tree/1.6.0"
+            },
+            "install-path": "../somnambulist/validation"
         },
         {
             "name": "spatie/dropbox-api",
