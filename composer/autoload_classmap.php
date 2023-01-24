@@ -31,4 +31,5 @@ return array(
     'Omnipay\\Omnipay' => $vendorDir . '/omnipay/common/src/Omnipay.php',
     'Securimage' => $vendorDir . '/dapphp/securimage/securimage.php',
     'Securimage_Color' => $vendorDir . '/dapphp/securimage/securimage.php',
+    'imageLib' => $vendorDir . '/pyovchevski/php-image-magician/php_image_magician.php',
 );

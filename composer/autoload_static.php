@@ -59,6 +59,7 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
             'Pecee\\' => 6,
             'ParagonIE\\ConstantTime\\' => 23,
             'PHPMailer\\PHPMailer\\' => 20,
+            'PHPImageMagician\\' => 17,
         ),
         'O' => 
         array (
@@ -204,6 +205,10 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         'PHPMailer\\PHPMailer\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+        ),
+        'PHPImageMagician\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/pyovchevski/php-image-magician',
         ),
         'Omnipay\\PayPal\\' => 
         array (
@@ -368,6 +373,7 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         'Omnipay\\Omnipay' => __DIR__ . '/..' . '/omnipay/common/src/Omnipay.php',
         'Securimage' => __DIR__ . '/..' . '/dapphp/securimage/securimage.php',
         'Securimage_Color' => __DIR__ . '/..' . '/dapphp/securimage/securimage.php',
+        'imageLib' => __DIR__ . '/..' . '/pyovchevski/php-image-magician/php_image_magician.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

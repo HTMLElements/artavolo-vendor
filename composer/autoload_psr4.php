@@ -26,6 +26,7 @@ return array(
     'Pecee\\' => array($vendorDir . '/developermarius/simple-router/src/Pecee'),
     'ParagonIE\\ConstantTime\\' => array($vendorDir . '/paragonie/constant_time_encoding/src'),
     'PHPMailer\\PHPMailer\\' => array($vendorDir . '/phpmailer/phpmailer/src'),
+    'PHPImageMagician\\' => array($vendorDir . '/pyovchevski/php-image-magician'),
     'Omnipay\\PayPal\\' => array($vendorDir . '/omnipay/paypal/src'),
     'Omnipay\\Common\\' => array($vendorDir . '/omnipay/common/src/Common'),
     'MyCLabs\\Enum\\' => array($vendorDir . '/myclabs/php-enum/src'),

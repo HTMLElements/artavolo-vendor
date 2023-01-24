@@ -5,7 +5,7 @@
         'type' => 'application',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '20c39c93110560251c6a9b3d1c6e3b633c7ce8e6',
+        'reference' => '2c13091ee347e091b8702b5a2a86b866ca52b1f0',
         'name' => 'artavolo/cms',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'application',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '20c39c93110560251c6a9b3d1c6e3b633c7ce8e6',
+            'reference' => '2c13091ee347e091b8702b5a2a86b866ca52b1f0',
             'dev_requirement' => false,
         ),
         'bacon/bacon-qr-code' => array(
@@ -491,6 +491,17 @@
             'install_path' => __DIR__ . '/../psr/simple-cache',
             'aliases' => array(),
             'reference' => '8707bf3cea6f710bf6ef05491234e3ab06f6432a',
+            'dev_requirement' => false,
+        ),
+        'pyovchevski/php-image-magician' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../pyovchevski/php-image-magician',
+            'aliases' => array(
+                0 => '9999999-dev',
+            ),
+            'reference' => '004bca4f9a117b5eb7a5e3a4469f90f573cc4ebf',
             'dev_requirement' => false,
         ),
         'ralouphie/getallheaders' => array(

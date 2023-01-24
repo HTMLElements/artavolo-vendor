@@ -3329,6 +3329,59 @@
             "install-path": "../psr/simple-cache"
         },
         {
+            "name": "pyovchevski/php-image-magician",
+            "version": "dev-master",
+            "version_normalized": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/plumtex-deps/php-image-magician.git",
+                "reference": "004bca4f9a117b5eb7a5e3a4469f90f573cc4ebf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/plumtex-deps/php-image-magician/zipball/004bca4f9a117b5eb7a5e3a4469f90f573cc4ebf",
+                "reference": "004bca4f9a117b5eb7a5e3a4469f90f573cc4ebf",
+                "shasum": ""
+            },
+            "require": {
+                "ext-gd": "*",
+                "php": ">=8.0"
+            },
+            "time": "2023-01-24T07:46:52+00:00",
+            "default-branch": true,
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "PHPImageMagician\\": "./"
+                },
+                "classmap": [
+                    "php_image_magician.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Petko Yovchevski",
+                    "email": "pyovchevski@gmail.com"
+                }
+            ],
+            "description": "PHP Image Magician",
+            "homepage": "https://github.com/plumtex-deps/php-image-magician",
+            "keywords": [
+                "image",
+                "library",
+                "php"
+            ],
+            "support": {
+                "source": "https://github.com/plumtex-deps/php-image-magician/tree/master"
+            },
+            "install-path": "../pyovchevski/php-image-magician"
+        },
+        {
             "name": "ralouphie/getallheaders",
             "version": "3.0.3",
             "version_normalized": "3.0.3.0",
