@@ -29,6 +29,7 @@ return array(
     'PHPImageMagician\\' => array($vendorDir . '/pyovchevski/php-image-magician'),
     'Omnipay\\PayPal\\' => array($vendorDir . '/omnipay/paypal/src'),
     'Omnipay\\Common\\' => array($vendorDir . '/omnipay/common/src/Common'),
+    'Mypos\\IPC\\' => array($vendorDir . '/developermypos/mypos-checkout-sdk/IPC'),
     'MyCLabs\\Enum\\' => array($vendorDir . '/myclabs/php-enum/src'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
     'Money\\' => array($vendorDir . '/moneyphp/money/src'),

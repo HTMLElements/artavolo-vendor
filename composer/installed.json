@@ -440,6 +440,49 @@
             "install-path": "../developermarius/simple-router"
         },
         {
+            "name": "developermypos/mypos-checkout-sdk",
+            "version": "1.2.2",
+            "version_normalized": "1.2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/developermypos/myPOS-Checkout-SDK-PHP.git",
+                "reference": "9b187a83b0d1cbd4887e7f42f280d3d6ee2f9a13"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/developermypos/myPOS-Checkout-SDK-PHP/zipball/9b187a83b0d1cbd4887e7f42f280d3d6ee2f9a13",
+                "reference": "9b187a83b0d1cbd4887e7f42f280d3d6ee2f9a13",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.8"
+            },
+            "time": "2022-03-18T10:03:37+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Mypos\\IPC\\": "IPC/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "myPOS Checkout SDK PHP",
+            "homepage": "https://developers.mypos.eu",
+            "keywords": [
+                "myPOS",
+                "myPOS Checkout",
+                "sdk"
+            ],
+            "support": {
+                "issues": "https://github.com/developermypos/myPOS-Checkout-SDK-PHP/issues",
+                "source": "https://github.com/developermypos/myPOS-Checkout-SDK-PHP/tree/1.2.2"
+            },
+            "install-path": "../developermypos/mypos-checkout-sdk"
+        },
+        {
             "name": "ezyang/htmlpurifier",
             "version": "v4.14.0",
             "version_normalized": "4.14.0.0",

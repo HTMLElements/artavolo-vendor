@@ -68,6 +68,7 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         ),
         'M' => 
         array (
+            'Mypos\\IPC\\' => 10,
             'MyCLabs\\Enum\\' => 13,
             'Monolog\\' => 8,
             'Money\\' => 6,
@@ -217,6 +218,10 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         'Omnipay\\Common\\' => 
         array (
             0 => __DIR__ . '/..' . '/omnipay/common/src/Common',
+        ),
+        'Mypos\\IPC\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/developermypos/mypos-checkout-sdk/IPC',
         ),
         'MyCLabs\\Enum\\' => 
         array (

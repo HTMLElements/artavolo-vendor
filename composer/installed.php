@@ -5,7 +5,7 @@
         'type' => 'application',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '2c13091ee347e091b8702b5a2a86b866ca52b1f0',
+        'reference' => 'a9dc23f4c50487f8663956e3765c349ab14d5306',
         'name' => 'artavolo/cms',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'application',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '2c13091ee347e091b8702b5a2a86b866ca52b1f0',
+            'reference' => 'a9dc23f4c50487f8663956e3765c349ab14d5306',
             'dev_requirement' => false,
         ),
         'bacon/bacon-qr-code' => array(
@@ -80,6 +80,15 @@
             'install_path' => __DIR__ . '/../developermarius/simple-router',
             'aliases' => array(),
             'reference' => 'b226d7a0957b121723597db53e1d8fedc504459c',
+            'dev_requirement' => false,
+        ),
+        'developermypos/mypos-checkout-sdk' => array(
+            'pretty_version' => '1.2.2',
+            'version' => '1.2.2.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../developermypos/mypos-checkout-sdk',
+            'aliases' => array(),
+            'reference' => '9b187a83b0d1cbd4887e7f42f280d3d6ee2f9a13',
             'dev_requirement' => false,
         ),
         'ezyang/htmlpurifier' => array(
