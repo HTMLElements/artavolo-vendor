@@ -172,7 +172,7 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         ),
         'Psr\\Log\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/log/src',
+            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
         ),
         'Psr\\Http\\Message\\' => 
         array (
@@ -343,6 +343,13 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
     );
 
     public static $prefixesPsr0 = array (
+        'P' => 
+        array (
+            'PayPal' => 
+            array (
+                0 => __DIR__ . '/..' . '/paypal/rest-api-sdk-php/lib',
+            ),
+        ),
         'H' => 
         array (
             'HTMLPurifier' => 
