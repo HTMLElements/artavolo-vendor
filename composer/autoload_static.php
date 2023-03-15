@@ -42,6 +42,7 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\HttpFoundation\\' => 33,
+            'Stripe\\' => 7,
             'Stevenmaguire\\OAuth2\\Client\\' => 28,
             'Spatie\\Dropbox\\' => 15,
             'Somnambulist\\Components\\Validation\\' => 35,
@@ -149,6 +150,10 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         'Symfony\\Component\\HttpFoundation\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/http-foundation',
+        ),
+        'Stripe\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/stripe/stripe-php/lib',
         ),
         'Stevenmaguire\\OAuth2\\Client\\' => 
         array (

@@ -5,7 +5,7 @@
         'type' => 'application',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'b2266c3ea2530921f64acea1fcb2fcf080b78782',
+        'reference' => 'abb768debbd4e942f4743b0a0ba28c336c3d4052',
         'name' => 'artavolo/cms',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'application',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'b2266c3ea2530921f64acea1fcb2fcf080b78782',
+            'reference' => 'abb768debbd4e942f4743b0a0ba28c336c3d4052',
             'dev_requirement' => false,
         ),
         'bacon/bacon-qr-code' => array(
@@ -556,6 +556,15 @@
             'install_path' => __DIR__ . '/../stevenmaguire/oauth2-dropbox',
             'aliases' => array(),
             'reference' => '01c37ed9ce190569450e6a4bdee90204eb8600a0',
+            'dev_requirement' => false,
+        ),
+        'stripe/stripe-php' => array(
+            'pretty_version' => 'v10.9.1',
+            'version' => '10.9.1.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../stripe/stripe-php',
+            'aliases' => array(),
+            'reference' => 'be1de500a70b9eada6dbe72b0c8e21c845570903',
             'dev_requirement' => false,
         ),
         'symfony/deprecation-contracts' => array(
