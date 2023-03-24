@@ -37,7 +37,7 @@ return array(
     'Microsoft\\Graph\\' => array($vendorDir . '/microsoft/microsoft-graph/src'),
     'Matrix\\' => array($vendorDir . '/markbaker/matrix/classes/src'),
     'MailchimpMarketing\\' => array($vendorDir . '/mailchimp/marketing/lib'),
-    'League\\OAuth2\\Client\\' => array($vendorDir . '/league/oauth2-client/src'),
+    'League\\OAuth2\\Client\\' => array($vendorDir . '/league/oauth2-client/src', $vendorDir . '/league/oauth2-github/src'),
     'Krizalys\\Onedrive\\' => array($vendorDir . '/krizalys/onedrive-php-sdk/src'),
     'Http\\Promise\\' => array($vendorDir . '/php-http/promise/src'),
     'Http\\Message\\' => array($vendorDir . '/php-http/message/src', $vendorDir . '/php-http/message-factory/src'),

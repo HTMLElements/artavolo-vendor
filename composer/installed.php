@@ -5,7 +5,7 @@
         'type' => 'application',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'abb768debbd4e942f4743b0a0ba28c336c3d4052',
+        'reference' => '82d15a1d8c25e0941c1422260c1902d1f1e66507',
         'name' => 'artavolo/cms',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'application',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'abb768debbd4e942f4743b0a0ba28c336c3d4052',
+            'reference' => '82d15a1d8c25e0941c1422260c1902d1f1e66507',
             'dev_requirement' => false,
         ),
         'bacon/bacon-qr-code' => array(
@@ -197,6 +197,15 @@
             'install_path' => __DIR__ . '/../league/oauth2-client',
             'aliases' => array(),
             'reference' => '2334c249907190c132364f5dae0287ab8666aa19',
+            'dev_requirement' => false,
+        ),
+        'league/oauth2-github' => array(
+            'pretty_version' => '3.1.0',
+            'version' => '3.1.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../league/oauth2-github',
+            'aliases' => array(),
+            'reference' => '97f31cd70e76f81e8f5b4e2ab6f3708e2db7ac18',
             'dev_requirement' => false,
         ),
         'league/omnipay' => array(
