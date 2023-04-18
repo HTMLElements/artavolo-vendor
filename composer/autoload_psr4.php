@@ -17,6 +17,7 @@ return array(
     'Spatie\\Dropbox\\' => array($vendorDir . '/spatie/dropbox-api/src'),
     'Somnambulist\\Components\\Validation\\' => array($vendorDir . '/somnambulist/validation/src'),
     'Securimage\\' => array($vendorDir . '/dapphp/securimage'),
+    'Pusher\\' => array($vendorDir . '/pusher/pusher-php-server/src'),
     'Psr\\SimpleCache\\' => array($vendorDir . '/psr/simple-cache/src'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-factory/src', $vendorDir . '/psr/http-message/src'),
