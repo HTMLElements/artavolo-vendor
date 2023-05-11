@@ -20,6 +20,7 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         'decc78cc4436b1292c6c0d151b19445c' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/bootstrap.php',
         'c65d09b6820da036953a371c8c73a9b1' => __DIR__ . '/..' . '/facebook/graph-sdk/src/Facebook/polyfills.php',
         'a8d3953fd9959404dd22d3dfcd0a79f0' => __DIR__ . '/..' . '/google/apiclient/src/aliases.php',
+        '61ba3e92ef91a7a0f1cc260ebd9290e4' => __DIR__ . '/..' . '/openai-php/client/src/OpenAI.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -66,6 +67,7 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         ),
         'O' => 
         array (
+            'OpenAI\\' => 7,
             'Omnipay\\PayPal\\' => 15,
             'Omnipay\\Common\\' => 15,
         ),
@@ -90,6 +92,7 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         'H' => 
         array (
             'Http\\Promise\\' => 13,
+            'Http\\Message\\MultipartStream\\' => 29,
             'Http\\Message\\' => 13,
             'Http\\Discovery\\' => 15,
             'Http\\Client\\' => 12,
@@ -187,8 +190,8 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-factory/src',
-            1 => __DIR__ . '/..' . '/psr/http-message/src',
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+            1 => __DIR__ . '/..' . '/psr/http-factory/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -221,6 +224,10 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         'PHPImageMagician\\' => 
         array (
             0 => __DIR__ . '/..' . '/pyovchevski/php-image-magician',
+        ),
+        'OpenAI\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/openai-php/client/src',
         ),
         'Omnipay\\PayPal\\' => 
         array (
@@ -270,6 +277,10 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         'Http\\Promise\\' => 
         array (
             0 => __DIR__ . '/..' . '/php-http/promise/src',
+        ),
+        'Http\\Message\\MultipartStream\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-http/multipart-stream-builder/src',
         ),
         'Http\\Message\\' => 
         array (
