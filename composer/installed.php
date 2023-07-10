@@ -3,7 +3,7 @@
         'name' => 'artavolo/cms',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '04f48a1bc912f0137fef5e18fc4d5494e70a9cb6',
+        'reference' => '8d7e85261eba901f213d643d40de4c6b5ba77857',
         'type' => 'application',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'artavolo/cms' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '04f48a1bc912f0137fef5e18fc4d5494e70a9cb6',
+            'reference' => '8d7e85261eba901f213d643d40de4c6b5ba77857',
             'type' => 'application',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -115,6 +115,15 @@
             'reference' => 'd28e6df83830252650da4623c78aaaf98fb385f3',
             'type' => 'library',
             'install_path' => __DIR__ . '/../firebase/php-jwt',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'genert/bbcode' => array(
+            'pretty_version' => '1.1.2',
+            'version' => '1.1.2.0',
+            'reference' => '8c52c54fe08cc1a38566c7a02d39bc8b3c9453ff',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../genert/bbcode',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -355,15 +364,15 @@
         'php-http/async-client-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0',
-                1 => '*',
+                0 => '*',
+                1 => '1.0',
             ),
         ),
         'php-http/client-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0',
-                1 => '*',
+                0 => '*',
+                1 => '1.0',
             ),
         ),
         'php-http/discovery' => array(
@@ -508,8 +517,8 @@
         'psr/http-factory-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '*',
-                1 => '1.0',
+                0 => '1.0',
+                1 => '*',
             ),
         ),
         'psr/http-message' => array(
@@ -524,8 +533,8 @@
         'psr/http-message-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '*',
-                1 => '1.0',
+                0 => '1.0',
+                1 => '*',
             ),
         ),
         'psr/log' => array(

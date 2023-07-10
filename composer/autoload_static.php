@@ -107,6 +107,7 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
             'Google\\Service\\' => 15,
             'Google\\Auth\\' => 12,
             'Google\\' => 7,
+            'Genert\\BBCode\\' => 14,
         ),
         'F' => 
         array (
@@ -190,8 +191,8 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -326,6 +327,10 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         'Google\\' => 
         array (
             0 => __DIR__ . '/..' . '/google/apiclient/src',
+        ),
+        'Genert\\BBCode\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/genert/bbcode/src',
         ),
         'Firebase\\JWT\\' => 
         array (
