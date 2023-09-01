@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'phpseclib3\\' => array($vendorDir . '/phpseclib/phpseclib/phpseclib'),
+    'onesignal\\client\\' => array($vendorDir . '/onesignal/onesignal-php-api/lib'),
     'ZipStream\\' => array($vendorDir . '/maennchen/zipstream-php/src'),
     'Workerman\\' => array($vendorDir . '/workerman/workerman'),
     'Twilio\\' => array($vendorDir . '/twilio/sdk/src/Twilio'),
@@ -17,6 +18,7 @@ return array(
     'Spatie\\Dropbox\\' => array($vendorDir . '/spatie/dropbox-api/src'),
     'Somnambulist\\Components\\Validation\\' => array($vendorDir . '/somnambulist/validation/src'),
     'Securimage\\' => array($vendorDir . '/dapphp/securimage'),
+    'Pusher\\PushNotifications\\' => array($vendorDir . '/pusher/pusher-push-notifications/src'),
     'Pusher\\' => array($vendorDir . '/pusher/pusher-php-server/src'),
     'Psr\\SimpleCache\\' => array($vendorDir . '/psr/simple-cache/src'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),

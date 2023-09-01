@@ -28,6 +28,10 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         array (
             'phpseclib3\\' => 11,
         ),
+        'o' => 
+        array (
+            'onesignal\\client\\' => 17,
+        ),
         'Z' => 
         array (
             'ZipStream\\' => 10,
@@ -52,6 +56,7 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         ),
         'P' => 
         array (
+            'Pusher\\PushNotifications\\' => 25,
             'Pusher\\' => 7,
             'Psr\\SimpleCache\\' => 16,
             'Psr\\Log\\' => 8,
@@ -137,6 +142,10 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         array (
             0 => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib',
         ),
+        'onesignal\\client\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/onesignal/onesignal-php-api/lib',
+        ),
         'ZipStream\\' => 
         array (
             0 => __DIR__ . '/..' . '/maennchen/zipstream-php/src',
@@ -176,6 +185,10 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         'Securimage\\' => 
         array (
             0 => __DIR__ . '/..' . '/dapphp/securimage',
+        ),
+        'Pusher\\PushNotifications\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/pusher/pusher-push-notifications/src',
         ),
         'Pusher\\' => 
         array (

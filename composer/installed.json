@@ -2307,6 +2307,63 @@
             "install-path": "../omnipay/paypal"
         },
         {
+            "name": "onesignal/onesignal-php-api",
+            "version": "dev-main",
+            "version_normalized": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/OneSignal/onesignal-php-api.git",
+                "reference": "325c42a2a2d19733391d9a638823ef051cbacc51"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/OneSignal/onesignal-php-api/zipball/325c42a2a2d19733391d9a638823ef051cbacc51",
+                "reference": "325c42a2a2d19733391d9a638823ef051cbacc51",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "guzzlehttp/guzzle": "^7.3",
+                "guzzlehttp/psr7": "^1.7 || ^2.0",
+                "php": "^7.3 || ^8.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.5"
+            },
+            "time": "2023-08-02T00:01:45+00:00",
+            "default-branch": true,
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "onesignal\\client\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "OneSignal developers",
+                    "homepage": "https://onesignal.com"
+                }
+            ],
+            "description": "A powerful way to send personalized messages at scale and build effective customer engagement strategies. Learn more at onesignal.com",
+            "homepage": "https://onesignal.com",
+            "keywords": [
+                "api",
+                "onesignal",
+                "php",
+                "rest",
+                "sdk"
+            ],
+            "support": {
+                "issues": "https://github.com/OneSignal/onesignal-php-api/issues",
+                "source": "https://github.com/OneSignal/onesignal-php-api/tree/main"
+            },
+            "install-path": "../onesignal/onesignal-php-api"
+        },
+        {
             "name": "openai-php/client",
             "version": "v0.4.2",
             "version_normalized": "0.4.2.0",
@@ -3879,6 +3936,51 @@
                 "source": "https://github.com/pusher/pusher-http-php/tree/7.2.2"
             },
             "install-path": "../pusher/pusher-php-server"
+        },
+        {
+            "name": "pusher/pusher-push-notifications",
+            "version": "2.0",
+            "version_normalized": "2.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pusher/push-notifications-php.git",
+                "reference": "6ec015243c18b0579c261c2decef99324d7452b9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pusher/push-notifications-php/zipball/6ec015243c18b0579c261c2decef99324d7452b9",
+                "reference": "6ec015243c18b0579c261c2decef99324d7452b9",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "firebase/php-jwt": "^6.0",
+                "guzzlehttp/guzzle": "^7.0",
+                "php": ">=8.0"
+            },
+            "require-dev": {
+                "doctrine/instantiator": "1.4.0",
+                "overtrue/phplint": "^4.0 || ^5.0",
+                "phpunit/phpunit": "^9.0",
+                "symfony/yaml": "^5.0 || ^6.0"
+            },
+            "time": "2022-08-09T21:07:46+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Pusher\\PushNotifications\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "support": {
+                "issues": "https://github.com/pusher/push-notifications-php/issues",
+                "source": "https://github.com/pusher/push-notifications-php/tree/2.0.0"
+            },
+            "install-path": "../pusher/pusher-push-notifications"
         },
         {
             "name": "pyovchevski/php-image-magician",
