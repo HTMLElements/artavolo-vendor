@@ -3,7 +3,7 @@
         'name' => 'artavolo/cms',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '3da99fa75fc260d0904fed20f5ea367b8b60b6b4',
+        'reference' => '1a6a71d1dcb0f9e30c9a53560704c6cec1704898',
         'type' => 'application',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'artavolo/cms' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '3da99fa75fc260d0904fed20f5ea367b8b60b6b4',
+            'reference' => '1a6a71d1dcb0f9e30c9a53560704c6cec1704898',
             'type' => 'application',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -314,17 +314,6 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../omnipay/paypal',
             'aliases' => array(),
-            'dev_requirement' => false,
-        ),
-        'onesignal/onesignal-php-api' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
-            'reference' => '325c42a2a2d19733391d9a638823ef051cbacc51',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../onesignal/onesignal-php-api',
-            'aliases' => array(
-                0 => '9999999-dev',
-            ),
             'dev_requirement' => false,
         ),
         'openai-php/client' => array(

@@ -28,10 +28,6 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         array (
             'phpseclib3\\' => 11,
         ),
-        'o' => 
-        array (
-            'onesignal\\client\\' => 17,
-        ),
         'Z' => 
         array (
             'ZipStream\\' => 10,
@@ -141,10 +137,6 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         'phpseclib3\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib',
-        ),
-        'onesignal\\client\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/onesignal/onesignal-php-api/lib',
         ),
         'ZipStream\\' => 
         array (

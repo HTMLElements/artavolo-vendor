@@ -2307,63 +2307,6 @@
             "install-path": "../omnipay/paypal"
         },
         {
-            "name": "onesignal/onesignal-php-api",
-            "version": "dev-main",
-            "version_normalized": "dev-main",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/OneSignal/onesignal-php-api.git",
-                "reference": "325c42a2a2d19733391d9a638823ef051cbacc51"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/OneSignal/onesignal-php-api/zipball/325c42a2a2d19733391d9a638823ef051cbacc51",
-                "reference": "325c42a2a2d19733391d9a638823ef051cbacc51",
-                "shasum": ""
-            },
-            "require": {
-                "ext-curl": "*",
-                "ext-json": "*",
-                "ext-mbstring": "*",
-                "guzzlehttp/guzzle": "^7.3",
-                "guzzlehttp/psr7": "^1.7 || ^2.0",
-                "php": "^7.3 || ^8.0"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.5"
-            },
-            "time": "2023-08-02T00:01:45+00:00",
-            "default-branch": true,
-            "type": "library",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "onesignal\\client\\": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "authors": [
-                {
-                    "name": "OneSignal developers",
-                    "homepage": "https://onesignal.com"
-                }
-            ],
-            "description": "A powerful way to send personalized messages at scale and build effective customer engagement strategies. Learn more at onesignal.com",
-            "homepage": "https://onesignal.com",
-            "keywords": [
-                "api",
-                "onesignal",
-                "php",
-                "rest",
-                "sdk"
-            ],
-            "support": {
-                "issues": "https://github.com/OneSignal/onesignal-php-api/issues",
-                "source": "https://github.com/OneSignal/onesignal-php-api/tree/main"
-            },
-            "install-path": "../onesignal/onesignal-php-api"
-        },
-        {
             "name": "openai-php/client",
             "version": "v0.4.2",
             "version_normalized": "0.4.2.0",
