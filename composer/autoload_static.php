@@ -4,16 +4,18 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
+class ComposerStaticInit80b0e0f002a2ecb8069939e615ebfbc4
 {
     public static $files = array (
-        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
+        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
-        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '9c67151ae59aff4788964ce8eb2a0f43' => __DIR__ . '/..' . '/clue/stream-filter/src/functions_include.php',
+        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '8cff32064859f4559445b89279f3199c' => __DIR__ . '/..' . '/php-http/message/src/filters.php',
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
         '1f87db08236948d07391152dccb70f04' => __DIR__ . '/..' . '/google/apiclient-services/autoload.php',
         '3109cb1a231dcd04bee1f9f620d46975' => __DIR__ . '/..' . '/paragonie/sodium_compat/autoload.php',
@@ -42,7 +44,12 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         ),
         'S' => 
         array (
+            'Symfony\\Polyfill\\Php80\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Symfony\\Polyfill\\Ctype\\' => 23,
+            'Symfony\\Component\\Yaml\\' => 23,
+            'Symfony\\Component\\Serializer\\' => 29,
+            'Symfony\\Component\\OptionsResolver\\' => 34,
             'Symfony\\Component\\HttpFoundation\\' => 33,
             'Stripe\\' => 7,
             'Stevenmaguire\\OAuth2\\Client\\' => 28,
@@ -84,11 +91,19 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         ),
         'L' => 
         array (
+            'League\\Uri\\' => 11,
             'League\\OAuth2\\Client\\' => 21,
         ),
         'K' => 
         array (
             'Krizalys\\Onedrive\\' => 18,
+        ),
+        'J' => 
+        array (
+            'JoliCode\\Slack\\Api\\' => 19,
+            'JoliCode\\Slack\\' => 15,
+            'Jane\\Component\\OpenApiRuntime\\' => 30,
+            'Jane\\Component\\JsonSchemaRuntime\\' => 33,
         ),
         'H' => 
         array (
@@ -96,6 +111,7 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
             'Http\\Message\\MultipartStream\\' => 29,
             'Http\\Message\\' => 13,
             'Http\\Discovery\\' => 15,
+            'Http\\Client\\Common\\' => 19,
             'Http\\Client\\' => 12,
             'Http\\Adapter\\Guzzle7\\' => 21,
         ),
@@ -150,9 +166,29 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         array (
             0 => __DIR__ . '/..' . '/twilio/sdk/src/Twilio',
         ),
+        'Symfony\\Polyfill\\Php80\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-php80',
+        ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
+        ),
+        'Symfony\\Polyfill\\Ctype\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
+        ),
+        'Symfony\\Component\\Yaml\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/yaml',
+        ),
+        'Symfony\\Component\\Serializer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/serializer',
+        ),
+        'Symfony\\Component\\OptionsResolver\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/options-resolver',
         ),
         'Symfony\\Component\\HttpFoundation\\' => 
         array (
@@ -196,8 +232,8 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-factory/src',
-            1 => __DIR__ . '/..' . '/psr/http-message/src',
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+            1 => __DIR__ . '/..' . '/psr/http-factory/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -271,6 +307,11 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         array (
             0 => __DIR__ . '/..' . '/mailchimp/marketing/lib',
         ),
+        'League\\Uri\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/league/uri-interfaces/src',
+            1 => __DIR__ . '/..' . '/league/uri/src',
+        ),
         'League\\OAuth2\\Client\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/oauth2-client/src',
@@ -279,6 +320,22 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         'Krizalys\\Onedrive\\' => 
         array (
             0 => __DIR__ . '/..' . '/krizalys/onedrive-php-sdk/src',
+        ),
+        'JoliCode\\Slack\\Api\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jolicode/slack-php-api/generated',
+        ),
+        'JoliCode\\Slack\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jolicode/slack-php-api/src',
+        ),
+        'Jane\\Component\\OpenApiRuntime\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jane-php/open-api-runtime',
+        ),
+        'Jane\\Component\\JsonSchemaRuntime\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jane-php/json-schema-runtime',
         ),
         'Http\\Promise\\' => 
         array (
@@ -290,12 +347,16 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         ),
         'Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/php-http/message/src',
-            1 => __DIR__ . '/..' . '/php-http/message-factory/src',
+            0 => __DIR__ . '/..' . '/php-http/message-factory/src',
+            1 => __DIR__ . '/..' . '/php-http/message/src',
         ),
         'Http\\Discovery\\' => 
         array (
             0 => __DIR__ . '/..' . '/php-http/discovery/src',
+        ),
+        'Http\\Client\\Common\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-http/client-common/src',
         ),
         'Http\\Client\\' => 
         array (
@@ -376,6 +437,13 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
     );
 
     public static $prefixesPsr0 = array (
+        'R' => 
+        array (
+            'Rs\\Json' => 
+            array (
+                0 => __DIR__ . '/..' . '/php-jsonpointer/php-jsonpointer/src',
+            ),
+        ),
         'P' => 
         array (
             'PayPal' => 
@@ -393,6 +461,7 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
     );
 
     public static $classMap = array (
+        'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Google_AccessToken_Revoke' => __DIR__ . '/..' . '/google/apiclient/src/aliases.php',
         'Google_AccessToken_Verify' => __DIR__ . '/..' . '/google/apiclient/src/aliases.php',
@@ -416,18 +485,22 @@ class ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94
         'Google_Task_Runner' => __DIR__ . '/..' . '/google/apiclient/src/aliases.php',
         'Google_Utils_UriTemplate' => __DIR__ . '/..' . '/google/apiclient/src/aliases.php',
         'Omnipay\\Omnipay' => __DIR__ . '/..' . '/omnipay/common/src/Omnipay.php',
+        'PhpToken' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/PhpToken.php',
         'Securimage' => __DIR__ . '/..' . '/dapphp/securimage/securimage.php',
         'Securimage_Color' => __DIR__ . '/..' . '/dapphp/securimage/securimage.php',
+        'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
+        'UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
+        'ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
         'imageLib' => __DIR__ . '/..' . '/pyovchevski/php-image-magician/php_image_magician.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit6adb36515a294ab0a23e7459abe0dc94::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit80b0e0f002a2ecb8069939e615ebfbc4::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit80b0e0f002a2ecb8069939e615ebfbc4::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit80b0e0f002a2ecb8069939e615ebfbc4::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit80b0e0f002a2ecb8069939e615ebfbc4::$classMap;
 
         }, null, ClassLoader::class);
     }
