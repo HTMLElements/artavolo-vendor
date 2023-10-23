@@ -3,7 +3,7 @@
         'name' => 'artavolo/cms',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '694ad5a5fa994e62049f56296a42684e432ca974',
+        'reference' => '75d1ef8470bd5b316db6c60cb5ab24bacddc4adb',
         'type' => 'application',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'artavolo/cms' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '694ad5a5fa994e62049f56296a42684e432ca974',
+            'reference' => '75d1ef8470bd5b316db6c60cb5ab24bacddc4adb',
             'type' => 'application',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -205,6 +205,15 @@
             'reference' => 'ce5ed462cba12e88e4072769ec7899556c70bb05',
             'type' => 'library',
             'install_path' => __DIR__ . '/../jane-php/open-api-runtime',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'johngrogg/ics-parser' => array(
+            'pretty_version' => 'v3.3.1',
+            'version' => '3.3.1.0',
+            'reference' => 'eeb51c4c0c06e6df3266f85ea774ca314536aba4',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../johngrogg/ics-parser',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -564,8 +573,8 @@
         'psr/http-client-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '*',
-                1 => '1.0',
+                0 => '1.0',
+                1 => '*',
             ),
         ),
         'psr/http-factory' => array(
@@ -580,8 +589,8 @@
         'psr/http-factory-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '*',
-                1 => '1.0',
+                0 => '1.0',
+                1 => '*',
             ),
         ),
         'psr/http-message' => array(
@@ -596,8 +605,8 @@
         'psr/http-message-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '*',
-                1 => '1.0',
+                0 => '1.0',
+                1 => '*',
             ),
         ),
         'psr/log' => array(

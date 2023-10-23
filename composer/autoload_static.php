@@ -232,8 +232,8 @@ class ComposerStaticInit80b0e0f002a2ecb8069939e615ebfbc4
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -309,8 +309,8 @@ class ComposerStaticInit80b0e0f002a2ecb8069939e615ebfbc4
         ),
         'League\\Uri\\' => 
         array (
-            0 => __DIR__ . '/..' . '/league/uri-interfaces/src',
-            1 => __DIR__ . '/..' . '/league/uri/src',
+            0 => __DIR__ . '/..' . '/league/uri/src',
+            1 => __DIR__ . '/..' . '/league/uri-interfaces/src',
         ),
         'League\\OAuth2\\Client\\' => 
         array (
@@ -347,8 +347,8 @@ class ComposerStaticInit80b0e0f002a2ecb8069939e615ebfbc4
         ),
         'Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/php-http/message-factory/src',
-            1 => __DIR__ . '/..' . '/php-http/message/src',
+            0 => __DIR__ . '/..' . '/php-http/message/src',
+            1 => __DIR__ . '/..' . '/php-http/message-factory/src',
         ),
         'Http\\Discovery\\' => 
         array (
@@ -449,6 +449,13 @@ class ComposerStaticInit80b0e0f002a2ecb8069939e615ebfbc4
             'PayPal' => 
             array (
                 0 => __DIR__ . '/..' . '/paypal/rest-api-sdk-php/lib',
+            ),
+        ),
+        'I' => 
+        array (
+            'ICal' => 
+            array (
+                0 => __DIR__ . '/..' . '/johngrogg/ics-parser/src',
             ),
         ),
         'H' => 
