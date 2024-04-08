@@ -107,6 +107,10 @@ class ComposerStaticInit80b0e0f002a2ecb8069939e615ebfbc4
             'Jane\\Component\\OpenApiRuntime\\' => 30,
             'Jane\\Component\\JsonSchemaRuntime\\' => 33,
         ),
+        'I' => 
+        array (
+            'Imagecow\\' => 9,
+        ),
         'H' => 
         array (
             'Http\\Promise\\' => 13,
@@ -343,6 +347,10 @@ class ComposerStaticInit80b0e0f002a2ecb8069939e615ebfbc4
         'Jane\\Component\\JsonSchemaRuntime\\' => 
         array (
             0 => __DIR__ . '/..' . '/jane-php/json-schema-runtime',
+        ),
+        'Imagecow\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/imagecow/imagecow/src',
         ),
         'Http\\Promise\\' => 
         array (

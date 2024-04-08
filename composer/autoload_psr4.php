@@ -53,6 +53,7 @@ return array(
     'JoliCode\\Slack\\' => array($vendorDir . '/jolicode/slack-php-api/src'),
     'Jane\\Component\\OpenApiRuntime\\' => array($vendorDir . '/jane-php/open-api-runtime'),
     'Jane\\Component\\JsonSchemaRuntime\\' => array($vendorDir . '/jane-php/json-schema-runtime'),
+    'Imagecow\\' => array($vendorDir . '/imagecow/imagecow/src'),
     'Http\\Promise\\' => array($vendorDir . '/php-http/promise/src'),
     'Http\\Message\\MultipartStream\\' => array($vendorDir . '/php-http/multipart-stream-builder/src'),
     'Http\\Message\\' => array($vendorDir . '/php-http/message/src', $vendorDir . '/php-http/message-factory/src'),
