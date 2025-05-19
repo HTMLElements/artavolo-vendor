@@ -325,8 +325,8 @@ class ComposerStaticInit80b0e0f002a2ecb8069939e615ebfbc4
         ),
         'League\\OAuth2\\Client\\' => 
         array (
-            0 => __DIR__ . '/..' . '/league/oauth2-client/src',
-            1 => __DIR__ . '/..' . '/league/oauth2-github/src',
+            0 => __DIR__ . '/..' . '/league/oauth2-github/src',
+            1 => __DIR__ . '/..' . '/league/oauth2-client/src',
         ),
         'Krizalys\\Onedrive\\' => 
         array (

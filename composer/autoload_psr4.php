@@ -47,7 +47,7 @@ return array(
     'Matrix\\' => array($vendorDir . '/markbaker/matrix/classes/src'),
     'MailchimpMarketing\\' => array($vendorDir . '/mailchimp/marketing/lib'),
     'League\\Uri\\' => array($vendorDir . '/league/uri/src', $vendorDir . '/league/uri-interfaces/src'),
-    'League\\OAuth2\\Client\\' => array($vendorDir . '/league/oauth2-client/src', $vendorDir . '/league/oauth2-github/src'),
+    'League\\OAuth2\\Client\\' => array($vendorDir . '/league/oauth2-github/src', $vendorDir . '/league/oauth2-client/src'),
     'Krizalys\\Onedrive\\' => array($vendorDir . '/krizalys/onedrive-php-sdk/src'),
     'JoliCode\\Slack\\Api\\' => array($vendorDir . '/jolicode/slack-php-api/generated'),
     'JoliCode\\Slack\\' => array($vendorDir . '/jolicode/slack-php-api/src'),

@@ -3,7 +3,7 @@
         'name' => 'artavolo/cms',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'f381f840e37928e7c379a838375f888c6aa4a424',
+        'reference' => '90b5adc8d71715b1608b7e918082db76ffb99239',
         'type' => 'application',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'artavolo/cms' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'f381f840e37928e7c379a838375f888c6aa4a424',
+            'reference' => '90b5adc8d71715b1608b7e918082db76ffb99239',
             'type' => 'application',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -110,9 +110,9 @@
             'dev_requirement' => false,
         ),
         'firebase/php-jwt' => array(
-            'pretty_version' => 'v6.2.0',
-            'version' => '6.2.0.0',
-            'reference' => 'd28e6df83830252650da4623c78aaaf98fb385f3',
+            'pretty_version' => 'v6.11.1',
+            'version' => '6.11.1.0',
+            'reference' => 'd1e91ecf8c598d073d0995afa8cd5c75c6e19e66',
             'type' => 'library',
             'install_path' => __DIR__ . '/../firebase/php-jwt',
             'aliases' => array(),
@@ -609,8 +609,8 @@
         'psr/http-client-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0',
-                1 => '*',
+                0 => '*',
+                1 => '1.0',
             ),
         ),
         'psr/http-factory' => array(
@@ -625,8 +625,8 @@
         'psr/http-factory-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '^1.0',
-                1 => '*',
+                0 => '*',
+                1 => '^1.0',
             ),
         ),
         'psr/http-message' => array(
@@ -641,8 +641,8 @@
         'psr/http-message-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0',
-                1 => '*',
+                0 => '*',
+                1 => '1.0',
             ),
         ),
         'psr/log' => array(
