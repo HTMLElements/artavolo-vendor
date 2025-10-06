@@ -17,8 +17,15 @@
 
 namespace Google\Service\Logging;
 
-class LogEntry extends \Google\Model
+class LogEntry extends \Google\Collection
 {
+  protected $collection_key = 'errorGroups';
+  protected $apphubType = AppHub::class;
+  protected $apphubDataType = '';
+  protected $apphubDestinationType = AppHub::class;
+  protected $apphubDestinationDataType = '';
+  protected $errorGroupsType = LogErrorGroup::class;
+  protected $errorGroupsDataType = 'array';
   protected $httpRequestType = HttpRequest::class;
   protected $httpRequestDataType = '';
   /**
@@ -80,6 +87,48 @@ class LogEntry extends \Google\Model
    */
   public $traceSampled;
 
+  /**
+   * @param AppHub
+   */
+  public function setApphub(AppHub $apphub)
+  {
+    $this->apphub = $apphub;
+  }
+  /**
+   * @return AppHub
+   */
+  public function getApphub()
+  {
+    return $this->apphub;
+  }
+  /**
+   * @param AppHub
+   */
+  public function setApphubDestination(AppHub $apphubDestination)
+  {
+    $this->apphubDestination = $apphubDestination;
+  }
+  /**
+   * @return AppHub
+   */
+  public function getApphubDestination()
+  {
+    return $this->apphubDestination;
+  }
+  /**
+   * @param LogErrorGroup[]
+   */
+  public function setErrorGroups($errorGroups)
+  {
+    $this->errorGroups = $errorGroups;
+  }
+  /**
+   * @return LogErrorGroup[]
+   */
+  public function getErrorGroups()
+  {
+    return $this->errorGroups;
+  }
   /**
    * @param HttpRequest
    */

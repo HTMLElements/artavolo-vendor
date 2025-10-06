@@ -19,7 +19,11 @@ namespace Google\Service\ChromePolicy;
 
 class Proto2FileDescriptorProto extends \Google\Collection
 {
-  protected $collection_key = 'messageType';
+  protected $collection_key = 'optionDependency';
+  /**
+   * @var string
+   */
+  public $editionDeprecated;
   protected $enumTypeType = Proto2EnumDescriptorProto::class;
   protected $enumTypeDataType = 'array';
   protected $messageTypeType = Proto2DescriptorProto::class;
@@ -29,6 +33,10 @@ class Proto2FileDescriptorProto extends \Google\Collection
    */
   public $name;
   /**
+   * @var string[]
+   */
+  public $optionDependency;
+  /**
    * @var string
    */
   public $package;
@@ -37,6 +45,20 @@ class Proto2FileDescriptorProto extends \Google\Collection
    */
   public $syntax;
 
+  /**
+   * @param string
+   */
+  public function setEditionDeprecated($editionDeprecated)
+  {
+    $this->editionDeprecated = $editionDeprecated;
+  }
+  /**
+   * @return string
+   */
+  public function getEditionDeprecated()
+  {
+    return $this->editionDeprecated;
+  }
   /**
    * @param Proto2EnumDescriptorProto[]
    */
@@ -78,6 +100,20 @@ class Proto2FileDescriptorProto extends \Google\Collection
   public function getName()
   {
     return $this->name;
+  }
+  /**
+   * @param string[]
+   */
+  public function setOptionDependency($optionDependency)
+  {
+    $this->optionDependency = $optionDependency;
+  }
+  /**
+   * @return string[]
+   */
+  public function getOptionDependency()
+  {
+    return $this->optionDependency;
   }
   /**
    * @param string

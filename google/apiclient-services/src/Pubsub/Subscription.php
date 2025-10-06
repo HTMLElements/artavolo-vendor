@@ -17,12 +17,19 @@
 
 namespace Google\Service\Pubsub;
 
-class Subscription extends \Google\Model
+class Subscription extends \Google\Collection
 {
+  protected $collection_key = 'messageTransforms';
   /**
    * @var int
    */
   public $ackDeadlineSeconds;
+  protected $analyticsHubSubscriptionInfoType = AnalyticsHubSubscriptionInfo::class;
+  protected $analyticsHubSubscriptionInfoDataType = '';
+  protected $bigqueryConfigType = BigQueryConfig::class;
+  protected $bigqueryConfigDataType = '';
+  protected $cloudStorageConfigType = CloudStorageConfig::class;
+  protected $cloudStorageConfigDataType = '';
   protected $deadLetterPolicyType = DeadLetterPolicy::class;
   protected $deadLetterPolicyDataType = '';
   /**
@@ -51,6 +58,8 @@ class Subscription extends \Google\Model
    * @var string
    */
   public $messageRetentionDuration;
+  protected $messageTransformsType = MessageTransform::class;
+  protected $messageTransformsDataType = 'array';
   /**
    * @var string
    */
@@ -89,6 +98,48 @@ class Subscription extends \Google\Model
   public function getAckDeadlineSeconds()
   {
     return $this->ackDeadlineSeconds;
+  }
+  /**
+   * @param AnalyticsHubSubscriptionInfo
+   */
+  public function setAnalyticsHubSubscriptionInfo(AnalyticsHubSubscriptionInfo $analyticsHubSubscriptionInfo)
+  {
+    $this->analyticsHubSubscriptionInfo = $analyticsHubSubscriptionInfo;
+  }
+  /**
+   * @return AnalyticsHubSubscriptionInfo
+   */
+  public function getAnalyticsHubSubscriptionInfo()
+  {
+    return $this->analyticsHubSubscriptionInfo;
+  }
+  /**
+   * @param BigQueryConfig
+   */
+  public function setBigqueryConfig(BigQueryConfig $bigqueryConfig)
+  {
+    $this->bigqueryConfig = $bigqueryConfig;
+  }
+  /**
+   * @return BigQueryConfig
+   */
+  public function getBigqueryConfig()
+  {
+    return $this->bigqueryConfig;
+  }
+  /**
+   * @param CloudStorageConfig
+   */
+  public function setCloudStorageConfig(CloudStorageConfig $cloudStorageConfig)
+  {
+    $this->cloudStorageConfig = $cloudStorageConfig;
+  }
+  /**
+   * @return CloudStorageConfig
+   */
+  public function getCloudStorageConfig()
+  {
+    return $this->cloudStorageConfig;
   }
   /**
    * @param DeadLetterPolicy
@@ -201,6 +252,20 @@ class Subscription extends \Google\Model
   public function getMessageRetentionDuration()
   {
     return $this->messageRetentionDuration;
+  }
+  /**
+   * @param MessageTransform[]
+   */
+  public function setMessageTransforms($messageTransforms)
+  {
+    $this->messageTransforms = $messageTransforms;
+  }
+  /**
+   * @return MessageTransform[]
+   */
+  public function getMessageTransforms()
+  {
+    return $this->messageTransforms;
   }
   /**
    * @param string

@@ -17,8 +17,9 @@
 
 namespace Google\Service\AuthorizedBuyersMarketplace;
 
-class Deal extends \Google\Model
+class Deal extends \Google\Collection
 {
+  protected $collection_key = 'eligibleSeatIds';
   /**
    * @var string
    */
@@ -27,6 +28,10 @@ class Deal extends \Google\Model
    * @var string
    */
   public $buyer;
+  /**
+   * @var string
+   */
+  public $buyerPermissionType;
   /**
    * @var string
    */
@@ -51,6 +56,10 @@ class Deal extends \Google\Model
    * @var string
    */
   public $displayName;
+  /**
+   * @var string[]
+   */
+  public $eligibleSeatIds;
   protected $estimatedGrossSpendType = Money::class;
   protected $estimatedGrossSpendDataType = '';
   /**
@@ -61,6 +70,8 @@ class Deal extends \Google\Model
    * @var string
    */
   public $flightStartTime;
+  protected $mediaPlannerType = MediaPlanner::class;
+  protected $mediaPlannerDataType = '';
   /**
    * @var string
    */
@@ -115,6 +126,20 @@ class Deal extends \Google\Model
   public function getBuyer()
   {
     return $this->buyer;
+  }
+  /**
+   * @param string
+   */
+  public function setBuyerPermissionType($buyerPermissionType)
+  {
+    $this->buyerPermissionType = $buyerPermissionType;
+  }
+  /**
+   * @return string
+   */
+  public function getBuyerPermissionType()
+  {
+    return $this->buyerPermissionType;
   }
   /**
    * @param string
@@ -215,6 +240,20 @@ class Deal extends \Google\Model
     return $this->displayName;
   }
   /**
+   * @param string[]
+   */
+  public function setEligibleSeatIds($eligibleSeatIds)
+  {
+    $this->eligibleSeatIds = $eligibleSeatIds;
+  }
+  /**
+   * @return string[]
+   */
+  public function getEligibleSeatIds()
+  {
+    return $this->eligibleSeatIds;
+  }
+  /**
    * @param Money
    */
   public function setEstimatedGrossSpend(Money $estimatedGrossSpend)
@@ -255,6 +294,20 @@ class Deal extends \Google\Model
   public function getFlightStartTime()
   {
     return $this->flightStartTime;
+  }
+  /**
+   * @param MediaPlanner
+   */
+  public function setMediaPlanner(MediaPlanner $mediaPlanner)
+  {
+    $this->mediaPlanner = $mediaPlanner;
+  }
+  /**
+   * @return MediaPlanner
+   */
+  public function getMediaPlanner()
+  {
+    return $this->mediaPlanner;
   }
   /**
    * @param string

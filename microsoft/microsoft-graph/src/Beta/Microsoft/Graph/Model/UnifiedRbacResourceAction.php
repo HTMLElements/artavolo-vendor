@@ -137,6 +137,35 @@ class UnifiedRbacResourceAction extends Entity
     }
 
     /**
+    * Gets the isPrivileged
+    * Flag indicating if the action is a sensitive resource action. Applies only for actions in the microsoft.directory resource namespace. Read-only. Supports $filter (eq).
+    *
+    * @return bool|null The isPrivileged
+    */
+    public function getIsPrivileged()
+    {
+        if (array_key_exists("isPrivileged", $this->_propDict)) {
+            return $this->_propDict["isPrivileged"];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+    * Sets the isPrivileged
+    * Flag indicating if the action is a sensitive resource action. Applies only for actions in the microsoft.directory resource namespace. Read-only. Supports $filter (eq).
+    *
+    * @param bool $val The isPrivileged
+    *
+    * @return UnifiedRbacResourceAction
+    */
+    public function setIsPrivileged($val)
+    {
+        $this->_propDict["isPrivileged"] = boolval($val);
+        return $this;
+    }
+
+    /**
     * Gets the name
     * Name for the action within the resource namespace, such as microsoft.insights/programs/update. Can include slash character (/). Case insensitive. Required. Supports $filter (eq).
     *
@@ -191,6 +220,37 @@ class UnifiedRbacResourceAction extends Entity
     public function setResourceScopeId($val)
     {
         $this->_propDict["resourceScopeId"] = $val;
+        return $this;
+    }
+
+    /**
+    * Gets the authenticationContext
+    *
+    * @return AuthenticationContextClassReference|null The authenticationContext
+    */
+    public function getAuthenticationContext()
+    {
+        if (array_key_exists("authenticationContext", $this->_propDict)) {
+            if (is_a($this->_propDict["authenticationContext"], "\Beta\Microsoft\Graph\Model\AuthenticationContextClassReference") || is_null($this->_propDict["authenticationContext"])) {
+                return $this->_propDict["authenticationContext"];
+            } else {
+                $this->_propDict["authenticationContext"] = new AuthenticationContextClassReference($this->_propDict["authenticationContext"]);
+                return $this->_propDict["authenticationContext"];
+            }
+        }
+        return null;
+    }
+
+    /**
+    * Sets the authenticationContext
+    *
+    * @param AuthenticationContextClassReference $val The authenticationContext
+    *
+    * @return UnifiedRbacResourceAction
+    */
+    public function setAuthenticationContext($val)
+    {
+        $this->_propDict["authenticationContext"] = $val;
         return $this;
     }
 

@@ -19,6 +19,12 @@ namespace Google\Service\GKEHub;
 
 class IdentityServiceAuthMethod extends \Google\Model
 {
+  protected $azureadConfigType = IdentityServiceAzureADConfig::class;
+  protected $azureadConfigDataType = '';
+  protected $googleConfigType = IdentityServiceGoogleConfig::class;
+  protected $googleConfigDataType = '';
+  protected $ldapConfigType = IdentityServiceLdapConfig::class;
+  protected $ldapConfigDataType = '';
   /**
    * @var string
    */
@@ -29,7 +35,51 @@ class IdentityServiceAuthMethod extends \Google\Model
    * @var string
    */
   public $proxy;
+  protected $samlConfigType = IdentityServiceSamlConfig::class;
+  protected $samlConfigDataType = '';
 
+  /**
+   * @param IdentityServiceAzureADConfig
+   */
+  public function setAzureadConfig(IdentityServiceAzureADConfig $azureadConfig)
+  {
+    $this->azureadConfig = $azureadConfig;
+  }
+  /**
+   * @return IdentityServiceAzureADConfig
+   */
+  public function getAzureadConfig()
+  {
+    return $this->azureadConfig;
+  }
+  /**
+   * @param IdentityServiceGoogleConfig
+   */
+  public function setGoogleConfig(IdentityServiceGoogleConfig $googleConfig)
+  {
+    $this->googleConfig = $googleConfig;
+  }
+  /**
+   * @return IdentityServiceGoogleConfig
+   */
+  public function getGoogleConfig()
+  {
+    return $this->googleConfig;
+  }
+  /**
+   * @param IdentityServiceLdapConfig
+   */
+  public function setLdapConfig(IdentityServiceLdapConfig $ldapConfig)
+  {
+    $this->ldapConfig = $ldapConfig;
+  }
+  /**
+   * @return IdentityServiceLdapConfig
+   */
+  public function getLdapConfig()
+  {
+    return $this->ldapConfig;
+  }
   /**
    * @param string
    */
@@ -71,6 +121,20 @@ class IdentityServiceAuthMethod extends \Google\Model
   public function getProxy()
   {
     return $this->proxy;
+  }
+  /**
+   * @param IdentityServiceSamlConfig
+   */
+  public function setSamlConfig(IdentityServiceSamlConfig $samlConfig)
+  {
+    $this->samlConfig = $samlConfig;
+  }
+  /**
+   * @return IdentityServiceSamlConfig
+   */
+  public function getSamlConfig()
+  {
+    return $this->samlConfig;
   }
 }
 

@@ -65,6 +65,10 @@ class GoogleCloudRunV2Task extends \Google\Collection
    */
   public $generation;
   /**
+   * @var bool
+   */
+  public $gpuZonalRedundancyDisabled;
+  /**
    * @var int
    */
   public $index;
@@ -81,7 +85,7 @@ class GoogleCloudRunV2Task extends \Google\Collection
   /**
    * @var string
    */
-  public $launchStage;
+  public $logUri;
   /**
    * @var int
    */
@@ -90,6 +94,8 @@ class GoogleCloudRunV2Task extends \Google\Collection
    * @var string
    */
   public $name;
+  protected $nodeSelectorType = GoogleCloudRunV2NodeSelector::class;
+  protected $nodeSelectorDataType = '';
   /**
    * @var string
    */
@@ -102,6 +108,14 @@ class GoogleCloudRunV2Task extends \Google\Collection
    * @var int
    */
   public $retried;
+  /**
+   * @var bool
+   */
+  public $satisfiesPzs;
+  /**
+   * @var string
+   */
+  public $scheduledTime;
   /**
    * @var string
    */
@@ -296,6 +310,20 @@ class GoogleCloudRunV2Task extends \Google\Collection
     return $this->generation;
   }
   /**
+   * @param bool
+   */
+  public function setGpuZonalRedundancyDisabled($gpuZonalRedundancyDisabled)
+  {
+    $this->gpuZonalRedundancyDisabled = $gpuZonalRedundancyDisabled;
+  }
+  /**
+   * @return bool
+   */
+  public function getGpuZonalRedundancyDisabled()
+  {
+    return $this->gpuZonalRedundancyDisabled;
+  }
+  /**
    * @param int
    */
   public function setIndex($index)
@@ -354,16 +382,16 @@ class GoogleCloudRunV2Task extends \Google\Collection
   /**
    * @param string
    */
-  public function setLaunchStage($launchStage)
+  public function setLogUri($logUri)
   {
-    $this->launchStage = $launchStage;
+    $this->logUri = $logUri;
   }
   /**
    * @return string
    */
-  public function getLaunchStage()
+  public function getLogUri()
   {
-    return $this->launchStage;
+    return $this->logUri;
   }
   /**
    * @param int
@@ -392,6 +420,20 @@ class GoogleCloudRunV2Task extends \Google\Collection
   public function getName()
   {
     return $this->name;
+  }
+  /**
+   * @param GoogleCloudRunV2NodeSelector
+   */
+  public function setNodeSelector(GoogleCloudRunV2NodeSelector $nodeSelector)
+  {
+    $this->nodeSelector = $nodeSelector;
+  }
+  /**
+   * @return GoogleCloudRunV2NodeSelector
+   */
+  public function getNodeSelector()
+  {
+    return $this->nodeSelector;
   }
   /**
    * @param string
@@ -434,6 +476,34 @@ class GoogleCloudRunV2Task extends \Google\Collection
   public function getRetried()
   {
     return $this->retried;
+  }
+  /**
+   * @param bool
+   */
+  public function setSatisfiesPzs($satisfiesPzs)
+  {
+    $this->satisfiesPzs = $satisfiesPzs;
+  }
+  /**
+   * @return bool
+   */
+  public function getSatisfiesPzs()
+  {
+    return $this->satisfiesPzs;
+  }
+  /**
+   * @param string
+   */
+  public function setScheduledTime($scheduledTime)
+  {
+    $this->scheduledTime = $scheduledTime;
+  }
+  /**
+   * @return string
+   */
+  public function getScheduledTime()
+  {
+    return $this->scheduledTime;
   }
   /**
    * @param string

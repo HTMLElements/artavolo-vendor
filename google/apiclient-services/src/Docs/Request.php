@@ -49,6 +49,8 @@ class Request extends \Google\Model
   protected $insertInlineImageDataType = '';
   protected $insertPageBreakType = InsertPageBreakRequest::class;
   protected $insertPageBreakDataType = '';
+  protected $insertPersonType = InsertPersonRequest::class;
+  protected $insertPersonDataType = '';
   protected $insertSectionBreakType = InsertSectionBreakRequest::class;
   protected $insertSectionBreakDataType = '';
   protected $insertTableType = InsertTableRequest::class;
@@ -61,6 +63,8 @@ class Request extends \Google\Model
   protected $insertTextDataType = '';
   protected $mergeTableCellsType = MergeTableCellsRequest::class;
   protected $mergeTableCellsDataType = '';
+  protected $pinTableHeaderRowsType = PinTableHeaderRowsRequest::class;
+  protected $pinTableHeaderRowsDataType = '';
   protected $replaceAllTextType = ReplaceAllTextRequest::class;
   protected $replaceAllTextDataType = '';
   protected $replaceImageType = ReplaceImageRequest::class;
@@ -295,6 +299,20 @@ class Request extends \Google\Model
     return $this->insertPageBreak;
   }
   /**
+   * @param InsertPersonRequest
+   */
+  public function setInsertPerson(InsertPersonRequest $insertPerson)
+  {
+    $this->insertPerson = $insertPerson;
+  }
+  /**
+   * @return InsertPersonRequest
+   */
+  public function getInsertPerson()
+  {
+    return $this->insertPerson;
+  }
+  /**
    * @param InsertSectionBreakRequest
    */
   public function setInsertSectionBreak(InsertSectionBreakRequest $insertSectionBreak)
@@ -377,6 +395,20 @@ class Request extends \Google\Model
   public function getMergeTableCells()
   {
     return $this->mergeTableCells;
+  }
+  /**
+   * @param PinTableHeaderRowsRequest
+   */
+  public function setPinTableHeaderRows(PinTableHeaderRowsRequest $pinTableHeaderRows)
+  {
+    $this->pinTableHeaderRows = $pinTableHeaderRows;
+  }
+  /**
+   * @return PinTableHeaderRowsRequest
+   */
+  public function getPinTableHeaderRows()
+  {
+    return $this->pinTableHeaderRows;
   }
   /**
    * @param ReplaceAllTextRequest

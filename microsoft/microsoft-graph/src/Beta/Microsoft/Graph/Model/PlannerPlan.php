@@ -26,7 +26,7 @@ class PlannerPlan extends PlannerDelta
 {
     /**
     * Gets the container
-    * Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it is set, this property can’t be updated. Required.
+    * Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it's set, this property can’t be updated. Required.
     *
     * @return PlannerPlanContainer|null The container
     */
@@ -45,7 +45,7 @@ class PlannerPlan extends PlannerDelta
 
     /**
     * Sets the container
-    * Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it is set, this property can’t be updated. Required.
+    * Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it's set, this property can’t be updated. Required.
     *
     * @param PlannerPlanContainer $val The container
     *
@@ -213,6 +213,36 @@ class PlannerPlan extends PlannerDelta
     public function setOwner($val)
     {
         $this->_propDict["owner"] = $val;
+        return $this;
+    }
+
+
+     /**
+     * Gets the sharedWithContainers
+    * List of containers the plan is shared with.
+     *
+     * @return array|null The sharedWithContainers
+     */
+    public function getSharedWithContainers()
+    {
+        if (array_key_exists("sharedWithContainers", $this->_propDict)) {
+           return $this->_propDict["sharedWithContainers"];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+    * Sets the sharedWithContainers
+    * List of containers the plan is shared with.
+    *
+    * @param PlannerSharedWithContainer[] $val The sharedWithContainers
+    *
+    * @return PlannerPlan
+    */
+    public function setSharedWithContainers($val)
+    {
+        $this->_propDict["sharedWithContainers"] = $val;
         return $this;
     }
 

@@ -37,9 +37,9 @@ class GoogleCloudDocumentaiV1DocumentEntity extends \Google\Collection
    */
   public $mentionText;
   /**
-   * @var bool
+   * @var string
    */
-  public $nonPresent;
+  public $method;
   protected $normalizedValueType = GoogleCloudDocumentaiV1DocumentEntityNormalizedValue::class;
   protected $normalizedValueDataType = '';
   protected $pageAnchorType = GoogleCloudDocumentaiV1DocumentPageAnchor::class;
@@ -116,18 +116,18 @@ class GoogleCloudDocumentaiV1DocumentEntity extends \Google\Collection
     return $this->mentionText;
   }
   /**
-   * @param bool
+   * @param string
    */
-  public function setNonPresent($nonPresent)
+  public function setMethod($method)
   {
-    $this->nonPresent = $nonPresent;
+    $this->method = $method;
   }
   /**
-   * @return bool
+   * @return string
    */
-  public function getNonPresent()
+  public function getMethod()
   {
-    return $this->nonPresent;
+    return $this->method;
   }
   /**
    * @param GoogleCloudDocumentaiV1DocumentEntityNormalizedValue

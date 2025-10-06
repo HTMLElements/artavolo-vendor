@@ -464,7 +464,7 @@ class Team extends Entity
 
     /**
     * Gets the tenantId
-    * The ID of the Azure Active Directory tenant.
+    * The ID of the Microsoft Entra tenant.
     *
     * @return string|null The tenantId
     */
@@ -479,7 +479,7 @@ class Team extends Entity
 
     /**
     * Sets the tenantId
-    * The ID of the Azure Active Directory tenant.
+    * The ID of the Microsoft Entra tenant.
     *
     * @param string $val The tenantId
     *
@@ -955,6 +955,7 @@ class Team extends Entity
 
     /**
     * Gets the templateDefinition
+    * Generic representation of a team template definition for a team with a specific structure and configuration.
     *
     * @return TeamTemplateDefinition|null The templateDefinition
     */
@@ -973,6 +974,7 @@ class Team extends Entity
 
     /**
     * Sets the templateDefinition
+    * Generic representation of a team template definition for a team with a specific structure and configuration.
     *
     * @param TeamTemplateDefinition $val The templateDefinition
     *

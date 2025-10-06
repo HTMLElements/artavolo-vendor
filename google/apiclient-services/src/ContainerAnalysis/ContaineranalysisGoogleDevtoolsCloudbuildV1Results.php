@@ -19,7 +19,7 @@ namespace Google\Service\ContainerAnalysis;
 
 class ContaineranalysisGoogleDevtoolsCloudbuildV1Results extends \Google\Collection
 {
-  protected $collection_key = 'images';
+  protected $collection_key = 'pythonPackages';
   /**
    * @var string
    */
@@ -34,12 +34,20 @@ class ContaineranalysisGoogleDevtoolsCloudbuildV1Results extends \Google\Collect
    * @var string[]
    */
   public $buildStepOutputs;
+  protected $goModulesType = ContaineranalysisGoogleDevtoolsCloudbuildV1UploadedGoModule::class;
+  protected $goModulesDataType = 'array';
   protected $imagesType = ContaineranalysisGoogleDevtoolsCloudbuildV1BuiltImage::class;
   protected $imagesDataType = 'array';
+  protected $mavenArtifactsType = ContaineranalysisGoogleDevtoolsCloudbuildV1UploadedMavenArtifact::class;
+  protected $mavenArtifactsDataType = 'array';
+  protected $npmPackagesType = ContaineranalysisGoogleDevtoolsCloudbuildV1UploadedNpmPackage::class;
+  protected $npmPackagesDataType = 'array';
   /**
    * @var string
    */
   public $numArtifacts;
+  protected $pythonPackagesType = ContaineranalysisGoogleDevtoolsCloudbuildV1UploadedPythonPackage::class;
+  protected $pythonPackagesDataType = 'array';
 
   /**
    * @param string
@@ -98,6 +106,20 @@ class ContaineranalysisGoogleDevtoolsCloudbuildV1Results extends \Google\Collect
     return $this->buildStepOutputs;
   }
   /**
+   * @param ContaineranalysisGoogleDevtoolsCloudbuildV1UploadedGoModule[]
+   */
+  public function setGoModules($goModules)
+  {
+    $this->goModules = $goModules;
+  }
+  /**
+   * @return ContaineranalysisGoogleDevtoolsCloudbuildV1UploadedGoModule[]
+   */
+  public function getGoModules()
+  {
+    return $this->goModules;
+  }
+  /**
    * @param ContaineranalysisGoogleDevtoolsCloudbuildV1BuiltImage[]
    */
   public function setImages($images)
@@ -112,6 +134,34 @@ class ContaineranalysisGoogleDevtoolsCloudbuildV1Results extends \Google\Collect
     return $this->images;
   }
   /**
+   * @param ContaineranalysisGoogleDevtoolsCloudbuildV1UploadedMavenArtifact[]
+   */
+  public function setMavenArtifacts($mavenArtifacts)
+  {
+    $this->mavenArtifacts = $mavenArtifacts;
+  }
+  /**
+   * @return ContaineranalysisGoogleDevtoolsCloudbuildV1UploadedMavenArtifact[]
+   */
+  public function getMavenArtifacts()
+  {
+    return $this->mavenArtifacts;
+  }
+  /**
+   * @param ContaineranalysisGoogleDevtoolsCloudbuildV1UploadedNpmPackage[]
+   */
+  public function setNpmPackages($npmPackages)
+  {
+    $this->npmPackages = $npmPackages;
+  }
+  /**
+   * @return ContaineranalysisGoogleDevtoolsCloudbuildV1UploadedNpmPackage[]
+   */
+  public function getNpmPackages()
+  {
+    return $this->npmPackages;
+  }
+  /**
    * @param string
    */
   public function setNumArtifacts($numArtifacts)
@@ -124,6 +174,20 @@ class ContaineranalysisGoogleDevtoolsCloudbuildV1Results extends \Google\Collect
   public function getNumArtifacts()
   {
     return $this->numArtifacts;
+  }
+  /**
+   * @param ContaineranalysisGoogleDevtoolsCloudbuildV1UploadedPythonPackage[]
+   */
+  public function setPythonPackages($pythonPackages)
+  {
+    $this->pythonPackages = $pythonPackages;
+  }
+  /**
+   * @return ContaineranalysisGoogleDevtoolsCloudbuildV1UploadedPythonPackage[]
+   */
+  public function getPythonPackages()
+  {
+    return $this->pythonPackages;
   }
 }
 

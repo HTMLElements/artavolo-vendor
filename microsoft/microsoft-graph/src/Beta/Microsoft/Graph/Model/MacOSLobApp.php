@@ -113,37 +113,8 @@ class MacOSLobApp extends MobileLobApp
     }
 
     /**
-    * Gets the identityVersion
-    * The identity version. This property is being deprecated in 2211(November 2022).
-    *
-    * @return string|null The identityVersion
-    */
-    public function getIdentityVersion()
-    {
-        if (array_key_exists("identityVersion", $this->_propDict)) {
-            return $this->_propDict["identityVersion"];
-        } else {
-            return null;
-        }
-    }
-
-    /**
-    * Sets the identityVersion
-    * The identity version. This property is being deprecated in 2211(November 2022).
-    *
-    * @param string $val The identityVersion
-    *
-    * @return MacOSLobApp
-    */
-    public function setIdentityVersion($val)
-    {
-        $this->_propDict["identityVersion"] = $val;
-        return $this;
-    }
-
-    /**
     * Gets the ignoreVersionDetection
-    * When TRUE, indicates that the app's version will NOT be used to detect if the app is installed on a device. When FALSE, indicates that the app's version will be used to detect if the app is installed on a device. Set this to true for apps that use a self update feature.
+    * When TRUE, indicates that the app's version will NOT be used to detect if the app is installed on a device. When FALSE, indicates that the app's version will be used to detect if the app is installed on a device. Set this to true for apps that use a self update feature. The default value is FALSE.
     *
     * @return bool|null The ignoreVersionDetection
     */
@@ -158,7 +129,7 @@ class MacOSLobApp extends MobileLobApp
 
     /**
     * Sets the ignoreVersionDetection
-    * When TRUE, indicates that the app's version will NOT be used to detect if the app is installed on a device. When FALSE, indicates that the app's version will be used to detect if the app is installed on a device. Set this to true for apps that use a self update feature.
+    * When TRUE, indicates that the app's version will NOT be used to detect if the app is installed on a device. When FALSE, indicates that the app's version will be used to detect if the app is installed on a device. Set this to true for apps that use a self update feature. The default value is FALSE.
     *
     * @param bool $val The ignoreVersionDetection
     *
@@ -172,7 +143,7 @@ class MacOSLobApp extends MobileLobApp
 
     /**
     * Gets the installAsManaged
-    * When TRUE, indicates that the app will be installed as managed (requires macOS 11.0 and other managed package restrictions). When FALSE, indicates that the app will be installed as unmanaged.
+    * When TRUE, indicates that the app will be installed as managed (requires macOS 11.0 and other managed package restrictions). When FALSE, indicates that the app will be installed as unmanaged. The default value is FALSE.
     *
     * @return bool|null The installAsManaged
     */
@@ -187,7 +158,7 @@ class MacOSLobApp extends MobileLobApp
 
     /**
     * Sets the installAsManaged
-    * When TRUE, indicates that the app will be installed as managed (requires macOS 11.0 and other managed package restrictions). When FALSE, indicates that the app will be installed as unmanaged.
+    * When TRUE, indicates that the app will be installed as managed (requires macOS 11.0 and other managed package restrictions). When FALSE, indicates that the app will be installed as unmanaged. The default value is FALSE.
     *
     * @param bool $val The installAsManaged
     *

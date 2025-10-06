@@ -25,6 +25,12 @@ class Advertiser extends \Google\Model
    * @var string
    */
   public $advertiserId;
+  protected $billingConfigType = AdvertiserBillingConfig::class;
+  protected $billingConfigDataType = '';
+  /**
+   * @var string
+   */
+  public $containsEuPoliticalAds;
   protected $creativeConfigType = AdvertiserCreativeConfig::class;
   protected $creativeConfigDataType = '';
   protected $dataAccessConfigType = AdvertiserDataAccessConfig::class;
@@ -87,6 +93,34 @@ class Advertiser extends \Google\Model
   public function getAdvertiserId()
   {
     return $this->advertiserId;
+  }
+  /**
+   * @param AdvertiserBillingConfig
+   */
+  public function setBillingConfig(AdvertiserBillingConfig $billingConfig)
+  {
+    $this->billingConfig = $billingConfig;
+  }
+  /**
+   * @return AdvertiserBillingConfig
+   */
+  public function getBillingConfig()
+  {
+    return $this->billingConfig;
+  }
+  /**
+   * @param string
+   */
+  public function setContainsEuPoliticalAds($containsEuPoliticalAds)
+  {
+    $this->containsEuPoliticalAds = $containsEuPoliticalAds;
+  }
+  /**
+   * @return string
+   */
+  public function getContainsEuPoliticalAds()
+  {
+    return $this->containsEuPoliticalAds;
   }
   /**
    * @param AdvertiserCreativeConfig

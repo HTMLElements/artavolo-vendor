@@ -17,10 +17,10 @@
 
 namespace Google\Service\BeyondCorp\Resource;
 
-use Google\Service\BeyondCorp\GoogleCloudBeyondcorpAppconnectorsV1alphaAppConnector;
-use Google\Service\BeyondCorp\GoogleCloudBeyondcorpAppconnectorsV1alphaListAppConnectorsResponse;
-use Google\Service\BeyondCorp\GoogleCloudBeyondcorpAppconnectorsV1alphaReportStatusRequest;
-use Google\Service\BeyondCorp\GoogleCloudBeyondcorpAppconnectorsV1alphaResolveInstanceConfigResponse;
+use Google\Service\BeyondCorp\GoogleCloudBeyondcorpAppconnectorsV1AppConnector;
+use Google\Service\BeyondCorp\GoogleCloudBeyondcorpAppconnectorsV1ListAppConnectorsResponse;
+use Google\Service\BeyondCorp\GoogleCloudBeyondcorpAppconnectorsV1ReportStatusRequest;
+use Google\Service\BeyondCorp\GoogleCloudBeyondcorpAppconnectorsV1ResolveInstanceConfigResponse;
 use Google\Service\BeyondCorp\GoogleIamV1Policy;
 use Google\Service\BeyondCorp\GoogleIamV1SetIamPolicyRequest;
 use Google\Service\BeyondCorp\GoogleIamV1TestIamPermissionsRequest;
@@ -32,7 +32,7 @@ use Google\Service\BeyondCorp\GoogleLongrunningOperation;
  * Typical usage is:
  *  <code>
  *   $beyondcorpService = new Google\Service\BeyondCorp(...);
- *   $appConnectors = $beyondcorpService->appConnectors;
+ *   $appConnectors = $beyondcorpService->projects_locations_appConnectors;
  *  </code>
  */
 class ProjectsLocationsAppConnectors extends \Google\Service\Resource
@@ -43,18 +43,18 @@ class ProjectsLocationsAppConnectors extends \Google\Service\Resource
    *
    * @param string $parent Required. The resource project name of the AppConnector
    * location using the form: `projects/{project_id}/locations/{location_id}`
-   * @param GoogleCloudBeyondcorpAppconnectorsV1alphaAppConnector $postBody
+   * @param GoogleCloudBeyondcorpAppconnectorsV1AppConnector $postBody
    * @param array $optParams Optional parameters.
    *
    * @opt_param string appConnectorId Optional. User-settable AppConnector
    * resource ID. * Must start with a letter. * Must contain between 4-63
-   * characters from (/a-z-/). * Must end with a number or a letter.
+   * characters from `/a-z-/`. * Must end with a number or a letter.
    * @opt_param string requestId Optional. An optional request ID to identify
    * requests. Specify a unique request ID so that if you must retry your request,
    * the server will know to ignore the request if it has already been completed.
    * The server will guarantee that for at least 60 minutes since the first
    * request. For example, consider a situation where you make an initial request
-   * and t he request times out. If you make the request again with the same
+   * and the request times out. If you make the request again with the same
    * request ID, the server can check if original operation with the same request
    * ID was received, and if so, will ignore the second request. This prevents
    * clients from accidentally creating duplicate commitments. The request ID must
@@ -63,8 +63,9 @@ class ProjectsLocationsAppConnectors extends \Google\Service\Resource
    * @opt_param bool validateOnly Optional. If set, validates request by executing
    * a dry-run which would not alter the resource in any way.
    * @return GoogleLongrunningOperation
+   * @throws \Google\Service\Exception
    */
-  public function create($parent, GoogleCloudBeyondcorpAppconnectorsV1alphaAppConnector $postBody, $optParams = [])
+  public function create($parent, GoogleCloudBeyondcorpAppconnectorsV1AppConnector $postBody, $optParams = [])
   {
     $params = ['parent' => $parent, 'postBody' => $postBody];
     $params = array_merge($params, $optParams);
@@ -83,7 +84,7 @@ class ProjectsLocationsAppConnectors extends \Google\Service\Resource
    * the server will know to ignore the request if it has already been completed.
    * The server will guarantee that for at least 60 minutes after the first
    * request. For example, consider a situation where you make an initial request
-   * and t he request times out. If you make the request again with the same
+   * and the request times out. If you make the request again with the same
    * request ID, the server can check if original operation with the same request
    * ID was received, and if so, will ignore the second request. This prevents
    * clients from accidentally creating duplicate commitments. The request ID must
@@ -92,6 +93,7 @@ class ProjectsLocationsAppConnectors extends \Google\Service\Resource
    * @opt_param bool validateOnly Optional. If set, validates request by executing
    * a dry-run which would not alter the resource in any way.
    * @return GoogleLongrunningOperation
+   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -106,13 +108,14 @@ class ProjectsLocationsAppConnectors extends \Google\Service\Resource
    * rojects/{project_id}/locations/{location_id}/appConnectors/{app_connector_id}
    * `
    * @param array $optParams Optional parameters.
-   * @return GoogleCloudBeyondcorpAppconnectorsV1alphaAppConnector
+   * @return GoogleCloudBeyondcorpAppconnectorsV1AppConnector
+   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
     $params = ['name' => $name];
     $params = array_merge($params, $optParams);
-    return $this->call('get', [$params], GoogleCloudBeyondcorpAppconnectorsV1alphaAppConnector::class);
+    return $this->call('get', [$params], GoogleCloudBeyondcorpAppconnectorsV1AppConnector::class);
   }
   /**
    * Gets the access control policy for a resource. Returns an empty policy if the
@@ -137,6 +140,7 @@ class ProjectsLocationsAppConnectors extends \Google\Service\Resource
    * documentation](https://cloud.google.com/iam/help/conditions/resource-
    * policies).
    * @return GoogleIamV1Policy
+   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($resource, $optParams = [])
   {
@@ -165,20 +169,21 @@ class ProjectsLocationsAppConnectors extends \Google\Service\Resource
    * instances left to be queried.
    * @opt_param string pageToken Optional. The next_page_token value returned from
    * a previous ListAppConnectorsRequest, if any.
-   * @return GoogleCloudBeyondcorpAppconnectorsV1alphaListAppConnectorsResponse
+   * @return GoogleCloudBeyondcorpAppconnectorsV1ListAppConnectorsResponse
+   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsAppConnectors($parent, $optParams = [])
   {
     $params = ['parent' => $parent];
     $params = array_merge($params, $optParams);
-    return $this->call('list', [$params], GoogleCloudBeyondcorpAppconnectorsV1alphaListAppConnectorsResponse::class);
+    return $this->call('list', [$params], GoogleCloudBeyondcorpAppconnectorsV1ListAppConnectorsResponse::class);
   }
   /**
    * Updates the parameters of a single AppConnector. (appConnectors.patch)
    *
    * @param string $name Required. Unique resource name of the AppConnector. The
    * name is ignored when creating a AppConnector.
-   * @param GoogleCloudBeyondcorpAppconnectorsV1alphaAppConnector $postBody
+   * @param GoogleCloudBeyondcorpAppconnectorsV1AppConnector $postBody
    * @param array $optParams Optional parameters.
    *
    * @opt_param string requestId Optional. An optional request ID to identify
@@ -186,7 +191,7 @@ class ProjectsLocationsAppConnectors extends \Google\Service\Resource
    * the server will know to ignore the request if it has already been completed.
    * The server will guarantee that for at least 60 minutes since the first
    * request. For example, consider a situation where you make an initial request
-   * and t he request times out. If you make the request again with the same
+   * and the request times out. If you make the request again with the same
    * request ID, the server can check if original operation with the same request
    * ID was received, and if so, will ignore the second request. This prevents
    * clients from accidentally creating duplicate commitments. The request ID must
@@ -199,8 +204,9 @@ class ProjectsLocationsAppConnectors extends \Google\Service\Resource
    * @opt_param bool validateOnly Optional. If set, validates request by executing
    * a dry-run which would not alter the resource in any way.
    * @return GoogleLongrunningOperation
+   * @throws \Google\Service\Exception
    */
-  public function patch($name, GoogleCloudBeyondcorpAppconnectorsV1alphaAppConnector $postBody, $optParams = [])
+  public function patch($name, GoogleCloudBeyondcorpAppconnectorsV1AppConnector $postBody, $optParams = [])
   {
     $params = ['name' => $name, 'postBody' => $postBody];
     $params = array_merge($params, $optParams);
@@ -211,32 +217,34 @@ class ProjectsLocationsAppConnectors extends \Google\Service\Resource
    *
    * @param string $appConnector Required. BeyondCorp Connector name using the
    * form: `projects/{project_id}/locations/{location_id}/connectors/{connector}`
-   * @param GoogleCloudBeyondcorpAppconnectorsV1alphaReportStatusRequest $postBody
+   * @param GoogleCloudBeyondcorpAppconnectorsV1ReportStatusRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleLongrunningOperation
+   * @throws \Google\Service\Exception
    */
-  public function reportStatus($appConnector, GoogleCloudBeyondcorpAppconnectorsV1alphaReportStatusRequest $postBody, $optParams = [])
+  public function reportStatus($appConnector, GoogleCloudBeyondcorpAppconnectorsV1ReportStatusRequest $postBody, $optParams = [])
   {
     $params = ['appConnector' => $appConnector, 'postBody' => $postBody];
     $params = array_merge($params, $optParams);
     return $this->call('reportStatus', [$params], GoogleLongrunningOperation::class);
   }
   /**
-   * Get instance config for a given AppConnector. An internal method called by a
-   * AppConnector to get its container config.
+   * Gets instance configuration for a given AppConnector. An internal method
+   * called by a AppConnector to get its container config.
    * (appConnectors.resolveInstanceConfig)
    *
    * @param string $appConnector Required. BeyondCorp AppConnector name using the
    * form:
    * `projects/{project_id}/locations/{location_id}/appConnectors/{app_connector}`
    * @param array $optParams Optional parameters.
-   * @return GoogleCloudBeyondcorpAppconnectorsV1alphaResolveInstanceConfigResponse
+   * @return GoogleCloudBeyondcorpAppconnectorsV1ResolveInstanceConfigResponse
+   * @throws \Google\Service\Exception
    */
   public function resolveInstanceConfig($appConnector, $optParams = [])
   {
     $params = ['appConnector' => $appConnector];
     $params = array_merge($params, $optParams);
-    return $this->call('resolveInstanceConfig', [$params], GoogleCloudBeyondcorpAppconnectorsV1alphaResolveInstanceConfigResponse::class);
+    return $this->call('resolveInstanceConfig', [$params], GoogleCloudBeyondcorpAppconnectorsV1ResolveInstanceConfigResponse::class);
   }
   /**
    * Sets the access control policy on the specified resource. Replaces any
@@ -250,6 +258,7 @@ class ProjectsLocationsAppConnectors extends \Google\Service\Resource
    * @param GoogleIamV1SetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleIamV1Policy
+   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($resource, GoogleIamV1SetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -272,6 +281,7 @@ class ProjectsLocationsAppConnectors extends \Google\Service\Resource
    * @param GoogleIamV1TestIamPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleIamV1TestIamPermissionsResponse
+   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($resource, GoogleIamV1TestIamPermissionsRequest $postBody, $optParams = [])
   {

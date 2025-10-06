@@ -88,7 +88,7 @@ class Workflow extends WorkflowBase
 
     /**
     * Gets the nextScheduleRunDateTime
-    * The date time when the workflow is expected to run next based on the schedule interval, if there are any users matching the execution conditions. Supports $filter(lt,gt) and $orderBy.
+    * The date time when the workflow is expected to run next based on the schedule interval, if there are any users matching the execution conditions. Supports $filter(lt,gt) and $orderby.
     *
     * @return \DateTime|null The nextScheduleRunDateTime
     */
@@ -107,7 +107,7 @@ class Workflow extends WorkflowBase
 
     /**
     * Sets the nextScheduleRunDateTime
-    * The date time when the workflow is expected to run next based on the schedule interval, if there are any users matching the execution conditions. Supports $filter(lt,gt) and $orderBy.
+    * The date time when the workflow is expected to run next based on the schedule interval, if there are any users matching the execution conditions. Supports $filter(lt,gt) and $orderby.
     *
     * @param \DateTime $val The nextScheduleRunDateTime
     *
@@ -151,7 +151,7 @@ class Workflow extends WorkflowBase
 
      /**
      * Gets the executionScope
-    * The unique identifier of the Azure AD identity that last modified the workflow object.
+    * The unique identifier of the Microsoft Entra identity that last modified the workflow object.
      *
      * @return array|null The executionScope
      */
@@ -166,9 +166,9 @@ class Workflow extends WorkflowBase
 
     /**
     * Sets the executionScope
-    * The unique identifier of the Azure AD identity that last modified the workflow object.
+    * The unique identifier of the Microsoft Entra identity that last modified the workflow object.
     *
-    * @param \Beta\Microsoft\Graph\Model\User[] $val The executionScope
+    * @param UserProcessingResult[] $val The executionScope
     *
     * @return Workflow
     */
@@ -181,6 +181,7 @@ class Workflow extends WorkflowBase
 
      /**
      * Gets the runs
+    * Workflow runs.
      *
      * @return array|null The runs
      */
@@ -195,6 +196,7 @@ class Workflow extends WorkflowBase
 
     /**
     * Sets the runs
+    * Workflow runs.
     *
     * @param Run[] $val The runs
     *
@@ -239,6 +241,7 @@ class Workflow extends WorkflowBase
 
      /**
      * Gets the userProcessingResults
+    * Per-user workflow execution results.
      *
      * @return array|null The userProcessingResults
      */
@@ -253,6 +256,7 @@ class Workflow extends WorkflowBase
 
     /**
     * Sets the userProcessingResults
+    * Per-user workflow execution results.
     *
     * @param UserProcessingResult[] $val The userProcessingResults
     *

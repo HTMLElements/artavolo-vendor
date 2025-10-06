@@ -19,15 +19,25 @@ namespace Google\Service\SQLAdmin;
 
 class ConnectSettings extends \Google\Collection
 {
-  protected $collection_key = 'ipAddresses';
+  protected $collection_key = 'nodes';
   /**
    * @var string
    */
   public $backendType;
   /**
+   * @var string[]
+   */
+  public $customSubjectAlternativeNames;
+  /**
    * @var string
    */
   public $databaseVersion;
+  /**
+   * @var string
+   */
+  public $dnsName;
+  protected $dnsNamesType = DnsNameMapping::class;
+  protected $dnsNamesDataType = 'array';
   protected $ipAddressesType = IpMapping::class;
   protected $ipAddressesDataType = 'array';
   /**
@@ -35,11 +45,29 @@ class ConnectSettings extends \Google\Collection
    */
   public $kind;
   /**
+   * @var string[]
+   */
+  public $mdxProtocolSupport;
+  /**
+   * @var int
+   */
+  public $nodeCount;
+  protected $nodesType = ConnectPoolNodeConfig::class;
+  protected $nodesDataType = 'array';
+  /**
+   * @var bool
+   */
+  public $pscEnabled;
+  /**
    * @var string
    */
   public $region;
   protected $serverCaCertType = SslCert::class;
   protected $serverCaCertDataType = '';
+  /**
+   * @var string
+   */
+  public $serverCaMode;
 
   /**
    * @param string
@@ -56,6 +84,20 @@ class ConnectSettings extends \Google\Collection
     return $this->backendType;
   }
   /**
+   * @param string[]
+   */
+  public function setCustomSubjectAlternativeNames($customSubjectAlternativeNames)
+  {
+    $this->customSubjectAlternativeNames = $customSubjectAlternativeNames;
+  }
+  /**
+   * @return string[]
+   */
+  public function getCustomSubjectAlternativeNames()
+  {
+    return $this->customSubjectAlternativeNames;
+  }
+  /**
    * @param string
    */
   public function setDatabaseVersion($databaseVersion)
@@ -68,6 +110,34 @@ class ConnectSettings extends \Google\Collection
   public function getDatabaseVersion()
   {
     return $this->databaseVersion;
+  }
+  /**
+   * @param string
+   */
+  public function setDnsName($dnsName)
+  {
+    $this->dnsName = $dnsName;
+  }
+  /**
+   * @return string
+   */
+  public function getDnsName()
+  {
+    return $this->dnsName;
+  }
+  /**
+   * @param DnsNameMapping[]
+   */
+  public function setDnsNames($dnsNames)
+  {
+    $this->dnsNames = $dnsNames;
+  }
+  /**
+   * @return DnsNameMapping[]
+   */
+  public function getDnsNames()
+  {
+    return $this->dnsNames;
   }
   /**
    * @param IpMapping[]
@@ -98,6 +168,62 @@ class ConnectSettings extends \Google\Collection
     return $this->kind;
   }
   /**
+   * @param string[]
+   */
+  public function setMdxProtocolSupport($mdxProtocolSupport)
+  {
+    $this->mdxProtocolSupport = $mdxProtocolSupport;
+  }
+  /**
+   * @return string[]
+   */
+  public function getMdxProtocolSupport()
+  {
+    return $this->mdxProtocolSupport;
+  }
+  /**
+   * @param int
+   */
+  public function setNodeCount($nodeCount)
+  {
+    $this->nodeCount = $nodeCount;
+  }
+  /**
+   * @return int
+   */
+  public function getNodeCount()
+  {
+    return $this->nodeCount;
+  }
+  /**
+   * @param ConnectPoolNodeConfig[]
+   */
+  public function setNodes($nodes)
+  {
+    $this->nodes = $nodes;
+  }
+  /**
+   * @return ConnectPoolNodeConfig[]
+   */
+  public function getNodes()
+  {
+    return $this->nodes;
+  }
+  /**
+   * @param bool
+   */
+  public function setPscEnabled($pscEnabled)
+  {
+    $this->pscEnabled = $pscEnabled;
+  }
+  /**
+   * @return bool
+   */
+  public function getPscEnabled()
+  {
+    return $this->pscEnabled;
+  }
+  /**
    * @param string
    */
   public function setRegion($region)
@@ -124,6 +250,20 @@ class ConnectSettings extends \Google\Collection
   public function getServerCaCert()
   {
     return $this->serverCaCert;
+  }
+  /**
+   * @param string
+   */
+  public function setServerCaMode($serverCaMode)
+  {
+    $this->serverCaMode = $serverCaMode;
+  }
+  /**
+   * @return string
+   */
+  public function getServerCaMode()
+  {
+    return $this->serverCaMode;
   }
 }
 

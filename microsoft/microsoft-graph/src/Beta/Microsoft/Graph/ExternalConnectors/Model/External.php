@@ -55,6 +55,65 @@ class External implements \JsonSerializable
         return $this->_propDict;
     }
 
+    /**
+    * Gets the industryData
+    *
+    * @return \Beta\Microsoft\Graph\IndustryData\Model\IndustryDataRoot|null The industryData
+    */
+    public function getIndustryData()
+    {
+        if (array_key_exists("industryData", $this->_propDict)) {
+            if (is_a($this->_propDict["industryData"], "\Beta\Microsoft\Graph\IndustryData\Model\IndustryDataRoot") || is_null($this->_propDict["industryData"])) {
+                return $this->_propDict["industryData"];
+            } else {
+                $this->_propDict["industryData"] = new \Beta\Microsoft\Graph\IndustryData\Model\IndustryDataRoot($this->_propDict["industryData"]);
+                return $this->_propDict["industryData"];
+            }
+        }
+        return null;
+    }
+
+    /**
+    * Sets the industryData
+    *
+    * @param \Beta\Microsoft\Graph\IndustryData\Model\IndustryDataRoot $val The industryData
+    *
+    * @return External
+    */
+    public function setIndustryData($val)
+    {
+        $this->_propDict["industryData"] = $val;
+        return $this;
+    }
+
+
+     /**
+     * Gets the authorizationSystems
+     *
+     * @return array|null The authorizationSystems
+     */
+    public function getAuthorizationSystems()
+    {
+        if (array_key_exists("authorizationSystems", $this->_propDict)) {
+           return $this->_propDict["authorizationSystems"];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+    * Sets the authorizationSystems
+    *
+    * @param \Beta\Microsoft\Graph\Model\AuthorizationSystem[] $val The authorizationSystems
+    *
+    * @return External
+    */
+    public function setAuthorizationSystems($val)
+    {
+        $this->_propDict["authorizationSystems"] = $val;
+        return $this;
+    }
+
 
      /**
      * Gets the connections

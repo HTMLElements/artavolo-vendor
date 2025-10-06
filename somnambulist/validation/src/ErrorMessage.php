@@ -2,7 +2,6 @@
 
 namespace Somnambulist\Components\Validation;
 
-use function array_is_list;
 use function array_merge;
 use function is_array;
 use function is_numeric;
@@ -37,6 +36,11 @@ class ErrorMessage
         return $this->key;
     }
 
+    public function params(): array
+    {
+        return $this->params;
+    }
+
     public function addParam(string $key, mixed $value): self
     {
         $this->params[$key] = $value;
@@ -63,7 +67,7 @@ class ErrorMessage
         $ret = [];
 
         foreach ($params as $key => $value) {
-            $prefix              = (str_starts_with($key, '[') || str_starts_with($key, '{')) ? '' : ':';
+            $prefix = (str_starts_with($key, '[') || str_starts_with($key, '{')) ? '' : ':';
             $ret[$prefix . $key] = $this->stringify($value);
         }
 
@@ -73,9 +77,9 @@ class ErrorMessage
     private function stringify(mixed $value): string
     {
         return match (true) {
-            is_string($value), is_numeric($value)          => (string)$value,
-            is_array($value) && Helper::arrayIsList($value) => Helper::join(Helper::wraps($value, '"'), ', ', ', '),
-            is_array($value) || is_object($value)          => json_encode($value),
+            is_string($value), is_numeric($value) => (string)$value,
+            is_array($value) && Helper::arrayIsList($value) && !Helper::arrayIsNested($value) => Helper::join(Helper::wraps($value, '"'), ', ', ', '),
+            is_array($value) || is_object($value) => json_encode($value),
 
             default => '',
         };

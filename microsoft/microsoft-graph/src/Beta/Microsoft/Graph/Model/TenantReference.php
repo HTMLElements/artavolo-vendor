@@ -57,6 +57,7 @@ class TenantReference implements \JsonSerializable
 
     /**
     * Gets the tenantId
+    * The identifier of the Microsoft Entra tenant. Read-only. Key.
     *
     * @return string|null The tenantId
     */
@@ -71,6 +72,7 @@ class TenantReference implements \JsonSerializable
 
     /**
     * Sets the tenantId
+    * The identifier of the Microsoft Entra tenant. Read-only. Key.
     *
     * @param string $val The tenantId
     *

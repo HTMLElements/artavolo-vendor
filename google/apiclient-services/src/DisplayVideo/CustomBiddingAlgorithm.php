@@ -31,10 +31,6 @@ class CustomBiddingAlgorithm extends \Google\Collection
   /**
    * @var string
    */
-  public $customBiddingAlgorithmState;
-  /**
-   * @var string
-   */
   public $customBiddingAlgorithmType;
   /**
    * @var string
@@ -44,6 +40,8 @@ class CustomBiddingAlgorithm extends \Google\Collection
    * @var string
    */
   public $entityStatus;
+  protected $modelDetailsType = CustomBiddingModelDetails::class;
+  protected $modelDetailsDataType = 'array';
   /**
    * @var string
    */
@@ -56,6 +54,10 @@ class CustomBiddingAlgorithm extends \Google\Collection
    * @var string[]
    */
   public $sharedAdvertiserIds;
+  /**
+   * @var string
+   */
+  public $thirdPartyOptimizationPartner;
 
   /**
    * @param string
@@ -84,20 +86,6 @@ class CustomBiddingAlgorithm extends \Google\Collection
   public function getCustomBiddingAlgorithmId()
   {
     return $this->customBiddingAlgorithmId;
-  }
-  /**
-   * @param string
-   */
-  public function setCustomBiddingAlgorithmState($customBiddingAlgorithmState)
-  {
-    $this->customBiddingAlgorithmState = $customBiddingAlgorithmState;
-  }
-  /**
-   * @return string
-   */
-  public function getCustomBiddingAlgorithmState()
-  {
-    return $this->customBiddingAlgorithmState;
   }
   /**
    * @param string
@@ -142,6 +130,20 @@ class CustomBiddingAlgorithm extends \Google\Collection
     return $this->entityStatus;
   }
   /**
+   * @param CustomBiddingModelDetails[]
+   */
+  public function setModelDetails($modelDetails)
+  {
+    $this->modelDetails = $modelDetails;
+  }
+  /**
+   * @return CustomBiddingModelDetails[]
+   */
+  public function getModelDetails()
+  {
+    return $this->modelDetails;
+  }
+  /**
    * @param string
    */
   public function setName($name)
@@ -182,6 +184,20 @@ class CustomBiddingAlgorithm extends \Google\Collection
   public function getSharedAdvertiserIds()
   {
     return $this->sharedAdvertiserIds;
+  }
+  /**
+   * @param string
+   */
+  public function setThirdPartyOptimizationPartner($thirdPartyOptimizationPartner)
+  {
+    $this->thirdPartyOptimizationPartner = $thirdPartyOptimizationPartner;
+  }
+  /**
+   * @return string
+   */
+  public function getThirdPartyOptimizationPartner()
+  {
+    return $this->thirdPartyOptimizationPartner;
   }
 }
 

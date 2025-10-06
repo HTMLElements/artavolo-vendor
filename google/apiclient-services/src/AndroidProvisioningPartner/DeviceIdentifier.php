@@ -22,7 +22,19 @@ class DeviceIdentifier extends \Google\Model
   /**
    * @var string
    */
+  public $chromeOsAttestedDeviceId;
+  /**
+   * @var string
+   */
+  public $deviceType;
+  /**
+   * @var string
+   */
   public $imei;
+  /**
+   * @var string
+   */
+  public $imei2;
   /**
    * @var string
    */
@@ -34,12 +46,44 @@ class DeviceIdentifier extends \Google\Model
   /**
    * @var string
    */
+  public $meid2;
+  /**
+   * @var string
+   */
   public $model;
   /**
    * @var string
    */
   public $serialNumber;
 
+  /**
+   * @param string
+   */
+  public function setChromeOsAttestedDeviceId($chromeOsAttestedDeviceId)
+  {
+    $this->chromeOsAttestedDeviceId = $chromeOsAttestedDeviceId;
+  }
+  /**
+   * @return string
+   */
+  public function getChromeOsAttestedDeviceId()
+  {
+    return $this->chromeOsAttestedDeviceId;
+  }
+  /**
+   * @param string
+   */
+  public function setDeviceType($deviceType)
+  {
+    $this->deviceType = $deviceType;
+  }
+  /**
+   * @return string
+   */
+  public function getDeviceType()
+  {
+    return $this->deviceType;
+  }
   /**
    * @param string
    */
@@ -53,6 +97,20 @@ class DeviceIdentifier extends \Google\Model
   public function getImei()
   {
     return $this->imei;
+  }
+  /**
+   * @param string
+   */
+  public function setImei2($imei2)
+  {
+    $this->imei2 = $imei2;
+  }
+  /**
+   * @return string
+   */
+  public function getImei2()
+  {
+    return $this->imei2;
   }
   /**
    * @param string
@@ -81,6 +139,20 @@ class DeviceIdentifier extends \Google\Model
   public function getMeid()
   {
     return $this->meid;
+  }
+  /**
+   * @param string
+   */
+  public function setMeid2($meid2)
+  {
+    $this->meid2 = $meid2;
+  }
+  /**
+   * @return string
+   */
+  public function getMeid2()
+  {
+    return $this->meid2;
   }
   /**
    * @param string

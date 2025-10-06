@@ -17,22 +17,35 @@
 
 namespace Google\Service\HangoutsChat;
 
-class GoogleAppsCardV1Widget extends \Google\Model
+class GoogleAppsCardV1Widget extends \Google\Collection
 {
+  protected $collection_key = 'eventActions';
   protected $buttonListType = GoogleAppsCardV1ButtonList::class;
   protected $buttonListDataType = '';
+  protected $carouselType = GoogleAppsCardV1Carousel::class;
+  protected $carouselDataType = '';
+  protected $chipListType = GoogleAppsCardV1ChipList::class;
+  protected $chipListDataType = '';
+  protected $columnsType = GoogleAppsCardV1Columns::class;
+  protected $columnsDataType = '';
   protected $dateTimePickerType = GoogleAppsCardV1DateTimePicker::class;
   protected $dateTimePickerDataType = '';
   protected $decoratedTextType = GoogleAppsCardV1DecoratedText::class;
   protected $decoratedTextDataType = '';
   protected $dividerType = GoogleAppsCardV1Divider::class;
   protected $dividerDataType = '';
+  protected $eventActionsType = GoogleAppsCardV1EventAction::class;
+  protected $eventActionsDataType = 'array';
   protected $gridType = GoogleAppsCardV1Grid::class;
   protected $gridDataType = '';
   /**
    * @var string
    */
   public $horizontalAlignment;
+  /**
+   * @var string
+   */
+  public $id;
   protected $imageType = GoogleAppsCardV1Image::class;
   protected $imageDataType = '';
   protected $selectionInputType = GoogleAppsCardV1SelectionInput::class;
@@ -41,6 +54,10 @@ class GoogleAppsCardV1Widget extends \Google\Model
   protected $textInputDataType = '';
   protected $textParagraphType = GoogleAppsCardV1TextParagraph::class;
   protected $textParagraphDataType = '';
+  /**
+   * @var string
+   */
+  public $visibility;
 
   /**
    * @param GoogleAppsCardV1ButtonList
@@ -55,6 +72,48 @@ class GoogleAppsCardV1Widget extends \Google\Model
   public function getButtonList()
   {
     return $this->buttonList;
+  }
+  /**
+   * @param GoogleAppsCardV1Carousel
+   */
+  public function setCarousel(GoogleAppsCardV1Carousel $carousel)
+  {
+    $this->carousel = $carousel;
+  }
+  /**
+   * @return GoogleAppsCardV1Carousel
+   */
+  public function getCarousel()
+  {
+    return $this->carousel;
+  }
+  /**
+   * @param GoogleAppsCardV1ChipList
+   */
+  public function setChipList(GoogleAppsCardV1ChipList $chipList)
+  {
+    $this->chipList = $chipList;
+  }
+  /**
+   * @return GoogleAppsCardV1ChipList
+   */
+  public function getChipList()
+  {
+    return $this->chipList;
+  }
+  /**
+   * @param GoogleAppsCardV1Columns
+   */
+  public function setColumns(GoogleAppsCardV1Columns $columns)
+  {
+    $this->columns = $columns;
+  }
+  /**
+   * @return GoogleAppsCardV1Columns
+   */
+  public function getColumns()
+  {
+    return $this->columns;
   }
   /**
    * @param GoogleAppsCardV1DateTimePicker
@@ -99,6 +158,20 @@ class GoogleAppsCardV1Widget extends \Google\Model
     return $this->divider;
   }
   /**
+   * @param GoogleAppsCardV1EventAction[]
+   */
+  public function setEventActions($eventActions)
+  {
+    $this->eventActions = $eventActions;
+  }
+  /**
+   * @return GoogleAppsCardV1EventAction[]
+   */
+  public function getEventActions()
+  {
+    return $this->eventActions;
+  }
+  /**
    * @param GoogleAppsCardV1Grid
    */
   public function setGrid(GoogleAppsCardV1Grid $grid)
@@ -125,6 +198,20 @@ class GoogleAppsCardV1Widget extends \Google\Model
   public function getHorizontalAlignment()
   {
     return $this->horizontalAlignment;
+  }
+  /**
+   * @param string
+   */
+  public function setId($id)
+  {
+    $this->id = $id;
+  }
+  /**
+   * @return string
+   */
+  public function getId()
+  {
+    return $this->id;
   }
   /**
    * @param GoogleAppsCardV1Image
@@ -181,6 +268,20 @@ class GoogleAppsCardV1Widget extends \Google\Model
   public function getTextParagraph()
   {
     return $this->textParagraph;
+  }
+  /**
+   * @param string
+   */
+  public function setVisibility($visibility)
+  {
+    $this->visibility = $visibility;
+  }
+  /**
+   * @return string
+   */
+  public function getVisibility()
+  {
+    return $this->visibility;
   }
 }
 

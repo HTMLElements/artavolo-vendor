@@ -439,7 +439,7 @@ class DeviceManagement extends Entity
 
     /**
     * Gets the subscriptions
-    * Tenant's Subscription. Possible values are: none, intune, office365, intunePremium, intune_EDU, intune_SMB.
+    * Tenant's Subscription. Possible values are: none, intune, office365, intunePremium, intuneEDU, intuneSMB.
     *
     * @return DeviceManagementSubscriptions|null The subscriptions
     */
@@ -458,7 +458,7 @@ class DeviceManagement extends Entity
 
     /**
     * Sets the subscriptions
-    * Tenant's Subscription. Possible values are: none, intune, office365, intunePremium, intune_EDU, intune_SMB.
+    * Tenant's Subscription. Possible values are: none, intune, office365, intunePremium, intuneEDU, intuneSMB.
     *
     * @param DeviceManagementSubscriptions $val The subscriptions
     *
@@ -599,6 +599,36 @@ class DeviceManagement extends Entity
     public function setWindowsMalwareOverview($val)
     {
         $this->_propDict["windowsMalwareOverview"] = $val;
+        return $this;
+    }
+
+
+     /**
+     * Gets the connectorStatus
+    * The list of connector status for the tenant.
+     *
+     * @return array|null The connectorStatus
+     */
+    public function getConnectorStatus()
+    {
+        if (array_key_exists("connectorStatus", $this->_propDict)) {
+           return $this->_propDict["connectorStatus"];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+    * Sets the connectorStatus
+    * The list of connector status for the tenant.
+    *
+    * @param ConnectorStatusDetails[] $val The connectorStatus
+    *
+    * @return DeviceManagement
+    */
+    public function setConnectorStatus($val)
+    {
+        $this->_propDict["connectorStatus"] = $val;
         return $this;
     }
 
@@ -967,6 +997,36 @@ class DeviceManagement extends Entity
     public function setTermsAndConditions($val)
     {
         $this->_propDict["termsAndConditions"] = $val;
+        return $this;
+    }
+
+
+     /**
+     * Gets the serviceNowConnections
+    * A list of ServiceNowConnections
+     *
+     * @return array|null The serviceNowConnections
+     */
+    public function getServiceNowConnections()
+    {
+        if (array_key_exists("serviceNowConnections", $this->_propDict)) {
+           return $this->_propDict["serviceNowConnections"];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+    * Sets the serviceNowConnections
+    * A list of ServiceNowConnections
+    *
+    * @param ServiceNowConnection[] $val The serviceNowConnections
+    *
+    * @return DeviceManagement
+    */
+    public function setServiceNowConnections($val)
+    {
+        $this->_propDict["serviceNowConnections"] = $val;
         return $this;
     }
 
@@ -1732,6 +1792,36 @@ class DeviceManagement extends Entity
     public function setReusableSettings($val)
     {
         $this->_propDict["reusableSettings"] = $val;
+        return $this;
+    }
+
+
+     /**
+     * Gets the templateInsights
+    * List of setting insights in a template
+     *
+     * @return array|null The templateInsights
+     */
+    public function getTemplateInsights()
+    {
+        if (array_key_exists("templateInsights", $this->_propDict)) {
+           return $this->_propDict["templateInsights"];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+    * Sets the templateInsights
+    * List of setting insights in a template
+    *
+    * @param DeviceManagementTemplateInsightsDefinition[] $val The templateInsights
+    *
+    * @return DeviceManagement
+    */
+    public function setTemplateInsights($val)
+    {
+        $this->_propDict["templateInsights"] = $val;
         return $this;
     }
 
@@ -2589,31 +2679,31 @@ class DeviceManagement extends Entity
 
 
      /**
-     * Gets the oemWarrantyInformationOnboarding
-    * List of OEM Warranty Statuses
+     * Gets the privilegeManagementElevations
+    * The endpoint privilege management elevation event entity contains elevation details.
      *
-     * @return array|null The oemWarrantyInformationOnboarding
+     * @return array|null The privilegeManagementElevations
      */
-    public function getOemWarrantyInformationOnboarding()
+    public function getPrivilegeManagementElevations()
     {
-        if (array_key_exists("oemWarrantyInformationOnboarding", $this->_propDict)) {
-           return $this->_propDict["oemWarrantyInformationOnboarding"];
+        if (array_key_exists("privilegeManagementElevations", $this->_propDict)) {
+           return $this->_propDict["privilegeManagementElevations"];
         } else {
             return null;
         }
     }
 
     /**
-    * Sets the oemWarrantyInformationOnboarding
-    * List of OEM Warranty Statuses
+    * Sets the privilegeManagementElevations
+    * The endpoint privilege management elevation event entity contains elevation details.
     *
-    * @param OemWarrantyInformationOnboarding[] $val The oemWarrantyInformationOnboarding
+    * @param PrivilegeManagementElevation[] $val The privilegeManagementElevations
     *
     * @return DeviceManagement
     */
-    public function setOemWarrantyInformationOnboarding($val)
+    public function setPrivilegeManagementElevations($val)
     {
-        $this->_propDict["oemWarrantyInformationOnboarding"] = $val;
+        $this->_propDict["privilegeManagementElevations"] = $val;
         return $this;
     }
 
@@ -2707,6 +2797,36 @@ class DeviceManagement extends Entity
     public function setUserExperienceAnalyticsAnomaly($val)
     {
         $this->_propDict["userExperienceAnalyticsAnomaly"] = $val;
+        return $this;
+    }
+
+
+     /**
+     * Gets the userExperienceAnalyticsAnomalyCorrelationGroupOverview
+    * The user experience analytics anomaly correlation group overview entity contains the information for each correlation group of an anomaly.
+     *
+     * @return array|null The userExperienceAnalyticsAnomalyCorrelationGroupOverview
+     */
+    public function getUserExperienceAnalyticsAnomalyCorrelationGroupOverview()
+    {
+        if (array_key_exists("userExperienceAnalyticsAnomalyCorrelationGroupOverview", $this->_propDict)) {
+           return $this->_propDict["userExperienceAnalyticsAnomalyCorrelationGroupOverview"];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+    * Sets the userExperienceAnalyticsAnomalyCorrelationGroupOverview
+    * The user experience analytics anomaly correlation group overview entity contains the information for each correlation group of an anomaly.
+    *
+    * @param UserExperienceAnalyticsAnomalyCorrelationGroupOverview[] $val The userExperienceAnalyticsAnomalyCorrelationGroupOverview
+    *
+    * @return DeviceManagement
+    */
+    public function setUserExperienceAnalyticsAnomalyCorrelationGroupOverview($val)
+    {
+        $this->_propDict["userExperienceAnalyticsAnomalyCorrelationGroupOverview"] = $val;
         return $this;
     }
 
@@ -3619,6 +3739,36 @@ class DeviceManagement extends Entity
     public function setUserExperienceAnalyticsDevicesWithoutCloudIdentity($val)
     {
         $this->_propDict["userExperienceAnalyticsDevicesWithoutCloudIdentity"] = $val;
+        return $this;
+    }
+
+
+     /**
+     * Gets the userExperienceAnalyticsDeviceTimelineEvent
+    * The user experience analytics device events entity contains NRT device timeline event details.
+     *
+     * @return array|null The userExperienceAnalyticsDeviceTimelineEvent
+     */
+    public function getUserExperienceAnalyticsDeviceTimelineEvent()
+    {
+        if (array_key_exists("userExperienceAnalyticsDeviceTimelineEvent", $this->_propDict)) {
+           return $this->_propDict["userExperienceAnalyticsDeviceTimelineEvent"];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+    * Sets the userExperienceAnalyticsDeviceTimelineEvent
+    * The user experience analytics device events entity contains NRT device timeline event details.
+    *
+    * @param UserExperienceAnalyticsDeviceTimelineEvent[] $val The userExperienceAnalyticsDeviceTimelineEvent
+    *
+    * @return DeviceManagement
+    */
+    public function setUserExperienceAnalyticsDeviceTimelineEvent($val)
+    {
+        $this->_propDict["userExperienceAnalyticsDeviceTimelineEvent"] = $val;
         return $this;
     }
 

@@ -83,6 +83,9 @@ class Refund extends Base
         $this->_addPostParam('IPC_Trnref', $this->getTrnref());
         $this->_addPostParam('OutputFormat', $this->getOutputFormat());
 
+        $this->_addPostParam('ApplicationID', $this->getCnf()->getApplicationID());
+        $this->_addPostParam('PartnerID', $this->getCnf()->getPartnerID());
+
         $response = $this->_processPost()->getData(CASE_LOWER);
         if (empty($response['ipc_trnref']) || (empty($response['amount']) || $response['amount'] != $this->getAmount()) || (empty($response['currency']) || $response['currency'] != $this->getCurrency()) || $response['status'] != Defines::STATUS_SUCCESS) {
             return false;
@@ -123,6 +126,16 @@ class Refund extends Base
 
         if ($this->getOutputFormat() == null || !Helper::isValidOutputFormat($this->getOutputFormat())) {
             throw new IPC_Exception('Invalid Output format');
+        }
+
+        if ($this->getCnf()->getVersion() === '1.4.1') {
+            if ($this->getCnf()->getPartnerID() == null) {
+                throw new IPC_Exception('Required parameter: Partner ID');
+            }
+
+            if ($this->getCnf()->getApplicationID() == null) {
+                throw new IPC_Exception('Required parameter: Application ID');
+            }
         }
 
         return true;
@@ -181,4 +194,5 @@ class Refund extends Base
     {
         return $this->orderID;
     }
+
 }

@@ -17,8 +17,13 @@
 
 namespace Google\Service\CloudResourceManager;
 
-class Project extends \Google\Model
+class Project extends \Google\Collection
 {
+  protected $collection_key = 'configuredCapabilities';
+  /**
+   * @var string[]
+   */
+  public $configuredCapabilities;
   /**
    * @var string
    */
@@ -56,10 +61,28 @@ class Project extends \Google\Model
    */
   public $state;
   /**
+   * @var string[]
+   */
+  public $tags;
+  /**
    * @var string
    */
   public $updateTime;
 
+  /**
+   * @param string[]
+   */
+  public function setConfiguredCapabilities($configuredCapabilities)
+  {
+    $this->configuredCapabilities = $configuredCapabilities;
+  }
+  /**
+   * @return string[]
+   */
+  public function getConfiguredCapabilities()
+  {
+    return $this->configuredCapabilities;
+  }
   /**
    * @param string
    */
@@ -185,6 +208,20 @@ class Project extends \Google\Model
   public function getState()
   {
     return $this->state;
+  }
+  /**
+   * @param string[]
+   */
+  public function setTags($tags)
+  {
+    $this->tags = $tags;
+  }
+  /**
+   * @return string[]
+   */
+  public function getTags()
+  {
+    return $this->tags;
   }
   /**
    * @param string

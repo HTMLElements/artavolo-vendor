@@ -24,6 +24,34 @@ namespace Microsoft\Graph\Model;
 */
 class Security extends Entity
 {
+
+     /**
+     * Gets the subjectRightsRequests
+     *
+     * @return array|null The subjectRightsRequests
+     */
+    public function getSubjectRightsRequests()
+    {
+        if (array_key_exists("subjectRightsRequests", $this->_propDict)) {
+           return $this->_propDict["subjectRightsRequests"];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+    * Sets the subjectRightsRequests
+    *
+    * @param SubjectRightsRequest[] $val The subjectRightsRequests
+    *
+    * @return Security
+    */
+    public function setSubjectRightsRequests($val)
+    {
+        $this->_propDict["subjectRightsRequests"] = $val;
+        return $this;
+    }
+
     /**
     * Gets the cases
     *
@@ -146,6 +174,68 @@ class Security extends Entity
         return $this;
     }
 
+    /**
+    * Gets the triggers
+    *
+    * @return \Microsoft\Graph\SecurityNamespace\Model\TriggersRoot|null The triggers
+    */
+    public function getTriggers()
+    {
+        if (array_key_exists("triggers", $this->_propDict)) {
+            if (is_a($this->_propDict["triggers"], "\Microsoft\Graph\SecurityNamespace\Model\TriggersRoot") || is_null($this->_propDict["triggers"])) {
+                return $this->_propDict["triggers"];
+            } else {
+                $this->_propDict["triggers"] = new \Microsoft\Graph\SecurityNamespace\Model\TriggersRoot($this->_propDict["triggers"]);
+                return $this->_propDict["triggers"];
+            }
+        }
+        return null;
+    }
+
+    /**
+    * Sets the triggers
+    *
+    * @param \Microsoft\Graph\SecurityNamespace\Model\TriggersRoot $val The triggers
+    *
+    * @return Security
+    */
+    public function setTriggers($val)
+    {
+        $this->_propDict["triggers"] = $val;
+        return $this;
+    }
+
+    /**
+    * Gets the triggerTypes
+    *
+    * @return \Microsoft\Graph\SecurityNamespace\Model\TriggerTypesRoot|null The triggerTypes
+    */
+    public function getTriggerTypes()
+    {
+        if (array_key_exists("triggerTypes", $this->_propDict)) {
+            if (is_a($this->_propDict["triggerTypes"], "\Microsoft\Graph\SecurityNamespace\Model\TriggerTypesRoot") || is_null($this->_propDict["triggerTypes"])) {
+                return $this->_propDict["triggerTypes"];
+            } else {
+                $this->_propDict["triggerTypes"] = new \Microsoft\Graph\SecurityNamespace\Model\TriggerTypesRoot($this->_propDict["triggerTypes"]);
+                return $this->_propDict["triggerTypes"];
+            }
+        }
+        return null;
+    }
+
+    /**
+    * Sets the triggerTypes
+    *
+    * @param \Microsoft\Graph\SecurityNamespace\Model\TriggerTypesRoot $val The triggerTypes
+    *
+    * @return Security
+    */
+    public function setTriggerTypes($val)
+    {
+        $this->_propDict["triggerTypes"] = $val;
+        return $this;
+    }
+
 
      /**
      * Gets the alerts
@@ -227,6 +317,37 @@ class Security extends Entity
     public function setSecureScores($val)
     {
         $this->_propDict["secureScores"] = $val;
+        return $this;
+    }
+
+    /**
+    * Gets the threatIntelligence
+    *
+    * @return \Microsoft\Graph\SecurityNamespace\Model\ThreatIntelligence|null The threatIntelligence
+    */
+    public function getThreatIntelligence()
+    {
+        if (array_key_exists("threatIntelligence", $this->_propDict)) {
+            if (is_a($this->_propDict["threatIntelligence"], "\Microsoft\Graph\SecurityNamespace\Model\ThreatIntelligence") || is_null($this->_propDict["threatIntelligence"])) {
+                return $this->_propDict["threatIntelligence"];
+            } else {
+                $this->_propDict["threatIntelligence"] = new \Microsoft\Graph\SecurityNamespace\Model\ThreatIntelligence($this->_propDict["threatIntelligence"]);
+                return $this->_propDict["threatIntelligence"];
+            }
+        }
+        return null;
+    }
+
+    /**
+    * Sets the threatIntelligence
+    *
+    * @param \Microsoft\Graph\SecurityNamespace\Model\ThreatIntelligence $val The threatIntelligence
+    *
+    * @return Security
+    */
+    public function setThreatIntelligence($val)
+    {
+        $this->_propDict["threatIntelligence"] = $val;
         return $this;
     }
 

@@ -24,6 +24,39 @@ namespace Beta\Microsoft\Graph\Model;
 */
 class Authentication extends Entity
 {
+    /**
+    * Gets the signInPreferences
+    * The settings and preferences for to the sign-in experience of a user.
+    *
+    * @return SignInPreferences|null The signInPreferences
+    */
+    public function getSignInPreferences()
+    {
+        if (array_key_exists("signInPreferences", $this->_propDict)) {
+            if (is_a($this->_propDict["signInPreferences"], "\Beta\Microsoft\Graph\Model\SignInPreferences") || is_null($this->_propDict["signInPreferences"])) {
+                return $this->_propDict["signInPreferences"];
+            } else {
+                $this->_propDict["signInPreferences"] = new SignInPreferences($this->_propDict["signInPreferences"]);
+                return $this->_propDict["signInPreferences"];
+            }
+        }
+        return null;
+    }
+
+    /**
+    * Sets the signInPreferences
+    * The settings and preferences for to the sign-in experience of a user.
+    *
+    * @param SignInPreferences $val The signInPreferences
+    *
+    * @return Authentication
+    */
+    public function setSignInPreferences($val)
+    {
+        $this->_propDict["signInPreferences"] = $val;
+        return $this;
+    }
+
 
      /**
      * Gets the emailMethods
@@ -259,6 +292,34 @@ class Authentication extends Entity
     public function setPhoneMethods($val)
     {
         $this->_propDict["phoneMethods"] = $val;
+        return $this;
+    }
+
+
+     /**
+     * Gets the platformCredentialMethods
+     *
+     * @return array|null The platformCredentialMethods
+     */
+    public function getPlatformCredentialMethods()
+    {
+        if (array_key_exists("platformCredentialMethods", $this->_propDict)) {
+           return $this->_propDict["platformCredentialMethods"];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+    * Sets the platformCredentialMethods
+    *
+    * @param PlatformCredentialAuthenticationMethod[] $val The platformCredentialMethods
+    *
+    * @return Authentication
+    */
+    public function setPlatformCredentialMethods($val)
+    {
+        $this->_propDict["platformCredentialMethods"] = $val;
         return $this;
     }
 

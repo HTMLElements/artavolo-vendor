@@ -14,7 +14,6 @@ class Authorization extends Base
     private $card;
     private $currency = 'EUR', $note, $orderID, $itemName, $amount;
 
-
     /**
      * Return purchase object
      *
@@ -109,7 +108,6 @@ class Authorization extends Base
         return $this;
     }
 
-
     /**
      * Initiate API request
      *
@@ -139,6 +137,9 @@ class Authorization extends Base
 
         $this->_addPostParam('Note', $this->getNote());
         $this->_addPostParam('OutputFormat', $this->getOutputFormat());
+
+        $this->_addPostParam('ApplicationID', $this->getCnf()->getApplicationID());
+        $this->_addPostParam('PartnerID', $this->getCnf()->getPartnerID());
 
         return $this->_processPost();
     }
@@ -185,6 +186,16 @@ class Authorization extends Base
             $this->getCard()->validate();
         } catch (\Exception $ex) {
             throw new IPC_Exception('Invalid Card details: ' . $ex->getMessage());
+        }
+
+        if ($this->getCnf()->getVersion() === '1.4.1') {
+            if ($this->getCnf()->getPartnerID() == null) {
+                throw new IPC_Exception('Required parameter: Partner ID');
+            }
+
+            if ($this->getCnf()->getApplicationID() == null) {
+                throw new IPC_Exception('Required parameter: Application ID');
+            }
         }
 
         return true;

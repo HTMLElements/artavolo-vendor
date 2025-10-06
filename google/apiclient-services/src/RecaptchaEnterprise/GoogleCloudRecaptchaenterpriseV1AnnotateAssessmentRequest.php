@@ -23,16 +23,38 @@ class GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest extends \Google\
   /**
    * @var string
    */
+  public $accountId;
+  /**
+   * @var string
+   */
   public $annotation;
   /**
    * @var string
    */
   public $hashedAccountId;
+  protected $phoneAuthenticationEventType = GoogleCloudRecaptchaenterpriseV1PhoneAuthenticationEvent::class;
+  protected $phoneAuthenticationEventDataType = '';
   /**
    * @var string[]
    */
   public $reasons;
+  protected $transactionEventType = GoogleCloudRecaptchaenterpriseV1TransactionEvent::class;
+  protected $transactionEventDataType = '';
 
+  /**
+   * @param string
+   */
+  public function setAccountId($accountId)
+  {
+    $this->accountId = $accountId;
+  }
+  /**
+   * @return string
+   */
+  public function getAccountId()
+  {
+    return $this->accountId;
+  }
   /**
    * @param string
    */
@@ -62,6 +84,20 @@ class GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest extends \Google\
     return $this->hashedAccountId;
   }
   /**
+   * @param GoogleCloudRecaptchaenterpriseV1PhoneAuthenticationEvent
+   */
+  public function setPhoneAuthenticationEvent(GoogleCloudRecaptchaenterpriseV1PhoneAuthenticationEvent $phoneAuthenticationEvent)
+  {
+    $this->phoneAuthenticationEvent = $phoneAuthenticationEvent;
+  }
+  /**
+   * @return GoogleCloudRecaptchaenterpriseV1PhoneAuthenticationEvent
+   */
+  public function getPhoneAuthenticationEvent()
+  {
+    return $this->phoneAuthenticationEvent;
+  }
+  /**
    * @param string[]
    */
   public function setReasons($reasons)
@@ -74,6 +110,20 @@ class GoogleCloudRecaptchaenterpriseV1AnnotateAssessmentRequest extends \Google\
   public function getReasons()
   {
     return $this->reasons;
+  }
+  /**
+   * @param GoogleCloudRecaptchaenterpriseV1TransactionEvent
+   */
+  public function setTransactionEvent(GoogleCloudRecaptchaenterpriseV1TransactionEvent $transactionEvent)
+  {
+    $this->transactionEvent = $transactionEvent;
+  }
+  /**
+   * @return GoogleCloudRecaptchaenterpriseV1TransactionEvent
+   */
+  public function getTransactionEvent()
+  {
+    return $this->transactionEvent;
   }
 }
 

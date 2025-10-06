@@ -7,7 +7,7 @@ namespace Braintree;
  *
  * @abstract
  */
-abstract class Instance
+abstract class Instance extends \stdClass
 {
     protected $_attributes = [];
 
@@ -28,6 +28,7 @@ abstract class Instance
      */
     public function __get($name)
     {
+        // phpcs:ignore
         if (array_key_exists($name, $this->_attributes)) {
             return $this->_attributes[$name];
         } else {

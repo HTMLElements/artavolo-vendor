@@ -53,6 +53,36 @@ class AndroidDeviceOwnerGeneralDeviceConfiguration extends DeviceConfiguration
         return $this;
     }
 
+
+     /**
+     * Gets the androidDeviceOwnerDelegatedScopeAppSettings
+    * Specifies the list of managed apps with app details and its associated delegated scope(s). This collection can contain a maximum of 500 elements.
+     *
+     * @return array|null The androidDeviceOwnerDelegatedScopeAppSettings
+     */
+    public function getAndroidDeviceOwnerDelegatedScopeAppSettings()
+    {
+        if (array_key_exists("androidDeviceOwnerDelegatedScopeAppSettings", $this->_propDict)) {
+           return $this->_propDict["androidDeviceOwnerDelegatedScopeAppSettings"];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+    * Sets the androidDeviceOwnerDelegatedScopeAppSettings
+    * Specifies the list of managed apps with app details and its associated delegated scope(s). This collection can contain a maximum of 500 elements.
+    *
+    * @param AndroidDeviceOwnerDelegatedScopeAppSetting[] $val The androidDeviceOwnerDelegatedScopeAppSettings
+    *
+    * @return AndroidDeviceOwnerGeneralDeviceConfiguration
+    */
+    public function setAndroidDeviceOwnerDelegatedScopeAppSettings($val)
+    {
+        $this->_propDict["androidDeviceOwnerDelegatedScopeAppSettings"] = $val;
+        return $this;
+    }
+
     /**
     * Gets the appsAllowInstallFromUnknownSources
     * Indicates whether or not the user is allowed to enable to unknown sources setting.
@@ -2028,6 +2058,64 @@ class AndroidDeviceOwnerGeneralDeviceConfiguration extends DeviceConfiguration
     public function setKioskModeWiFiConfigurationEnabled($val)
     {
         $this->_propDict["kioskModeWiFiConfigurationEnabled"] = boolval($val);
+        return $this;
+    }
+
+    /**
+    * Gets the locateDeviceLostModeEnabled
+    * Indicates whether or not LocateDevice for devices with lost mode (COBO, COPE) is enabled.
+    *
+    * @return bool|null The locateDeviceLostModeEnabled
+    */
+    public function getLocateDeviceLostModeEnabled()
+    {
+        if (array_key_exists("locateDeviceLostModeEnabled", $this->_propDict)) {
+            return $this->_propDict["locateDeviceLostModeEnabled"];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+    * Sets the locateDeviceLostModeEnabled
+    * Indicates whether or not LocateDevice for devices with lost mode (COBO, COPE) is enabled.
+    *
+    * @param bool $val The locateDeviceLostModeEnabled
+    *
+    * @return AndroidDeviceOwnerGeneralDeviceConfiguration
+    */
+    public function setLocateDeviceLostModeEnabled($val)
+    {
+        $this->_propDict["locateDeviceLostModeEnabled"] = boolval($val);
+        return $this;
+    }
+
+    /**
+    * Gets the locateDeviceUserlessDisabled
+    * Indicates whether or not LocateDevice for userless (COSU) devices is disabled.
+    *
+    * @return bool|null The locateDeviceUserlessDisabled
+    */
+    public function getLocateDeviceUserlessDisabled()
+    {
+        if (array_key_exists("locateDeviceUserlessDisabled", $this->_propDict)) {
+            return $this->_propDict["locateDeviceUserlessDisabled"];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+    * Sets the locateDeviceUserlessDisabled
+    * Indicates whether or not LocateDevice for userless (COSU) devices is disabled.
+    *
+    * @param bool $val The locateDeviceUserlessDisabled
+    *
+    * @return AndroidDeviceOwnerGeneralDeviceConfiguration
+    */
+    public function setLocateDeviceUserlessDisabled($val)
+    {
+        $this->_propDict["locateDeviceUserlessDisabled"] = boolval($val);
         return $this;
     }
 

@@ -154,34 +154,4 @@ class OrganizationSettings extends Entity
         return $this;
     }
 
-
-     /**
-     * Gets the profileCardProperties
-    * Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.
-     *
-     * @return array|null The profileCardProperties
-     */
-    public function getProfileCardProperties()
-    {
-        if (array_key_exists("profileCardProperties", $this->_propDict)) {
-           return $this->_propDict["profileCardProperties"];
-        } else {
-            return null;
-        }
-    }
-
-    /**
-    * Sets the profileCardProperties
-    * Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.
-    *
-    * @param ProfileCardProperty[] $val The profileCardProperties
-    *
-    * @return OrganizationSettings
-    */
-    public function setProfileCardProperties($val)
-    {
-        $this->_propDict["profileCardProperties"] = $val;
-        return $this;
-    }
-
 }

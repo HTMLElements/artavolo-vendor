@@ -19,7 +19,7 @@ namespace Google\Service\Bigquery;
 
 class ExternalDataConfiguration extends \Google\Collection
 {
-  protected $collection_key = 'sourceUris';
+  protected $collection_key = 'timestampTargetPrecision';
   /**
    * @var bool
    */
@@ -39,9 +39,21 @@ class ExternalDataConfiguration extends \Google\Collection
   protected $csvOptionsType = CsvOptions::class;
   protected $csvOptionsDataType = '';
   /**
+   * @var string
+   */
+  public $dateFormat;
+  /**
+   * @var string
+   */
+  public $datetimeFormat;
+  /**
    * @var string[]
    */
   public $decimalTargetTypes;
+  /**
+   * @var string
+   */
+  public $fileSetSpecType;
   protected $googleSheetsOptionsType = GoogleSheetsOptions::class;
   protected $googleSheetsOptionsDataType = '';
   protected $hivePartitioningOptionsType = HivePartitioningOptions::class;
@@ -51,11 +63,29 @@ class ExternalDataConfiguration extends \Google\Collection
    */
   public $ignoreUnknownValues;
   /**
+   * @var string
+   */
+  public $jsonExtension;
+  protected $jsonOptionsType = JsonOptions::class;
+  protected $jsonOptionsDataType = '';
+  /**
    * @var int
    */
   public $maxBadRecords;
+  /**
+   * @var string
+   */
+  public $metadataCacheMode;
+  /**
+   * @var string
+   */
+  public $objectMetadata;
   protected $parquetOptionsType = ParquetOptions::class;
   protected $parquetOptionsDataType = '';
+  /**
+   * @var string
+   */
+  public $referenceFileSchemaUri;
   protected $schemaType = TableSchema::class;
   protected $schemaDataType = '';
   /**
@@ -66,6 +96,22 @@ class ExternalDataConfiguration extends \Google\Collection
    * @var string[]
    */
   public $sourceUris;
+  /**
+   * @var string
+   */
+  public $timeFormat;
+  /**
+   * @var string
+   */
+  public $timeZone;
+  /**
+   * @var string
+   */
+  public $timestampFormat;
+  /**
+   * @var int[]
+   */
+  public $timestampTargetPrecision;
 
   /**
    * @param bool
@@ -152,6 +198,34 @@ class ExternalDataConfiguration extends \Google\Collection
     return $this->csvOptions;
   }
   /**
+   * @param string
+   */
+  public function setDateFormat($dateFormat)
+  {
+    $this->dateFormat = $dateFormat;
+  }
+  /**
+   * @return string
+   */
+  public function getDateFormat()
+  {
+    return $this->dateFormat;
+  }
+  /**
+   * @param string
+   */
+  public function setDatetimeFormat($datetimeFormat)
+  {
+    $this->datetimeFormat = $datetimeFormat;
+  }
+  /**
+   * @return string
+   */
+  public function getDatetimeFormat()
+  {
+    return $this->datetimeFormat;
+  }
+  /**
    * @param string[]
    */
   public function setDecimalTargetTypes($decimalTargetTypes)
@@ -164,6 +238,20 @@ class ExternalDataConfiguration extends \Google\Collection
   public function getDecimalTargetTypes()
   {
     return $this->decimalTargetTypes;
+  }
+  /**
+   * @param string
+   */
+  public function setFileSetSpecType($fileSetSpecType)
+  {
+    $this->fileSetSpecType = $fileSetSpecType;
+  }
+  /**
+   * @return string
+   */
+  public function getFileSetSpecType()
+  {
+    return $this->fileSetSpecType;
   }
   /**
    * @param GoogleSheetsOptions
@@ -208,6 +296,34 @@ class ExternalDataConfiguration extends \Google\Collection
     return $this->ignoreUnknownValues;
   }
   /**
+   * @param string
+   */
+  public function setJsonExtension($jsonExtension)
+  {
+    $this->jsonExtension = $jsonExtension;
+  }
+  /**
+   * @return string
+   */
+  public function getJsonExtension()
+  {
+    return $this->jsonExtension;
+  }
+  /**
+   * @param JsonOptions
+   */
+  public function setJsonOptions(JsonOptions $jsonOptions)
+  {
+    $this->jsonOptions = $jsonOptions;
+  }
+  /**
+   * @return JsonOptions
+   */
+  public function getJsonOptions()
+  {
+    return $this->jsonOptions;
+  }
+  /**
    * @param int
    */
   public function setMaxBadRecords($maxBadRecords)
@@ -222,6 +338,34 @@ class ExternalDataConfiguration extends \Google\Collection
     return $this->maxBadRecords;
   }
   /**
+   * @param string
+   */
+  public function setMetadataCacheMode($metadataCacheMode)
+  {
+    $this->metadataCacheMode = $metadataCacheMode;
+  }
+  /**
+   * @return string
+   */
+  public function getMetadataCacheMode()
+  {
+    return $this->metadataCacheMode;
+  }
+  /**
+   * @param string
+   */
+  public function setObjectMetadata($objectMetadata)
+  {
+    $this->objectMetadata = $objectMetadata;
+  }
+  /**
+   * @return string
+   */
+  public function getObjectMetadata()
+  {
+    return $this->objectMetadata;
+  }
+  /**
    * @param ParquetOptions
    */
   public function setParquetOptions(ParquetOptions $parquetOptions)
@@ -234,6 +378,20 @@ class ExternalDataConfiguration extends \Google\Collection
   public function getParquetOptions()
   {
     return $this->parquetOptions;
+  }
+  /**
+   * @param string
+   */
+  public function setReferenceFileSchemaUri($referenceFileSchemaUri)
+  {
+    $this->referenceFileSchemaUri = $referenceFileSchemaUri;
+  }
+  /**
+   * @return string
+   */
+  public function getReferenceFileSchemaUri()
+  {
+    return $this->referenceFileSchemaUri;
   }
   /**
    * @param TableSchema
@@ -276,6 +434,62 @@ class ExternalDataConfiguration extends \Google\Collection
   public function getSourceUris()
   {
     return $this->sourceUris;
+  }
+  /**
+   * @param string
+   */
+  public function setTimeFormat($timeFormat)
+  {
+    $this->timeFormat = $timeFormat;
+  }
+  /**
+   * @return string
+   */
+  public function getTimeFormat()
+  {
+    return $this->timeFormat;
+  }
+  /**
+   * @param string
+   */
+  public function setTimeZone($timeZone)
+  {
+    $this->timeZone = $timeZone;
+  }
+  /**
+   * @return string
+   */
+  public function getTimeZone()
+  {
+    return $this->timeZone;
+  }
+  /**
+   * @param string
+   */
+  public function setTimestampFormat($timestampFormat)
+  {
+    $this->timestampFormat = $timestampFormat;
+  }
+  /**
+   * @return string
+   */
+  public function getTimestampFormat()
+  {
+    return $this->timestampFormat;
+  }
+  /**
+   * @param int[]
+   */
+  public function setTimestampTargetPrecision($timestampTargetPrecision)
+  {
+    $this->timestampTargetPrecision = $timestampTargetPrecision;
+  }
+  /**
+   * @return int[]
+   */
+  public function getTimestampTargetPrecision()
+  {
+    return $this->timestampTargetPrecision;
   }
 }
 

@@ -20,7 +20,7 @@ namespace Google\Service;
 use Google\Client;
 
 /**
- * Service definition for DataprocMetastore (v1beta).
+ * Service definition for DataprocMetastore (v2).
  *
  * <p>
  * The Dataproc Metastore API is used to manage the lifecycle and configuration
@@ -39,14 +39,9 @@ class DataprocMetastore extends \Google\Service
   const CLOUD_PLATFORM =
       "https://www.googleapis.com/auth/cloud-platform";
 
-  public $projects_locations;
-  public $projects_locations_federations;
-  public $projects_locations_operations;
   public $projects_locations_services;
   public $projects_locations_services_backups;
-  public $projects_locations_services_databases;
-  public $projects_locations_services_databases_tables;
-  public $projects_locations_services_metadataImports;
+  public $rootUrlTemplate;
 
   /**
    * Constructs the internal representation of the DataprocMetastore service.
@@ -59,243 +54,40 @@ class DataprocMetastore extends \Google\Service
   {
     parent::__construct($clientOrConfig);
     $this->rootUrl = $rootUrl ?: 'https://metastore.googleapis.com/';
+    $this->rootUrlTemplate = $rootUrl ?: 'https://metastore.UNIVERSE_DOMAIN/';
     $this->servicePath = '';
     $this->batchPath = 'batch';
-    $this->version = 'v1beta';
+    $this->version = 'v2';
     $this->serviceName = 'metastore';
 
-    $this->projects_locations = new DataprocMetastore\Resource\ProjectsLocations(
-        $this,
-        $this->serviceName,
-        'locations',
-        [
-          'methods' => [
-            'get' => [
-              'path' => 'v1beta/{+name}',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'list' => [
-              'path' => 'v1beta/{+name}/locations',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'filter' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-                'pageSize' => [
-                  'location' => 'query',
-                  'type' => 'integer',
-                ],
-                'pageToken' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-              ],
-            ],
-          ]
-        ]
-    );
-    $this->projects_locations_federations = new DataprocMetastore\Resource\ProjectsLocationsFederations(
-        $this,
-        $this->serviceName,
-        'federations',
-        [
-          'methods' => [
-            'create' => [
-              'path' => 'v1beta/{+parent}/federations',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'parent' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'federationId' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-                'requestId' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-              ],
-            ],'delete' => [
-              'path' => 'v1beta/{+name}',
-              'httpMethod' => 'DELETE',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'requestId' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-              ],
-            ],'get' => [
-              'path' => 'v1beta/{+name}',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'getIamPolicy' => [
-              'path' => 'v1beta/{+resource}:getIamPolicy',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'resource' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'options.requestedPolicyVersion' => [
-                  'location' => 'query',
-                  'type' => 'integer',
-                ],
-              ],
-            ],'list' => [
-              'path' => 'v1beta/{+parent}/federations',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'parent' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'filter' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-                'orderBy' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-                'pageSize' => [
-                  'location' => 'query',
-                  'type' => 'integer',
-                ],
-                'pageToken' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-              ],
-            ],'patch' => [
-              'path' => 'v1beta/{+name}',
-              'httpMethod' => 'PATCH',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'requestId' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-                'updateMask' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-              ],
-            ],'setIamPolicy' => [
-              'path' => 'v1beta/{+resource}:setIamPolicy',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'resource' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'testIamPermissions' => [
-              'path' => 'v1beta/{+resource}:testIamPermissions',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'resource' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],
-          ]
-        ]
-    );
-    $this->projects_locations_operations = new DataprocMetastore\Resource\ProjectsLocationsOperations(
-        $this,
-        $this->serviceName,
-        'operations',
-        [
-          'methods' => [
-            'delete' => [
-              'path' => 'v1beta/{+name}',
-              'httpMethod' => 'DELETE',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'get' => [
-              'path' => 'v1beta/{+name}',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'list' => [
-              'path' => 'v1beta/{+name}/operations',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'filter' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-                'pageSize' => [
-                  'location' => 'query',
-                  'type' => 'integer',
-                ],
-                'pageToken' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-              ],
-            ],
-          ]
-        ]
-    );
     $this->projects_locations_services = new DataprocMetastore\Resource\ProjectsLocationsServices(
         $this,
         $this->serviceName,
         'services',
         [
           'methods' => [
-            'create' => [
-              'path' => 'v1beta/{+parent}/services',
+            'alterLocation' => [
+              'path' => 'v2/{+service}:alterLocation',
+              'httpMethod' => 'POST',
+              'parameters' => [
+                'service' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+              ],
+            ],'alterTableProperties' => [
+              'path' => 'v2/{+service}:alterTableProperties',
+              'httpMethod' => 'POST',
+              'parameters' => [
+                'service' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+              ],
+            ],'create' => [
+              'path' => 'v2/{+parent}/services',
               'httpMethod' => 'POST',
               'parameters' => [
                 'parent' => [
@@ -313,7 +105,7 @@ class DataprocMetastore extends \Google\Service
                 ],
               ],
             ],'delete' => [
-              'path' => 'v1beta/{+name}',
+              'path' => 'v2/{+name}',
               'httpMethod' => 'DELETE',
               'parameters' => [
                 'name' => [
@@ -327,7 +119,7 @@ class DataprocMetastore extends \Google\Service
                 ],
               ],
             ],'exportMetadata' => [
-              'path' => 'v1beta/{+service}:exportMetadata',
+              'path' => 'v2/{+service}:exportMetadata',
               'httpMethod' => 'POST',
               'parameters' => [
                 'service' => [
@@ -337,7 +129,7 @@ class DataprocMetastore extends \Google\Service
                 ],
               ],
             ],'get' => [
-              'path' => 'v1beta/{+name}',
+              'path' => 'v2/{+name}',
               'httpMethod' => 'GET',
               'parameters' => [
                 'name' => [
@@ -346,22 +138,18 @@ class DataprocMetastore extends \Google\Service
                   'required' => true,
                 ],
               ],
-            ],'getIamPolicy' => [
-              'path' => 'v1beta/{+resource}:getIamPolicy',
-              'httpMethod' => 'GET',
+            ],'importMetadata' => [
+              'path' => 'v2/{+name}:importMetadata',
+              'httpMethod' => 'POST',
               'parameters' => [
-                'resource' => [
+                'name' => [
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ],
-                'options.requestedPolicyVersion' => [
-                  'location' => 'query',
-                  'type' => 'integer',
-                ],
               ],
             ],'list' => [
-              'path' => 'v1beta/{+parent}/services',
+              'path' => 'v2/{+parent}/services',
               'httpMethod' => 'GET',
               'parameters' => [
                 'parent' => [
@@ -386,8 +174,18 @@ class DataprocMetastore extends \Google\Service
                   'type' => 'string',
                 ],
               ],
+            ],'moveTableToDatabase' => [
+              'path' => 'v2/{+service}:moveTableToDatabase',
+              'httpMethod' => 'POST',
+              'parameters' => [
+                'service' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+              ],
             ],'patch' => [
-              'path' => 'v1beta/{+name}',
+              'path' => 'v2/{+name}',
               'httpMethod' => 'PATCH',
               'parameters' => [
                 'name' => [
@@ -404,18 +202,8 @@ class DataprocMetastore extends \Google\Service
                   'type' => 'string',
                 ],
               ],
-            ],'removeIamPolicy' => [
-              'path' => 'v1beta/{+resource}:removeIamPolicy',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'resource' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'restore' => [
-              'path' => 'v1beta/{+service}:restore',
+            ],'queryMetadata' => [
+              'path' => 'v2/{+service}:queryMetadata',
               'httpMethod' => 'POST',
               'parameters' => [
                 'service' => [
@@ -424,21 +212,11 @@ class DataprocMetastore extends \Google\Service
                   'required' => true,
                 ],
               ],
-            ],'setIamPolicy' => [
-              'path' => 'v1beta/{+resource}:setIamPolicy',
+            ],'restore' => [
+              'path' => 'v2/{+service}:restore',
               'httpMethod' => 'POST',
               'parameters' => [
-                'resource' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'testIamPermissions' => [
-              'path' => 'v1beta/{+resource}:testIamPermissions',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'resource' => [
+                'service' => [
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -455,7 +233,7 @@ class DataprocMetastore extends \Google\Service
         [
           'methods' => [
             'create' => [
-              'path' => 'v1beta/{+parent}/backups',
+              'path' => 'v2/{+parent}/backups',
               'httpMethod' => 'POST',
               'parameters' => [
                 'parent' => [
@@ -473,7 +251,7 @@ class DataprocMetastore extends \Google\Service
                 ],
               ],
             ],'delete' => [
-              'path' => 'v1beta/{+name}',
+              'path' => 'v2/{+name}',
               'httpMethod' => 'DELETE',
               'parameters' => [
                 'name' => [
@@ -487,7 +265,7 @@ class DataprocMetastore extends \Google\Service
                 ],
               ],
             ],'get' => [
-              'path' => 'v1beta/{+name}',
+              'path' => 'v2/{+name}',
               'httpMethod' => 'GET',
               'parameters' => [
                 'name' => [
@@ -496,22 +274,8 @@ class DataprocMetastore extends \Google\Service
                   'required' => true,
                 ],
               ],
-            ],'getIamPolicy' => [
-              'path' => 'v1beta/{+resource}:getIamPolicy',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'resource' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'options.requestedPolicyVersion' => [
-                  'location' => 'query',
-                  'type' => 'integer',
-                ],
-              ],
             ],'list' => [
-              'path' => 'v1beta/{+parent}/backups',
+              'path' => 'v2/{+parent}/backups',
               'httpMethod' => 'GET',
               'parameters' => [
                 'parent' => [
@@ -532,196 +296,6 @@ class DataprocMetastore extends \Google\Service
                   'type' => 'integer',
                 ],
                 'pageToken' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-              ],
-            ],'setIamPolicy' => [
-              'path' => 'v1beta/{+resource}:setIamPolicy',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'resource' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'testIamPermissions' => [
-              'path' => 'v1beta/{+resource}:testIamPermissions',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'resource' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],
-          ]
-        ]
-    );
-    $this->projects_locations_services_databases = new DataprocMetastore\Resource\ProjectsLocationsServicesDatabases(
-        $this,
-        $this->serviceName,
-        'databases',
-        [
-          'methods' => [
-            'getIamPolicy' => [
-              'path' => 'v1beta/{+resource}:getIamPolicy',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'resource' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'options.requestedPolicyVersion' => [
-                  'location' => 'query',
-                  'type' => 'integer',
-                ],
-              ],
-            ],'setIamPolicy' => [
-              'path' => 'v1beta/{+resource}:setIamPolicy',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'resource' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'testIamPermissions' => [
-              'path' => 'v1beta/{+resource}:testIamPermissions',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'resource' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],
-          ]
-        ]
-    );
-    $this->projects_locations_services_databases_tables = new DataprocMetastore\Resource\ProjectsLocationsServicesDatabasesTables(
-        $this,
-        $this->serviceName,
-        'tables',
-        [
-          'methods' => [
-            'getIamPolicy' => [
-              'path' => 'v1beta/{+resource}:getIamPolicy',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'resource' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'options.requestedPolicyVersion' => [
-                  'location' => 'query',
-                  'type' => 'integer',
-                ],
-              ],
-            ],'setIamPolicy' => [
-              'path' => 'v1beta/{+resource}:setIamPolicy',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'resource' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'testIamPermissions' => [
-              'path' => 'v1beta/{+resource}:testIamPermissions',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'resource' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],
-          ]
-        ]
-    );
-    $this->projects_locations_services_metadataImports = new DataprocMetastore\Resource\ProjectsLocationsServicesMetadataImports(
-        $this,
-        $this->serviceName,
-        'metadataImports',
-        [
-          'methods' => [
-            'create' => [
-              'path' => 'v1beta/{+parent}/metadataImports',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'parent' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'metadataImportId' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-                'requestId' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-              ],
-            ],'get' => [
-              'path' => 'v1beta/{+name}',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'list' => [
-              'path' => 'v1beta/{+parent}/metadataImports',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'parent' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'filter' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-                'orderBy' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-                'pageSize' => [
-                  'location' => 'query',
-                  'type' => 'integer',
-                ],
-                'pageToken' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-              ],
-            ],'patch' => [
-              'path' => 'v1beta/{+name}',
-              'httpMethod' => 'PATCH',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'requestId' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-                'updateMask' => [
                   'location' => 'query',
                   'type' => 'string',
                 ],

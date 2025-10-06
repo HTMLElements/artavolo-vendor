@@ -33,8 +33,14 @@ class BackupConfig extends \Google\Model
    * @var bool
    */
   public $includeVolumeData;
+  /**
+   * @var bool
+   */
+  public $permissiveMode;
   protected $selectedApplicationsType = NamespacedNames::class;
   protected $selectedApplicationsDataType = '';
+  protected $selectedNamespaceLabelsType = ResourceLabels::class;
+  protected $selectedNamespaceLabelsDataType = '';
   protected $selectedNamespacesType = Namespaces::class;
   protected $selectedNamespacesDataType = '';
 
@@ -95,6 +101,20 @@ class BackupConfig extends \Google\Model
     return $this->includeVolumeData;
   }
   /**
+   * @param bool
+   */
+  public function setPermissiveMode($permissiveMode)
+  {
+    $this->permissiveMode = $permissiveMode;
+  }
+  /**
+   * @return bool
+   */
+  public function getPermissiveMode()
+  {
+    return $this->permissiveMode;
+  }
+  /**
    * @param NamespacedNames
    */
   public function setSelectedApplications(NamespacedNames $selectedApplications)
@@ -107,6 +127,20 @@ class BackupConfig extends \Google\Model
   public function getSelectedApplications()
   {
     return $this->selectedApplications;
+  }
+  /**
+   * @param ResourceLabels
+   */
+  public function setSelectedNamespaceLabels(ResourceLabels $selectedNamespaceLabels)
+  {
+    $this->selectedNamespaceLabels = $selectedNamespaceLabels;
+  }
+  /**
+   * @return ResourceLabels
+   */
+  public function getSelectedNamespaceLabels()
+  {
+    return $this->selectedNamespaceLabels;
   }
   /**
    * @param Namespaces

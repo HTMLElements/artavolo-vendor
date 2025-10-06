@@ -17,8 +17,15 @@
 
 namespace Google\Service\Container;
 
-class IPAllocationPolicy extends \Google\Model
+class IPAllocationPolicy extends \Google\Collection
 {
+  protected $collection_key = 'additionalIpRangesConfigs';
+  protected $additionalIpRangesConfigsType = AdditionalIPRangesConfig::class;
+  protected $additionalIpRangesConfigsDataType = 'array';
+  protected $additionalPodRangesConfigType = AdditionalPodRangesConfig::class;
+  protected $additionalPodRangesConfigDataType = '';
+  protected $autoIpamConfigType = AutoIpamConfig::class;
+  protected $autoIpamConfigDataType = '';
   /**
    * @var string
    */
@@ -35,6 +42,13 @@ class IPAllocationPolicy extends \Google\Model
    * @var bool
    */
   public $createSubnetwork;
+  public $defaultPodIpv4RangeUtilization;
+  /**
+   * @var string
+   */
+  public $ipv6AccessType;
+  protected $networkTierConfigType = NetworkTierConfig::class;
+  protected $networkTierConfigDataType = '';
   /**
    * @var string
    */
@@ -43,6 +57,8 @@ class IPAllocationPolicy extends \Google\Model
    * @var string
    */
   public $nodeIpv4CidrBlock;
+  protected $podCidrOverprovisionConfigType = PodCIDROverprovisionConfig::class;
+  protected $podCidrOverprovisionConfigDataType = '';
   /**
    * @var string
    */
@@ -54,7 +70,19 @@ class IPAllocationPolicy extends \Google\Model
   /**
    * @var string
    */
+  public $servicesIpv6CidrBlock;
+  /**
+   * @var string
+   */
   public $servicesSecondaryRangeName;
+  /**
+   * @var string
+   */
+  public $stackType;
+  /**
+   * @var string
+   */
+  public $subnetIpv6CidrBlock;
   /**
    * @var string
    */
@@ -72,6 +100,48 @@ class IPAllocationPolicy extends \Google\Model
    */
   public $useRoutes;
 
+  /**
+   * @param AdditionalIPRangesConfig[]
+   */
+  public function setAdditionalIpRangesConfigs($additionalIpRangesConfigs)
+  {
+    $this->additionalIpRangesConfigs = $additionalIpRangesConfigs;
+  }
+  /**
+   * @return AdditionalIPRangesConfig[]
+   */
+  public function getAdditionalIpRangesConfigs()
+  {
+    return $this->additionalIpRangesConfigs;
+  }
+  /**
+   * @param AdditionalPodRangesConfig
+   */
+  public function setAdditionalPodRangesConfig(AdditionalPodRangesConfig $additionalPodRangesConfig)
+  {
+    $this->additionalPodRangesConfig = $additionalPodRangesConfig;
+  }
+  /**
+   * @return AdditionalPodRangesConfig
+   */
+  public function getAdditionalPodRangesConfig()
+  {
+    return $this->additionalPodRangesConfig;
+  }
+  /**
+   * @param AutoIpamConfig
+   */
+  public function setAutoIpamConfig(AutoIpamConfig $autoIpamConfig)
+  {
+    $this->autoIpamConfig = $autoIpamConfig;
+  }
+  /**
+   * @return AutoIpamConfig
+   */
+  public function getAutoIpamConfig()
+  {
+    return $this->autoIpamConfig;
+  }
   /**
    * @param string
    */
@@ -128,6 +198,42 @@ class IPAllocationPolicy extends \Google\Model
   {
     return $this->createSubnetwork;
   }
+  public function setDefaultPodIpv4RangeUtilization($defaultPodIpv4RangeUtilization)
+  {
+    $this->defaultPodIpv4RangeUtilization = $defaultPodIpv4RangeUtilization;
+  }
+  public function getDefaultPodIpv4RangeUtilization()
+  {
+    return $this->defaultPodIpv4RangeUtilization;
+  }
+  /**
+   * @param string
+   */
+  public function setIpv6AccessType($ipv6AccessType)
+  {
+    $this->ipv6AccessType = $ipv6AccessType;
+  }
+  /**
+   * @return string
+   */
+  public function getIpv6AccessType()
+  {
+    return $this->ipv6AccessType;
+  }
+  /**
+   * @param NetworkTierConfig
+   */
+  public function setNetworkTierConfig(NetworkTierConfig $networkTierConfig)
+  {
+    $this->networkTierConfig = $networkTierConfig;
+  }
+  /**
+   * @return NetworkTierConfig
+   */
+  public function getNetworkTierConfig()
+  {
+    return $this->networkTierConfig;
+  }
   /**
    * @param string
    */
@@ -155,6 +261,20 @@ class IPAllocationPolicy extends \Google\Model
   public function getNodeIpv4CidrBlock()
   {
     return $this->nodeIpv4CidrBlock;
+  }
+  /**
+   * @param PodCIDROverprovisionConfig
+   */
+  public function setPodCidrOverprovisionConfig(PodCIDROverprovisionConfig $podCidrOverprovisionConfig)
+  {
+    $this->podCidrOverprovisionConfig = $podCidrOverprovisionConfig;
+  }
+  /**
+   * @return PodCIDROverprovisionConfig
+   */
+  public function getPodCidrOverprovisionConfig()
+  {
+    return $this->podCidrOverprovisionConfig;
   }
   /**
    * @param string
@@ -187,6 +307,20 @@ class IPAllocationPolicy extends \Google\Model
   /**
    * @param string
    */
+  public function setServicesIpv6CidrBlock($servicesIpv6CidrBlock)
+  {
+    $this->servicesIpv6CidrBlock = $servicesIpv6CidrBlock;
+  }
+  /**
+   * @return string
+   */
+  public function getServicesIpv6CidrBlock()
+  {
+    return $this->servicesIpv6CidrBlock;
+  }
+  /**
+   * @param string
+   */
   public function setServicesSecondaryRangeName($servicesSecondaryRangeName)
   {
     $this->servicesSecondaryRangeName = $servicesSecondaryRangeName;
@@ -197,6 +331,34 @@ class IPAllocationPolicy extends \Google\Model
   public function getServicesSecondaryRangeName()
   {
     return $this->servicesSecondaryRangeName;
+  }
+  /**
+   * @param string
+   */
+  public function setStackType($stackType)
+  {
+    $this->stackType = $stackType;
+  }
+  /**
+   * @return string
+   */
+  public function getStackType()
+  {
+    return $this->stackType;
+  }
+  /**
+   * @param string
+   */
+  public function setSubnetIpv6CidrBlock($subnetIpv6CidrBlock)
+  {
+    $this->subnetIpv6CidrBlock = $subnetIpv6CidrBlock;
+  }
+  /**
+   * @return string
+   */
+  public function getSubnetIpv6CidrBlock()
+  {
+    return $this->subnetIpv6CidrBlock;
   }
   /**
    * @param string

@@ -8,6 +8,8 @@ namespace Braintree;
  */
 class WebhookTestingGateway
 {
+    private $config;
+
     // phpcs:ignore PEAR.Commenting.FunctionComment.Missing
     public function __construct($gateway)
     {
@@ -41,14 +43,11 @@ class WebhookTestingGateway
     private static function _sampleXml($kind, $id, $sourceMerchantId)
     {
         switch ($kind) {
-            case WebhookNotification::SUB_MERCHANT_ACCOUNT_APPROVED:
-                $subjectXml = self::_merchantAccountApprovedSampleXml($id);
-                break;
-            case WebhookNotification::SUB_MERCHANT_ACCOUNT_DECLINED:
-                $subjectXml = self::_merchantAccountDeclinedSampleXml($id);
-                break;
             case WebhookNotification::TRANSACTION_DISBURSED:
                 $subjectXml = self::_transactionDisbursedSampleXml($id);
+                break;
+            case WebhookNotification::TRANSACTION_RETRIED:
+                $subjectXml = self::_transactionRetriedSampleXml($id);
                 break;
             case WebhookNotification::TRANSACTION_REVIEWED:
                 $subjectXml = self::_transactionReviewedSampleXml($id);
@@ -83,23 +82,35 @@ class WebhookTestingGateway
             case WebhookNotification::CONNECTED_MERCHANT_PAYPAL_STATUS_CHANGED:
                 $subjectXml = self::_connectedMerchantPayPalStatusChangedSampleXml($id);
                 break;
-            case WebhookNotification::DISPUTE_OPENED:
-                $subjectXml = self::_disputeOpenedSampleXml($id);
-                break;
-            case WebhookNotification::DISPUTE_LOST:
-                $subjectXml = self::_disputeLostSampleXml($id);
-                break;
-            case WebhookNotification::DISPUTE_WON:
-                $subjectXml = self::_disputeWonSampleXml($id);
-                break;
             case WebhookNotification::DISPUTE_ACCEPTED:
                 $subjectXml = self::_disputeAcceptedSampleXml($id);
+                break;
+            case WebhookNotification::DISPUTE_AUTO_ACCEPTED:
+                $subjectXml = self::_disputeAutoAcceptedSampleXml($id);
                 break;
             case WebhookNotification::DISPUTE_DISPUTED:
                 $subjectXml = self::_disputeDisputedSampleXml($id);
                 break;
             case WebhookNotification::DISPUTE_EXPIRED:
                 $subjectXml = self::_disputeExpiredSampleXml($id);
+                break;
+            case WebhookNotification::DISPUTE_LOST:
+                $subjectXml = self::_disputeLostSampleXml($id);
+                break;
+            case WebhookNotification::DISPUTE_OPENED:
+                $subjectXml = self::_disputeOpenedSampleXml($id);
+                break;
+            case WebhookNotification::DISPUTE_UNDER_REVIEW:
+                $subjectXml = self::_disputeUnderReviewSampleXml($id);
+                break;
+            case WebhookNotification::DISPUTE_WON:
+                $subjectXml = self::_disputeWonSampleXml($id);
+                break;
+            case WebhookNotification::REFUND_FAILED:
+                $subjectXml = self::_refundFailedSampleXml($id);
+                break;
+            case WebhookNotification::SUBSCRIPTION_BILLING_SKIPPED:
+                $subjectXml = self::_subscriptionBillingSkippedSampleXml($id);
                 break;
             case WebhookNotification::SUBSCRIPTION_CHARGED_SUCCESSFULLY:
                 $subjectXml = self::_subscriptionChargedSuccessfullySampleXml($id);
@@ -135,7 +146,7 @@ class WebhookTestingGateway
                 $subjectXml = self::_paymentMethodRevokedByCustomerSampleXml($id);
                 break;
             case WebhookNotification::LOCAL_PAYMENT_COMPLETED:
-                $subjectXml = self::_localPaymentCompletedSampleXml();
+                $subjectXml = self::_localPaymentCompletedSampleXml($id);
                 break;
             case WebhookNotification::LOCAL_PAYMENT_EXPIRED:
                 $subjectXml = self::_localPaymentExpiredSampleXml();
@@ -217,11 +228,25 @@ class WebhookTestingGateway
     {
         return "
         <transaction>
-            <id>${id}</id>
+            <id>{$id}</id>
             <amount>100</amount>
             <disbursement-details>
                 <disbursement-date type=\"date\">2013-07-09</disbursement-date>
             </disbursement-details>
+        </transaction>
+        ";
+    }
+
+    private static function _transactionRetriedSampleXml($id)
+    {
+        return "
+        <transaction>
+            <id>{$id}</id>
+            <amount>100.00</amount>
+            <status>submitted_for_settlement</status>
+            <type>sale</type>
+            <currency-iso-code>USD</currency-iso-code>
+            <retried-transaction-id>original_txn_id</retried-transaction-id>
         </transaction>
         ";
     }
@@ -243,7 +268,7 @@ class WebhookTestingGateway
     {
         return "
         <transaction>
-          <id>${id}</id>
+          <id>{$id}</id>
           <status>settled</status>
           <type>sale</type>
           <currency-iso-code>USD</currency-iso-code>
@@ -264,7 +289,7 @@ class WebhookTestingGateway
     {
         return "
         <transaction>
-          <id>${id}</id>
+          <id>{$id}</id>
           <status>settlement_declined</status>
           <type>sale</type>
           <currency-iso-code>USD</currency-iso-code>
@@ -281,36 +306,11 @@ class WebhookTestingGateway
         ";
     }
 
-    private static function _disbursementExceptionSampleXml($id)
-    {
-        return "
-        <disbursement>
-          <id>${id}</id>
-          <transaction-ids type=\"array\">
-            <item>asdfg</item>
-            <item>qwert</item>
-          </transaction-ids>
-          <success type=\"boolean\">false</success>
-          <retry type=\"boolean\">false</retry>
-          <merchant-account>
-            <id>merchant_account_token</id>
-            <currency-iso-code>USD</currency-iso-code>
-            <sub-merchant-account type=\"boolean\">false</sub-merchant-account>
-            <status>active</status>
-          </merchant-account>
-          <amount>100.00</amount>
-          <disbursement-date type=\"date\">2014-02-10</disbursement-date>
-          <exception-message>bank_rejected</exception-message>
-          <follow-up-action>update_funding_information</follow-up-action>
-        </disbursement>
-        ";
-    }
-
     private static function _disbursementSampleXml($id)
     {
         return "
         <disbursement>
-          <id>${id}</id>
+          <id>{$id}</id>
           <transaction-ids type=\"array\">
             <item>asdfg</item>
             <item>qwert</item>
@@ -331,6 +331,29 @@ class WebhookTestingGateway
         ";
     }
 
+    private static function _disputeUnderReviewSampleXml($id)
+    {
+        return "
+        <dispute>
+          <amount>250.00</amount>
+          <amount-disputed>250.0</amount-disputed>
+          <amount-won>245.00</amount-won>
+          <currency-iso-code>USD</currency-iso-code>
+          <received-date type=\"date\">2014-03-01</received-date>
+          <reply-by-date type=\"date\">2014-03-21</reply-by-date>
+          <kind>chargeback</kind>
+          <status>under_review</status>
+          <reason>fraud</reason>
+          <id>{$id}</id>
+          <transaction>
+            <id>{$id}</id>
+            <amount>250.00</amount>
+          </transaction>
+          <date-opened type=\"date\">2014-03-21</date-opened>
+        </dispute>
+        ";
+    }
+
     private static function _disputeOpenedSampleXml($id)
     {
         return "
@@ -344,9 +367,9 @@ class WebhookTestingGateway
           <kind>chargeback</kind>
           <status>open</status>
           <reason>fraud</reason>
-          <id>${id}</id>
+          <id>{$id}</id>
           <transaction>
-            <id>${id}</id>
+            <id>{$id}</id>
             <amount>250.00</amount>
           </transaction>
           <date-opened type=\"date\">2014-03-21</date-opened>
@@ -367,9 +390,9 @@ class WebhookTestingGateway
           <kind>chargeback</kind>
           <status>lost</status>
           <reason>fraud</reason>
-          <id>${id}</id>
+          <id>{$id}</id>
           <transaction>
-            <id>${id}</id>
+            <id>{$id}</id>
             <amount>250.00</amount>
             <next_billing-date type=\"date\">2020-02-10</next_billing-date>
           </transaction>
@@ -391,14 +414,32 @@ class WebhookTestingGateway
           <kind>chargeback</kind>
           <status>won</status>
           <reason>fraud</reason>
-          <id>${id}</id>
+          <id>{$id}</id>
           <transaction>
-            <id>${id}</id>
+            <id>{$id}</id>
             <amount>250.00</amount>
           </transaction>
           <date-opened type=\"date\">2014-03-21</date-opened>
           <date-won type=\"date\">2014-03-22</date-won>
         </dispute>
+        ";
+    }
+
+    private static function _refundFailedSampleXml($id)
+    {
+        return "
+        <transaction>
+            <id>{$id}</id>
+            <amount>250.00</amount>
+            <us-bank-account>
+                <routing-number>123456789</routing-number>
+                <last-4>1234</last-4>
+                <account-type>checking</account-type>
+                <account-holder-name>Dan Schulman</account-holder-name>
+            </us-bank-account>
+            <status>processor_declined</status>
+            <refunded-transaction-fk>1</refunded-transaction-fk>
+        </transaction>
         ";
     }
 
@@ -415,9 +456,32 @@ class WebhookTestingGateway
           <kind>chargeback</kind>
           <status>accepted</status>
           <reason>fraud</reason>
-          <id>${id}</id>
+          <id>{$id}</id>
           <transaction>
-            <id>${id}</id>
+            <id>{$id}</id>
+            <amount>250.00</amount>
+          </transaction>
+          <date-opened type=\"date\">2014-03-21</date-opened>
+        </dispute>
+        ";
+    }
+
+    private static function _disputeAutoAcceptedSampleXml($id)
+    {
+        return "
+        <dispute>
+          <amount>250.00</amount>
+          <amount-disputed>250.0</amount-disputed>
+          <amount-won>245.00</amount-won>
+          <currency-iso-code>USD</currency-iso-code>
+          <received-date type=\"date\">2014-03-01</received-date>
+          <reply-by-date type=\"date\">2014-03-21</reply-by-date>
+          <kind>chargeback</kind>
+          <status>auto_accepted</status>
+          <reason>fraud</reason>
+          <id>{$id}</id>
+          <transaction>
+            <id>{$id}</id>
             <amount>250.00</amount>
           </transaction>
           <date-opened type=\"date\">2014-03-21</date-opened>
@@ -438,9 +502,9 @@ class WebhookTestingGateway
           <kind>chargeback</kind>
           <status>disputed</status>
           <reason>fraud</reason>
-          <id>${id}</id>
+          <id>{$id}</id>
           <transaction>
-            <id>${id}</id>
+            <id>{$id}</id>
             <amount>250.00</amount>
           </transaction>
           <date-opened type=\"date\">2014-03-21</date-opened>
@@ -461,9 +525,9 @@ class WebhookTestingGateway
           <kind>chargeback</kind>
           <status>expired</status>
           <reason>fraud</reason>
-          <id>${id}</id>
+          <id>{$id}</id>
           <transaction>
-            <id>${id}</id>
+            <id>{$id}</id>
             <amount>250.00</amount>
           </transaction>
           <date-opened type=\"date\">2014-03-21</date-opened>
@@ -472,6 +536,22 @@ class WebhookTestingGateway
     }
 
     private static function _subscriptionSampleXml($id)
+    {
+        return "
+        <subscription>
+            <id>{$id}</id>
+            <status>Active</status>
+            <transactions type=\"array\">
+            </transactions>
+            <add_ons type=\"array\">
+            </add_ons>
+            <discounts type=\"array\">
+            </discounts>
+        </subscription>
+        ";
+    }
+
+    private static function _subscriptionBillingSkippedSampleXml($id)
     {
         return "
         <subscription>
@@ -704,12 +784,49 @@ class WebhookTestingGateway
         ";
     }
 
-    private static function _localPaymentCompletedSampleXml()
+    private static function _localPaymentCompletedSampleXml($id)
+    {
+        if ($id == "blik_one_click_id") {
+            return self::_blikOneClickLocalPaymentCompletedSampleXml();
+        } else {
+            return self::_defaultLocalPaymentCompletedSampleXml();
+        }
+    }
+    private static function _blikOneClickLocalPaymentCompletedSampleXml()
     {
         return "
 		<local-payment>
-            <payment-id>a-payment-id</payment-id>
+            <bic>a-bic</bic>
+            <blik-aliases type='array'>
+                <blik-alias>
+                    <key>unique-key-1</key>
+                    <label>unique-label-1</label>
+                </blik-alias>
+            </blik-aliases>
+            <iban-last-chars>1234</iban-last-chars>
             <payer-id>a-payer-id</payer-id>
+            <payer-name>a-payer-name</payer-name>
+            <payment-id>a-payment-id</payment-id>
+            <payment-method-nonce>ee257d98-de40-47e8-96b3-a6954ea7a9a4</payment-method-nonce>
+            <transaction>
+                <id>1</id>
+                <status>authorizing</status>
+                <amount>10.00</amount>
+                <order-id>order1234</order-id>
+            </transaction>
+		</local-payment>
+        ";
+    }
+
+    private static function _defaultLocalPaymentCompletedSampleXml()
+    {
+        return "
+		<local-payment>
+            <bic>a-bic</bic>
+            <iban-last-chars>1234</iban-last-chars>
+            <payer-id>a-payer-id</payer-id>
+            <payer-name>a-payer-name</payer-name>
+            <payment-id>a-payment-id</payment-id>
             <payment-method-nonce>ee257d98-de40-47e8-96b3-a6954ea7a9a4</payment-method-nonce>
             <transaction>
                 <id>1</id>
@@ -776,6 +893,20 @@ class WebhookTestingGateway
               <last-name>Doe</last-name>
               <phone-number>1231231234</phone-number>
               <email>john.doe@paypal.com</email>
+              <billing-address>
+                <street-address>billing-street-address</street-address>
+                <extended-address>billing-extended-address</extended-address>
+                <locality>billing-locality</locality>
+                <region>billing-region</region>
+                <postal-code>billing-code</postal-code>
+              </billing-address>
+              <shipping-address>
+                <street-address>shipping-street-address</street-address>
+                <extended-address>shipping-extended-address</extended-address>
+                <locality>shipping-locality</locality>
+                <region>shipping-region</region>
+                <postal-code>shipping-code</postal-code>
+              </shipping-address>
             </profile-data>
           </enriched-customer-data>
         </payment-method-customer-data-updated-metadata>

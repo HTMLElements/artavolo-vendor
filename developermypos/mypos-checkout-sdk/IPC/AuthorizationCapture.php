@@ -84,6 +84,9 @@ class AuthorizationCapture extends Base
 
         $this->_addPostParam('Amount', $this->getAmount());
         $this->_addPostParam('Currency', $this->getCurrency());
+
+        $this->_addPostParam('ApplicationID', $this->getCnf()->getApplicationID());
+        $this->_addPostParam('PartnerID', $this->getCnf()->getPartnerID());
         
         $this->_addPostParam('OutputFormat', $this->getOutputFormat());
 
@@ -114,6 +117,16 @@ class AuthorizationCapture extends Base
 
         if ($this->getAmount() === null || !Helper::isValidAmount($this->getAmount())) {
             throw new IPC_Exception('Empty or invalid amount');
+        }
+
+        if ($this->getCnf()->getVersion() === '1.4.1') {
+            if ($this->getCnf()->getPartnerID() == null) {
+                throw new IPC_Exception('Required parameter: Partner ID');
+            }
+
+            if ($this->getCnf()->getApplicationID() == null) {
+                throw new IPC_Exception('Required parameter: Application ID');
+            }
         }
         
         return true;
@@ -148,5 +161,5 @@ class AuthorizationCapture extends Base
     {
         return $this->amount;
     }
-    
+
 }

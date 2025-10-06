@@ -21,6 +21,10 @@ class AndroidModel extends \Google\Collection
 {
   protected $collection_key = 'tags';
   /**
+   * @var string[]
+   */
+  public $accessDeniedReasons;
+  /**
    * @var string
    */
   public $brand;
@@ -40,6 +44,8 @@ class AndroidModel extends \Google\Collection
    * @var string
    */
   public $id;
+  protected $labInfoType = LabInfo::class;
+  protected $labInfoDataType = '';
   /**
    * @var bool
    */
@@ -52,6 +58,8 @@ class AndroidModel extends \Google\Collection
    * @var string
    */
   public $name;
+  protected $perVersionInfoType = PerAndroidVersionInfo::class;
+  protected $perVersionInfoDataType = 'array';
   /**
    * @var int
    */
@@ -81,6 +89,20 @@ class AndroidModel extends \Google\Collection
    */
   public $thumbnailUrl;
 
+  /**
+   * @param string[]
+   */
+  public function setAccessDeniedReasons($accessDeniedReasons)
+  {
+    $this->accessDeniedReasons = $accessDeniedReasons;
+  }
+  /**
+   * @return string[]
+   */
+  public function getAccessDeniedReasons()
+  {
+    return $this->accessDeniedReasons;
+  }
   /**
    * @param string
    */
@@ -152,6 +174,20 @@ class AndroidModel extends \Google\Collection
     return $this->id;
   }
   /**
+   * @param LabInfo
+   */
+  public function setLabInfo(LabInfo $labInfo)
+  {
+    $this->labInfo = $labInfo;
+  }
+  /**
+   * @return LabInfo
+   */
+  public function getLabInfo()
+  {
+    return $this->labInfo;
+  }
+  /**
    * @param bool
    */
   public function setLowFpsVideoRecording($lowFpsVideoRecording)
@@ -192,6 +228,20 @@ class AndroidModel extends \Google\Collection
   public function getName()
   {
     return $this->name;
+  }
+  /**
+   * @param PerAndroidVersionInfo[]
+   */
+  public function setPerVersionInfo($perVersionInfo)
+  {
+    $this->perVersionInfo = $perVersionInfo;
+  }
+  /**
+   * @return PerAndroidVersionInfo[]
+   */
+  public function getPerVersionInfo()
+  {
+    return $this->perVersionInfo;
   }
   /**
    * @param int

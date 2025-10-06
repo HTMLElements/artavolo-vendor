@@ -26,6 +26,7 @@ class Identity extends \Beta\Microsoft\Graph\Model\Entity
 {
     /**
     * Gets the type
+    * The type of identity. Possible values are: user or group for Microsoft Entra identities and externalgroup for groups in an external system.
     *
     * @return IdentityType|null The type
     */
@@ -44,6 +45,7 @@ class Identity extends \Beta\Microsoft\Graph\Model\Entity
 
     /**
     * Sets the type
+    * The type of identity. Possible values are: user or group for Microsoft Entra identities and externalgroup for groups in an external system.
     *
     * @param IdentityType $val The type
     *

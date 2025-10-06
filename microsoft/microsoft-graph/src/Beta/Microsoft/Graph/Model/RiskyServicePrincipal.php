@@ -112,8 +112,35 @@ class RiskyServicePrincipal extends Entity
     }
 
     /**
+    * Gets the isEnabled
+    *
+    * @return bool|null The isEnabled
+    */
+    public function getIsEnabled()
+    {
+        if (array_key_exists("isEnabled", $this->_propDict)) {
+            return $this->_propDict["isEnabled"];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+    * Sets the isEnabled
+    *
+    * @param bool $val The isEnabled
+    *
+    * @return RiskyServicePrincipal
+    */
+    public function setIsEnabled($val)
+    {
+        $this->_propDict["isEnabled"] = boolval($val);
+        return $this;
+    }
+
+    /**
     * Gets the isProcessing
-    * Indicates whether Azure AD is currently processing the service principal's risky state.
+    * Indicates whether Microsoft Entra ID Protection is currently processing the service principal's risky state.
     *
     * @return bool|null The isProcessing
     */
@@ -128,7 +155,7 @@ class RiskyServicePrincipal extends Entity
 
     /**
     * Sets the isProcessing
-    * Indicates whether Azure AD is currently processing the service principal's risky state.
+    * Indicates whether Microsoft Entra ID Protection is currently processing the service principal's risky state.
     *
     * @param bool $val The isProcessing
     *
@@ -274,7 +301,7 @@ class RiskyServicePrincipal extends Entity
 
     /**
     * Gets the servicePrincipalType
-    * Identifies whether the service principal represents an Application, a ManagedIdentity, or a legacy application (socialIdp). This is set by Azure AD internally and is inherited from servicePrincipal.
+    * Identifies whether the service principal represents an Application, a ManagedIdentity, or a legacy application (socialIdp). This is set by Microsoft Entra ID internally and is inherited from servicePrincipal.
     *
     * @return string|null The servicePrincipalType
     */
@@ -289,7 +316,7 @@ class RiskyServicePrincipal extends Entity
 
     /**
     * Sets the servicePrincipalType
-    * Identifies whether the service principal represents an Application, a ManagedIdentity, or a legacy application (socialIdp). This is set by Azure AD internally and is inherited from servicePrincipal.
+    * Identifies whether the service principal represents an Application, a ManagedIdentity, or a legacy application (socialIdp). This is set by Microsoft Entra ID internally and is inherited from servicePrincipal.
     *
     * @param string $val The servicePrincipalType
     *
@@ -304,7 +331,7 @@ class RiskyServicePrincipal extends Entity
 
      /**
      * Gets the history
-    * Represents the risk history of Azure AD service principals.
+    * Represents the risk history of Microsoft Entra service principals.
      *
      * @return array|null The history
      */
@@ -319,7 +346,7 @@ class RiskyServicePrincipal extends Entity
 
     /**
     * Sets the history
-    * Represents the risk history of Azure AD service principals.
+    * Represents the risk history of Microsoft Entra service principals.
     *
     * @param RiskyServicePrincipalHistoryItem[] $val The history
     *

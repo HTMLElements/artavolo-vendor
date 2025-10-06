@@ -19,6 +19,12 @@ namespace Google\Service\Dataproc;
 
 class RuntimeConfig extends \Google\Model
 {
+  protected $autotuningConfigType = AutotuningConfig::class;
+  protected $autotuningConfigDataType = '';
+  /**
+   * @var string
+   */
+  public $cohort;
   /**
    * @var string
    */
@@ -27,13 +33,41 @@ class RuntimeConfig extends \Google\Model
    * @var string[]
    */
   public $properties;
-  protected $sessionAuthenticationConfigType = AuthenticationConfig::class;
-  protected $sessionAuthenticationConfigDataType = '';
+  protected $repositoryConfigType = RepositoryConfig::class;
+  protected $repositoryConfigDataType = '';
   /**
    * @var string
    */
   public $version;
 
+  /**
+   * @param AutotuningConfig
+   */
+  public function setAutotuningConfig(AutotuningConfig $autotuningConfig)
+  {
+    $this->autotuningConfig = $autotuningConfig;
+  }
+  /**
+   * @return AutotuningConfig
+   */
+  public function getAutotuningConfig()
+  {
+    return $this->autotuningConfig;
+  }
+  /**
+   * @param string
+   */
+  public function setCohort($cohort)
+  {
+    $this->cohort = $cohort;
+  }
+  /**
+   * @return string
+   */
+  public function getCohort()
+  {
+    return $this->cohort;
+  }
   /**
    * @param string
    */
@@ -63,18 +97,18 @@ class RuntimeConfig extends \Google\Model
     return $this->properties;
   }
   /**
-   * @param AuthenticationConfig
+   * @param RepositoryConfig
    */
-  public function setSessionAuthenticationConfig(AuthenticationConfig $sessionAuthenticationConfig)
+  public function setRepositoryConfig(RepositoryConfig $repositoryConfig)
   {
-    $this->sessionAuthenticationConfig = $sessionAuthenticationConfig;
+    $this->repositoryConfig = $repositoryConfig;
   }
   /**
-   * @return AuthenticationConfig
+   * @return RepositoryConfig
    */
-  public function getSessionAuthenticationConfig()
+  public function getRepositoryConfig()
   {
-    return $this->sessionAuthenticationConfig;
+    return $this->repositoryConfig;
   }
   /**
    * @param string

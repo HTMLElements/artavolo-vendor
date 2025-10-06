@@ -26,6 +26,8 @@ class Settings extends \Google\Collection
   public $activationPolicy;
   protected $activeDirectoryConfigType = SqlActiveDirectoryConfig::class;
   protected $activeDirectoryConfigDataType = '';
+  protected $advancedMachineFeaturesType = AdvancedMachineFeatures::class;
+  protected $advancedMachineFeaturesDataType = '';
   /**
    * @var string[]
    */
@@ -40,10 +42,26 @@ class Settings extends \Google\Collection
    * @var string
    */
   public $collation;
+  protected $connectionPoolConfigType = ConnectionPoolConfig::class;
+  protected $connectionPoolConfigDataType = '';
+  /**
+   * @var string
+   */
+  public $connectorEnforcement;
   /**
    * @var bool
    */
   public $crashSafeReplicationEnabled;
+  protected $dataCacheConfigType = DataCacheConfig::class;
+  protected $dataCacheConfigDataType = '';
+  /**
+   * @var string
+   */
+  public $dataDiskProvisionedIops;
+  /**
+   * @var string
+   */
+  public $dataDiskProvisionedThroughput;
   /**
    * @var string
    */
@@ -58,8 +76,26 @@ class Settings extends \Google\Collection
    * @var bool
    */
   public $databaseReplicationEnabled;
+  /**
+   * @var bool
+   */
+  public $deletionProtectionEnabled;
   protected $denyMaintenancePeriodsType = DenyMaintenancePeriod::class;
   protected $denyMaintenancePeriodsDataType = 'array';
+  /**
+   * @var string
+   */
+  public $edition;
+  /**
+   * @var bool
+   */
+  public $enableDataplexIntegration;
+  /**
+   * @var bool
+   */
+  public $enableGoogleMlIntegration;
+  protected $finalBackupConfigType = FinalBackupConfig::class;
+  protected $finalBackupConfigDataType = '';
   protected $insightsConfigType = InsightsConfig::class;
   protected $insightsConfigDataType = '';
   protected $ipConfigurationType = IpConfiguration::class;
@@ -78,10 +114,20 @@ class Settings extends \Google\Collection
    * @var string
    */
   public $pricingPlan;
+  protected $readPoolAutoScaleConfigType = ReadPoolAutoScaleConfig::class;
+  protected $readPoolAutoScaleConfigDataType = '';
+  /**
+   * @var int
+   */
+  public $replicationLagMaxSeconds;
   /**
    * @var string
    */
   public $replicationType;
+  /**
+   * @var bool
+   */
+  public $retainBackupsOnDelete;
   /**
    * @var string
    */
@@ -100,6 +146,10 @@ class Settings extends \Google\Collection
    * @var string
    */
   public $tier;
+  /**
+   * @var string
+   */
+  public $timeZone;
   /**
    * @var string[]
    */
@@ -132,6 +182,20 @@ class Settings extends \Google\Collection
   public function getActiveDirectoryConfig()
   {
     return $this->activeDirectoryConfig;
+  }
+  /**
+   * @param AdvancedMachineFeatures
+   */
+  public function setAdvancedMachineFeatures(AdvancedMachineFeatures $advancedMachineFeatures)
+  {
+    $this->advancedMachineFeatures = $advancedMachineFeatures;
+  }
+  /**
+   * @return AdvancedMachineFeatures
+   */
+  public function getAdvancedMachineFeatures()
+  {
+    return $this->advancedMachineFeatures;
   }
   /**
    * @param string[]
@@ -190,6 +254,34 @@ class Settings extends \Google\Collection
     return $this->collation;
   }
   /**
+   * @param ConnectionPoolConfig
+   */
+  public function setConnectionPoolConfig(ConnectionPoolConfig $connectionPoolConfig)
+  {
+    $this->connectionPoolConfig = $connectionPoolConfig;
+  }
+  /**
+   * @return ConnectionPoolConfig
+   */
+  public function getConnectionPoolConfig()
+  {
+    return $this->connectionPoolConfig;
+  }
+  /**
+   * @param string
+   */
+  public function setConnectorEnforcement($connectorEnforcement)
+  {
+    $this->connectorEnforcement = $connectorEnforcement;
+  }
+  /**
+   * @return string
+   */
+  public function getConnectorEnforcement()
+  {
+    return $this->connectorEnforcement;
+  }
+  /**
    * @param bool
    */
   public function setCrashSafeReplicationEnabled($crashSafeReplicationEnabled)
@@ -202,6 +294,48 @@ class Settings extends \Google\Collection
   public function getCrashSafeReplicationEnabled()
   {
     return $this->crashSafeReplicationEnabled;
+  }
+  /**
+   * @param DataCacheConfig
+   */
+  public function setDataCacheConfig(DataCacheConfig $dataCacheConfig)
+  {
+    $this->dataCacheConfig = $dataCacheConfig;
+  }
+  /**
+   * @return DataCacheConfig
+   */
+  public function getDataCacheConfig()
+  {
+    return $this->dataCacheConfig;
+  }
+  /**
+   * @param string
+   */
+  public function setDataDiskProvisionedIops($dataDiskProvisionedIops)
+  {
+    $this->dataDiskProvisionedIops = $dataDiskProvisionedIops;
+  }
+  /**
+   * @return string
+   */
+  public function getDataDiskProvisionedIops()
+  {
+    return $this->dataDiskProvisionedIops;
+  }
+  /**
+   * @param string
+   */
+  public function setDataDiskProvisionedThroughput($dataDiskProvisionedThroughput)
+  {
+    $this->dataDiskProvisionedThroughput = $dataDiskProvisionedThroughput;
+  }
+  /**
+   * @return string
+   */
+  public function getDataDiskProvisionedThroughput()
+  {
+    return $this->dataDiskProvisionedThroughput;
   }
   /**
    * @param string
@@ -260,6 +394,20 @@ class Settings extends \Google\Collection
     return $this->databaseReplicationEnabled;
   }
   /**
+   * @param bool
+   */
+  public function setDeletionProtectionEnabled($deletionProtectionEnabled)
+  {
+    $this->deletionProtectionEnabled = $deletionProtectionEnabled;
+  }
+  /**
+   * @return bool
+   */
+  public function getDeletionProtectionEnabled()
+  {
+    return $this->deletionProtectionEnabled;
+  }
+  /**
    * @param DenyMaintenancePeriod[]
    */
   public function setDenyMaintenancePeriods($denyMaintenancePeriods)
@@ -272,6 +420,62 @@ class Settings extends \Google\Collection
   public function getDenyMaintenancePeriods()
   {
     return $this->denyMaintenancePeriods;
+  }
+  /**
+   * @param string
+   */
+  public function setEdition($edition)
+  {
+    $this->edition = $edition;
+  }
+  /**
+   * @return string
+   */
+  public function getEdition()
+  {
+    return $this->edition;
+  }
+  /**
+   * @param bool
+   */
+  public function setEnableDataplexIntegration($enableDataplexIntegration)
+  {
+    $this->enableDataplexIntegration = $enableDataplexIntegration;
+  }
+  /**
+   * @return bool
+   */
+  public function getEnableDataplexIntegration()
+  {
+    return $this->enableDataplexIntegration;
+  }
+  /**
+   * @param bool
+   */
+  public function setEnableGoogleMlIntegration($enableGoogleMlIntegration)
+  {
+    $this->enableGoogleMlIntegration = $enableGoogleMlIntegration;
+  }
+  /**
+   * @return bool
+   */
+  public function getEnableGoogleMlIntegration()
+  {
+    return $this->enableGoogleMlIntegration;
+  }
+  /**
+   * @param FinalBackupConfig
+   */
+  public function setFinalBackupConfig(FinalBackupConfig $finalBackupConfig)
+  {
+    $this->finalBackupConfig = $finalBackupConfig;
+  }
+  /**
+   * @return FinalBackupConfig
+   */
+  public function getFinalBackupConfig()
+  {
+    return $this->finalBackupConfig;
   }
   /**
    * @param InsightsConfig
@@ -372,6 +576,34 @@ class Settings extends \Google\Collection
     return $this->pricingPlan;
   }
   /**
+   * @param ReadPoolAutoScaleConfig
+   */
+  public function setReadPoolAutoScaleConfig(ReadPoolAutoScaleConfig $readPoolAutoScaleConfig)
+  {
+    $this->readPoolAutoScaleConfig = $readPoolAutoScaleConfig;
+  }
+  /**
+   * @return ReadPoolAutoScaleConfig
+   */
+  public function getReadPoolAutoScaleConfig()
+  {
+    return $this->readPoolAutoScaleConfig;
+  }
+  /**
+   * @param int
+   */
+  public function setReplicationLagMaxSeconds($replicationLagMaxSeconds)
+  {
+    $this->replicationLagMaxSeconds = $replicationLagMaxSeconds;
+  }
+  /**
+   * @return int
+   */
+  public function getReplicationLagMaxSeconds()
+  {
+    return $this->replicationLagMaxSeconds;
+  }
+  /**
    * @param string
    */
   public function setReplicationType($replicationType)
@@ -384,6 +616,20 @@ class Settings extends \Google\Collection
   public function getReplicationType()
   {
     return $this->replicationType;
+  }
+  /**
+   * @param bool
+   */
+  public function setRetainBackupsOnDelete($retainBackupsOnDelete)
+  {
+    $this->retainBackupsOnDelete = $retainBackupsOnDelete;
+  }
+  /**
+   * @return bool
+   */
+  public function getRetainBackupsOnDelete()
+  {
+    return $this->retainBackupsOnDelete;
   }
   /**
    * @param string
@@ -454,6 +700,20 @@ class Settings extends \Google\Collection
   public function getTier()
   {
     return $this->tier;
+  }
+  /**
+   * @param string
+   */
+  public function setTimeZone($timeZone)
+  {
+    $this->timeZone = $timeZone;
+  }
+  /**
+   * @return string
+   */
+  public function getTimeZone()
+  {
+    return $this->timeZone;
   }
   /**
    * @param string[]

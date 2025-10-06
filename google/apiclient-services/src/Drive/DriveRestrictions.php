@@ -31,10 +31,16 @@ class DriveRestrictions extends \Google\Model
    * @var bool
    */
   public $domainUsersOnly;
+  protected $downloadRestrictionType = DownloadRestriction::class;
+  protected $downloadRestrictionDataType = '';
   /**
    * @var bool
    */
   public $driveMembersOnly;
+  /**
+   * @var bool
+   */
+  public $sharingFoldersRequiresOrganizerPermission;
 
   /**
    * @param bool
@@ -79,6 +85,20 @@ class DriveRestrictions extends \Google\Model
     return $this->domainUsersOnly;
   }
   /**
+   * @param DownloadRestriction
+   */
+  public function setDownloadRestriction(DownloadRestriction $downloadRestriction)
+  {
+    $this->downloadRestriction = $downloadRestriction;
+  }
+  /**
+   * @return DownloadRestriction
+   */
+  public function getDownloadRestriction()
+  {
+    return $this->downloadRestriction;
+  }
+  /**
    * @param bool
    */
   public function setDriveMembersOnly($driveMembersOnly)
@@ -91,6 +111,20 @@ class DriveRestrictions extends \Google\Model
   public function getDriveMembersOnly()
   {
     return $this->driveMembersOnly;
+  }
+  /**
+   * @param bool
+   */
+  public function setSharingFoldersRequiresOrganizerPermission($sharingFoldersRequiresOrganizerPermission)
+  {
+    $this->sharingFoldersRequiresOrganizerPermission = $sharingFoldersRequiresOrganizerPermission;
+  }
+  /**
+   * @return bool
+   */
+  public function getSharingFoldersRequiresOrganizerPermission()
+  {
+    return $this->sharingFoldersRequiresOrganizerPermission;
   }
 }
 

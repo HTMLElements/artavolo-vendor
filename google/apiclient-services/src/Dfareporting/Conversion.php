@@ -19,7 +19,13 @@ namespace Google\Service\Dfareporting;
 
 class Conversion extends \Google\Collection
 {
-  protected $collection_key = 'encryptedUserIdCandidates';
+  protected $collection_key = 'userIdentifiers';
+  /**
+   * @var string
+   */
+  public $adUserDataConsent;
+  protected $cartDataType = CartData::class;
+  protected $cartDataDataType = '';
   /**
    * @var bool
    */
@@ -53,6 +59,10 @@ class Conversion extends \Google\Collection
   /**
    * @var string
    */
+  public $impressionId;
+  /**
+   * @var string
+   */
   public $kind;
   /**
    * @var bool
@@ -81,13 +91,47 @@ class Conversion extends \Google\Collection
   /**
    * @var string
    */
+  public $sessionAttributesEncoded;
+  /**
+   * @var string
+   */
   public $timestampMicros;
   /**
    * @var bool
    */
   public $treatmentForUnderage;
+  protected $userIdentifiersType = UserIdentifier::class;
+  protected $userIdentifiersDataType = 'array';
   public $value;
 
+  /**
+   * @param string
+   */
+  public function setAdUserDataConsent($adUserDataConsent)
+  {
+    $this->adUserDataConsent = $adUserDataConsent;
+  }
+  /**
+   * @return string
+   */
+  public function getAdUserDataConsent()
+  {
+    return $this->adUserDataConsent;
+  }
+  /**
+   * @param CartData
+   */
+  public function setCartData(CartData $cartData)
+  {
+    $this->cartData = $cartData;
+  }
+  /**
+   * @return CartData
+   */
+  public function getCartData()
+  {
+    return $this->cartData;
+  }
   /**
    * @param bool
    */
@@ -203,6 +247,20 @@ class Conversion extends \Google\Collection
   /**
    * @param string
    */
+  public function setImpressionId($impressionId)
+  {
+    $this->impressionId = $impressionId;
+  }
+  /**
+   * @return string
+   */
+  public function getImpressionId()
+  {
+    return $this->impressionId;
+  }
+  /**
+   * @param string
+   */
   public function setKind($kind)
   {
     $this->kind = $kind;
@@ -301,6 +359,20 @@ class Conversion extends \Google\Collection
   /**
    * @param string
    */
+  public function setSessionAttributesEncoded($sessionAttributesEncoded)
+  {
+    $this->sessionAttributesEncoded = $sessionAttributesEncoded;
+  }
+  /**
+   * @return string
+   */
+  public function getSessionAttributesEncoded()
+  {
+    return $this->sessionAttributesEncoded;
+  }
+  /**
+   * @param string
+   */
   public function setTimestampMicros($timestampMicros)
   {
     $this->timestampMicros = $timestampMicros;
@@ -325,6 +397,20 @@ class Conversion extends \Google\Collection
   public function getTreatmentForUnderage()
   {
     return $this->treatmentForUnderage;
+  }
+  /**
+   * @param UserIdentifier[]
+   */
+  public function setUserIdentifiers($userIdentifiers)
+  {
+    $this->userIdentifiers = $userIdentifiers;
+  }
+  /**
+   * @return UserIdentifier[]
+   */
+  public function getUserIdentifiers()
+  {
+    return $this->userIdentifiers;
   }
   public function setValue($value)
   {

@@ -47,7 +47,19 @@ class InstanceInfo extends \Google\Collection
   /**
    * @var string
    */
+  public $pscNetworkAttachmentUri;
+  /**
+   * @var bool
+   */
+  public $running;
+  /**
+   * @var string
+   */
   public $serviceAccount;
+  /**
+   * @var string
+   */
+  public $status;
   /**
    * @var string
    */
@@ -140,6 +152,34 @@ class InstanceInfo extends \Google\Collection
   /**
    * @param string
    */
+  public function setPscNetworkAttachmentUri($pscNetworkAttachmentUri)
+  {
+    $this->pscNetworkAttachmentUri = $pscNetworkAttachmentUri;
+  }
+  /**
+   * @return string
+   */
+  public function getPscNetworkAttachmentUri()
+  {
+    return $this->pscNetworkAttachmentUri;
+  }
+  /**
+   * @param bool
+   */
+  public function setRunning($running)
+  {
+    $this->running = $running;
+  }
+  /**
+   * @return bool
+   */
+  public function getRunning()
+  {
+    return $this->running;
+  }
+  /**
+   * @param string
+   */
   public function setServiceAccount($serviceAccount)
   {
     $this->serviceAccount = $serviceAccount;
@@ -150,6 +190,20 @@ class InstanceInfo extends \Google\Collection
   public function getServiceAccount()
   {
     return $this->serviceAccount;
+  }
+  /**
+   * @param string
+   */
+  public function setStatus($status)
+  {
+    $this->status = $status;
+  }
+  /**
+   * @return string
+   */
+  public function getStatus()
+  {
+    return $this->status;
   }
   /**
    * @param string

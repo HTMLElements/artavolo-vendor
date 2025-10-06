@@ -17,11 +17,9 @@
 
 namespace Google\Service\Bigquery;
 
-class CsvOptions extends \Google\Model
+class CsvOptions extends \Google\Collection
 {
-  protected $internal_gapi_mappings = [
-        "nullMarker" => "null_marker",
-  ];
+  protected $collection_key = 'nullMarkers';
   /**
    * @var bool
    */
@@ -43,6 +41,14 @@ class CsvOptions extends \Google\Model
    */
   public $nullMarker;
   /**
+   * @var string[]
+   */
+  public $nullMarkers;
+  /**
+   * @var bool
+   */
+  public $preserveAsciiControlCharacters;
+  /**
    * @var string
    */
   public $quote;
@@ -50,6 +56,10 @@ class CsvOptions extends \Google\Model
    * @var string
    */
   public $skipLeadingRows;
+  /**
+   * @var string
+   */
+  public $sourceColumnMatch;
 
   /**
    * @param bool
@@ -122,6 +132,34 @@ class CsvOptions extends \Google\Model
     return $this->nullMarker;
   }
   /**
+   * @param string[]
+   */
+  public function setNullMarkers($nullMarkers)
+  {
+    $this->nullMarkers = $nullMarkers;
+  }
+  /**
+   * @return string[]
+   */
+  public function getNullMarkers()
+  {
+    return $this->nullMarkers;
+  }
+  /**
+   * @param bool
+   */
+  public function setPreserveAsciiControlCharacters($preserveAsciiControlCharacters)
+  {
+    $this->preserveAsciiControlCharacters = $preserveAsciiControlCharacters;
+  }
+  /**
+   * @return bool
+   */
+  public function getPreserveAsciiControlCharacters()
+  {
+    return $this->preserveAsciiControlCharacters;
+  }
+  /**
    * @param string
    */
   public function setQuote($quote)
@@ -148,6 +186,20 @@ class CsvOptions extends \Google\Model
   public function getSkipLeadingRows()
   {
     return $this->skipLeadingRows;
+  }
+  /**
+   * @param string
+   */
+  public function setSourceColumnMatch($sourceColumnMatch)
+  {
+    $this->sourceColumnMatch = $sourceColumnMatch;
+  }
+  /**
+   * @return string
+   */
+  public function getSourceColumnMatch()
+  {
+    return $this->sourceColumnMatch;
   }
 }
 

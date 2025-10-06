@@ -19,7 +19,7 @@ namespace Google\Service\Dfareporting;
 
 class Campaign extends \Google\Collection
 {
-  protected $collection_key = 'traffickerEmails';
+  protected $collection_key = 'eventTagOverrides';
   /**
    * @var string
    */
@@ -72,6 +72,10 @@ class Campaign extends \Google\Collection
    * @var string
    */
   public $endDate;
+  /**
+   * @var string
+   */
+  public $euPoliticalAdsDeclaration;
   protected $eventTagOverridesType = EventTagOverride::class;
   protected $eventTagOverridesDataType = 'array';
   /**
@@ -97,10 +101,6 @@ class Campaign extends \Google\Collection
    */
   public $name;
   /**
-   * @var bool
-   */
-  public $nielsenOcrEnabled;
-  /**
    * @var string
    */
   public $startDate;
@@ -108,10 +108,6 @@ class Campaign extends \Google\Collection
    * @var string
    */
   public $subaccountId;
-  /**
-   * @var string[]
-   */
-  public $traffickerEmails;
 
   /**
    * @param string
@@ -352,6 +348,20 @@ class Campaign extends \Google\Collection
     return $this->endDate;
   }
   /**
+   * @param string
+   */
+  public function setEuPoliticalAdsDeclaration($euPoliticalAdsDeclaration)
+  {
+    $this->euPoliticalAdsDeclaration = $euPoliticalAdsDeclaration;
+  }
+  /**
+   * @return string
+   */
+  public function getEuPoliticalAdsDeclaration()
+  {
+    return $this->euPoliticalAdsDeclaration;
+  }
+  /**
    * @param EventTagOverride[]
    */
   public function setEventTagOverrides($eventTagOverrides)
@@ -464,20 +474,6 @@ class Campaign extends \Google\Collection
     return $this->name;
   }
   /**
-   * @param bool
-   */
-  public function setNielsenOcrEnabled($nielsenOcrEnabled)
-  {
-    $this->nielsenOcrEnabled = $nielsenOcrEnabled;
-  }
-  /**
-   * @return bool
-   */
-  public function getNielsenOcrEnabled()
-  {
-    return $this->nielsenOcrEnabled;
-  }
-  /**
    * @param string
    */
   public function setStartDate($startDate)
@@ -504,20 +500,6 @@ class Campaign extends \Google\Collection
   public function getSubaccountId()
   {
     return $this->subaccountId;
-  }
-  /**
-   * @param string[]
-   */
-  public function setTraffickerEmails($traffickerEmails)
-  {
-    $this->traffickerEmails = $traffickerEmails;
-  }
-  /**
-   * @return string[]
-   */
-  public function getTraffickerEmails()
-  {
-    return $this->traffickerEmails;
   }
 }
 

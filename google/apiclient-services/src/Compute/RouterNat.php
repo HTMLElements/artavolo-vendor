@@ -21,6 +21,10 @@ class RouterNat extends \Google\Collection
 {
   protected $collection_key = 'subnetworks';
   /**
+   * @var string
+   */
+  public $autoNetworkTier;
+  /**
    * @var string[]
    */
   public $drainNatIps;
@@ -54,6 +58,8 @@ class RouterNat extends \Google\Collection
    * @var string
    */
   public $name;
+  protected $nat64SubnetworksType = RouterNatSubnetworkToNat64::class;
+  protected $nat64SubnetworksDataType = 'array';
   /**
    * @var string
    */
@@ -68,6 +74,10 @@ class RouterNat extends \Google\Collection
    * @var string
    */
   public $sourceSubnetworkIpRangesToNat;
+  /**
+   * @var string
+   */
+  public $sourceSubnetworkIpRangesToNat64;
   protected $subnetworksType = RouterNatSubnetworkToNat::class;
   protected $subnetworksDataType = 'array';
   /**
@@ -83,10 +93,28 @@ class RouterNat extends \Google\Collection
    */
   public $tcpTransitoryIdleTimeoutSec;
   /**
+   * @var string
+   */
+  public $type;
+  /**
    * @var int
    */
   public $udpIdleTimeoutSec;
 
+  /**
+   * @param string
+   */
+  public function setAutoNetworkTier($autoNetworkTier)
+  {
+    $this->autoNetworkTier = $autoNetworkTier;
+  }
+  /**
+   * @return string
+   */
+  public function getAutoNetworkTier()
+  {
+    return $this->autoNetworkTier;
+  }
   /**
    * @param string[]
    */
@@ -214,6 +242,20 @@ class RouterNat extends \Google\Collection
     return $this->name;
   }
   /**
+   * @param RouterNatSubnetworkToNat64[]
+   */
+  public function setNat64Subnetworks($nat64Subnetworks)
+  {
+    $this->nat64Subnetworks = $nat64Subnetworks;
+  }
+  /**
+   * @return RouterNatSubnetworkToNat64[]
+   */
+  public function getNat64Subnetworks()
+  {
+    return $this->nat64Subnetworks;
+  }
+  /**
    * @param string
    */
   public function setNatIpAllocateOption($natIpAllocateOption)
@@ -270,6 +312,20 @@ class RouterNat extends \Google\Collection
     return $this->sourceSubnetworkIpRangesToNat;
   }
   /**
+   * @param string
+   */
+  public function setSourceSubnetworkIpRangesToNat64($sourceSubnetworkIpRangesToNat64)
+  {
+    $this->sourceSubnetworkIpRangesToNat64 = $sourceSubnetworkIpRangesToNat64;
+  }
+  /**
+   * @return string
+   */
+  public function getSourceSubnetworkIpRangesToNat64()
+  {
+    return $this->sourceSubnetworkIpRangesToNat64;
+  }
+  /**
    * @param RouterNatSubnetworkToNat[]
    */
   public function setSubnetworks($subnetworks)
@@ -324,6 +380,20 @@ class RouterNat extends \Google\Collection
   public function getTcpTransitoryIdleTimeoutSec()
   {
     return $this->tcpTransitoryIdleTimeoutSec;
+  }
+  /**
+   * @param string
+   */
+  public function setType($type)
+  {
+    $this->type = $type;
+  }
+  /**
+   * @return string
+   */
+  public function getType()
+  {
+    return $this->type;
   }
   /**
    * @param int

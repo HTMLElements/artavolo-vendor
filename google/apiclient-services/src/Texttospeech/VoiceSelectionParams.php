@@ -28,11 +28,19 @@ class VoiceSelectionParams extends \Google\Model
   /**
    * @var string
    */
+  public $modelName;
+  protected $multiSpeakerVoiceConfigType = MultiSpeakerVoiceConfig::class;
+  protected $multiSpeakerVoiceConfigDataType = '';
+  /**
+   * @var string
+   */
   public $name;
   /**
    * @var string
    */
   public $ssmlGender;
+  protected $voiceCloneType = VoiceCloneParams::class;
+  protected $voiceCloneDataType = '';
 
   /**
    * @param CustomVoiceParams
@@ -65,6 +73,34 @@ class VoiceSelectionParams extends \Google\Model
   /**
    * @param string
    */
+  public function setModelName($modelName)
+  {
+    $this->modelName = $modelName;
+  }
+  /**
+   * @return string
+   */
+  public function getModelName()
+  {
+    return $this->modelName;
+  }
+  /**
+   * @param MultiSpeakerVoiceConfig
+   */
+  public function setMultiSpeakerVoiceConfig(MultiSpeakerVoiceConfig $multiSpeakerVoiceConfig)
+  {
+    $this->multiSpeakerVoiceConfig = $multiSpeakerVoiceConfig;
+  }
+  /**
+   * @return MultiSpeakerVoiceConfig
+   */
+  public function getMultiSpeakerVoiceConfig()
+  {
+    return $this->multiSpeakerVoiceConfig;
+  }
+  /**
+   * @param string
+   */
   public function setName($name)
   {
     $this->name = $name;
@@ -89,6 +125,20 @@ class VoiceSelectionParams extends \Google\Model
   public function getSsmlGender()
   {
     return $this->ssmlGender;
+  }
+  /**
+   * @param VoiceCloneParams
+   */
+  public function setVoiceClone(VoiceCloneParams $voiceClone)
+  {
+    $this->voiceClone = $voiceClone;
+  }
+  /**
+   * @return VoiceCloneParams
+   */
+  public function getVoiceClone()
+  {
+    return $this->voiceClone;
   }
 }
 

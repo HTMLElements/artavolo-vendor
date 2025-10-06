@@ -114,7 +114,7 @@ class OrgContact extends DirectoryObject
 
     /**
     * Gets the displayName
-    * Display name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values), $search, and $orderBy.
+    * Display name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values), $search, and $orderby.
     *
     * @return string|null The displayName
     */
@@ -129,7 +129,7 @@ class OrgContact extends DirectoryObject
 
     /**
     * Sets the displayName
-    * Display name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values), $search, and $orderBy.
+    * Display name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values), $search, and $orderby.
     *
     * @param string $val The displayName
     *
@@ -405,6 +405,36 @@ class OrgContact extends DirectoryObject
     public function setProxyAddresses($val)
     {
         $this->_propDict["proxyAddresses"] = $val;
+        return $this;
+    }
+
+
+     /**
+     * Gets the serviceProvisioningErrors
+    * Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from an orgContact object .  Supports $filter (eq, not, for isResolved and serviceInstance).
+     *
+     * @return array|null The serviceProvisioningErrors
+     */
+    public function getServiceProvisioningErrors()
+    {
+        if (array_key_exists("serviceProvisioningErrors", $this->_propDict)) {
+           return $this->_propDict["serviceProvisioningErrors"];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+    * Sets the serviceProvisioningErrors
+    * Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from an orgContact object .  Supports $filter (eq, not, for isResolved and serviceInstance).
+    *
+    * @param ServiceProvisioningError[] $val The serviceProvisioningErrors
+    *
+    * @return OrgContact
+    */
+    public function setServiceProvisioningErrors($val)
+    {
+        $this->_propDict["serviceProvisioningErrors"] = $val;
         return $this;
     }
 

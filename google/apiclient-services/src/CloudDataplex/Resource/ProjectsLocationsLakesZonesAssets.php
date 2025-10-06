@@ -30,7 +30,7 @@ use Google\Service\CloudDataplex\GoogleLongrunningOperation;
  * Typical usage is:
  *  <code>
  *   $dataplexService = new Google\Service\CloudDataplex(...);
- *   $assets = $dataplexService->assets;
+ *   $assets = $dataplexService->projects_locations_lakes_zones_assets;
  *  </code>
  */
 class ProjectsLocationsLakesZonesAssets extends \Google\Service\Resource
@@ -38,9 +38,8 @@ class ProjectsLocationsLakesZonesAssets extends \Google\Service\Resource
   /**
    * Creates an asset resource. (assets.create)
    *
-   * @param string $parent Required. The resource name of the parent zone:
-   * projects/{project_number}/locations/{location_id}/lakes/{lake_id}
-   * /zones/{zone_id}`
+   * @param string $parent Required. The resource name of the parent zone: project
+   * s/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}.
    * @param GoogleCloudDataplexV1Asset $postBody
    * @param array $optParams Optional parameters.
    *
@@ -52,6 +51,7 @@ class ProjectsLocationsLakesZonesAssets extends \Google\Service\Resource
    * @opt_param bool validateOnly Optional. Only validate the request, but do not
    * perform mutations. The default is false.
    * @return GoogleLongrunningOperation
+   * @throws \Google\Service\Exception
    */
   public function create($parent, GoogleCloudDataplexV1Asset $postBody, $optParams = [])
   {
@@ -64,11 +64,12 @@ class ProjectsLocationsLakesZonesAssets extends \Google\Service\Resource
    * (default) or deleted based on the associated Lifecycle policy.
    * (assets.delete)
    *
-   * @param string $name Required. The resource name of the asset:
-   * projects/{project_number}/locations/{location_id}/lakes/{lake_id}
-   * /zones/{zone_id}/assets/{asset_id}
+   * @param string $name Required. The resource name of the asset: projects/{proje
+   * ct_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/assets/{as
+   * set_id}.
    * @param array $optParams Optional parameters.
    * @return GoogleLongrunningOperation
+   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -79,11 +80,12 @@ class ProjectsLocationsLakesZonesAssets extends \Google\Service\Resource
   /**
    * Retrieves an asset resource. (assets.get)
    *
-   * @param string $name Required. The resource name of the asset:
-   * projects/{project_number}/locations/{location_id}/lakes/{lake_id}
-   * /zones/{zone_id}/assets/{asset_id}
+   * @param string $name Required. The resource name of the asset: projects/{proje
+   * ct_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/assets/{as
+   * set_id}.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudDataplexV1Asset
+   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -113,6 +115,7 @@ class ProjectsLocationsLakesZonesAssets extends \Google\Service\Resource
    * IAM policies, see the IAM documentation
    * (https://cloud.google.com/iam/help/conditions/resource-policies).
    * @return GoogleIamV1Policy
+   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($resource, $optParams = [])
   {
@@ -124,9 +127,8 @@ class ProjectsLocationsLakesZonesAssets extends \Google\Service\Resource
    * Lists asset resources in a zone.
    * (assets.listProjectsLocationsLakesZonesAssets)
    *
-   * @param string $parent Required. The resource name of the parent zone:
-   * projects/{project_number}/locations/{location_id}/lakes/{lake_id}
-   * /zones/{zone_id}`
+   * @param string $parent Required. The resource name of the parent zone: project
+   * s/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}.
    * @param array $optParams Optional parameters.
    *
    * @opt_param string filter Optional. Filter request.
@@ -140,6 +142,7 @@ class ProjectsLocationsLakesZonesAssets extends \Google\Service\Resource
    * paginating, all other parameters provided to ListAssets must match the call
    * that provided the page token.
    * @return GoogleCloudDataplexV1ListAssetsResponse
+   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsLakesZonesAssets($parent, $optParams = [])
   {
@@ -160,6 +163,7 @@ class ProjectsLocationsLakesZonesAssets extends \Google\Service\Resource
    * @opt_param bool validateOnly Optional. Only validate the request, but do not
    * perform mutations. The default is false.
    * @return GoogleLongrunningOperation
+   * @throws \Google\Service\Exception
    */
   public function patch($name, GoogleCloudDataplexV1Asset $postBody, $optParams = [])
   {
@@ -179,6 +183,7 @@ class ProjectsLocationsLakesZonesAssets extends \Google\Service\Resource
    * @param GoogleIamV1SetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleIamV1Policy
+   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($resource, GoogleIamV1SetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -200,6 +205,7 @@ class ProjectsLocationsLakesZonesAssets extends \Google\Service\Resource
    * @param GoogleIamV1TestIamPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleIamV1TestIamPermissionsResponse
+   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($resource, GoogleIamV1TestIamPermissionsRequest $postBody, $optParams = [])
   {

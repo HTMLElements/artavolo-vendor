@@ -19,12 +19,16 @@ namespace Google\Service\DLP;
 
 class GooglePrivacyDlpV2Action extends \Google\Model
 {
+  protected $deidentifyType = GooglePrivacyDlpV2Deidentify::class;
+  protected $deidentifyDataType = '';
   protected $jobNotificationEmailsType = GooglePrivacyDlpV2JobNotificationEmails::class;
   protected $jobNotificationEmailsDataType = '';
   protected $pubSubType = GooglePrivacyDlpV2PublishToPubSub::class;
   protected $pubSubDataType = '';
   protected $publishFindingsToCloudDataCatalogType = GooglePrivacyDlpV2PublishFindingsToCloudDataCatalog::class;
   protected $publishFindingsToCloudDataCatalogDataType = '';
+  protected $publishFindingsToDataplexCatalogType = GooglePrivacyDlpV2PublishFindingsToDataplexCatalog::class;
+  protected $publishFindingsToDataplexCatalogDataType = '';
   protected $publishSummaryToCsccType = GooglePrivacyDlpV2PublishSummaryToCscc::class;
   protected $publishSummaryToCsccDataType = '';
   protected $publishToStackdriverType = GooglePrivacyDlpV2PublishToStackdriver::class;
@@ -32,6 +36,20 @@ class GooglePrivacyDlpV2Action extends \Google\Model
   protected $saveFindingsType = GooglePrivacyDlpV2SaveFindings::class;
   protected $saveFindingsDataType = '';
 
+  /**
+   * @param GooglePrivacyDlpV2Deidentify
+   */
+  public function setDeidentify(GooglePrivacyDlpV2Deidentify $deidentify)
+  {
+    $this->deidentify = $deidentify;
+  }
+  /**
+   * @return GooglePrivacyDlpV2Deidentify
+   */
+  public function getDeidentify()
+  {
+    return $this->deidentify;
+  }
   /**
    * @param GooglePrivacyDlpV2JobNotificationEmails
    */
@@ -73,6 +91,20 @@ class GooglePrivacyDlpV2Action extends \Google\Model
   public function getPublishFindingsToCloudDataCatalog()
   {
     return $this->publishFindingsToCloudDataCatalog;
+  }
+  /**
+   * @param GooglePrivacyDlpV2PublishFindingsToDataplexCatalog
+   */
+  public function setPublishFindingsToDataplexCatalog(GooglePrivacyDlpV2PublishFindingsToDataplexCatalog $publishFindingsToDataplexCatalog)
+  {
+    $this->publishFindingsToDataplexCatalog = $publishFindingsToDataplexCatalog;
+  }
+  /**
+   * @return GooglePrivacyDlpV2PublishFindingsToDataplexCatalog
+   */
+  public function getPublishFindingsToDataplexCatalog()
+  {
+    return $this->publishFindingsToDataplexCatalog;
   }
   /**
    * @param GooglePrivacyDlpV2PublishSummaryToCscc

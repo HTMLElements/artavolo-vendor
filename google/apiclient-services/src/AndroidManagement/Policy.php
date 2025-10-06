@@ -19,7 +19,7 @@ namespace Google\Service\AndroidManagement;
 
 class Policy extends \Google\Collection
 {
-  protected $collection_key = 'stayOnPluggedModes';
+  protected $collection_key = 'wipeDataFlags';
   /**
    * @var string[]
    */
@@ -44,8 +44,16 @@ class Policy extends \Google\Collection
    * @var string
    */
   public $appAutoUpdatePolicy;
+  /**
+   * @var string
+   */
+  public $appFunctions;
   protected $applicationsType = ApplicationPolicy::class;
   protected $applicationsDataType = 'array';
+  /**
+   * @var string
+   */
+  public $assistContentPolicy;
   /**
    * @var string
    */
@@ -91,6 +99,10 @@ class Policy extends \Google\Collection
    */
   public $createWindowsDisabled;
   /**
+   * @var string
+   */
+  public $credentialProviderPolicyDefault;
+  /**
    * @var bool
    */
   public $credentialsConfigDisabled;
@@ -108,8 +120,14 @@ class Policy extends \Google\Collection
    * @var string
    */
   public $defaultPermissionPolicy;
+  protected $deviceConnectivityManagementType = DeviceConnectivityManagement::class;
+  protected $deviceConnectivityManagementDataType = '';
   protected $deviceOwnerLockScreenInfoType = UserFacingMessage::class;
   protected $deviceOwnerLockScreenInfoDataType = '';
+  protected $deviceRadioStateType = DeviceRadioState::class;
+  protected $deviceRadioStateDataType = '';
+  protected $displaySettingsType = DisplaySettings::class;
+  protected $displaySettingsDataType = '';
   /**
    * @var string
    */
@@ -118,6 +136,10 @@ class Policy extends \Google\Collection
    * @var bool
    */
   public $ensureVerifyAppsEnabled;
+  /**
+   * @var string
+   */
+  public $enterpriseDisplayNameVisibility;
   /**
    * @var bool
    */
@@ -233,6 +255,10 @@ class Policy extends \Google\Collection
    */
   public $preferentialNetworkService;
   /**
+   * @var string
+   */
+  public $printingPolicy;
+  /**
    * @var bool
    */
   public $privateKeySelectionEnabled;
@@ -324,6 +350,12 @@ class Policy extends \Google\Collection
    * @var bool
    */
   public $wifiConfigsLockdownEnabled;
+  /**
+   * @var string[]
+   */
+  public $wipeDataFlags;
+  protected $workAccountSetupConfigType = WorkAccountSetupConfig::class;
+  protected $workAccountSetupConfigDataType = '';
 
   /**
    * @param string[]
@@ -424,6 +456,20 @@ class Policy extends \Google\Collection
     return $this->appAutoUpdatePolicy;
   }
   /**
+   * @param string
+   */
+  public function setAppFunctions($appFunctions)
+  {
+    $this->appFunctions = $appFunctions;
+  }
+  /**
+   * @return string
+   */
+  public function getAppFunctions()
+  {
+    return $this->appFunctions;
+  }
+  /**
    * @param ApplicationPolicy[]
    */
   public function setApplications($applications)
@@ -436,6 +482,20 @@ class Policy extends \Google\Collection
   public function getApplications()
   {
     return $this->applications;
+  }
+  /**
+   * @param string
+   */
+  public function setAssistContentPolicy($assistContentPolicy)
+  {
+    $this->assistContentPolicy = $assistContentPolicy;
+  }
+  /**
+   * @return string
+   */
+  public function getAssistContentPolicy()
+  {
+    return $this->assistContentPolicy;
   }
   /**
    * @param string
@@ -606,6 +666,20 @@ class Policy extends \Google\Collection
     return $this->createWindowsDisabled;
   }
   /**
+   * @param string
+   */
+  public function setCredentialProviderPolicyDefault($credentialProviderPolicyDefault)
+  {
+    $this->credentialProviderPolicyDefault = $credentialProviderPolicyDefault;
+  }
+  /**
+   * @return string
+   */
+  public function getCredentialProviderPolicyDefault()
+  {
+    return $this->credentialProviderPolicyDefault;
+  }
+  /**
    * @param bool
    */
   public function setCredentialsConfigDisabled($credentialsConfigDisabled)
@@ -676,6 +750,20 @@ class Policy extends \Google\Collection
     return $this->defaultPermissionPolicy;
   }
   /**
+   * @param DeviceConnectivityManagement
+   */
+  public function setDeviceConnectivityManagement(DeviceConnectivityManagement $deviceConnectivityManagement)
+  {
+    $this->deviceConnectivityManagement = $deviceConnectivityManagement;
+  }
+  /**
+   * @return DeviceConnectivityManagement
+   */
+  public function getDeviceConnectivityManagement()
+  {
+    return $this->deviceConnectivityManagement;
+  }
+  /**
    * @param UserFacingMessage
    */
   public function setDeviceOwnerLockScreenInfo(UserFacingMessage $deviceOwnerLockScreenInfo)
@@ -688,6 +776,34 @@ class Policy extends \Google\Collection
   public function getDeviceOwnerLockScreenInfo()
   {
     return $this->deviceOwnerLockScreenInfo;
+  }
+  /**
+   * @param DeviceRadioState
+   */
+  public function setDeviceRadioState(DeviceRadioState $deviceRadioState)
+  {
+    $this->deviceRadioState = $deviceRadioState;
+  }
+  /**
+   * @return DeviceRadioState
+   */
+  public function getDeviceRadioState()
+  {
+    return $this->deviceRadioState;
+  }
+  /**
+   * @param DisplaySettings
+   */
+  public function setDisplaySettings(DisplaySettings $displaySettings)
+  {
+    $this->displaySettings = $displaySettings;
+  }
+  /**
+   * @return DisplaySettings
+   */
+  public function getDisplaySettings()
+  {
+    return $this->displaySettings;
   }
   /**
    * @param string
@@ -716,6 +832,20 @@ class Policy extends \Google\Collection
   public function getEnsureVerifyAppsEnabled()
   {
     return $this->ensureVerifyAppsEnabled;
+  }
+  /**
+   * @param string
+   */
+  public function setEnterpriseDisplayNameVisibility($enterpriseDisplayNameVisibility)
+  {
+    $this->enterpriseDisplayNameVisibility = $enterpriseDisplayNameVisibility;
+  }
+  /**
+   * @return string
+   */
+  public function getEnterpriseDisplayNameVisibility()
+  {
+    return $this->enterpriseDisplayNameVisibility;
   }
   /**
    * @param bool
@@ -1194,6 +1324,20 @@ class Policy extends \Google\Collection
     return $this->preferentialNetworkService;
   }
   /**
+   * @param string
+   */
+  public function setPrintingPolicy($printingPolicy)
+  {
+    $this->printingPolicy = $printingPolicy;
+  }
+  /**
+   * @return string
+   */
+  public function getPrintingPolicy()
+  {
+    return $this->printingPolicy;
+  }
+  /**
    * @param bool
    */
   public function setPrivateKeySelectionEnabled($privateKeySelectionEnabled)
@@ -1556,6 +1700,34 @@ class Policy extends \Google\Collection
   public function getWifiConfigsLockdownEnabled()
   {
     return $this->wifiConfigsLockdownEnabled;
+  }
+  /**
+   * @param string[]
+   */
+  public function setWipeDataFlags($wipeDataFlags)
+  {
+    $this->wipeDataFlags = $wipeDataFlags;
+  }
+  /**
+   * @return string[]
+   */
+  public function getWipeDataFlags()
+  {
+    return $this->wipeDataFlags;
+  }
+  /**
+   * @param WorkAccountSetupConfig
+   */
+  public function setWorkAccountSetupConfig(WorkAccountSetupConfig $workAccountSetupConfig)
+  {
+    $this->workAccountSetupConfig = $workAccountSetupConfig;
+  }
+  /**
+   * @return WorkAccountSetupConfig
+   */
+  public function getWorkAccountSetupConfig()
+  {
+    return $this->workAccountSetupConfig;
   }
 }
 

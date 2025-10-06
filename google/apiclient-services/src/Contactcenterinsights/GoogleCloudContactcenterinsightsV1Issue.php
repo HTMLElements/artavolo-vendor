@@ -17,12 +17,17 @@
 
 namespace Google\Service\Contactcenterinsights;
 
-class GoogleCloudContactcenterinsightsV1Issue extends \Google\Model
+class GoogleCloudContactcenterinsightsV1Issue extends \Google\Collection
 {
+  protected $collection_key = 'sampleUtterances';
   /**
    * @var string
    */
   public $createTime;
+  /**
+   * @var string
+   */
+  public $displayDescription;
   /**
    * @var string
    */
@@ -31,6 +36,10 @@ class GoogleCloudContactcenterinsightsV1Issue extends \Google\Model
    * @var string
    */
   public $name;
+  /**
+   * @var string[]
+   */
+  public $sampleUtterances;
   /**
    * @var string
    */
@@ -49,6 +58,20 @@ class GoogleCloudContactcenterinsightsV1Issue extends \Google\Model
   public function getCreateTime()
   {
     return $this->createTime;
+  }
+  /**
+   * @param string
+   */
+  public function setDisplayDescription($displayDescription)
+  {
+    $this->displayDescription = $displayDescription;
+  }
+  /**
+   * @return string
+   */
+  public function getDisplayDescription()
+  {
+    return $this->displayDescription;
   }
   /**
    * @param string
@@ -77,6 +100,20 @@ class GoogleCloudContactcenterinsightsV1Issue extends \Google\Model
   public function getName()
   {
     return $this->name;
+  }
+  /**
+   * @param string[]
+   */
+  public function setSampleUtterances($sampleUtterances)
+  {
+    $this->sampleUtterances = $sampleUtterances;
+  }
+  /**
+   * @return string[]
+   */
+  public function getSampleUtterances()
+  {
+    return $this->sampleUtterances;
   }
   /**
    * @param string

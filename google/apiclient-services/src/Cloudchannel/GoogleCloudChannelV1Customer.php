@@ -36,7 +36,15 @@ class GoogleCloudChannelV1Customer extends \Google\Model
   /**
    * @var string
    */
+  public $correlationId;
+  /**
+   * @var string
+   */
   public $createTime;
+  /**
+   * @var string
+   */
+  public $customerAttestationState;
   /**
    * @var string
    */
@@ -121,6 +129,20 @@ class GoogleCloudChannelV1Customer extends \Google\Model
   /**
    * @param string
    */
+  public function setCorrelationId($correlationId)
+  {
+    $this->correlationId = $correlationId;
+  }
+  /**
+   * @return string
+   */
+  public function getCorrelationId()
+  {
+    return $this->correlationId;
+  }
+  /**
+   * @param string
+   */
   public function setCreateTime($createTime)
   {
     $this->createTime = $createTime;
@@ -131,6 +153,20 @@ class GoogleCloudChannelV1Customer extends \Google\Model
   public function getCreateTime()
   {
     return $this->createTime;
+  }
+  /**
+   * @param string
+   */
+  public function setCustomerAttestationState($customerAttestationState)
+  {
+    $this->customerAttestationState = $customerAttestationState;
+  }
+  /**
+   * @return string
+   */
+  public function getCustomerAttestationState()
+  {
+    return $this->customerAttestationState;
   }
   /**
    * @param string

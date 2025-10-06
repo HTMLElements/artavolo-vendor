@@ -43,6 +43,7 @@ class OtherContacts extends \Google\Service\Resource
    * @param CopyOtherContactToMyContactsGroupRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Person
+   * @throws \Google\Service\Exception
    */
   public function copyOtherContactToMyContactsGroup($resourceName, CopyOtherContactToMyContactsGroupRequest $postBody, $optParams = [])
   {
@@ -54,16 +55,18 @@ class OtherContacts extends \Google\Service\Resource
    * List all "Other contacts", that is contacts that are not in a contact group.
    * "Other contacts" are typically auto created contacts from interactions. Sync
    * tokens expire 7 days after the full sync. A request with an expired sync
-   * token will result in a 410 error. In the case of such an error clients should
-   * make a full sync request without a `sync_token`. The first page of a full
-   * sync request has an additional quota. If the quota is exceeded, a 429 error
-   * will be returned. This quota is fixed and can not be increased. When the
-   * `sync_token` is specified, resources deleted since the last sync will be
-   * returned as a person with `PersonMetadata.deleted` set to true. When the
-   * `page_token` or `sync_token` is specified, all other request parameters must
-   * match the first call. Writes may have a propagation delay of several minutes
-   * for sync requests. Incremental syncs are not intended for read-after-write
-   * use cases. See example usage at [List the user's other contacts that have
+   * token will get an error with an [google.rpc.ErrorInfo](https://cloud.google.c
+   * om/apis/design/errors#error_info) with reason "EXPIRED_SYNC_TOKEN". In the
+   * case of such an error clients should make a full sync request without a
+   * `sync_token`. The first page of a full sync request has an additional quota.
+   * If the quota is exceeded, a 429 error will be returned. This quota is fixed
+   * and can not be increased. When the `sync_token` is specified, resources
+   * deleted since the last sync will be returned as a person with
+   * `PersonMetadata.deleted` set to true. When the `page_token` or `sync_token`
+   * is specified, all other request parameters must match the first call. Writes
+   * may have a propagation delay of several minutes for sync requests.
+   * Incremental syncs are not intended for read-after-write use cases. See
+   * example usage at [List the user's other contacts that have
    * changed](/people/v1/other-
    * contacts#list_the_users_other_contacts_that_have_changed).
    * (otherContacts.listOtherContacts)
@@ -104,6 +107,7 @@ class OtherContacts extends \Google\Service\Resource
    * to `otherContacts.list` must match the first call that provided the sync
    * token. More details about sync behavior at `otherContacts.list`.
    * @return ListOtherContactsResponse
+   * @throws \Google\Service\Exception
    */
   public function listOtherContacts($optParams = [])
   {
@@ -134,6 +138,7 @@ class OtherContacts extends \Google\Service\Resource
    * with commas. Valid values are: * emailAddresses * metadata * names *
    * phoneNumbers
    * @return SearchResponse
+   * @throws \Google\Service\Exception
    */
   public function search($optParams = [])
   {

@@ -20,10 +20,52 @@ namespace Google\Service\Container;
 class LinuxNodeConfig extends \Google\Model
 {
   /**
+   * @var string
+   */
+  public $cgroupMode;
+  protected $hugepagesType = HugepagesConfig::class;
+  protected $hugepagesDataType = '';
+  /**
    * @var string[]
    */
   public $sysctls;
+  /**
+   * @var string
+   */
+  public $transparentHugepageDefrag;
+  /**
+   * @var string
+   */
+  public $transparentHugepageEnabled;
 
+  /**
+   * @param string
+   */
+  public function setCgroupMode($cgroupMode)
+  {
+    $this->cgroupMode = $cgroupMode;
+  }
+  /**
+   * @return string
+   */
+  public function getCgroupMode()
+  {
+    return $this->cgroupMode;
+  }
+  /**
+   * @param HugepagesConfig
+   */
+  public function setHugepages(HugepagesConfig $hugepages)
+  {
+    $this->hugepages = $hugepages;
+  }
+  /**
+   * @return HugepagesConfig
+   */
+  public function getHugepages()
+  {
+    return $this->hugepages;
+  }
   /**
    * @param string[]
    */
@@ -37,6 +79,34 @@ class LinuxNodeConfig extends \Google\Model
   public function getSysctls()
   {
     return $this->sysctls;
+  }
+  /**
+   * @param string
+   */
+  public function setTransparentHugepageDefrag($transparentHugepageDefrag)
+  {
+    $this->transparentHugepageDefrag = $transparentHugepageDefrag;
+  }
+  /**
+   * @return string
+   */
+  public function getTransparentHugepageDefrag()
+  {
+    return $this->transparentHugepageDefrag;
+  }
+  /**
+   * @param string
+   */
+  public function setTransparentHugepageEnabled($transparentHugepageEnabled)
+  {
+    $this->transparentHugepageEnabled = $transparentHugepageEnabled;
+  }
+  /**
+   * @return string
+   */
+  public function getTransparentHugepageEnabled()
+  {
+    return $this->transparentHugepageEnabled;
   }
 }
 

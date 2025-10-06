@@ -83,8 +83,37 @@ class ExtensionProperty extends DirectoryObject
     }
 
     /**
+    * Gets the isMultiValued
+    * Defines the directory extension as a multi-valued property. When true, the directory extension property can store a collection of objects of the dataType; for example, a collection of integers. The default value is false.
+    *
+    * @return bool|null The isMultiValued
+    */
+    public function getIsMultiValued()
+    {
+        if (array_key_exists("isMultiValued", $this->_propDict)) {
+            return $this->_propDict["isMultiValued"];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+    * Sets the isMultiValued
+    * Defines the directory extension as a multi-valued property. When true, the directory extension property can store a collection of objects of the dataType; for example, a collection of integers. The default value is false.
+    *
+    * @param bool $val The isMultiValued
+    *
+    * @return ExtensionProperty
+    */
+    public function setIsMultiValued($val)
+    {
+        $this->_propDict["isMultiValued"] = boolval($val);
+        return $this;
+    }
+
+    /**
     * Gets the isSyncedFromOnPremises
-    * Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.
+    * Indicates if this extension property was synced from on-premises active directory using Microsoft Entra Connect. Read-only.
     *
     * @return bool|null The isSyncedFromOnPremises
     */
@@ -99,7 +128,7 @@ class ExtensionProperty extends DirectoryObject
 
     /**
     * Sets the isSyncedFromOnPremises
-    * Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.
+    * Indicates if this extension property was synced from on-premises active directory using Microsoft Entra Connect. Read-only.
     *
     * @param bool $val The isSyncedFromOnPremises
     *

@@ -48,9 +48,11 @@ class ApigeeRegistry extends \Google\Service
   public $projects_locations_apis_versions_specs;
   public $projects_locations_apis_versions_specs_artifacts;
   public $projects_locations_artifacts;
+  public $projects_locations_documents;
   public $projects_locations_instances;
   public $projects_locations_operations;
   public $projects_locations_runtime;
+  public $rootUrlTemplate;
 
   /**
    * Constructs the internal representation of the ApigeeRegistry service.
@@ -63,6 +65,7 @@ class ApigeeRegistry extends \Google\Service
   {
     parent::__construct($clientOrConfig);
     $this->rootUrl = $rootUrl ?: 'https://apigeeregistry.googleapis.com/';
+    $this->rootUrlTemplate = $rootUrl ?: 'https://apigeeregistry.UNIVERSE_DOMAIN/';
     $this->servicePath = '';
     $this->batchPath = 'batch';
     $this->version = 'v1';
@@ -139,6 +142,10 @@ class ApigeeRegistry extends \Google\Service
                   'type' => 'string',
                   'required' => true,
                 ],
+                'force' => [
+                  'location' => 'query',
+                  'type' => 'boolean',
+                ],
               ],
             ],'get' => [
               'path' => 'v1/{+name}',
@@ -174,6 +181,10 @@ class ApigeeRegistry extends \Google\Service
                   'required' => true,
                 ],
                 'filter' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
+                'orderBy' => [
                   'location' => 'query',
                   'type' => 'string',
                 ],
@@ -305,6 +316,10 @@ class ApigeeRegistry extends \Google\Service
                   'location' => 'query',
                   'type' => 'string',
                 ],
+                'orderBy' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
                 'pageSize' => [
                   'location' => 'query',
                   'type' => 'integer',
@@ -429,6 +444,10 @@ class ApigeeRegistry extends \Google\Service
                   'location' => 'query',
                   'type' => 'string',
                 ],
+                'orderBy' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
                 'pageSize' => [
                   'location' => 'query',
                   'type' => 'integer',
@@ -446,6 +465,10 @@ class ApigeeRegistry extends \Google\Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
+                ],
+                'filter' => [
+                  'location' => 'query',
+                  'type' => 'string',
                 ],
                 'pageSize' => [
                   'location' => 'query',
@@ -581,6 +604,10 @@ class ApigeeRegistry extends \Google\Service
                   'location' => 'query',
                   'type' => 'string',
                 ],
+                'orderBy' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
                 'pageSize' => [
                   'location' => 'query',
                   'type' => 'integer',
@@ -633,6 +660,10 @@ class ApigeeRegistry extends \Google\Service
                   'type' => 'string',
                   'required' => true,
                 ],
+                'force' => [
+                  'location' => 'query',
+                  'type' => 'boolean',
+                ],
               ],
             ],'get' => [
               'path' => 'v1/{+name}',
@@ -668,6 +699,10 @@ class ApigeeRegistry extends \Google\Service
                   'required' => true,
                 ],
                 'filter' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
+                'orderBy' => [
                   'location' => 'query',
                   'type' => 'string',
                 ],
@@ -796,6 +831,10 @@ class ApigeeRegistry extends \Google\Service
                   'required' => true,
                 ],
                 'filter' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
+                'orderBy' => [
                   'location' => 'query',
                   'type' => 'string',
                 ],
@@ -933,6 +972,10 @@ class ApigeeRegistry extends \Google\Service
                   'location' => 'query',
                   'type' => 'string',
                 ],
+                'orderBy' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
                 'pageSize' => [
                   'location' => 'query',
                   'type' => 'integer',
@@ -950,6 +993,10 @@ class ApigeeRegistry extends \Google\Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
+                ],
+                'filter' => [
+                  'location' => 'query',
+                  'type' => 'string',
                 ],
                 'pageSize' => [
                   'location' => 'query',
@@ -1099,6 +1146,10 @@ class ApigeeRegistry extends \Google\Service
                   'location' => 'query',
                   'type' => 'string',
                 ],
+                'orderBy' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
                 'pageSize' => [
                   'location' => 'query',
                   'type' => 'integer',
@@ -1219,6 +1270,10 @@ class ApigeeRegistry extends \Google\Service
                   'location' => 'query',
                   'type' => 'string',
                 ],
+                'orderBy' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
                 'pageSize' => [
                   'location' => 'query',
                   'type' => 'integer',
@@ -1236,6 +1291,50 @@ class ApigeeRegistry extends \Google\Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
+                ],
+              ],
+            ],'setIamPolicy' => [
+              'path' => 'v1/{+resource}:setIamPolicy',
+              'httpMethod' => 'POST',
+              'parameters' => [
+                'resource' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+              ],
+            ],'testIamPermissions' => [
+              'path' => 'v1/{+resource}:testIamPermissions',
+              'httpMethod' => 'POST',
+              'parameters' => [
+                'resource' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+              ],
+            ],
+          ]
+        ]
+    );
+    $this->projects_locations_documents = new ApigeeRegistry\Resource\ProjectsLocationsDocuments(
+        $this,
+        $this->serviceName,
+        'documents',
+        [
+          'methods' => [
+            'getIamPolicy' => [
+              'path' => 'v1/{+resource}:getIamPolicy',
+              'httpMethod' => 'GET',
+              'parameters' => [
+                'resource' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+                'options.requestedPolicyVersion' => [
+                  'location' => 'query',
+                  'type' => 'integer',
                 ],
               ],
             ],'setIamPolicy' => [

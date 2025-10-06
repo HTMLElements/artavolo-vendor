@@ -353,6 +353,39 @@ class Organization extends DirectoryObject
     }
 
     /**
+    * Gets the onPremisesLastPasswordSyncDateTime
+    * The last time a password sync request was received for the tenant.
+    *
+    * @return \DateTime|null The onPremisesLastPasswordSyncDateTime
+    */
+    public function getOnPremisesLastPasswordSyncDateTime()
+    {
+        if (array_key_exists("onPremisesLastPasswordSyncDateTime", $this->_propDict)) {
+            if (is_a($this->_propDict["onPremisesLastPasswordSyncDateTime"], "\DateTime") || is_null($this->_propDict["onPremisesLastPasswordSyncDateTime"])) {
+                return $this->_propDict["onPremisesLastPasswordSyncDateTime"];
+            } else {
+                $this->_propDict["onPremisesLastPasswordSyncDateTime"] = new \DateTime($this->_propDict["onPremisesLastPasswordSyncDateTime"]);
+                return $this->_propDict["onPremisesLastPasswordSyncDateTime"];
+            }
+        }
+        return null;
+    }
+
+    /**
+    * Sets the onPremisesLastPasswordSyncDateTime
+    * The last time a password sync request was received for the tenant.
+    *
+    * @param \DateTime $val The onPremisesLastPasswordSyncDateTime
+    *
+    * @return Organization
+    */
+    public function setOnPremisesLastPasswordSyncDateTime($val)
+    {
+        $this->_propDict["onPremisesLastPasswordSyncDateTime"] = $val;
+        return $this;
+    }
+
+    /**
     * Gets the onPremisesLastSyncDateTime
     * The time and date at which the tenant was last synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     *
@@ -411,6 +444,39 @@ class Organization extends DirectoryObject
     public function setOnPremisesSyncEnabled($val)
     {
         $this->_propDict["onPremisesSyncEnabled"] = boolval($val);
+        return $this;
+    }
+
+    /**
+    * Gets the partnerTenantType
+    * The type of partnership this tenant has with Microsoft. The possible values are: microsoftSupport, syndicatePartner, breadthPartner, breadthPartnerDelegatedAdmin, resellerPartnerDelegatedAdmin, valueAddedResellerPartnerDelegatedAdmin, unknownFutureValue. Nullable. For more information about the possible types, see partnerTenantType values.
+    *
+    * @return PartnerTenantType|null The partnerTenantType
+    */
+    public function getPartnerTenantType()
+    {
+        if (array_key_exists("partnerTenantType", $this->_propDict)) {
+            if (is_a($this->_propDict["partnerTenantType"], "\Beta\Microsoft\Graph\Model\PartnerTenantType") || is_null($this->_propDict["partnerTenantType"])) {
+                return $this->_propDict["partnerTenantType"];
+            } else {
+                $this->_propDict["partnerTenantType"] = new PartnerTenantType($this->_propDict["partnerTenantType"]);
+                return $this->_propDict["partnerTenantType"];
+            }
+        }
+        return null;
+    }
+
+    /**
+    * Sets the partnerTenantType
+    * The type of partnership this tenant has with Microsoft. The possible values are: microsoftSupport, syndicatePartner, breadthPartner, breadthPartnerDelegatedAdmin, resellerPartnerDelegatedAdmin, valueAddedResellerPartnerDelegatedAdmin, unknownFutureValue. Nullable. For more information about the possible types, see partnerTenantType values.
+    *
+    * @param PartnerTenantType $val The partnerTenantType
+    *
+    * @return Organization
+    */
+    public function setPartnerTenantType($val)
+    {
+        $this->_propDict["partnerTenantType"] = $val;
         return $this;
     }
 
@@ -537,6 +603,7 @@ class Organization extends DirectoryObject
 
     /**
     * Gets the securityComplianceNotificationMails
+    * Not nullable.
     *
     * @return array|null The securityComplianceNotificationMails
     */
@@ -551,6 +618,7 @@ class Organization extends DirectoryObject
 
     /**
     * Sets the securityComplianceNotificationMails
+    * Not nullable.
     *
     * @param string[] $val The securityComplianceNotificationMails
     *
@@ -564,6 +632,7 @@ class Organization extends DirectoryObject
 
     /**
     * Gets the securityComplianceNotificationPhones
+    * Not nullable.
     *
     * @return array|null The securityComplianceNotificationPhones
     */
@@ -578,6 +647,7 @@ class Organization extends DirectoryObject
 
     /**
     * Sets the securityComplianceNotificationPhones
+    * Not nullable.
     *
     * @param string[] $val The securityComplianceNotificationPhones
     *
@@ -832,6 +902,37 @@ class Organization extends DirectoryObject
     public function setCertificateBasedAuthConfiguration($val)
     {
         $this->_propDict["certificateBasedAuthConfiguration"] = $val;
+        return $this;
+    }
+
+    /**
+    * Gets the partnerInformation
+    *
+    * @return PartnerInformation|null The partnerInformation
+    */
+    public function getPartnerInformation()
+    {
+        if (array_key_exists("partnerInformation", $this->_propDict)) {
+            if (is_a($this->_propDict["partnerInformation"], "\Beta\Microsoft\Graph\Model\PartnerInformation") || is_null($this->_propDict["partnerInformation"])) {
+                return $this->_propDict["partnerInformation"];
+            } else {
+                $this->_propDict["partnerInformation"] = new PartnerInformation($this->_propDict["partnerInformation"]);
+                return $this->_propDict["partnerInformation"];
+            }
+        }
+        return null;
+    }
+
+    /**
+    * Sets the partnerInformation
+    *
+    * @param PartnerInformation $val The partnerInformation
+    *
+    * @return Organization
+    */
+    public function setPartnerInformation($val)
+    {
+        $this->_propDict["partnerInformation"] = $val;
         return $this;
     }
 

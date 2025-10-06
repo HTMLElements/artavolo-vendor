@@ -19,6 +19,10 @@ namespace Google\Service\Transcoder;
 
 class Job extends \Google\Model
 {
+  /**
+   * @var int
+   */
+  public $batchModePriority;
   protected $configType = JobConfig::class;
   protected $configDataType = '';
   /**
@@ -32,13 +36,29 @@ class Job extends \Google\Model
   protected $errorType = Status::class;
   protected $errorDataType = '';
   /**
+   * @var bool
+   */
+  public $fillContentGaps;
+  /**
    * @var string
    */
   public $inputUri;
   /**
+   * @var string[]
+   */
+  public $labels;
+  /**
+   * @var string
+   */
+  public $mode;
+  /**
    * @var string
    */
   public $name;
+  /**
+   * @var string
+   */
+  public $optimization;
   /**
    * @var string
    */
@@ -60,6 +80,20 @@ class Job extends \Google\Model
    */
   public $ttlAfterCompletionDays;
 
+  /**
+   * @param int
+   */
+  public function setBatchModePriority($batchModePriority)
+  {
+    $this->batchModePriority = $batchModePriority;
+  }
+  /**
+   * @return int
+   */
+  public function getBatchModePriority()
+  {
+    return $this->batchModePriority;
+  }
   /**
    * @param JobConfig
    */
@@ -117,6 +151,20 @@ class Job extends \Google\Model
     return $this->error;
   }
   /**
+   * @param bool
+   */
+  public function setFillContentGaps($fillContentGaps)
+  {
+    $this->fillContentGaps = $fillContentGaps;
+  }
+  /**
+   * @return bool
+   */
+  public function getFillContentGaps()
+  {
+    return $this->fillContentGaps;
+  }
+  /**
    * @param string
    */
   public function setInputUri($inputUri)
@@ -131,6 +179,34 @@ class Job extends \Google\Model
     return $this->inputUri;
   }
   /**
+   * @param string[]
+   */
+  public function setLabels($labels)
+  {
+    $this->labels = $labels;
+  }
+  /**
+   * @return string[]
+   */
+  public function getLabels()
+  {
+    return $this->labels;
+  }
+  /**
+   * @param string
+   */
+  public function setMode($mode)
+  {
+    $this->mode = $mode;
+  }
+  /**
+   * @return string
+   */
+  public function getMode()
+  {
+    return $this->mode;
+  }
+  /**
    * @param string
    */
   public function setName($name)
@@ -143,6 +219,20 @@ class Job extends \Google\Model
   public function getName()
   {
     return $this->name;
+  }
+  /**
+   * @param string
+   */
+  public function setOptimization($optimization)
+  {
+    $this->optimization = $optimization;
+  }
+  /**
+   * @return string
+   */
+  public function getOptimization()
+  {
+    return $this->optimization;
   }
   /**
    * @param string

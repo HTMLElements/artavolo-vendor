@@ -21,16 +21,28 @@ class SubscriptionPurchaseLineItem extends \Google\Model
 {
   protected $autoRenewingPlanType = AutoRenewingPlan::class;
   protected $autoRenewingPlanDataType = '';
+  protected $deferredItemRemovalType = DeferredItemRemoval::class;
+  protected $deferredItemRemovalDataType = '';
+  protected $deferredItemReplacementType = DeferredItemReplacement::class;
+  protected $deferredItemReplacementDataType = '';
   /**
    * @var string
    */
   public $expiryTime;
+  /**
+   * @var string
+   */
+  public $latestSuccessfulOrderId;
+  protected $offerDetailsType = OfferDetails::class;
+  protected $offerDetailsDataType = '';
   protected $prepaidPlanType = PrepaidPlan::class;
   protected $prepaidPlanDataType = '';
   /**
    * @var string
    */
   public $productId;
+  protected $signupPromotionType = SignupPromotion::class;
+  protected $signupPromotionDataType = '';
 
   /**
    * @param AutoRenewingPlan
@@ -47,6 +59,34 @@ class SubscriptionPurchaseLineItem extends \Google\Model
     return $this->autoRenewingPlan;
   }
   /**
+   * @param DeferredItemRemoval
+   */
+  public function setDeferredItemRemoval(DeferredItemRemoval $deferredItemRemoval)
+  {
+    $this->deferredItemRemoval = $deferredItemRemoval;
+  }
+  /**
+   * @return DeferredItemRemoval
+   */
+  public function getDeferredItemRemoval()
+  {
+    return $this->deferredItemRemoval;
+  }
+  /**
+   * @param DeferredItemReplacement
+   */
+  public function setDeferredItemReplacement(DeferredItemReplacement $deferredItemReplacement)
+  {
+    $this->deferredItemReplacement = $deferredItemReplacement;
+  }
+  /**
+   * @return DeferredItemReplacement
+   */
+  public function getDeferredItemReplacement()
+  {
+    return $this->deferredItemReplacement;
+  }
+  /**
    * @param string
    */
   public function setExpiryTime($expiryTime)
@@ -59,6 +99,34 @@ class SubscriptionPurchaseLineItem extends \Google\Model
   public function getExpiryTime()
   {
     return $this->expiryTime;
+  }
+  /**
+   * @param string
+   */
+  public function setLatestSuccessfulOrderId($latestSuccessfulOrderId)
+  {
+    $this->latestSuccessfulOrderId = $latestSuccessfulOrderId;
+  }
+  /**
+   * @return string
+   */
+  public function getLatestSuccessfulOrderId()
+  {
+    return $this->latestSuccessfulOrderId;
+  }
+  /**
+   * @param OfferDetails
+   */
+  public function setOfferDetails(OfferDetails $offerDetails)
+  {
+    $this->offerDetails = $offerDetails;
+  }
+  /**
+   * @return OfferDetails
+   */
+  public function getOfferDetails()
+  {
+    return $this->offerDetails;
   }
   /**
    * @param PrepaidPlan
@@ -87,6 +155,20 @@ class SubscriptionPurchaseLineItem extends \Google\Model
   public function getProductId()
   {
     return $this->productId;
+  }
+  /**
+   * @param SignupPromotion
+   */
+  public function setSignupPromotion(SignupPromotion $signupPromotion)
+  {
+    $this->signupPromotion = $signupPromotion;
+  }
+  /**
+   * @return SignupPromotion
+   */
+  public function getSignupPromotion()
+  {
+    return $this->signupPromotion;
   }
 }
 

@@ -28,9 +28,21 @@ class AdvancedMachineFeatures extends \Google\Model
    */
   public $enableUefiNetworking;
   /**
+   * @var string
+   */
+  public $performanceMonitoringUnit;
+  /**
    * @var int
    */
   public $threadsPerCore;
+  /**
+   * @var string
+   */
+  public $turboMode;
+  /**
+   * @var int
+   */
+  public $visibleCoreCount;
 
   /**
    * @param bool
@@ -61,6 +73,20 @@ class AdvancedMachineFeatures extends \Google\Model
     return $this->enableUefiNetworking;
   }
   /**
+   * @param string
+   */
+  public function setPerformanceMonitoringUnit($performanceMonitoringUnit)
+  {
+    $this->performanceMonitoringUnit = $performanceMonitoringUnit;
+  }
+  /**
+   * @return string
+   */
+  public function getPerformanceMonitoringUnit()
+  {
+    return $this->performanceMonitoringUnit;
+  }
+  /**
    * @param int
    */
   public function setThreadsPerCore($threadsPerCore)
@@ -73,6 +99,34 @@ class AdvancedMachineFeatures extends \Google\Model
   public function getThreadsPerCore()
   {
     return $this->threadsPerCore;
+  }
+  /**
+   * @param string
+   */
+  public function setTurboMode($turboMode)
+  {
+    $this->turboMode = $turboMode;
+  }
+  /**
+   * @return string
+   */
+  public function getTurboMode()
+  {
+    return $this->turboMode;
+  }
+  /**
+   * @param int
+   */
+  public function setVisibleCoreCount($visibleCoreCount)
+  {
+    $this->visibleCoreCount = $visibleCoreCount;
+  }
+  /**
+   * @return int
+   */
+  public function getVisibleCoreCount()
+  {
+    return $this->visibleCoreCount;
   }
 }
 

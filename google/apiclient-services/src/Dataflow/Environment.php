@@ -65,7 +65,19 @@ class Environment extends \Google\Collection
   /**
    * @var string
    */
+  public $streamingMode;
+  /**
+   * @var string
+   */
   public $tempStoragePrefix;
+  /**
+   * @var bool
+   */
+  public $usePublicIps;
+  /**
+   * @var bool
+   */
+  public $useStreamingEngineResourceBasedBilling;
   /**
    * @var array[]
    */
@@ -242,6 +254,20 @@ class Environment extends \Google\Collection
   /**
    * @param string
    */
+  public function setStreamingMode($streamingMode)
+  {
+    $this->streamingMode = $streamingMode;
+  }
+  /**
+   * @return string
+   */
+  public function getStreamingMode()
+  {
+    return $this->streamingMode;
+  }
+  /**
+   * @param string
+   */
   public function setTempStoragePrefix($tempStoragePrefix)
   {
     $this->tempStoragePrefix = $tempStoragePrefix;
@@ -252,6 +278,34 @@ class Environment extends \Google\Collection
   public function getTempStoragePrefix()
   {
     return $this->tempStoragePrefix;
+  }
+  /**
+   * @param bool
+   */
+  public function setUsePublicIps($usePublicIps)
+  {
+    $this->usePublicIps = $usePublicIps;
+  }
+  /**
+   * @return bool
+   */
+  public function getUsePublicIps()
+  {
+    return $this->usePublicIps;
+  }
+  /**
+   * @param bool
+   */
+  public function setUseStreamingEngineResourceBasedBilling($useStreamingEngineResourceBasedBilling)
+  {
+    $this->useStreamingEngineResourceBasedBilling = $useStreamingEngineResourceBasedBilling;
+  }
+  /**
+   * @return bool
+   */
+  public function getUseStreamingEngineResourceBasedBilling()
+  {
+    return $this->useStreamingEngineResourceBasedBilling;
   }
   /**
    * @param array[]

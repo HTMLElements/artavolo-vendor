@@ -19,6 +19,10 @@ namespace Google\Service\BackupforGKE;
 
 class BackupPlan extends \Google\Model
 {
+  /**
+   * @var string
+   */
+  public $backupChannel;
   protected $backupConfigType = BackupConfig::class;
   protected $backupConfigDataType = '';
   protected $backupScheduleType = Schedule::class;
@@ -50,6 +54,10 @@ class BackupPlan extends \Google\Model
   /**
    * @var string
    */
+  public $lastSuccessfulBackupTime;
+  /**
+   * @var string
+   */
   public $name;
   /**
    * @var int
@@ -57,6 +65,22 @@ class BackupPlan extends \Google\Model
   public $protectedPodCount;
   protected $retentionPolicyType = RetentionPolicy::class;
   protected $retentionPolicyDataType = '';
+  /**
+   * @var int
+   */
+  public $rpoRiskLevel;
+  /**
+   * @var string
+   */
+  public $rpoRiskReason;
+  /**
+   * @var string
+   */
+  public $state;
+  /**
+   * @var string
+   */
+  public $stateReason;
   /**
    * @var string
    */
@@ -66,6 +90,20 @@ class BackupPlan extends \Google\Model
    */
   public $updateTime;
 
+  /**
+   * @param string
+   */
+  public function setBackupChannel($backupChannel)
+  {
+    $this->backupChannel = $backupChannel;
+  }
+  /**
+   * @return string
+   */
+  public function getBackupChannel()
+  {
+    return $this->backupChannel;
+  }
   /**
    * @param BackupConfig
    */
@@ -181,6 +219,20 @@ class BackupPlan extends \Google\Model
   /**
    * @param string
    */
+  public function setLastSuccessfulBackupTime($lastSuccessfulBackupTime)
+  {
+    $this->lastSuccessfulBackupTime = $lastSuccessfulBackupTime;
+  }
+  /**
+   * @return string
+   */
+  public function getLastSuccessfulBackupTime()
+  {
+    return $this->lastSuccessfulBackupTime;
+  }
+  /**
+   * @param string
+   */
   public function setName($name)
   {
     $this->name = $name;
@@ -219,6 +271,62 @@ class BackupPlan extends \Google\Model
   public function getRetentionPolicy()
   {
     return $this->retentionPolicy;
+  }
+  /**
+   * @param int
+   */
+  public function setRpoRiskLevel($rpoRiskLevel)
+  {
+    $this->rpoRiskLevel = $rpoRiskLevel;
+  }
+  /**
+   * @return int
+   */
+  public function getRpoRiskLevel()
+  {
+    return $this->rpoRiskLevel;
+  }
+  /**
+   * @param string
+   */
+  public function setRpoRiskReason($rpoRiskReason)
+  {
+    $this->rpoRiskReason = $rpoRiskReason;
+  }
+  /**
+   * @return string
+   */
+  public function getRpoRiskReason()
+  {
+    return $this->rpoRiskReason;
+  }
+  /**
+   * @param string
+   */
+  public function setState($state)
+  {
+    $this->state = $state;
+  }
+  /**
+   * @return string
+   */
+  public function getState()
+  {
+    return $this->state;
+  }
+  /**
+   * @param string
+   */
+  public function setStateReason($stateReason)
+  {
+    $this->stateReason = $stateReason;
+  }
+  /**
+   * @return string
+   */
+  public function getStateReason()
+  {
+    return $this->stateReason;
   }
   /**
    * @param string

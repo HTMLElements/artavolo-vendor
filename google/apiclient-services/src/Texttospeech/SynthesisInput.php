@@ -19,6 +19,18 @@ namespace Google\Service\Texttospeech;
 
 class SynthesisInput extends \Google\Model
 {
+  protected $customPronunciationsType = CustomPronunciations::class;
+  protected $customPronunciationsDataType = '';
+  /**
+   * @var string
+   */
+  public $markup;
+  protected $multiSpeakerMarkupType = MultiSpeakerMarkup::class;
+  protected $multiSpeakerMarkupDataType = '';
+  /**
+   * @var string
+   */
+  public $prompt;
   /**
    * @var string
    */
@@ -28,6 +40,62 @@ class SynthesisInput extends \Google\Model
    */
   public $text;
 
+  /**
+   * @param CustomPronunciations
+   */
+  public function setCustomPronunciations(CustomPronunciations $customPronunciations)
+  {
+    $this->customPronunciations = $customPronunciations;
+  }
+  /**
+   * @return CustomPronunciations
+   */
+  public function getCustomPronunciations()
+  {
+    return $this->customPronunciations;
+  }
+  /**
+   * @param string
+   */
+  public function setMarkup($markup)
+  {
+    $this->markup = $markup;
+  }
+  /**
+   * @return string
+   */
+  public function getMarkup()
+  {
+    return $this->markup;
+  }
+  /**
+   * @param MultiSpeakerMarkup
+   */
+  public function setMultiSpeakerMarkup(MultiSpeakerMarkup $multiSpeakerMarkup)
+  {
+    $this->multiSpeakerMarkup = $multiSpeakerMarkup;
+  }
+  /**
+   * @return MultiSpeakerMarkup
+   */
+  public function getMultiSpeakerMarkup()
+  {
+    return $this->multiSpeakerMarkup;
+  }
+  /**
+   * @param string
+   */
+  public function setPrompt($prompt)
+  {
+    $this->prompt = $prompt;
+  }
+  /**
+   * @return string
+   */
+  public function getPrompt()
+  {
+    return $this->prompt;
+  }
   /**
    * @param string
    */

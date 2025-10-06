@@ -30,7 +30,7 @@ use Google\Service\NetworkSecurity\Operation;
  * Typical usage is:
  *  <code>
  *   $networksecurityService = new Google\Service\NetworkSecurity(...);
- *   $authorizationPolicies = $networksecurityService->authorizationPolicies;
+ *   $authorizationPolicies = $networksecurityService->projects_locations_authorizationPolicies;
  *  </code>
  */
 class ProjectsLocationsAuthorizationPolicies extends \Google\Service\Resource
@@ -50,6 +50,7 @@ class ProjectsLocationsAuthorizationPolicies extends \Google\Service\Resource
    * characters long, containing only letters, numbers, hyphens, and underscores,
    * and should not start with a number. E.g. "authz_policy".
    * @return Operation
+   * @throws \Google\Service\Exception
    */
   public function create($parent, AuthorizationPolicy $postBody, $optParams = [])
   {
@@ -65,6 +66,7 @@ class ProjectsLocationsAuthorizationPolicies extends \Google\Service\Resource
    * `projects/{project}/locations/{location}/authorizationPolicies`.
    * @param array $optParams Optional parameters.
    * @return Operation
+   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -80,6 +82,7 @@ class ProjectsLocationsAuthorizationPolicies extends \Google\Service\Resource
    * `projects/{project}/locations/{location}/authorizationPolicies`.
    * @param array $optParams Optional parameters.
    * @return AuthorizationPolicy
+   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -93,8 +96,9 @@ class ProjectsLocationsAuthorizationPolicies extends \Google\Service\Resource
    * (authorizationPolicies.getIamPolicy)
    *
    * @param string $resource REQUIRED: The resource for which the policy is being
-   * requested. See the operation documentation for the appropriate value for this
-   * field.
+   * requested. See [Resource
+   * names](https://cloud.google.com/apis/design/resource_names) for the
+   * appropriate value for this field.
    * @param array $optParams Optional parameters.
    *
    * @opt_param int options.requestedPolicyVersion Optional. The maximum policy
@@ -110,6 +114,7 @@ class ProjectsLocationsAuthorizationPolicies extends \Google\Service\Resource
    * documentation](https://cloud.google.com/iam/help/conditions/resource-
    * policies).
    * @return GoogleIamV1Policy
+   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($resource, $optParams = [])
   {
@@ -133,6 +138,7 @@ class ProjectsLocationsAuthorizationPolicies extends \Google\Service\Resource
    * a prior `ListAuthorizationPolicies` call, and that the system should return
    * the next page of data.
    * @return ListAuthorizationPoliciesResponse
+   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsAuthorizationPolicies($parent, $optParams = [])
   {
@@ -156,6 +162,7 @@ class ProjectsLocationsAuthorizationPolicies extends \Google\Service\Resource
    * full request. A field will be overwritten if it is in the mask. If the user
    * does not provide a mask then all fields will be overwritten.
    * @return Operation
+   * @throws \Google\Service\Exception
    */
   public function patch($name, AuthorizationPolicy $postBody, $optParams = [])
   {
@@ -169,11 +176,13 @@ class ProjectsLocationsAuthorizationPolicies extends \Google\Service\Resource
    * `PERMISSION_DENIED` errors. (authorizationPolicies.setIamPolicy)
    *
    * @param string $resource REQUIRED: The resource for which the policy is being
-   * specified. See the operation documentation for the appropriate value for this
-   * field.
+   * specified. See [Resource
+   * names](https://cloud.google.com/apis/design/resource_names) for the
+   * appropriate value for this field.
    * @param GoogleIamV1SetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleIamV1Policy
+   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($resource, GoogleIamV1SetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -190,11 +199,13 @@ class ProjectsLocationsAuthorizationPolicies extends \Google\Service\Resource
    * (authorizationPolicies.testIamPermissions)
    *
    * @param string $resource REQUIRED: The resource for which the policy detail is
-   * being requested. See the operation documentation for the appropriate value
-   * for this field.
+   * being requested. See [Resource
+   * names](https://cloud.google.com/apis/design/resource_names) for the
+   * appropriate value for this field.
    * @param GoogleIamV1TestIamPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleIamV1TestIamPermissionsResponse
+   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($resource, GoogleIamV1TestIamPermissionsRequest $postBody, $optParams = [])
   {

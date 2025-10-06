@@ -90,17 +90,16 @@ class Admin implements \JsonSerializable
 
     /**
     * Gets the sharepoint
-    * A container for administrative resources to manage tenant-level settings for SharePoint and OneDrive.
     *
-    * @return \Beta\Microsoft\Graph\TenantAdmin\Model\Sharepoint|null The sharepoint
+    * @return Sharepoint|null The sharepoint
     */
     public function getSharepoint()
     {
         if (array_key_exists("sharepoint", $this->_propDict)) {
-            if (is_a($this->_propDict["sharepoint"], "\Beta\Microsoft\Graph\TenantAdmin\Model\Sharepoint") || is_null($this->_propDict["sharepoint"])) {
+            if (is_a($this->_propDict["sharepoint"], "\Beta\Microsoft\Graph\Model\Sharepoint") || is_null($this->_propDict["sharepoint"])) {
                 return $this->_propDict["sharepoint"];
             } else {
-                $this->_propDict["sharepoint"] = new \Beta\Microsoft\Graph\TenantAdmin\Model\Sharepoint($this->_propDict["sharepoint"]);
+                $this->_propDict["sharepoint"] = new Sharepoint($this->_propDict["sharepoint"]);
                 return $this->_propDict["sharepoint"];
             }
         }
@@ -109,9 +108,8 @@ class Admin implements \JsonSerializable
 
     /**
     * Sets the sharepoint
-    * A container for administrative resources to manage tenant-level settings for SharePoint and OneDrive.
     *
-    * @param \Beta\Microsoft\Graph\TenantAdmin\Model\Sharepoint $val The sharepoint
+    * @param Sharepoint $val The sharepoint
     *
     * @return Admin
     */
@@ -188,18 +186,173 @@ class Admin implements \JsonSerializable
     }
 
     /**
-    * Gets the windows
-    * A container for all Windows Update for Business deployment service functionality. Read-only.
+    * Gets the appsAndServices
     *
-    * @return \Beta\Microsoft\Graph\WindowsUpdates\Model\Windows|null The windows
+    * @return AdminAppsAndServices|null The appsAndServices
+    */
+    public function getAppsAndServices()
+    {
+        if (array_key_exists("appsAndServices", $this->_propDict)) {
+            if (is_a($this->_propDict["appsAndServices"], "\Beta\Microsoft\Graph\Model\AdminAppsAndServices") || is_null($this->_propDict["appsAndServices"])) {
+                return $this->_propDict["appsAndServices"];
+            } else {
+                $this->_propDict["appsAndServices"] = new AdminAppsAndServices($this->_propDict["appsAndServices"]);
+                return $this->_propDict["appsAndServices"];
+            }
+        }
+        return null;
+    }
+
+    /**
+    * Sets the appsAndServices
+    *
+    * @param AdminAppsAndServices $val The appsAndServices
+    *
+    * @return Admin
+    */
+    public function setAppsAndServices($val)
+    {
+        $this->_propDict["appsAndServices"] = $val;
+        return $this;
+    }
+
+    /**
+    * Gets the dynamics
+    *
+    * @return AdminDynamics|null The dynamics
+    */
+    public function getDynamics()
+    {
+        if (array_key_exists("dynamics", $this->_propDict)) {
+            if (is_a($this->_propDict["dynamics"], "\Beta\Microsoft\Graph\Model\AdminDynamics") || is_null($this->_propDict["dynamics"])) {
+                return $this->_propDict["dynamics"];
+            } else {
+                $this->_propDict["dynamics"] = new AdminDynamics($this->_propDict["dynamics"]);
+                return $this->_propDict["dynamics"];
+            }
+        }
+        return null;
+    }
+
+    /**
+    * Sets the dynamics
+    *
+    * @param AdminDynamics $val The dynamics
+    *
+    * @return Admin
+    */
+    public function setDynamics($val)
+    {
+        $this->_propDict["dynamics"] = $val;
+        return $this;
+    }
+
+    /**
+    * Gets the forms
+    *
+    * @return AdminForms|null The forms
+    */
+    public function getForms()
+    {
+        if (array_key_exists("forms", $this->_propDict)) {
+            if (is_a($this->_propDict["forms"], "\Beta\Microsoft\Graph\Model\AdminForms") || is_null($this->_propDict["forms"])) {
+                return $this->_propDict["forms"];
+            } else {
+                $this->_propDict["forms"] = new AdminForms($this->_propDict["forms"]);
+                return $this->_propDict["forms"];
+            }
+        }
+        return null;
+    }
+
+    /**
+    * Sets the forms
+    *
+    * @param AdminForms $val The forms
+    *
+    * @return Admin
+    */
+    public function setForms($val)
+    {
+        $this->_propDict["forms"] = $val;
+        return $this;
+    }
+
+    /**
+    * Gets the todo
+    *
+    * @return AdminTodo|null The todo
+    */
+    public function getTodo()
+    {
+        if (array_key_exists("todo", $this->_propDict)) {
+            if (is_a($this->_propDict["todo"], "\Beta\Microsoft\Graph\Model\AdminTodo") || is_null($this->_propDict["todo"])) {
+                return $this->_propDict["todo"];
+            } else {
+                $this->_propDict["todo"] = new AdminTodo($this->_propDict["todo"]);
+                return $this->_propDict["todo"];
+            }
+        }
+        return null;
+    }
+
+    /**
+    * Sets the todo
+    *
+    * @param AdminTodo $val The todo
+    *
+    * @return Admin
+    */
+    public function setTodo($val)
+    {
+        $this->_propDict["todo"] = $val;
+        return $this;
+    }
+
+    /**
+    * Gets the people
+    *
+    * @return PeopleAdminSettings|null The people
+    */
+    public function getPeople()
+    {
+        if (array_key_exists("people", $this->_propDict)) {
+            if (is_a($this->_propDict["people"], "\Beta\Microsoft\Graph\Model\PeopleAdminSettings") || is_null($this->_propDict["people"])) {
+                return $this->_propDict["people"];
+            } else {
+                $this->_propDict["people"] = new PeopleAdminSettings($this->_propDict["people"]);
+                return $this->_propDict["people"];
+            }
+        }
+        return null;
+    }
+
+    /**
+    * Sets the people
+    *
+    * @param PeopleAdminSettings $val The people
+    *
+    * @return Admin
+    */
+    public function setPeople($val)
+    {
+        $this->_propDict["people"] = $val;
+        return $this;
+    }
+
+    /**
+    * Gets the windows
+    * A container for all Windows administrator functionalities. Read-only.
+    *
+    * @return AdminWindows|null The windows
     */
     public function getWindows()
     {
         if (array_key_exists("windows", $this->_propDict)) {
-            if (is_a($this->_propDict["windows"], "\Beta\Microsoft\Graph\WindowsUpdates\Model\Windows") || is_null($this->_propDict["windows"])) {
+            if (is_a($this->_propDict["windows"], "\Beta\Microsoft\Graph\Model\AdminWindows") || is_null($this->_propDict["windows"])) {
                 return $this->_propDict["windows"];
             } else {
-                $this->_propDict["windows"] = new \Beta\Microsoft\Graph\WindowsUpdates\Model\Windows($this->_propDict["windows"]);
+                $this->_propDict["windows"] = new AdminWindows($this->_propDict["windows"]);
                 return $this->_propDict["windows"];
             }
         }
@@ -208,9 +361,9 @@ class Admin implements \JsonSerializable
 
     /**
     * Sets the windows
-    * A container for all Windows Update for Business deployment service functionality. Read-only.
+    * A container for all Windows administrator functionalities. Read-only.
     *
-    * @param \Beta\Microsoft\Graph\WindowsUpdates\Model\Windows $val The windows
+    * @param AdminWindows $val The windows
     *
     * @return Admin
     */

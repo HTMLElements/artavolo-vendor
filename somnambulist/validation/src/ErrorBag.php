@@ -5,6 +5,7 @@ namespace Somnambulist\Components\Validation;
 use ArrayIterator;
 use Countable;
 use IteratorAggregate;
+
 use function count;
 use function explode;
 use function preg_match;
@@ -89,7 +90,7 @@ class ErrorBag implements Countable, IteratorAggregate
         return str_contains($key, '*');
     }
 
-    private function filterMessagesForWildcardKey(string $key, $ruleName = null): array
+    private function filterMessagesForWildcardKey(string $key, ?string $ruleName = null): array
     {
         $messages = $this->errors;
         $pattern  = preg_quote($key, '#');

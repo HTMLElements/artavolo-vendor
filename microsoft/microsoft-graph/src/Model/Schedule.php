@@ -319,6 +319,7 @@ class Schedule extends Entity
 
      /**
      * Gets the offerShiftRequests
+    * The offer requests for shifts in the schedule.
      *
      * @return array|null The offerShiftRequests
      */
@@ -333,6 +334,7 @@ class Schedule extends Entity
 
     /**
     * Sets the offerShiftRequests
+    * The offer requests for shifts in the schedule.
     *
     * @param OfferShiftRequest[] $val The offerShiftRequests
     *
@@ -347,6 +349,7 @@ class Schedule extends Entity
 
      /**
      * Gets the openShiftChangeRequests
+    * The open shift requests in the schedule.
      *
      * @return array|null The openShiftChangeRequests
      */
@@ -361,6 +364,7 @@ class Schedule extends Entity
 
     /**
     * Sets the openShiftChangeRequests
+    * The open shift requests in the schedule.
     *
     * @param OpenShiftChangeRequest[] $val The openShiftChangeRequests
     *
@@ -375,6 +379,7 @@ class Schedule extends Entity
 
      /**
      * Gets the openShifts
+    * The set of open shifts in a scheduling group in the schedule.
      *
      * @return array|null The openShifts
      */
@@ -389,6 +394,7 @@ class Schedule extends Entity
 
     /**
     * Sets the openShifts
+    * The set of open shifts in a scheduling group in the schedule.
     *
     * @param OpenShift[] $val The openShifts
     *
@@ -463,6 +469,7 @@ class Schedule extends Entity
 
      /**
      * Gets the swapShiftsChangeRequests
+    * The swap requests for shifts in the schedule.
      *
      * @return array|null The swapShiftsChangeRequests
      */
@@ -477,6 +484,7 @@ class Schedule extends Entity
 
     /**
     * Sets the swapShiftsChangeRequests
+    * The swap requests for shifts in the schedule.
     *
     * @param SwapShiftsChangeRequest[] $val The swapShiftsChangeRequests
     *
@@ -521,6 +529,7 @@ class Schedule extends Entity
 
      /**
      * Gets the timeOffRequests
+    * The time off requests in the schedule.
      *
      * @return array|null The timeOffRequests
      */
@@ -535,6 +544,7 @@ class Schedule extends Entity
 
     /**
     * Sets the timeOffRequests
+    * The time off requests in the schedule.
     *
     * @param TimeOffRequest[] $val The timeOffRequests
     *

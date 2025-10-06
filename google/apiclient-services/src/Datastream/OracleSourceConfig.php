@@ -19,13 +19,41 @@ namespace Google\Service\Datastream;
 
 class OracleSourceConfig extends \Google\Model
 {
+  protected $binaryLogParserType = BinaryLogParser::class;
+  protected $binaryLogParserDataType = '';
   protected $dropLargeObjectsType = DropLargeObjects::class;
   protected $dropLargeObjectsDataType = '';
   protected $excludeObjectsType = OracleRdbms::class;
   protected $excludeObjectsDataType = '';
   protected $includeObjectsType = OracleRdbms::class;
   protected $includeObjectsDataType = '';
+  protected $logMinerType = LogMiner::class;
+  protected $logMinerDataType = '';
+  /**
+   * @var int
+   */
+  public $maxConcurrentBackfillTasks;
+  /**
+   * @var int
+   */
+  public $maxConcurrentCdcTasks;
+  protected $streamLargeObjectsType = StreamLargeObjects::class;
+  protected $streamLargeObjectsDataType = '';
 
+  /**
+   * @param BinaryLogParser
+   */
+  public function setBinaryLogParser(BinaryLogParser $binaryLogParser)
+  {
+    $this->binaryLogParser = $binaryLogParser;
+  }
+  /**
+   * @return BinaryLogParser
+   */
+  public function getBinaryLogParser()
+  {
+    return $this->binaryLogParser;
+  }
   /**
    * @param DropLargeObjects
    */
@@ -67,6 +95,62 @@ class OracleSourceConfig extends \Google\Model
   public function getIncludeObjects()
   {
     return $this->includeObjects;
+  }
+  /**
+   * @param LogMiner
+   */
+  public function setLogMiner(LogMiner $logMiner)
+  {
+    $this->logMiner = $logMiner;
+  }
+  /**
+   * @return LogMiner
+   */
+  public function getLogMiner()
+  {
+    return $this->logMiner;
+  }
+  /**
+   * @param int
+   */
+  public function setMaxConcurrentBackfillTasks($maxConcurrentBackfillTasks)
+  {
+    $this->maxConcurrentBackfillTasks = $maxConcurrentBackfillTasks;
+  }
+  /**
+   * @return int
+   */
+  public function getMaxConcurrentBackfillTasks()
+  {
+    return $this->maxConcurrentBackfillTasks;
+  }
+  /**
+   * @param int
+   */
+  public function setMaxConcurrentCdcTasks($maxConcurrentCdcTasks)
+  {
+    $this->maxConcurrentCdcTasks = $maxConcurrentCdcTasks;
+  }
+  /**
+   * @return int
+   */
+  public function getMaxConcurrentCdcTasks()
+  {
+    return $this->maxConcurrentCdcTasks;
+  }
+  /**
+   * @param StreamLargeObjects
+   */
+  public function setStreamLargeObjects(StreamLargeObjects $streamLargeObjects)
+  {
+    $this->streamLargeObjects = $streamLargeObjects;
+  }
+  /**
+   * @return StreamLargeObjects
+   */
+  public function getStreamLargeObjects()
+  {
+    return $this->streamLargeObjects;
   }
 }
 

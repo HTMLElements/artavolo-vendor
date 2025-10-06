@@ -26,6 +26,8 @@ class GoogleAppsCardV1Card extends \Google\Collection
    * @var string
    */
   public $displayStyle;
+  protected $expressionDataType = GoogleAppsCardV1ExpressionData::class;
+  protected $expressionDataDataType = 'array';
   protected $fixedFooterType = GoogleAppsCardV1CardFixedFooter::class;
   protected $fixedFooterDataType = '';
   protected $headerType = GoogleAppsCardV1CardHeader::class;
@@ -36,6 +38,10 @@ class GoogleAppsCardV1Card extends \Google\Collection
   public $name;
   protected $peekCardHeaderType = GoogleAppsCardV1CardHeader::class;
   protected $peekCardHeaderDataType = '';
+  /**
+   * @var string
+   */
+  public $sectionDividerStyle;
   protected $sectionsType = GoogleAppsCardV1Section::class;
   protected $sectionsDataType = 'array';
 
@@ -66,6 +72,20 @@ class GoogleAppsCardV1Card extends \Google\Collection
   public function getDisplayStyle()
   {
     return $this->displayStyle;
+  }
+  /**
+   * @param GoogleAppsCardV1ExpressionData[]
+   */
+  public function setExpressionData($expressionData)
+  {
+    $this->expressionData = $expressionData;
+  }
+  /**
+   * @return GoogleAppsCardV1ExpressionData[]
+   */
+  public function getExpressionData()
+  {
+    return $this->expressionData;
   }
   /**
    * @param GoogleAppsCardV1CardFixedFooter
@@ -122,6 +142,20 @@ class GoogleAppsCardV1Card extends \Google\Collection
   public function getPeekCardHeader()
   {
     return $this->peekCardHeader;
+  }
+  /**
+   * @param string
+   */
+  public function setSectionDividerStyle($sectionDividerStyle)
+  {
+    $this->sectionDividerStyle = $sectionDividerStyle;
+  }
+  /**
+   * @return string
+   */
+  public function getSectionDividerStyle()
+  {
+    return $this->sectionDividerStyle;
   }
   /**
    * @param GoogleAppsCardV1Section[]

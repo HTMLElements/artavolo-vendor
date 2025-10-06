@@ -22,8 +22,14 @@ class QueryParameterType extends \Google\Collection
   protected $collection_key = 'structTypes';
   protected $arrayTypeType = QueryParameterType::class;
   protected $arrayTypeDataType = '';
+  protected $rangeElementTypeType = QueryParameterType::class;
+  protected $rangeElementTypeDataType = '';
   protected $structTypesType = QueryParameterTypeStructTypes::class;
   protected $structTypesDataType = 'array';
+  /**
+   * @var string
+   */
+  public $timestampPrecision;
   /**
    * @var string
    */
@@ -44,6 +50,20 @@ class QueryParameterType extends \Google\Collection
     return $this->arrayType;
   }
   /**
+   * @param QueryParameterType
+   */
+  public function setRangeElementType(QueryParameterType $rangeElementType)
+  {
+    $this->rangeElementType = $rangeElementType;
+  }
+  /**
+   * @return QueryParameterType
+   */
+  public function getRangeElementType()
+  {
+    return $this->rangeElementType;
+  }
+  /**
    * @param QueryParameterTypeStructTypes[]
    */
   public function setStructTypes($structTypes)
@@ -56,6 +76,20 @@ class QueryParameterType extends \Google\Collection
   public function getStructTypes()
   {
     return $this->structTypes;
+  }
+  /**
+   * @param string
+   */
+  public function setTimestampPrecision($timestampPrecision)
+  {
+    $this->timestampPrecision = $timestampPrecision;
+  }
+  /**
+   * @return string
+   */
+  public function getTimestampPrecision()
+  {
+    return $this->timestampPrecision;
   }
   /**
    * @param string

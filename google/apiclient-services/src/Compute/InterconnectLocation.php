@@ -19,7 +19,7 @@ namespace Google\Service\Compute;
 
 class InterconnectLocation extends \Google\Collection
 {
-  protected $collection_key = 'regionInfos';
+  protected $collection_key = 'singleRegionProductionCriticalPeerLocations';
   /**
    * @var string
    */
@@ -28,6 +28,14 @@ class InterconnectLocation extends \Google\Collection
    * @var string
    */
   public $availabilityZone;
+  /**
+   * @var string[]
+   */
+  public $availableFeatures;
+  /**
+   * @var string[]
+   */
+  public $availableLinkTypes;
   /**
    * @var string
    */
@@ -75,6 +83,10 @@ class InterconnectLocation extends \Google\Collection
    */
   public $selfLink;
   /**
+   * @var string[]
+   */
+  public $singleRegionProductionCriticalPeerLocations;
+  /**
    * @var string
    */
   public $status;
@@ -110,6 +122,34 @@ class InterconnectLocation extends \Google\Collection
   public function getAvailabilityZone()
   {
     return $this->availabilityZone;
+  }
+  /**
+   * @param string[]
+   */
+  public function setAvailableFeatures($availableFeatures)
+  {
+    $this->availableFeatures = $availableFeatures;
+  }
+  /**
+   * @return string[]
+   */
+  public function getAvailableFeatures()
+  {
+    return $this->availableFeatures;
+  }
+  /**
+   * @param string[]
+   */
+  public function setAvailableLinkTypes($availableLinkTypes)
+  {
+    $this->availableLinkTypes = $availableLinkTypes;
+  }
+  /**
+   * @return string[]
+   */
+  public function getAvailableLinkTypes()
+  {
+    return $this->availableLinkTypes;
   }
   /**
    * @param string
@@ -278,6 +318,20 @@ class InterconnectLocation extends \Google\Collection
   public function getSelfLink()
   {
     return $this->selfLink;
+  }
+  /**
+   * @param string[]
+   */
+  public function setSingleRegionProductionCriticalPeerLocations($singleRegionProductionCriticalPeerLocations)
+  {
+    $this->singleRegionProductionCriticalPeerLocations = $singleRegionProductionCriticalPeerLocations;
+  }
+  /**
+   * @return string[]
+   */
+  public function getSingleRegionProductionCriticalPeerLocations()
+  {
+    return $this->singleRegionProductionCriticalPeerLocations;
   }
   /**
    * @param string

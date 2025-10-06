@@ -26,7 +26,7 @@ class PstnCallLogRow extends \Microsoft\Graph\Model\Entity
 
     /**
     * Gets the callDurationSource
-    * The source of the call duration data. If the call uses a third-party telecommunications operator via the Operator Connect Program, the operator may provide their own call duration data. In this case, the property value is operator. Otherwise, the value is microsoft.
+    * The source of the call duration data. If the call uses a third-party telecommunications operator via the Operator Connect Program, the operator can provide their own call duration data. In this case, the property value is operator. Otherwise, the value is microsoft.
     *
     * @return PstnCallDurationSource|null The callDurationSource
     */
@@ -45,7 +45,7 @@ class PstnCallLogRow extends \Microsoft\Graph\Model\Entity
 
     /**
     * Sets the callDurationSource
-    * The source of the call duration data. If the call uses a third-party telecommunications operator via the Operator Connect Program, the operator may provide their own call duration data. In this case, the property value is operator. Otherwise, the value is microsoft.
+    * The source of the call duration data. If the call uses a third-party telecommunications operator via the Operator Connect Program, the operator can provide their own call duration data. In this case, the property value is operator. Otherwise, the value is microsoft.
     *
     * @param PstnCallDurationSource $val The value to assign to the callDurationSource
     *
@@ -142,7 +142,7 @@ class PstnCallLogRow extends \Microsoft\Graph\Model\Entity
     }
     /**
     * Gets the callType
-    * Whether the call was a PSTN outbound or inbound call and the type of call such as a call placed by a user or an audio conference.
+    * Indicates whether the call was a PSTN outbound or inbound call and the type of call, such as a call placed by a user or an audio conference.
     *
     * @return string|null The callType
     */
@@ -157,7 +157,7 @@ class PstnCallLogRow extends \Microsoft\Graph\Model\Entity
 
     /**
     * Sets the callType
-    * Whether the call was a PSTN outbound or inbound call and the type of call such as a call placed by a user or an audio conference.
+    * Indicates whether the call was a PSTN outbound or inbound call and the type of call, such as a call placed by a user or an audio conference.
     *
     * @param string $val The value of the callType
     *
@@ -264,7 +264,7 @@ class PstnCallLogRow extends \Microsoft\Graph\Model\Entity
     }
     /**
     * Gets the currency
-    * Type of currency used to calculate the cost of the call (ISO 4217).
+    * Type of currency used to calculate the cost of the call. For details, see (ISO 4217.
     *
     * @return string|null The currency
     */
@@ -279,7 +279,7 @@ class PstnCallLogRow extends \Microsoft\Graph\Model\Entity
 
     /**
     * Sets the currency
-    * Type of currency used to calculate the cost of the call (ISO 4217).
+    * Type of currency used to calculate the cost of the call. For details, see (ISO 4217.
     *
     * @param string $val The value of the currency
     *
@@ -292,7 +292,7 @@ class PstnCallLogRow extends \Microsoft\Graph\Model\Entity
     }
     /**
     * Gets the destinationContext
-    * Whether the call was domestic (within a country or region) or international (outside a country or region) based on the user's location.
+    * Whether the call was domestic (within a country or region) or international (outside a country or region), based on the user's location.
     *
     * @return string|null The destinationContext
     */
@@ -307,7 +307,7 @@ class PstnCallLogRow extends \Microsoft\Graph\Model\Entity
 
     /**
     * Sets the destinationContext
-    * Whether the call was domestic (within a country or region) or international (outside a country or region) based on the user's location.
+    * Whether the call was domestic (within a country or region) or international (outside a country or region), based on the user's location.
     *
     * @param string $val The value of the destinationContext
     *
@@ -493,7 +493,7 @@ class PstnCallLogRow extends \Microsoft\Graph\Model\Entity
     }
     /**
     * Gets the operator
-    * The telecommunications operator which provided PSTN services for this call. This may be Microsoft, or it may be a third-party operator via the Operator Connect Program.
+    * The telecommunications operator which provided PSTN services for this call. This might be Microsoft, or it might be a third-party operator via the Operator Connect Program.
     *
     * @return string|null The operator
     */
@@ -508,7 +508,7 @@ class PstnCallLogRow extends \Microsoft\Graph\Model\Entity
 
     /**
     * Sets the operator
-    * The telecommunications operator which provided PSTN services for this call. This may be Microsoft, or it may be a third-party operator via the Operator Connect Program.
+    * The telecommunications operator which provided PSTN services for this call. This might be Microsoft, or it might be a third-party operator via the Operator Connect Program.
     *
     * @param string $val The value of the operator
     *
@@ -554,7 +554,7 @@ class PstnCallLogRow extends \Microsoft\Graph\Model\Entity
     }
     /**
     * Gets the tenantCountryCode
-    * Country code of the tenant, ISO 3166-1 alpha-2.
+    * Country code of the tenant. For details, see ISO 3166-1 alpha-2.
     *
     * @return string|null The tenantCountryCode
     */
@@ -569,7 +569,7 @@ class PstnCallLogRow extends \Microsoft\Graph\Model\Entity
 
     /**
     * Sets the tenantCountryCode
-    * Country code of the tenant, ISO 3166-1 alpha-2.
+    * Country code of the tenant. For details, see ISO 3166-1 alpha-2.
     *
     * @param string $val The value of the tenantCountryCode
     *
@@ -582,7 +582,7 @@ class PstnCallLogRow extends \Microsoft\Graph\Model\Entity
     }
     /**
     * Gets the usageCountryCode
-    * Country code of the user, ISO 3166-1 alpha-2.
+    * Country code of the user. For details, see ISO 3166-1 alpha-2.
     *
     * @return string|null The usageCountryCode
     */
@@ -597,7 +597,7 @@ class PstnCallLogRow extends \Microsoft\Graph\Model\Entity
 
     /**
     * Sets the usageCountryCode
-    * Country code of the user, ISO 3166-1 alpha-2.
+    * Country code of the user. For details, see ISO 3166-1 alpha-2.
     *
     * @param string $val The value of the usageCountryCode
     *
@@ -638,7 +638,7 @@ class PstnCallLogRow extends \Microsoft\Graph\Model\Entity
     }
     /**
     * Gets the userId
-    * Calling user's ID in Graph. GUID. This and other user info will be null/empty for bot call types (ucap_in, ucap_out).
+    * Calling user's ID in Microsoft Graph. GUID. This and other user info will be null/empty for bot call types (ucapin, ucapout).
     *
     * @return string|null The userId
     */
@@ -653,7 +653,7 @@ class PstnCallLogRow extends \Microsoft\Graph\Model\Entity
 
     /**
     * Sets the userId
-    * Calling user's ID in Graph. GUID. This and other user info will be null/empty for bot call types (ucap_in, ucap_out).
+    * Calling user's ID in Microsoft Graph. GUID. This and other user info will be null/empty for bot call types (ucapin, ucapout).
     *
     * @param string $val The value of the userId
     *
@@ -666,7 +666,7 @@ class PstnCallLogRow extends \Microsoft\Graph\Model\Entity
     }
     /**
     * Gets the userPrincipalName
-    * UserPrincipalName (sign-in name) in Azure Active Directory. This is usually the same as user's SIP Address, and can be same as user's e-mail address.
+    * The user principal name (sign-in name) in Microsoft Entra ID. This is usually the same as the user's SIP address, and can be the same as the user's email address.
     *
     * @return string|null The userPrincipalName
     */
@@ -681,7 +681,7 @@ class PstnCallLogRow extends \Microsoft\Graph\Model\Entity
 
     /**
     * Sets the userPrincipalName
-    * UserPrincipalName (sign-in name) in Azure Active Directory. This is usually the same as user's SIP Address, and can be same as user's e-mail address.
+    * The user principal name (sign-in name) in Microsoft Entra ID. This is usually the same as the user's SIP address, and can be the same as the user's email address.
     *
     * @param string $val The value of the userPrincipalName
     *

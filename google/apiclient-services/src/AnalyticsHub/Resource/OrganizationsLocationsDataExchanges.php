@@ -24,7 +24,7 @@ use Google\Service\AnalyticsHub\ListOrgDataExchangesResponse;
  * Typical usage is:
  *  <code>
  *   $analyticshubService = new Google\Service\AnalyticsHub(...);
- *   $dataExchanges = $analyticshubService->dataExchanges;
+ *   $dataExchanges = $analyticshubService->organizations_locations_dataExchanges;
  *  </code>
  */
 class OrganizationsLocationsDataExchanges extends \Google\Service\Resource
@@ -34,7 +34,7 @@ class OrganizationsLocationsDataExchanges extends \Google\Service\Resource
    * (dataExchanges.listOrganizationsLocationsDataExchanges)
    *
    * @param string $organization Required. The organization resource path of the
-   * projects containing DataExchanges. e.g. `organizations/myorg/locations/US`.
+   * projects containing DataExchanges. e.g. `organizations/myorg/locations/us`.
    * @param array $optParams Optional parameters.
    *
    * @opt_param int pageSize The maximum number of results to return in a single
@@ -43,6 +43,7 @@ class OrganizationsLocationsDataExchanges extends \Google\Service\Resource
    * @opt_param string pageToken Page token, returned by a previous call, to
    * request the next page of results.
    * @return ListOrgDataExchangesResponse
+   * @throws \Google\Service\Exception
    */
   public function listOrganizationsLocationsDataExchanges($organization, $optParams = [])
   {

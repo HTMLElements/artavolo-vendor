@@ -20,17 +20,13 @@ namespace Google\Service\IDS\Resource;
 use Google\Service\IDS\Endpoint;
 use Google\Service\IDS\ListEndpointsResponse;
 use Google\Service\IDS\Operation;
-use Google\Service\IDS\Policy;
-use Google\Service\IDS\SetIamPolicyRequest;
-use Google\Service\IDS\TestIamPermissionsRequest;
-use Google\Service\IDS\TestIamPermissionsResponse;
 
 /**
  * The "endpoints" collection of methods.
  * Typical usage is:
  *  <code>
  *   $idsService = new Google\Service\IDS(...);
- *   $endpoints = $idsService->endpoints;
+ *   $endpoints = $idsService->projects_locations_endpoints;
  *  </code>
  */
 class ProjectsLocationsEndpoints extends \Google\Service\Resource
@@ -51,7 +47,7 @@ class ProjectsLocationsEndpoints extends \Google\Service\Resource
    * Specify a unique request ID so that if you must retry your request, the
    * server will know to ignore the request if it has already been completed. The
    * server will guarantee that for at least 60 minutes since the first request.
-   * For example, consider a situation where you make an initial request and t he
+   * For example, consider a situation where you make an initial request and the
    * request times out. If you make the request again with the same request ID,
    * the server can check if original operation with the same request ID was
    * received, and if so, will ignore the second request. This prevents clients
@@ -59,6 +55,7 @@ class ProjectsLocationsEndpoints extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported
    * (00000000-0000-0000-0000-000000000000).
    * @return Operation
+   * @throws \Google\Service\Exception
    */
   public function create($parent, Endpoint $postBody, $optParams = [])
   {
@@ -76,7 +73,7 @@ class ProjectsLocationsEndpoints extends \Google\Service\Resource
    * Specify a unique request ID so that if you must retry your request, the
    * server will know to ignore the request if it has already been completed. The
    * server will guarantee that for at least 60 minutes after the first request.
-   * For example, consider a situation where you make an initial request and t he
+   * For example, consider a situation where you make an initial request and the
    * request times out. If you make the request again with the same request ID,
    * the server can check if original operation with the same request ID was
    * received, and if so, will ignore the second request. This prevents clients
@@ -84,6 +81,7 @@ class ProjectsLocationsEndpoints extends \Google\Service\Resource
    * valid UUID with the exception that zero UUID is not supported
    * (00000000-0000-0000-0000-000000000000).
    * @return Operation
+   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -98,41 +96,13 @@ class ProjectsLocationsEndpoints extends \Google\Service\Resource
    * projects/{project}/locations/{location}/endpoints/{endpoint}
    * @param array $optParams Optional parameters.
    * @return Endpoint
+   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
     $params = ['name' => $name];
     $params = array_merge($params, $optParams);
     return $this->call('get', [$params], Endpoint::class);
-  }
-  /**
-   * Gets the access control policy for a resource. Returns an empty policy if the
-   * resource exists and does not have a policy set. (endpoints.getIamPolicy)
-   *
-   * @param string $resource REQUIRED: The resource for which the policy is being
-   * requested. See the operation documentation for the appropriate value for this
-   * field.
-   * @param array $optParams Optional parameters.
-   *
-   * @opt_param int options.requestedPolicyVersion Optional. The maximum policy
-   * version that will be used to format the policy. Valid values are 0, 1, and 3.
-   * Requests specifying an invalid value will be rejected. Requests for policies
-   * with any conditional role bindings must specify version 3. Policies with no
-   * conditional role bindings may specify any valid value or leave the field
-   * unset. The policy in the response might use the policy version that you
-   * specified, or it might use a lower policy version. For example, if you
-   * specify version 3, but the policy has no conditional role bindings, the
-   * response uses version 1. To learn which resources support conditions in their
-   * IAM policies, see the [IAM
-   * documentation](https://cloud.google.com/iam/help/conditions/resource-
-   * policies).
-   * @return Policy
-   */
-  public function getIamPolicy($resource, $optParams = [])
-  {
-    $params = ['resource' => $resource];
-    $params = array_merge($params, $optParams);
-    return $this->call('getIamPolicy', [$params], Policy::class);
   }
   /**
    * Lists Endpoints in a given project and location.
@@ -153,6 +123,7 @@ class ProjectsLocationsEndpoints extends \Google\Service\Resource
    * paginating, all other parameters provided to `ListEndpoints` must match the
    * call that provided the page token.
    * @return ListEndpointsResponse
+   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsEndpoints($parent, $optParams = [])
   {
@@ -161,43 +132,36 @@ class ProjectsLocationsEndpoints extends \Google\Service\Resource
     return $this->call('list', [$params], ListEndpointsResponse::class);
   }
   /**
-   * Sets the access control policy on the specified resource. Replaces any
-   * existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and
-   * `PERMISSION_DENIED` errors. (endpoints.setIamPolicy)
+   * Updates the parameters of a single Endpoint. (endpoints.patch)
    *
-   * @param string $resource REQUIRED: The resource for which the policy is being
-   * specified. See the operation documentation for the appropriate value for this
-   * field.
-   * @param SetIamPolicyRequest $postBody
+   * @param string $name Output only. The name of the endpoint.
+   * @param Endpoint $postBody
    * @param array $optParams Optional parameters.
-   * @return Policy
-   */
-  public function setIamPolicy($resource, SetIamPolicyRequest $postBody, $optParams = [])
-  {
-    $params = ['resource' => $resource, 'postBody' => $postBody];
-    $params = array_merge($params, $optParams);
-    return $this->call('setIamPolicy', [$params], Policy::class);
-  }
-  /**
-   * Returns permissions that a caller has on the specified resource. If the
-   * resource does not exist, this will return an empty set of permissions, not a
-   * `NOT_FOUND` error. Note: This operation is designed to be used for building
-   * permission-aware UIs and command-line tools, not for authorization checking.
-   * This operation may "fail open" without warning.
-   * (endpoints.testIamPermissions)
    *
-   * @param string $resource REQUIRED: The resource for which the policy detail is
-   * being requested. See the operation documentation for the appropriate value
-   * for this field.
-   * @param TestIamPermissionsRequest $postBody
-   * @param array $optParams Optional parameters.
-   * @return TestIamPermissionsResponse
+   * @opt_param string requestId An optional request ID to identify requests.
+   * Specify a unique request ID so that if you must retry your request, the
+   * server will know to ignore the request if it has already been completed. The
+   * server will guarantee that for at least 60 minutes since the first request.
+   * For example, consider a situation where you make an initial request and the
+   * request times out. If you make the request again with the same request ID,
+   * the server can check if original operation with the same request ID was
+   * received, and if so, will ignore the second request. This prevents clients
+   * from accidentally creating duplicate commitments. The request ID must be a
+   * valid UUID with the exception that zero UUID is not supported
+   * (00000000-0000-0000-0000-000000000000).
+   * @opt_param string updateMask Field mask is used to specify the fields to be
+   * overwritten in the Endpoint resource by the update. The fields specified in
+   * the update_mask are relative to the resource, not the full request. A field
+   * will be overwritten if it is in the mask. If the user does not provide a mask
+   * then all fields will be overwritten.
+   * @return Operation
+   * @throws \Google\Service\Exception
    */
-  public function testIamPermissions($resource, TestIamPermissionsRequest $postBody, $optParams = [])
+  public function patch($name, Endpoint $postBody, $optParams = [])
   {
-    $params = ['resource' => $resource, 'postBody' => $postBody];
+    $params = ['name' => $name, 'postBody' => $postBody];
     $params = array_merge($params, $optParams);
-    return $this->call('testIamPermissions', [$params], TestIamPermissionsResponse::class);
+    return $this->call('patch', [$params], Operation::class);
   }
 }
 

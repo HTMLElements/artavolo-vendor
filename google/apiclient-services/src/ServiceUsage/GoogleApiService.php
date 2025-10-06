@@ -22,6 +22,8 @@ class GoogleApiService extends \Google\Collection
   protected $collection_key = 'types';
   protected $apisType = Api::class;
   protected $apisDataType = 'array';
+  protected $aspectsType = Aspect::class;
+  protected $aspectsDataType = 'array';
   protected $authenticationType = Authentication::class;
   protected $authenticationDataType = '';
   protected $backendType = Backend::class;
@@ -68,6 +70,8 @@ class GoogleApiService extends \Google\Collection
    * @var string
    */
   public $producerProjectId;
+  protected $publishingType = Publishing::class;
+  protected $publishingDataType = '';
   protected $quotaType = Quota::class;
   protected $quotaDataType = '';
   protected $sourceInfoType = SourceInfo::class;
@@ -98,6 +102,20 @@ class GoogleApiService extends \Google\Collection
   public function getApis()
   {
     return $this->apis;
+  }
+  /**
+   * @param Aspect[]
+   */
+  public function setAspects($aspects)
+  {
+    $this->aspects = $aspects;
+  }
+  /**
+   * @return Aspect[]
+   */
+  public function getAspects()
+  {
+    return $this->aspects;
   }
   /**
    * @param Authentication
@@ -364,6 +382,20 @@ class GoogleApiService extends \Google\Collection
   public function getProducerProjectId()
   {
     return $this->producerProjectId;
+  }
+  /**
+   * @param Publishing
+   */
+  public function setPublishing(Publishing $publishing)
+  {
+    $this->publishing = $publishing;
+  }
+  /**
+   * @return Publishing
+   */
+  public function getPublishing()
+  {
+    return $this->publishing;
   }
   /**
    * @param Quota

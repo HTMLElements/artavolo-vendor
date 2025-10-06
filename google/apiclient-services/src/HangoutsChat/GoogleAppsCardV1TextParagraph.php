@@ -20,10 +20,32 @@ namespace Google\Service\HangoutsChat;
 class GoogleAppsCardV1TextParagraph extends \Google\Model
 {
   /**
+   * @var int
+   */
+  public $maxLines;
+  /**
    * @var string
    */
   public $text;
+  /**
+   * @var string
+   */
+  public $textSyntax;
 
+  /**
+   * @param int
+   */
+  public function setMaxLines($maxLines)
+  {
+    $this->maxLines = $maxLines;
+  }
+  /**
+   * @return int
+   */
+  public function getMaxLines()
+  {
+    return $this->maxLines;
+  }
   /**
    * @param string
    */
@@ -37,6 +59,20 @@ class GoogleAppsCardV1TextParagraph extends \Google\Model
   public function getText()
   {
     return $this->text;
+  }
+  /**
+   * @param string
+   */
+  public function setTextSyntax($textSyntax)
+  {
+    $this->textSyntax = $textSyntax;
+  }
+  /**
+   * @return string
+   */
+  public function getTextSyntax()
+  {
+    return $this->textSyntax;
   }
 }
 

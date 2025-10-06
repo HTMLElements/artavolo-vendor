@@ -17,12 +17,23 @@
 
 namespace Google\Service\AnalyticsHub;
 
-class BigQueryDatasetSource extends \Google\Model
+class BigQueryDatasetSource extends \Google\Collection
 {
+  protected $collection_key = 'selectedResources';
   /**
    * @var string
    */
   public $dataset;
+  protected $effectiveReplicasType = Replica::class;
+  protected $effectiveReplicasDataType = 'array';
+  /**
+   * @var string[]
+   */
+  public $replicaLocations;
+  protected $restrictedExportPolicyType = RestrictedExportPolicy::class;
+  protected $restrictedExportPolicyDataType = '';
+  protected $selectedResourcesType = SelectedResource::class;
+  protected $selectedResourcesDataType = 'array';
 
   /**
    * @param string
@@ -37,6 +48,62 @@ class BigQueryDatasetSource extends \Google\Model
   public function getDataset()
   {
     return $this->dataset;
+  }
+  /**
+   * @param Replica[]
+   */
+  public function setEffectiveReplicas($effectiveReplicas)
+  {
+    $this->effectiveReplicas = $effectiveReplicas;
+  }
+  /**
+   * @return Replica[]
+   */
+  public function getEffectiveReplicas()
+  {
+    return $this->effectiveReplicas;
+  }
+  /**
+   * @param string[]
+   */
+  public function setReplicaLocations($replicaLocations)
+  {
+    $this->replicaLocations = $replicaLocations;
+  }
+  /**
+   * @return string[]
+   */
+  public function getReplicaLocations()
+  {
+    return $this->replicaLocations;
+  }
+  /**
+   * @param RestrictedExportPolicy
+   */
+  public function setRestrictedExportPolicy(RestrictedExportPolicy $restrictedExportPolicy)
+  {
+    $this->restrictedExportPolicy = $restrictedExportPolicy;
+  }
+  /**
+   * @return RestrictedExportPolicy
+   */
+  public function getRestrictedExportPolicy()
+  {
+    return $this->restrictedExportPolicy;
+  }
+  /**
+   * @param SelectedResource[]
+   */
+  public function setSelectedResources($selectedResources)
+  {
+    $this->selectedResources = $selectedResources;
+  }
+  /**
+   * @return SelectedResource[]
+   */
+  public function getSelectedResources()
+  {
+    return $this->selectedResources;
   }
 }
 

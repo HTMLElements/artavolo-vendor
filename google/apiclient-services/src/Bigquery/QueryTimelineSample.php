@@ -34,7 +34,12 @@ class QueryTimelineSample extends \Google\Model
   /**
    * @var string
    */
+  public $estimatedRunnableUnits;
+  /**
+   * @var string
+   */
   public $pendingUnits;
+  public $shuffleRamUsageRatio;
   /**
    * @var string
    */
@@ -85,6 +90,20 @@ class QueryTimelineSample extends \Google\Model
   /**
    * @param string
    */
+  public function setEstimatedRunnableUnits($estimatedRunnableUnits)
+  {
+    $this->estimatedRunnableUnits = $estimatedRunnableUnits;
+  }
+  /**
+   * @return string
+   */
+  public function getEstimatedRunnableUnits()
+  {
+    return $this->estimatedRunnableUnits;
+  }
+  /**
+   * @param string
+   */
   public function setPendingUnits($pendingUnits)
   {
     $this->pendingUnits = $pendingUnits;
@@ -95,6 +114,14 @@ class QueryTimelineSample extends \Google\Model
   public function getPendingUnits()
   {
     return $this->pendingUnits;
+  }
+  public function setShuffleRamUsageRatio($shuffleRamUsageRatio)
+  {
+    $this->shuffleRamUsageRatio = $shuffleRamUsageRatio;
+  }
+  public function getShuffleRamUsageRatio()
+  {
+    return $this->shuffleRamUsageRatio;
   }
   /**
    * @param string

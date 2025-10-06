@@ -35,11 +35,19 @@ class Commitment extends \Google\Collection
   /**
    * @var string
    */
+  public $customEndTimestamp;
+  /**
+   * @var string
+   */
   public $description;
   /**
    * @var string
    */
   public $endTimestamp;
+  /**
+   * @var string[]
+   */
+  public $existingReservations;
   /**
    * @var string
    */
@@ -50,6 +58,10 @@ class Commitment extends \Google\Collection
   public $kind;
   protected $licenseResourceType = LicenseResourceCommitment::class;
   protected $licenseResourceDataType = '';
+  /**
+   * @var string[]
+   */
+  public $mergeSourceCommitments;
   /**
    * @var string
    */
@@ -64,12 +76,18 @@ class Commitment extends \Google\Collection
   public $region;
   protected $reservationsType = Reservation::class;
   protected $reservationsDataType = 'array';
+  protected $resourceStatusType = CommitmentResourceStatus::class;
+  protected $resourceStatusDataType = '';
   protected $resourcesType = ResourceCommitment::class;
   protected $resourcesDataType = 'array';
   /**
    * @var string
    */
   public $selfLink;
+  /**
+   * @var string
+   */
+  public $splitSourceCommitment;
   /**
    * @var string
    */
@@ -132,6 +150,20 @@ class Commitment extends \Google\Collection
   /**
    * @param string
    */
+  public function setCustomEndTimestamp($customEndTimestamp)
+  {
+    $this->customEndTimestamp = $customEndTimestamp;
+  }
+  /**
+   * @return string
+   */
+  public function getCustomEndTimestamp()
+  {
+    return $this->customEndTimestamp;
+  }
+  /**
+   * @param string
+   */
   public function setDescription($description)
   {
     $this->description = $description;
@@ -156,6 +188,20 @@ class Commitment extends \Google\Collection
   public function getEndTimestamp()
   {
     return $this->endTimestamp;
+  }
+  /**
+   * @param string[]
+   */
+  public function setExistingReservations($existingReservations)
+  {
+    $this->existingReservations = $existingReservations;
+  }
+  /**
+   * @return string[]
+   */
+  public function getExistingReservations()
+  {
+    return $this->existingReservations;
   }
   /**
    * @param string
@@ -198,6 +244,20 @@ class Commitment extends \Google\Collection
   public function getLicenseResource()
   {
     return $this->licenseResource;
+  }
+  /**
+   * @param string[]
+   */
+  public function setMergeSourceCommitments($mergeSourceCommitments)
+  {
+    $this->mergeSourceCommitments = $mergeSourceCommitments;
+  }
+  /**
+   * @return string[]
+   */
+  public function getMergeSourceCommitments()
+  {
+    return $this->mergeSourceCommitments;
   }
   /**
    * @param string
@@ -256,6 +316,20 @@ class Commitment extends \Google\Collection
     return $this->reservations;
   }
   /**
+   * @param CommitmentResourceStatus
+   */
+  public function setResourceStatus(CommitmentResourceStatus $resourceStatus)
+  {
+    $this->resourceStatus = $resourceStatus;
+  }
+  /**
+   * @return CommitmentResourceStatus
+   */
+  public function getResourceStatus()
+  {
+    return $this->resourceStatus;
+  }
+  /**
    * @param ResourceCommitment[]
    */
   public function setResources($resources)
@@ -282,6 +356,20 @@ class Commitment extends \Google\Collection
   public function getSelfLink()
   {
     return $this->selfLink;
+  }
+  /**
+   * @param string
+   */
+  public function setSplitSourceCommitment($splitSourceCommitment)
+  {
+    $this->splitSourceCommitment = $splitSourceCommitment;
+  }
+  /**
+   * @return string
+   */
+  public function getSplitSourceCommitment()
+  {
+    return $this->splitSourceCommitment;
   }
   /**
    * @param string

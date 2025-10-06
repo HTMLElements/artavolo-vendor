@@ -32,6 +32,10 @@ class LineItem extends \Google\Collection
    * @var string
    */
   public $campaignId;
+  /**
+   * @var string
+   */
+  public $containsEuPoliticalAds;
   protected $conversionCountingType = ConversionCountingConfig::class;
   protected $conversionCountingDataType = '';
   /**
@@ -60,10 +64,6 @@ class LineItem extends \Google\Collection
   public $insertionOrderId;
   protected $integrationDetailsType = IntegrationDetails::class;
   protected $integrationDetailsDataType = '';
-  /**
-   * @var string[]
-   */
-  public $inventorySourceIds;
   /**
    * @var string
    */
@@ -98,6 +98,8 @@ class LineItem extends \Google\Collection
    * @var string[]
    */
   public $warningMessages;
+  protected $youtubeAndPartnersSettingsType = YoutubeAndPartnersSettings::class;
+  protected $youtubeAndPartnersSettingsDataType = '';
 
   /**
    * @param string
@@ -154,6 +156,20 @@ class LineItem extends \Google\Collection
   public function getCampaignId()
   {
     return $this->campaignId;
+  }
+  /**
+   * @param string
+   */
+  public function setContainsEuPoliticalAds($containsEuPoliticalAds)
+  {
+    $this->containsEuPoliticalAds = $containsEuPoliticalAds;
+  }
+  /**
+   * @return string
+   */
+  public function getContainsEuPoliticalAds()
+  {
+    return $this->containsEuPoliticalAds;
   }
   /**
    * @param ConversionCountingConfig
@@ -280,20 +296,6 @@ class LineItem extends \Google\Collection
   public function getIntegrationDetails()
   {
     return $this->integrationDetails;
-  }
-  /**
-   * @param string[]
-   */
-  public function setInventorySourceIds($inventorySourceIds)
-  {
-    $this->inventorySourceIds = $inventorySourceIds;
-  }
-  /**
-   * @return string[]
-   */
-  public function getInventorySourceIds()
-  {
-    return $this->inventorySourceIds;
   }
   /**
    * @param string
@@ -448,6 +450,20 @@ class LineItem extends \Google\Collection
   public function getWarningMessages()
   {
     return $this->warningMessages;
+  }
+  /**
+   * @param YoutubeAndPartnersSettings
+   */
+  public function setYoutubeAndPartnersSettings(YoutubeAndPartnersSettings $youtubeAndPartnersSettings)
+  {
+    $this->youtubeAndPartnersSettings = $youtubeAndPartnersSettings;
+  }
+  /**
+   * @return YoutubeAndPartnersSettings
+   */
+  public function getYoutubeAndPartnersSettings()
+  {
+    return $this->youtubeAndPartnersSettings;
   }
 }
 

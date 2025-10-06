@@ -34,11 +34,19 @@ class DriveCapabilities extends \Google\Model
   /**
    * @var bool
    */
+  public $canChangeDownloadRestriction;
+  /**
+   * @var bool
+   */
   public $canChangeDriveBackground;
   /**
    * @var bool
    */
   public $canChangeDriveMembersOnlyRestriction;
+  /**
+   * @var bool
+   */
+  public $canChangeSharingFoldersRequiresOrganizerPermissionRestriction;
   /**
    * @var bool
    */
@@ -141,6 +149,20 @@ class DriveCapabilities extends \Google\Model
   /**
    * @param bool
    */
+  public function setCanChangeDownloadRestriction($canChangeDownloadRestriction)
+  {
+    $this->canChangeDownloadRestriction = $canChangeDownloadRestriction;
+  }
+  /**
+   * @return bool
+   */
+  public function getCanChangeDownloadRestriction()
+  {
+    return $this->canChangeDownloadRestriction;
+  }
+  /**
+   * @param bool
+   */
   public function setCanChangeDriveBackground($canChangeDriveBackground)
   {
     $this->canChangeDriveBackground = $canChangeDriveBackground;
@@ -165,6 +187,20 @@ class DriveCapabilities extends \Google\Model
   public function getCanChangeDriveMembersOnlyRestriction()
   {
     return $this->canChangeDriveMembersOnlyRestriction;
+  }
+  /**
+   * @param bool
+   */
+  public function setCanChangeSharingFoldersRequiresOrganizerPermissionRestriction($canChangeSharingFoldersRequiresOrganizerPermissionRestriction)
+  {
+    $this->canChangeSharingFoldersRequiresOrganizerPermissionRestriction = $canChangeSharingFoldersRequiresOrganizerPermissionRestriction;
+  }
+  /**
+   * @return bool
+   */
+  public function getCanChangeSharingFoldersRequiresOrganizerPermissionRestriction()
+  {
+    return $this->canChangeSharingFoldersRequiresOrganizerPermissionRestriction;
   }
   /**
    * @param bool

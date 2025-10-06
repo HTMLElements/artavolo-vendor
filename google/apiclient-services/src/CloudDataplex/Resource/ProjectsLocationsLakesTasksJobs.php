@@ -27,7 +27,7 @@ use Google\Service\CloudDataplex\GoogleCloudDataplexV1ListJobsResponse;
  * Typical usage is:
  *  <code>
  *   $dataplexService = new Google\Service\CloudDataplex(...);
- *   $jobs = $dataplexService->jobs;
+ *   $jobs = $dataplexService->projects_locations_lakes_tasks_jobs;
  *  </code>
  */
 class ProjectsLocationsLakesTasksJobs extends \Google\Service\Resource
@@ -35,12 +35,12 @@ class ProjectsLocationsLakesTasksJobs extends \Google\Service\Resource
   /**
    * Cancel jobs running for the task resource. (jobs.cancel)
    *
-   * @param string $name Required. The resource name of the job:
-   * projects/{project_number}/locations/{location_id}/lakes/{lake_id}
-   * /task/{task_id}/job/{job_id}`
+   * @param string $name Required. The resource name of the job: projects/{project
+   * _number}/locations/{location_id}/lakes/{lake_id}/task/{task_id}/job/{job_id}.
    * @param GoogleCloudDataplexV1CancelJobRequest $postBody
    * @param array $optParams Optional parameters.
    * @return DataplexEmpty
+   * @throws \Google\Service\Exception
    */
   public function cancel($name, GoogleCloudDataplexV1CancelJobRequest $postBody, $optParams = [])
   {
@@ -51,11 +51,12 @@ class ProjectsLocationsLakesTasksJobs extends \Google\Service\Resource
   /**
    * Get job resource. (jobs.get)
    *
-   * @param string $name Required. The resource name of the job:
-   * projects/{project_number}/locations/{location_id}/lakes/{lake_id}
-   * /tasks/{task_id}/jobs/{job_id}
+   * @param string $name Required. The resource name of the job: projects/{project
+   * _number}/locations/{location_id}/lakes/{lake_id}/tasks/{task_id}/jobs/{job_id
+   * }.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudDataplexV1Job
+   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -68,7 +69,7 @@ class ProjectsLocationsLakesTasksJobs extends \Google\Service\Resource
    *
    * @param string $parent Required. The resource name of the parent environment:
    * projects/{project_number}/locations/{location_id}/lakes/{lake_id}/tasks/{task
-   * _id}
+   * _id}.
    * @param array $optParams Optional parameters.
    *
    * @opt_param int pageSize Optional. Maximum number of jobs to return. The
@@ -80,6 +81,7 @@ class ProjectsLocationsLakesTasksJobs extends \Google\Service\Resource
    * all other parameters provided to ListJobs must match the call that provided
    * the page token.
    * @return GoogleCloudDataplexV1ListJobsResponse
+   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsLakesTasksJobs($parent, $optParams = [])
   {

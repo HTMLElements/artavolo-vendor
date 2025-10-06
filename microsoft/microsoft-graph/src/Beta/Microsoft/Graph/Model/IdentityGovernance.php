@@ -211,6 +211,130 @@ class IdentityGovernance implements \JsonSerializable
     }
 
     /**
+    * Gets the permissionsAnalytics
+    *
+    * @return PermissionsAnalyticsAggregation|null The permissionsAnalytics
+    */
+    public function getPermissionsAnalytics()
+    {
+        if (array_key_exists("permissionsAnalytics", $this->_propDict)) {
+            if (is_a($this->_propDict["permissionsAnalytics"], "\Beta\Microsoft\Graph\Model\PermissionsAnalyticsAggregation") || is_null($this->_propDict["permissionsAnalytics"])) {
+                return $this->_propDict["permissionsAnalytics"];
+            } else {
+                $this->_propDict["permissionsAnalytics"] = new PermissionsAnalyticsAggregation($this->_propDict["permissionsAnalytics"]);
+                return $this->_propDict["permissionsAnalytics"];
+            }
+        }
+        return null;
+    }
+
+    /**
+    * Sets the permissionsAnalytics
+    *
+    * @param PermissionsAnalyticsAggregation $val The permissionsAnalytics
+    *
+    * @return IdentityGovernance
+    */
+    public function setPermissionsAnalytics($val)
+    {
+        $this->_propDict["permissionsAnalytics"] = $val;
+        return $this;
+    }
+
+    /**
+    * Gets the permissionsManagement
+    *
+    * @return PermissionsManagement|null The permissionsManagement
+    */
+    public function getPermissionsManagement()
+    {
+        if (array_key_exists("permissionsManagement", $this->_propDict)) {
+            if (is_a($this->_propDict["permissionsManagement"], "\Beta\Microsoft\Graph\Model\PermissionsManagement") || is_null($this->_propDict["permissionsManagement"])) {
+                return $this->_propDict["permissionsManagement"];
+            } else {
+                $this->_propDict["permissionsManagement"] = new PermissionsManagement($this->_propDict["permissionsManagement"]);
+                return $this->_propDict["permissionsManagement"];
+            }
+        }
+        return null;
+    }
+
+    /**
+    * Sets the permissionsManagement
+    *
+    * @param PermissionsManagement $val The permissionsManagement
+    *
+    * @return IdentityGovernance
+    */
+    public function setPermissionsManagement($val)
+    {
+        $this->_propDict["permissionsManagement"] = $val;
+        return $this;
+    }
+
+    /**
+    * Gets the privilegedAccess
+    *
+    * @return PrivilegedAccessRoot|null The privilegedAccess
+    */
+    public function getPrivilegedAccess()
+    {
+        if (array_key_exists("privilegedAccess", $this->_propDict)) {
+            if (is_a($this->_propDict["privilegedAccess"], "\Beta\Microsoft\Graph\Model\PrivilegedAccessRoot") || is_null($this->_propDict["privilegedAccess"])) {
+                return $this->_propDict["privilegedAccess"];
+            } else {
+                $this->_propDict["privilegedAccess"] = new PrivilegedAccessRoot($this->_propDict["privilegedAccess"]);
+                return $this->_propDict["privilegedAccess"];
+            }
+        }
+        return null;
+    }
+
+    /**
+    * Sets the privilegedAccess
+    *
+    * @param PrivilegedAccessRoot $val The privilegedAccess
+    *
+    * @return IdentityGovernance
+    */
+    public function setPrivilegedAccess($val)
+    {
+        $this->_propDict["privilegedAccess"] = $val;
+        return $this;
+    }
+
+    /**
+    * Gets the roleManagementAlerts
+    *
+    * @return RoleManagementAlert|null The roleManagementAlerts
+    */
+    public function getRoleManagementAlerts()
+    {
+        if (array_key_exists("roleManagementAlerts", $this->_propDict)) {
+            if (is_a($this->_propDict["roleManagementAlerts"], "\Beta\Microsoft\Graph\Model\RoleManagementAlert") || is_null($this->_propDict["roleManagementAlerts"])) {
+                return $this->_propDict["roleManagementAlerts"];
+            } else {
+                $this->_propDict["roleManagementAlerts"] = new RoleManagementAlert($this->_propDict["roleManagementAlerts"]);
+                return $this->_propDict["roleManagementAlerts"];
+            }
+        }
+        return null;
+    }
+
+    /**
+    * Sets the roleManagementAlerts
+    *
+    * @param RoleManagementAlert $val The roleManagementAlerts
+    *
+    * @return IdentityGovernance
+    */
+    public function setRoleManagementAlerts($val)
+    {
+        $this->_propDict["roleManagementAlerts"] = $val;
+        return $this;
+    }
+
+    /**
     * Gets the ODataType
     *
     * @return string|null The ODataType

@@ -25,8 +25,41 @@ namespace Microsoft\Graph\Model;
 class CrossTenantAccessPolicyConfigurationDefault extends Entity
 {
     /**
+    * Gets the automaticUserConsentSettings
+    * Determines the default configuration for automatic user consent settings. The inboundAllowed and outboundAllowed properties are always false and cannot be updated in the default configuration. Read-only.
+    *
+    * @return InboundOutboundPolicyConfiguration|null The automaticUserConsentSettings
+    */
+    public function getAutomaticUserConsentSettings()
+    {
+        if (array_key_exists("automaticUserConsentSettings", $this->_propDict)) {
+            if (is_a($this->_propDict["automaticUserConsentSettings"], "\Microsoft\Graph\Model\InboundOutboundPolicyConfiguration") || is_null($this->_propDict["automaticUserConsentSettings"])) {
+                return $this->_propDict["automaticUserConsentSettings"];
+            } else {
+                $this->_propDict["automaticUserConsentSettings"] = new InboundOutboundPolicyConfiguration($this->_propDict["automaticUserConsentSettings"]);
+                return $this->_propDict["automaticUserConsentSettings"];
+            }
+        }
+        return null;
+    }
+
+    /**
+    * Sets the automaticUserConsentSettings
+    * Determines the default configuration for automatic user consent settings. The inboundAllowed and outboundAllowed properties are always false and cannot be updated in the default configuration. Read-only.
+    *
+    * @param InboundOutboundPolicyConfiguration $val The automaticUserConsentSettings
+    *
+    * @return CrossTenantAccessPolicyConfigurationDefault
+    */
+    public function setAutomaticUserConsentSettings($val)
+    {
+        $this->_propDict["automaticUserConsentSettings"] = $val;
+        return $this;
+    }
+
+    /**
     * Gets the b2bCollaborationInbound
-    * Defines your default configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.
+    * Defines your default configuration for users from other organizations accessing your resources via Microsoft Entra B2B collaboration.
     *
     * @return CrossTenantAccessPolicyB2BSetting|null The b2bCollaborationInbound
     */
@@ -45,7 +78,7 @@ class CrossTenantAccessPolicyConfigurationDefault extends Entity
 
     /**
     * Sets the b2bCollaborationInbound
-    * Defines your default configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.
+    * Defines your default configuration for users from other organizations accessing your resources via Microsoft Entra B2B collaboration.
     *
     * @param CrossTenantAccessPolicyB2BSetting $val The b2bCollaborationInbound
     *
@@ -59,7 +92,7 @@ class CrossTenantAccessPolicyConfigurationDefault extends Entity
 
     /**
     * Gets the b2bCollaborationOutbound
-    * Defines your default configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B collaboration.
+    * Defines your default configuration for users in your organization going outbound to access resources in another organization via Microsoft Entra B2B collaboration.
     *
     * @return CrossTenantAccessPolicyB2BSetting|null The b2bCollaborationOutbound
     */
@@ -78,7 +111,7 @@ class CrossTenantAccessPolicyConfigurationDefault extends Entity
 
     /**
     * Sets the b2bCollaborationOutbound
-    * Defines your default configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B collaboration.
+    * Defines your default configuration for users in your organization going outbound to access resources in another organization via Microsoft Entra B2B collaboration.
     *
     * @param CrossTenantAccessPolicyB2BSetting $val The b2bCollaborationOutbound
     *
@@ -92,7 +125,7 @@ class CrossTenantAccessPolicyConfigurationDefault extends Entity
 
     /**
     * Gets the b2bDirectConnectInbound
-    * Defines your default configuration for users from other organizations accessing your resources via Azure AD B2B direct connect.
+    * Defines your default configuration for users from other organizations accessing your resources via Microsoft Entra B2B direct connect.
     *
     * @return CrossTenantAccessPolicyB2BSetting|null The b2bDirectConnectInbound
     */
@@ -111,7 +144,7 @@ class CrossTenantAccessPolicyConfigurationDefault extends Entity
 
     /**
     * Sets the b2bDirectConnectInbound
-    * Defines your default configuration for users from other organizations accessing your resources via Azure AD B2B direct connect.
+    * Defines your default configuration for users from other organizations accessing your resources via Microsoft Entra B2B direct connect.
     *
     * @param CrossTenantAccessPolicyB2BSetting $val The b2bDirectConnectInbound
     *
@@ -125,7 +158,7 @@ class CrossTenantAccessPolicyConfigurationDefault extends Entity
 
     /**
     * Gets the b2bDirectConnectOutbound
-    * Defines your default configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B direct connect.
+    * Defines your default configuration for users in your organization going outbound to access resources in another organization via Microsoft Entra B2B direct connect.
     *
     * @return CrossTenantAccessPolicyB2BSetting|null The b2bDirectConnectOutbound
     */
@@ -144,7 +177,7 @@ class CrossTenantAccessPolicyConfigurationDefault extends Entity
 
     /**
     * Sets the b2bDirectConnectOutbound
-    * Defines your default configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B direct connect.
+    * Defines your default configuration for users in your organization going outbound to access resources in another organization via Microsoft Entra B2B direct connect.
     *
     * @param CrossTenantAccessPolicyB2BSetting $val The b2bDirectConnectOutbound
     *
@@ -158,7 +191,7 @@ class CrossTenantAccessPolicyConfigurationDefault extends Entity
 
     /**
     * Gets the inboundTrust
-    * Determines the default configuration for trusting other Conditional Access claims from external Azure AD organizations.
+    * Determines the default configuration for trusting other Conditional Access claims from external Microsoft Entra organizations.
     *
     * @return CrossTenantAccessPolicyInboundTrust|null The inboundTrust
     */
@@ -177,7 +210,7 @@ class CrossTenantAccessPolicyConfigurationDefault extends Entity
 
     /**
     * Sets the inboundTrust
-    * Determines the default configuration for trusting other Conditional Access claims from external Azure AD organizations.
+    * Determines the default configuration for trusting other Conditional Access claims from external Microsoft Entra organizations.
     *
     * @param CrossTenantAccessPolicyInboundTrust $val The inboundTrust
     *

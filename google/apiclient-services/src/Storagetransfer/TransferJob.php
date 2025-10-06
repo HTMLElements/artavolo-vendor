@@ -31,6 +31,8 @@ class TransferJob extends \Google\Model
    * @var string
    */
   public $description;
+  protected $eventStreamType = EventStream::class;
+  protected $eventStreamDataType = '';
   /**
    * @var string
    */
@@ -51,8 +53,14 @@ class TransferJob extends \Google\Model
    * @var string
    */
   public $projectId;
+  protected $replicationSpecType = ReplicationSpec::class;
+  protected $replicationSpecDataType = '';
   protected $scheduleType = Schedule::class;
   protected $scheduleDataType = '';
+  /**
+   * @var string
+   */
+  public $serviceAccount;
   /**
    * @var string
    */
@@ -101,6 +109,20 @@ class TransferJob extends \Google\Model
   public function getDescription()
   {
     return $this->description;
+  }
+  /**
+   * @param EventStream
+   */
+  public function setEventStream(EventStream $eventStream)
+  {
+    $this->eventStream = $eventStream;
+  }
+  /**
+   * @return EventStream
+   */
+  public function getEventStream()
+  {
+    return $this->eventStream;
   }
   /**
    * @param string
@@ -187,6 +209,20 @@ class TransferJob extends \Google\Model
     return $this->projectId;
   }
   /**
+   * @param ReplicationSpec
+   */
+  public function setReplicationSpec(ReplicationSpec $replicationSpec)
+  {
+    $this->replicationSpec = $replicationSpec;
+  }
+  /**
+   * @return ReplicationSpec
+   */
+  public function getReplicationSpec()
+  {
+    return $this->replicationSpec;
+  }
+  /**
    * @param Schedule
    */
   public function setSchedule(Schedule $schedule)
@@ -199,6 +235,20 @@ class TransferJob extends \Google\Model
   public function getSchedule()
   {
     return $this->schedule;
+  }
+  /**
+   * @param string
+   */
+  public function setServiceAccount($serviceAccount)
+  {
+    $this->serviceAccount = $serviceAccount;
+  }
+  /**
+   * @return string
+   */
+  public function getServiceAccount()
+  {
+    return $this->serviceAccount;
   }
   /**
    * @param string

@@ -124,7 +124,7 @@ class ConditionalAccessSessionControls extends Entity
     }
     /**
     * Gets the disableResilienceDefaults
-    * Session control that determines whether it is acceptable for Azure AD to extend existing sessions based on information collected prior to an outage or not.
+    * Session control that determines whether it's acceptable for Microsoft Entra ID to extend existing sessions based on information collected prior to an outage or not.
     *
     * @return bool|null The disableResilienceDefaults
     */
@@ -139,7 +139,7 @@ class ConditionalAccessSessionControls extends Entity
 
     /**
     * Sets the disableResilienceDefaults
-    * Session control that determines whether it is acceptable for Azure AD to extend existing sessions based on information collected prior to an outage or not.
+    * Session control that determines whether it's acceptable for Microsoft Entra ID to extend existing sessions based on information collected prior to an outage or not.
     *
     * @param bool $val The value of the disableResilienceDefaults
     *
@@ -181,6 +181,39 @@ class ConditionalAccessSessionControls extends Entity
     public function setPersistentBrowser($val)
     {
         $this->_propDict["persistentBrowser"] = $val;
+         return $this;
+    }
+
+    /**
+    * Gets the secureSignInSession
+    * Session control to require sign in sessions to be bound to a device.
+    *
+    * @return SecureSignInSessionControl|null The secureSignInSession
+    */
+    public function getSecureSignInSession()
+    {
+        if (array_key_exists("secureSignInSession", $this->_propDict)) {
+            if (is_a($this->_propDict["secureSignInSession"], "\Beta\Microsoft\Graph\Model\SecureSignInSessionControl") || is_null($this->_propDict["secureSignInSession"])) {
+                return $this->_propDict["secureSignInSession"];
+            } else {
+                $this->_propDict["secureSignInSession"] = new SecureSignInSessionControl($this->_propDict["secureSignInSession"]);
+                return $this->_propDict["secureSignInSession"];
+            }
+        }
+        return null;
+    }
+
+    /**
+    * Sets the secureSignInSession
+    * Session control to require sign in sessions to be bound to a device.
+    *
+    * @param SecureSignInSessionControl $val The value to assign to the secureSignInSession
+    *
+    * @return ConditionalAccessSessionControls The ConditionalAccessSessionControls
+    */
+    public function setSecureSignInSession($val)
+    {
+        $this->_propDict["secureSignInSession"] = $val;
          return $this;
     }
 

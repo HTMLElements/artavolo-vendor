@@ -30,7 +30,7 @@ use Google\Service\ManagedServiceforMicrosoftActiveDirectoryConsumerAPI\TestIamP
  * Typical usage is:
  *  <code>
  *   $managedidentitiesService = new Google\Service\ManagedServiceforMicrosoftActiveDirectoryConsumerAPI(...);
- *   $backups = $managedidentitiesService->backups;
+ *   $backups = $managedidentitiesService->projects_locations_global_domains_backups;
  *  </code>
  */
 class ProjectsLocationsManagedidentitiesGlobalDomainsBackups extends \Google\Service\Resource
@@ -49,6 +49,7 @@ class ProjectsLocationsManagedidentitiesGlobalDomainsBackups extends \Google\Ser
    * characters. * Must end with a number or a letter. * Must be unique within the
    * domain.
    * @return Operation
+   * @throws \Google\Service\Exception
    */
   public function create($parent, Backup $postBody, $optParams = [])
   {
@@ -63,6 +64,7 @@ class ProjectsLocationsManagedidentitiesGlobalDomainsBackups extends \Google\Ser
    * cts/{project_id}/locations/global/domains/{domain_name}/backups/{backup_id}`
    * @param array $optParams Optional parameters.
    * @return Operation
+   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -77,6 +79,7 @@ class ProjectsLocationsManagedidentitiesGlobalDomainsBackups extends \Google\Ser
    * cts/{project_id}/locations/global/domains/{domain_name}/backups/{backup_id}`
    * @param array $optParams Optional parameters.
    * @return Backup
+   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -89,8 +92,9 @@ class ProjectsLocationsManagedidentitiesGlobalDomainsBackups extends \Google\Ser
    * resource exists and does not have a policy set. (backups.getIamPolicy)
    *
    * @param string $resource REQUIRED: The resource for which the policy is being
-   * requested. See the operation documentation for the appropriate value for this
-   * field.
+   * requested. See [Resource
+   * names](https://cloud.google.com/apis/design/resource_names) for the
+   * appropriate value for this field.
    * @param array $optParams Optional parameters.
    *
    * @opt_param int options.requestedPolicyVersion Optional. The maximum policy
@@ -106,6 +110,7 @@ class ProjectsLocationsManagedidentitiesGlobalDomainsBackups extends \Google\Ser
    * documentation](https://cloud.google.com/iam/help/conditions/resource-
    * policies).
    * @return Policy
+   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($resource, $optParams = [])
   {
@@ -134,6 +139,7 @@ class ProjectsLocationsManagedidentitiesGlobalDomainsBackups extends \Google\Ser
    * @opt_param string pageToken Optional. The `next_page_token` value returned
    * from a previous List request, if any.
    * @return ListBackupsResponse
+   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsManagedidentitiesGlobalDomainsBackups($parent, $optParams = [])
   {
@@ -153,6 +159,7 @@ class ProjectsLocationsManagedidentitiesGlobalDomainsBackups extends \Google\Ser
    * path must be supplied in this field. The elements of the repeated paths field
    * may only include these fields from Backup: * `labels`
    * @return Operation
+   * @throws \Google\Service\Exception
    */
   public function patch($name, Backup $postBody, $optParams = [])
   {
@@ -166,11 +173,13 @@ class ProjectsLocationsManagedidentitiesGlobalDomainsBackups extends \Google\Ser
    * `PERMISSION_DENIED` errors. (backups.setIamPolicy)
    *
    * @param string $resource REQUIRED: The resource for which the policy is being
-   * specified. See the operation documentation for the appropriate value for this
-   * field.
+   * specified. See [Resource
+   * names](https://cloud.google.com/apis/design/resource_names) for the
+   * appropriate value for this field.
    * @param SetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Policy
+   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($resource, SetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -186,11 +195,13 @@ class ProjectsLocationsManagedidentitiesGlobalDomainsBackups extends \Google\Ser
    * This operation may "fail open" without warning. (backups.testIamPermissions)
    *
    * @param string $resource REQUIRED: The resource for which the policy detail is
-   * being requested. See the operation documentation for the appropriate value
-   * for this field.
+   * being requested. See [Resource
+   * names](https://cloud.google.com/apis/design/resource_names) for the
+   * appropriate value for this field.
    * @param TestIamPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return TestIamPermissionsResponse
+   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($resource, TestIamPermissionsRequest $postBody, $optParams = [])
   {

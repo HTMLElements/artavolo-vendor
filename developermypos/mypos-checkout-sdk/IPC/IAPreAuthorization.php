@@ -151,6 +151,9 @@ class IAPreAuthorization extends Base
         $this->_addPostParam('Note', $this->getNote());
         $this->_addPostParam('OutputFormat', $this->getOutputFormat());
 
+        $this->_addPostParam('ApplicationID', $this->getCnf()->getApplicationID());
+        $this->_addPostParam('PartnerID', $this->getCnf()->getPartnerID());
+
         return $this->_processPost();
     }
 
@@ -192,6 +195,16 @@ class IAPreAuthorization extends Base
             $this->getCard()->validate();
         } catch (\Exception $ex) {
             throw new IPC_Exception('Invalid Card details: ' . $ex->getMessage());
+        }
+
+        if ($this->getCnf()->getVersion() === '1.4.1') {
+            if ($this->getCnf()->getPartnerID() == null) {
+                throw new IPC_Exception('Required parameter: Partner ID');
+            }
+
+            if ($this->getCnf()->getApplicationID() == null) {
+                throw new IPC_Exception('Required parameter: Application ID');
+            }
         }
 
         return true;
@@ -256,4 +269,5 @@ class IAPreAuthorization extends Base
     {
         return $this->note;
     }
+
 }

@@ -19,7 +19,7 @@ namespace Google\Service\Compute;
 
 class BackendService extends \Google\Collection
 {
-  protected $collection_key = 'serviceBindings';
+  protected $collection_key = 'usedBy';
   /**
    * @var int
    */
@@ -30,6 +30,10 @@ class BackendService extends \Google\Collection
   protected $cdnPolicyDataType = '';
   protected $circuitBreakersType = CircuitBreakers::class;
   protected $circuitBreakersDataType = '';
+  /**
+   * @var string
+   */
+  public $compressionMode;
   protected $connectionDrainingType = ConnectionDraining::class;
   protected $connectionDrainingDataType = '';
   protected $connectionTrackingPolicyType = BackendServiceConnectionTrackingPolicy::class;
@@ -40,6 +44,8 @@ class BackendService extends \Google\Collection
    * @var string
    */
   public $creationTimestamp;
+  protected $customMetricsType = BackendServiceCustomMetric::class;
+  protected $customMetricsDataType = 'array';
   /**
    * @var string[]
    */
@@ -60,12 +66,22 @@ class BackendService extends \Google\Collection
    * @var bool
    */
   public $enableCDN;
+  /**
+   * @var string
+   */
+  public $externalManagedMigrationState;
+  /**
+   * @var float
+   */
+  public $externalManagedMigrationTestingPercentage;
   protected $failoverPolicyType = BackendServiceFailoverPolicy::class;
   protected $failoverPolicyDataType = '';
   /**
    * @var string
    */
   public $fingerprint;
+  protected $haPolicyType = BackendServiceHAPolicy::class;
+  protected $haPolicyDataType = '';
   /**
    * @var string[]
    */
@@ -76,6 +92,10 @@ class BackendService extends \Google\Collection
    * @var string
    */
   public $id;
+  /**
+   * @var string
+   */
+  public $ipAddressSelectionPolicy;
   /**
    * @var string
    */
@@ -95,6 +115,10 @@ class BackendService extends \Google\Collection
   protected $maxStreamDurationType = Duration::class;
   protected $maxStreamDurationDataType = '';
   /**
+   * @var string[]
+   */
+  public $metadatas;
+  /**
    * @var string
    */
   public $name;
@@ -104,6 +128,8 @@ class BackendService extends \Google\Collection
   public $network;
   protected $outlierDetectionType = OutlierDetection::class;
   protected $outlierDetectionDataType = '';
+  protected $paramsType = BackendServiceParams::class;
+  protected $paramsDataType = '';
   /**
    * @var int
    */
@@ -137,13 +163,23 @@ class BackendService extends \Google\Collection
   /**
    * @var string
    */
+  public $serviceLbPolicy;
+  /**
+   * @var string
+   */
   public $sessionAffinity;
+  protected $strongSessionAffinityCookieType = BackendServiceHttpCookie::class;
+  protected $strongSessionAffinityCookieDataType = '';
   protected $subsettingType = Subsetting::class;
   protected $subsettingDataType = '';
   /**
    * @var int
    */
   public $timeoutSec;
+  protected $tlsSettingsType = BackendServiceTlsSettings::class;
+  protected $tlsSettingsDataType = '';
+  protected $usedByType = BackendServiceUsedBy::class;
+  protected $usedByDataType = 'array';
 
   /**
    * @param int
@@ -202,6 +238,20 @@ class BackendService extends \Google\Collection
     return $this->circuitBreakers;
   }
   /**
+   * @param string
+   */
+  public function setCompressionMode($compressionMode)
+  {
+    $this->compressionMode = $compressionMode;
+  }
+  /**
+   * @return string
+   */
+  public function getCompressionMode()
+  {
+    return $this->compressionMode;
+  }
+  /**
    * @param ConnectionDraining
    */
   public function setConnectionDraining(ConnectionDraining $connectionDraining)
@@ -256,6 +306,20 @@ class BackendService extends \Google\Collection
   public function getCreationTimestamp()
   {
     return $this->creationTimestamp;
+  }
+  /**
+   * @param BackendServiceCustomMetric[]
+   */
+  public function setCustomMetrics($customMetrics)
+  {
+    $this->customMetrics = $customMetrics;
+  }
+  /**
+   * @return BackendServiceCustomMetric[]
+   */
+  public function getCustomMetrics()
+  {
+    return $this->customMetrics;
   }
   /**
    * @param string[]
@@ -328,6 +392,34 @@ class BackendService extends \Google\Collection
     return $this->enableCDN;
   }
   /**
+   * @param string
+   */
+  public function setExternalManagedMigrationState($externalManagedMigrationState)
+  {
+    $this->externalManagedMigrationState = $externalManagedMigrationState;
+  }
+  /**
+   * @return string
+   */
+  public function getExternalManagedMigrationState()
+  {
+    return $this->externalManagedMigrationState;
+  }
+  /**
+   * @param float
+   */
+  public function setExternalManagedMigrationTestingPercentage($externalManagedMigrationTestingPercentage)
+  {
+    $this->externalManagedMigrationTestingPercentage = $externalManagedMigrationTestingPercentage;
+  }
+  /**
+   * @return float
+   */
+  public function getExternalManagedMigrationTestingPercentage()
+  {
+    return $this->externalManagedMigrationTestingPercentage;
+  }
+  /**
    * @param BackendServiceFailoverPolicy
    */
   public function setFailoverPolicy(BackendServiceFailoverPolicy $failoverPolicy)
@@ -354,6 +446,20 @@ class BackendService extends \Google\Collection
   public function getFingerprint()
   {
     return $this->fingerprint;
+  }
+  /**
+   * @param BackendServiceHAPolicy
+   */
+  public function setHaPolicy(BackendServiceHAPolicy $haPolicy)
+  {
+    $this->haPolicy = $haPolicy;
+  }
+  /**
+   * @return BackendServiceHAPolicy
+   */
+  public function getHaPolicy()
+  {
+    return $this->haPolicy;
   }
   /**
    * @param string[]
@@ -396,6 +502,20 @@ class BackendService extends \Google\Collection
   public function getId()
   {
     return $this->id;
+  }
+  /**
+   * @param string
+   */
+  public function setIpAddressSelectionPolicy($ipAddressSelectionPolicy)
+  {
+    $this->ipAddressSelectionPolicy = $ipAddressSelectionPolicy;
+  }
+  /**
+   * @return string
+   */
+  public function getIpAddressSelectionPolicy()
+  {
+    return $this->ipAddressSelectionPolicy;
   }
   /**
    * @param string
@@ -482,6 +602,20 @@ class BackendService extends \Google\Collection
     return $this->maxStreamDuration;
   }
   /**
+   * @param string[]
+   */
+  public function setMetadatas($metadatas)
+  {
+    $this->metadatas = $metadatas;
+  }
+  /**
+   * @return string[]
+   */
+  public function getMetadatas()
+  {
+    return $this->metadatas;
+  }
+  /**
    * @param string
    */
   public function setName($name)
@@ -522,6 +656,20 @@ class BackendService extends \Google\Collection
   public function getOutlierDetection()
   {
     return $this->outlierDetection;
+  }
+  /**
+   * @param BackendServiceParams
+   */
+  public function setParams(BackendServiceParams $params)
+  {
+    $this->params = $params;
+  }
+  /**
+   * @return BackendServiceParams
+   */
+  public function getParams()
+  {
+    return $this->params;
   }
   /**
    * @param int
@@ -638,6 +786,20 @@ class BackendService extends \Google\Collection
   /**
    * @param string
    */
+  public function setServiceLbPolicy($serviceLbPolicy)
+  {
+    $this->serviceLbPolicy = $serviceLbPolicy;
+  }
+  /**
+   * @return string
+   */
+  public function getServiceLbPolicy()
+  {
+    return $this->serviceLbPolicy;
+  }
+  /**
+   * @param string
+   */
   public function setSessionAffinity($sessionAffinity)
   {
     $this->sessionAffinity = $sessionAffinity;
@@ -648,6 +810,20 @@ class BackendService extends \Google\Collection
   public function getSessionAffinity()
   {
     return $this->sessionAffinity;
+  }
+  /**
+   * @param BackendServiceHttpCookie
+   */
+  public function setStrongSessionAffinityCookie(BackendServiceHttpCookie $strongSessionAffinityCookie)
+  {
+    $this->strongSessionAffinityCookie = $strongSessionAffinityCookie;
+  }
+  /**
+   * @return BackendServiceHttpCookie
+   */
+  public function getStrongSessionAffinityCookie()
+  {
+    return $this->strongSessionAffinityCookie;
   }
   /**
    * @param Subsetting
@@ -676,6 +852,34 @@ class BackendService extends \Google\Collection
   public function getTimeoutSec()
   {
     return $this->timeoutSec;
+  }
+  /**
+   * @param BackendServiceTlsSettings
+   */
+  public function setTlsSettings(BackendServiceTlsSettings $tlsSettings)
+  {
+    $this->tlsSettings = $tlsSettings;
+  }
+  /**
+   * @return BackendServiceTlsSettings
+   */
+  public function getTlsSettings()
+  {
+    return $this->tlsSettings;
+  }
+  /**
+   * @param BackendServiceUsedBy[]
+   */
+  public function setUsedBy($usedBy)
+  {
+    $this->usedBy = $usedBy;
+  }
+  /**
+   * @return BackendServiceUsedBy[]
+   */
+  public function getUsedBy()
+  {
+    return $this->usedBy;
   }
 }
 

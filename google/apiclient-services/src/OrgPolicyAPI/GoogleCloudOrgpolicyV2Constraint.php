@@ -33,12 +33,24 @@ class GoogleCloudOrgpolicyV2Constraint extends \Google\Model
    * @var string
    */
   public $displayName;
+  /**
+   * @var string
+   */
+  public $equivalentConstraint;
   protected $listConstraintType = GoogleCloudOrgpolicyV2ConstraintListConstraint::class;
   protected $listConstraintDataType = '';
   /**
    * @var string
    */
   public $name;
+  /**
+   * @var bool
+   */
+  public $supportsDryRun;
+  /**
+   * @var bool
+   */
+  public $supportsSimulation;
 
   /**
    * @param GoogleCloudOrgpolicyV2ConstraintBooleanConstraint
@@ -97,6 +109,20 @@ class GoogleCloudOrgpolicyV2Constraint extends \Google\Model
     return $this->displayName;
   }
   /**
+   * @param string
+   */
+  public function setEquivalentConstraint($equivalentConstraint)
+  {
+    $this->equivalentConstraint = $equivalentConstraint;
+  }
+  /**
+   * @return string
+   */
+  public function getEquivalentConstraint()
+  {
+    return $this->equivalentConstraint;
+  }
+  /**
    * @param GoogleCloudOrgpolicyV2ConstraintListConstraint
    */
   public function setListConstraint(GoogleCloudOrgpolicyV2ConstraintListConstraint $listConstraint)
@@ -123,6 +149,34 @@ class GoogleCloudOrgpolicyV2Constraint extends \Google\Model
   public function getName()
   {
     return $this->name;
+  }
+  /**
+   * @param bool
+   */
+  public function setSupportsDryRun($supportsDryRun)
+  {
+    $this->supportsDryRun = $supportsDryRun;
+  }
+  /**
+   * @return bool
+   */
+  public function getSupportsDryRun()
+  {
+    return $this->supportsDryRun;
+  }
+  /**
+   * @param bool
+   */
+  public function setSupportsSimulation($supportsSimulation)
+  {
+    $this->supportsSimulation = $supportsSimulation;
+  }
+  /**
+   * @return bool
+   */
+  public function getSupportsSimulation()
+  {
+    return $this->supportsSimulation;
   }
 }
 

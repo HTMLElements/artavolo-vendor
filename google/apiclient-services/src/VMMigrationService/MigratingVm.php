@@ -22,6 +22,10 @@ class MigratingVm extends \Google\Collection
   protected $collection_key = 'recentCutoverJobs';
   protected $awsSourceVmDetailsType = AwsSourceVmDetails::class;
   protected $awsSourceVmDetailsDataType = '';
+  protected $azureSourceVmDetailsType = AzureSourceVmDetails::class;
+  protected $azureSourceVmDetailsDataType = '';
+  protected $computeEngineDisksTargetDefaultsType = ComputeEngineDisksTargetDefaults::class;
+  protected $computeEngineDisksTargetDefaultsDataType = '';
   protected $computeEngineTargetDefaultsType = ComputeEngineTargetDefaults::class;
   protected $computeEngineTargetDefaultsDataType = '';
   /**
@@ -30,6 +34,8 @@ class MigratingVm extends \Google\Collection
   public $createTime;
   protected $currentSyncInfoType = ReplicationCycle::class;
   protected $currentSyncInfoDataType = '';
+  protected $cutoverForecastType = CutoverForecast::class;
+  protected $cutoverForecastDataType = '';
   /**
    * @var string
    */
@@ -40,6 +46,8 @@ class MigratingVm extends \Google\Collection
   public $displayName;
   protected $errorType = Status::class;
   protected $errorDataType = '';
+  protected $expirationType = Expiration::class;
+  protected $expirationDataType = '';
   /**
    * @var string
    */
@@ -48,6 +56,8 @@ class MigratingVm extends \Google\Collection
    * @var string[]
    */
   public $labels;
+  protected $lastReplicationCycleType = ReplicationCycle::class;
+  protected $lastReplicationCycleDataType = '';
   protected $lastSyncType = ReplicationSync::class;
   protected $lastSyncDataType = '';
   /**
@@ -76,6 +86,8 @@ class MigratingVm extends \Google\Collection
    * @var string
    */
   public $updateTime;
+  protected $vmwareSourceVmDetailsType = VmwareSourceVmDetails::class;
+  protected $vmwareSourceVmDetailsDataType = '';
 
   /**
    * @param AwsSourceVmDetails
@@ -90,6 +102,34 @@ class MigratingVm extends \Google\Collection
   public function getAwsSourceVmDetails()
   {
     return $this->awsSourceVmDetails;
+  }
+  /**
+   * @param AzureSourceVmDetails
+   */
+  public function setAzureSourceVmDetails(AzureSourceVmDetails $azureSourceVmDetails)
+  {
+    $this->azureSourceVmDetails = $azureSourceVmDetails;
+  }
+  /**
+   * @return AzureSourceVmDetails
+   */
+  public function getAzureSourceVmDetails()
+  {
+    return $this->azureSourceVmDetails;
+  }
+  /**
+   * @param ComputeEngineDisksTargetDefaults
+   */
+  public function setComputeEngineDisksTargetDefaults(ComputeEngineDisksTargetDefaults $computeEngineDisksTargetDefaults)
+  {
+    $this->computeEngineDisksTargetDefaults = $computeEngineDisksTargetDefaults;
+  }
+  /**
+   * @return ComputeEngineDisksTargetDefaults
+   */
+  public function getComputeEngineDisksTargetDefaults()
+  {
+    return $this->computeEngineDisksTargetDefaults;
   }
   /**
    * @param ComputeEngineTargetDefaults
@@ -134,6 +174,20 @@ class MigratingVm extends \Google\Collection
     return $this->currentSyncInfo;
   }
   /**
+   * @param CutoverForecast
+   */
+  public function setCutoverForecast(CutoverForecast $cutoverForecast)
+  {
+    $this->cutoverForecast = $cutoverForecast;
+  }
+  /**
+   * @return CutoverForecast
+   */
+  public function getCutoverForecast()
+  {
+    return $this->cutoverForecast;
+  }
+  /**
    * @param string
    */
   public function setDescription($description)
@@ -176,6 +230,20 @@ class MigratingVm extends \Google\Collection
     return $this->error;
   }
   /**
+   * @param Expiration
+   */
+  public function setExpiration(Expiration $expiration)
+  {
+    $this->expiration = $expiration;
+  }
+  /**
+   * @return Expiration
+   */
+  public function getExpiration()
+  {
+    return $this->expiration;
+  }
+  /**
    * @param string
    */
   public function setGroup($group)
@@ -202,6 +270,20 @@ class MigratingVm extends \Google\Collection
   public function getLabels()
   {
     return $this->labels;
+  }
+  /**
+   * @param ReplicationCycle
+   */
+  public function setLastReplicationCycle(ReplicationCycle $lastReplicationCycle)
+  {
+    $this->lastReplicationCycle = $lastReplicationCycle;
+  }
+  /**
+   * @return ReplicationCycle
+   */
+  public function getLastReplicationCycle()
+  {
+    return $this->lastReplicationCycle;
   }
   /**
    * @param ReplicationSync
@@ -328,6 +410,20 @@ class MigratingVm extends \Google\Collection
   public function getUpdateTime()
   {
     return $this->updateTime;
+  }
+  /**
+   * @param VmwareSourceVmDetails
+   */
+  public function setVmwareSourceVmDetails(VmwareSourceVmDetails $vmwareSourceVmDetails)
+  {
+    $this->vmwareSourceVmDetails = $vmwareSourceVmDetails;
+  }
+  /**
+   * @return VmwareSourceVmDetails
+   */
+  public function getVmwareSourceVmDetails()
+  {
+    return $this->vmwareSourceVmDetails;
   }
 }
 

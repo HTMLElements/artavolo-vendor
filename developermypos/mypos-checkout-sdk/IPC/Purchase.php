@@ -28,7 +28,7 @@ class Purchase extends Base
      */
     private $customer;
     private $url_ok, $url_cancel, $url_notify;
-    private $currency = 'EUR', $note, $orderID, $cardTokenRequest, $paymentParametersRequired;
+    private $currency = 'EUR', $note, $orderID, $cardTokenRequest, $paymentParametersRequired, $expiresIn = '86400';
     private $paymentMethod;
 
     /**
@@ -119,6 +119,23 @@ class Purchase extends Base
     }
 
     /**
+     *
+     * @param $expiresIn
+     * @return Purchase
+     */
+    public function setExpiresIn($expiresIn)
+    {
+        $this->expiresIn = $expiresIn;
+
+        return $this;
+    }
+
+    public function getExpiresIn()
+    {
+        return $this->expiresIn;
+    }
+
+    /**
      * Initiate API request
      *
      * @return boolean
@@ -147,6 +164,11 @@ class Purchase extends Base
         $this->_addPostParam('URL_Notify', $this->getUrlNotify());
 
         $this->_addPostParam('Note', $this->getNote());
+        $this->_addPostParam('expires_in', $this->getExpiresIn());
+
+        // Add partner details
+        $this->_addPostParam('ApplicationID', $this->getCnf()->getApplicationID());
+        $this->_addPostParam('PartnerID', $this->getCnf()->getPartnerID());
 
         $this->_addPostParam('customeremail', $this->getCustomer()->getEmail());
         $this->_addPostParam('customerphone', $this->getCustomer()->getPhone());
@@ -258,6 +280,16 @@ class Purchase extends Base
                 $this->getCustomer()->validate($this->getPaymentParametersRequired());
             } catch (\Exception $ex) {
                 throw new IPC_Exception('Invalid Customer details: ' . $ex->getMessage());
+            }
+        }
+
+        if ($this->getCnf()->getVersion() === '1.4.1'){
+            if ($this->getCnf()->getPartnerID() == null){
+                throw new IPC_Exception('Required parameter: Partner ID');
+            }
+
+            if ($this->getCnf()->getApplicationID() == null){
+                throw new IPC_Exception('Required parameter: Application ID');
             }
         }
 

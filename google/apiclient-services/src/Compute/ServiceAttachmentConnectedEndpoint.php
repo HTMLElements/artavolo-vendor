@@ -17,12 +17,25 @@
 
 namespace Google\Service\Compute;
 
-class ServiceAttachmentConnectedEndpoint extends \Google\Model
+class ServiceAttachmentConnectedEndpoint extends \Google\Collection
 {
+  protected $collection_key = 'natIps';
+  /**
+   * @var string
+   */
+  public $consumerNetwork;
   /**
    * @var string
    */
   public $endpoint;
+  /**
+   * @var string[]
+   */
+  public $natIps;
+  /**
+   * @var string
+   */
+  public $propagatedConnectionCount;
   /**
    * @var string
    */
@@ -32,6 +45,20 @@ class ServiceAttachmentConnectedEndpoint extends \Google\Model
    */
   public $status;
 
+  /**
+   * @param string
+   */
+  public function setConsumerNetwork($consumerNetwork)
+  {
+    $this->consumerNetwork = $consumerNetwork;
+  }
+  /**
+   * @return string
+   */
+  public function getConsumerNetwork()
+  {
+    return $this->consumerNetwork;
+  }
   /**
    * @param string
    */
@@ -45,6 +72,34 @@ class ServiceAttachmentConnectedEndpoint extends \Google\Model
   public function getEndpoint()
   {
     return $this->endpoint;
+  }
+  /**
+   * @param string[]
+   */
+  public function setNatIps($natIps)
+  {
+    $this->natIps = $natIps;
+  }
+  /**
+   * @return string[]
+   */
+  public function getNatIps()
+  {
+    return $this->natIps;
+  }
+  /**
+   * @param string
+   */
+  public function setPropagatedConnectionCount($propagatedConnectionCount)
+  {
+    $this->propagatedConnectionCount = $propagatedConnectionCount;
+  }
+  /**
+   * @return string
+   */
+  public function getPropagatedConnectionCount()
+  {
+    return $this->propagatedConnectionCount;
   }
   /**
    * @param string

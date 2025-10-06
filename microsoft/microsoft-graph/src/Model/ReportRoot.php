@@ -22,11 +22,76 @@ namespace Microsoft\Graph\Model;
 * @license   https://opensource.org/licenses/MIT MIT License
 * @link      https://graph.microsoft.com
 */
-class ReportRoot extends Entity
+class ReportRoot implements \JsonSerializable
 {
+    /**
+    * The array of properties available
+    * to the model
+    *
+    * @var array $_propDict
+    */
+    protected $_propDict;
+
+    /**
+    * Construct a new ReportRoot
+    *
+    * @param array $propDict A list of properties to set
+    */
+    function __construct($propDict = array())
+    {
+        if (!is_array($propDict)) {
+           $propDict = array();
+        }
+        $this->_propDict = $propDict;
+    }
+
+    /**
+    * Gets the property dictionary of the ReportRoot
+    *
+    * @return array The list of properties
+    */
+    public function getProperties()
+    {
+        return $this->_propDict;
+    }
+
+    /**
+    * Gets the authenticationMethods
+    * Container for navigation properties for Microsoft Entra authentication methods resources.
+    *
+    * @return AuthenticationMethodsRoot|null The authenticationMethods
+    */
+    public function getAuthenticationMethods()
+    {
+        if (array_key_exists("authenticationMethods", $this->_propDict)) {
+            if (is_a($this->_propDict["authenticationMethods"], "\Microsoft\Graph\Model\AuthenticationMethodsRoot") || is_null($this->_propDict["authenticationMethods"])) {
+                return $this->_propDict["authenticationMethods"];
+            } else {
+                $this->_propDict["authenticationMethods"] = new AuthenticationMethodsRoot($this->_propDict["authenticationMethods"]);
+                return $this->_propDict["authenticationMethods"];
+            }
+        }
+        return null;
+    }
+
+    /**
+    * Sets the authenticationMethods
+    * Container for navigation properties for Microsoft Entra authentication methods resources.
+    *
+    * @param AuthenticationMethodsRoot $val The authenticationMethods
+    *
+    * @return ReportRoot
+    */
+    public function setAuthenticationMethods($val)
+    {
+        $this->_propDict["authenticationMethods"] = $val;
+        return $this;
+    }
+
 
      /**
      * Gets the dailyPrintUsageByPrinter
+    * Retrieve a list of daily print usage summaries, grouped by printer.
      *
      * @return array|null The dailyPrintUsageByPrinter
      */
@@ -41,6 +106,7 @@ class ReportRoot extends Entity
 
     /**
     * Sets the dailyPrintUsageByPrinter
+    * Retrieve a list of daily print usage summaries, grouped by printer.
     *
     * @param PrintUsageByPrinter[] $val The dailyPrintUsageByPrinter
     *
@@ -55,6 +121,7 @@ class ReportRoot extends Entity
 
      /**
      * Gets the dailyPrintUsageByUser
+    * Retrieve a list of daily print usage summaries, grouped by user.
      *
      * @return array|null The dailyPrintUsageByUser
      */
@@ -69,6 +136,7 @@ class ReportRoot extends Entity
 
     /**
     * Sets the dailyPrintUsageByUser
+    * Retrieve a list of daily print usage summaries, grouped by user.
     *
     * @param PrintUsageByUser[] $val The dailyPrintUsageByUser
     *
@@ -83,6 +151,7 @@ class ReportRoot extends Entity
 
      /**
      * Gets the monthlyPrintUsageByPrinter
+    * Retrieve a list of monthly print usage summaries, grouped by printer.
      *
      * @return array|null The monthlyPrintUsageByPrinter
      */
@@ -97,6 +166,7 @@ class ReportRoot extends Entity
 
     /**
     * Sets the monthlyPrintUsageByPrinter
+    * Retrieve a list of monthly print usage summaries, grouped by printer.
     *
     * @param PrintUsageByPrinter[] $val The monthlyPrintUsageByPrinter
     *
@@ -111,6 +181,7 @@ class ReportRoot extends Entity
 
      /**
      * Gets the monthlyPrintUsageByUser
+    * Retrieve a list of monthly print usage summaries, grouped by user.
      *
      * @return array|null The monthlyPrintUsageByUser
      */
@@ -125,6 +196,7 @@ class ReportRoot extends Entity
 
     /**
     * Sets the monthlyPrintUsageByUser
+    * Retrieve a list of monthly print usage summaries, grouped by user.
     *
     * @param PrintUsageByUser[] $val The monthlyPrintUsageByUser
     *
@@ -138,6 +210,7 @@ class ReportRoot extends Entity
 
     /**
     * Gets the security
+    * Represents an abstract type that contains resources for attack simulation and training reports.
     *
     * @return SecurityReportsRoot|null The security
     */
@@ -156,6 +229,7 @@ class ReportRoot extends Entity
 
     /**
     * Sets the security
+    * Represents an abstract type that contains resources for attack simulation and training reports.
     *
     * @param SecurityReportsRoot $val The security
     *
@@ -167,4 +241,53 @@ class ReportRoot extends Entity
         return $this;
     }
 
+    /**
+    * Gets the ODataType
+    *
+    * @return string|null The ODataType
+    */
+    public function getODataType()
+    {
+        if (array_key_exists('@odata.type', $this->_propDict)) {
+            return $this->_propDict["@odata.type"];
+        }
+        return null;
+    }
+
+    /**
+    * Sets the ODataType
+    *
+    * @param string $val The ODataType
+    *
+    * @return ReportRoot
+    */
+    public function setODataType($val)
+    {
+        $this->_propDict["@odata.type"] = $val;
+        return $this;
+    }
+
+    /**
+    * Serializes the object by property array
+    * Manually serialize DateTime into RFC3339 format
+    *
+    * @return array The list of properties
+    */
+    #[\ReturnTypeWillChange]
+    public function jsonSerialize()
+    {
+        $serializableProperties = $this->getProperties();
+        foreach ($serializableProperties as $property => $val) {
+            if (is_a($val, "\DateTime")) {
+                $serializableProperties[$property] = $val->format(\DateTime::RFC3339);
+            } else if (is_a($val, "\Microsoft\Graph\Core\Enum")) {
+                $serializableProperties[$property] = $val->value();
+            } else if (is_a($val, "\Entity")) {
+                $serializableProperties[$property] = $val->jsonSerialize();
+            } else if (is_a($val, "\GuzzleHttp\Psr7\Stream")) {
+                $serializableProperties[$property] = (string) $val;
+            }
+        }
+        return $serializableProperties;
+    }
 }

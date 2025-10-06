@@ -49,6 +49,7 @@ class Projects extends \Google\Service\Resource
    * @param Project $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
+   * @throws \Google\Service\Exception
    */
   public function create(Project $postBody, $optParams = [])
   {
@@ -66,9 +67,7 @@ class Projects extends \Google\Service\Resource
    * checked by retrieving the project with GetProject, and the project remains
    * visible to ListProjects. However, you cannot update the project. After the
    * deletion completes, the project is not retrievable by the GetProject,
-   * ListProjects, and SearchProjects methods. This method behaves idempotently,
-   * such that deleting a `DELETE_REQUESTED` project will not cause an error, but
-   * also won't do anything. The caller must have
+   * ListProjects, and SearchProjects methods. The caller must have
    * `resourcemanager.projects.delete` permissions for this project.
    * (projects.delete)
    *
@@ -76,6 +75,7 @@ class Projects extends \Google\Service\Resource
    * `projects/415104041262`).
    * @param array $optParams Optional parameters.
    * @return Operation
+   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -92,6 +92,7 @@ class Projects extends \Google\Service\Resource
    * `projects/415104041262`).
    * @param array $optParams Optional parameters.
    * @return Project
+   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -111,6 +112,7 @@ class Projects extends \Google\Service\Resource
    * @param GetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Policy
+   * @throws \Google\Service\Exception
    */
   public function getIamPolicy($resource, GetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -134,13 +136,16 @@ class Projects extends \Google\Service\Resource
    * @opt_param string pageToken Optional. A pagination token returned from a
    * previous call to ListProjects that indicates from where listing should
    * continue.
-   * @opt_param string parent Required. The name of the parent resource to list
-   * projects under. For example, setting this field to 'folders/1234' would list
-   * all projects directly under that folder.
+   * @opt_param string parent Required. The name of the parent resource whose
+   * projects are being listed. Only children of this parent resource are listed;
+   * descendants are not listed. If the parent is a folder, use the value
+   * `folders/{folder_id}`. If the parent is an organization, use the value
+   * `organizations/{org_id}`.
    * @opt_param bool showDeleted Optional. Indicate that projects in the
    * `DELETE_REQUESTED` state should also be returned. Normally only `ACTIVE`
    * projects are returned.
    * @return ListProjectsResponse
+   * @throws \Google\Service\Exception
    */
   public function listProjects($optParams = [])
   {
@@ -163,6 +168,7 @@ class Projects extends \Google\Service\Resource
    * @param MoveProjectRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
+   * @throws \Google\Service\Exception
    */
   public function move($name, MoveProjectRequest $postBody, $optParams = [])
   {
@@ -186,6 +192,7 @@ class Projects extends \Google\Service\Resource
    * @opt_param string updateMask Optional. An update mask to selectively update
    * fields.
    * @return Operation
+   * @throws \Google\Service\Exception
    */
   public function patch($name, Project $postBody, $optParams = [])
   {
@@ -194,7 +201,7 @@ class Projects extends \Google\Service\Resource
     return $this->call('patch', [$params], Operation::class);
   }
   /**
-   * Search for projects that the caller has both `resourcemanager.projects.get`
+   * Search for projects that the caller has the `resourcemanager.projects.get`
    * permission on, and also satisfy the specified query. This method returns
    * projects in an unspecified order. This method is eventually consistent with
    * project mutations; this means that a newly created project may not appear in
@@ -229,10 +236,11 @@ class Projects extends \Google\Service\Resource
    * NAME:howl | Equivalent to above. | | labels.color:* | The project has the
    * label `color`. | | labels.color:red | The project's label `color` has the
    * value `red`. | | labels.color:red labels.size:big | The project's label
-   * `color` has the value `red` and its label `size` has the value `big`.| ``` If
+   * `color` has the value `red` or its label `size` has the value `big`. | ``` If
    * no query is specified, the call will return projects for which the user has
    * the `resourcemanager.projects.get` permission.
    * @return SearchProjectsResponse
+   * @throws \Google\Service\Exception
    */
   public function search($optParams = [])
   {
@@ -267,8 +275,7 @@ class Projects extends \Google\Service\Resource
    * that no longer have owners who have accepted the ToS. Edits to IAM policies
    * will be rejected until the lack of a ToS-accepting owner is rectified. If the
    * project is part of an organization, you can remove all owners, potentially
-   * making the organization inaccessible. + Calling this method requires enabling
-   * the App Engine Admin API. (projects.setIamPolicy)
+   * making the organization inaccessible. (projects.setIamPolicy)
    *
    * @param string $resource REQUIRED: The resource for which the policy is being
    * specified. See [Resource
@@ -277,6 +284,7 @@ class Projects extends \Google\Service\Resource
    * @param SetIamPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Policy
+   * @throws \Google\Service\Exception
    */
   public function setIamPolicy($resource, SetIamPolicyRequest $postBody, $optParams = [])
   {
@@ -296,6 +304,7 @@ class Projects extends \Google\Service\Resource
    * @param TestIamPermissionsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return TestIamPermissionsResponse
+   * @throws \Google\Service\Exception
    */
   public function testIamPermissions($resource, TestIamPermissionsRequest $postBody, $optParams = [])
   {
@@ -315,6 +324,7 @@ class Projects extends \Google\Service\Resource
    * @param UndeleteProjectRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
+   * @throws \Google\Service\Exception
    */
   public function undelete($name, UndeleteProjectRequest $postBody, $optParams = [])
   {

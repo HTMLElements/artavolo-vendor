@@ -17,14 +17,19 @@
 
 namespace Google\Service\SQLAdmin;
 
-class CloneContext extends \Google\Model
+class CloneContext extends \Google\Collection
 {
+  protected $collection_key = 'databaseNames';
   /**
    * @var string
    */
   public $allocatedIpRange;
   protected $binLogCoordinatesType = BinLogCoordinates::class;
   protected $binLogCoordinatesDataType = '';
+  /**
+   * @var string[]
+   */
+  public $databaseNames;
   /**
    * @var string
    */
@@ -41,6 +46,18 @@ class CloneContext extends \Google\Model
    * @var string
    */
   public $pointInTime;
+  /**
+   * @var string
+   */
+  public $preferredSecondaryZone;
+  /**
+   * @var string
+   */
+  public $preferredZone;
+  /**
+   * @var string
+   */
+  public $sourceInstanceDeletionTime;
 
   /**
    * @param string
@@ -69,6 +86,20 @@ class CloneContext extends \Google\Model
   public function getBinLogCoordinates()
   {
     return $this->binLogCoordinates;
+  }
+  /**
+   * @param string[]
+   */
+  public function setDatabaseNames($databaseNames)
+  {
+    $this->databaseNames = $databaseNames;
+  }
+  /**
+   * @return string[]
+   */
+  public function getDatabaseNames()
+  {
+    return $this->databaseNames;
   }
   /**
    * @param string
@@ -125,6 +156,48 @@ class CloneContext extends \Google\Model
   public function getPointInTime()
   {
     return $this->pointInTime;
+  }
+  /**
+   * @param string
+   */
+  public function setPreferredSecondaryZone($preferredSecondaryZone)
+  {
+    $this->preferredSecondaryZone = $preferredSecondaryZone;
+  }
+  /**
+   * @return string
+   */
+  public function getPreferredSecondaryZone()
+  {
+    return $this->preferredSecondaryZone;
+  }
+  /**
+   * @param string
+   */
+  public function setPreferredZone($preferredZone)
+  {
+    $this->preferredZone = $preferredZone;
+  }
+  /**
+   * @return string
+   */
+  public function getPreferredZone()
+  {
+    return $this->preferredZone;
+  }
+  /**
+   * @param string
+   */
+  public function setSourceInstanceDeletionTime($sourceInstanceDeletionTime)
+  {
+    $this->sourceInstanceDeletionTime = $sourceInstanceDeletionTime;
+  }
+  /**
+   * @return string
+   */
+  public function getSourceInstanceDeletionTime()
+  {
+    return $this->sourceInstanceDeletionTime;
   }
 }
 

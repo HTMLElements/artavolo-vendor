@@ -28,7 +28,7 @@ use Google\Service\ApiKeysService\V2UndeleteKeyRequest;
  * Typical usage is:
  *  <code>
  *   $apikeysService = new Google\Service\ApiKeysService(...);
- *   $keys = $apikeysService->keys;
+ *   $keys = $apikeysService->projects_locations_keys;
  *  </code>
  */
 class ProjectsLocationsKeys extends \Google\Service\Resource
@@ -48,6 +48,7 @@ class ProjectsLocationsKeys extends \Google\Service\Resource
    * word, the id must match the regular expression:
    * `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`. The id must NOT be a UUID-like string.
    * @return Operation
+   * @throws \Google\Service\Exception
    */
   public function create($parent, V2Key $postBody, $optParams = [])
   {
@@ -67,6 +68,7 @@ class ProjectsLocationsKeys extends \Google\Service\Resource
    * @opt_param string etag Optional. The etag known to the client for the
    * expected state of the key. This is to be used for optimistic concurrency.
    * @return Operation
+   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -82,6 +84,7 @@ class ProjectsLocationsKeys extends \Google\Service\Resource
    * @param string $name Required. The resource name of the API key to get.
    * @param array $optParams Optional parameters.
    * @return V2Key
+   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -97,6 +100,7 @@ class ProjectsLocationsKeys extends \Google\Service\Resource
    * retrieved.
    * @param array $optParams Optional parameters.
    * @return V2GetKeyStringResponse
+   * @throws \Google\Service\Exception
    */
   public function getKeyString($name, $optParams = [])
   {
@@ -119,6 +123,7 @@ class ProjectsLocationsKeys extends \Google\Service\Resource
    * @opt_param bool showDeleted Optional. Indicate that keys deleted in the past
    * 30 days should also be returned.
    * @return V2ListKeysResponse
+   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsKeys($parent, $optParams = [])
   {
@@ -132,21 +137,21 @@ class ProjectsLocationsKeys extends \Google\Service\Resource
    * only supported value for location is `global`. (keys.patch)
    *
    * @param string $name Output only. The resource name of the key. The `name` has
-   * the form: `projects//locations/global/keys/`. For example:
-   * `projects/123456867718/locations/global/keys/b7ff1f9f-8275-410a-94dd-
-   * 3855ee9b5dd2` NOTE: Key is a global resource; hence the only supported value
-   * for location is `global`.
+   * the form: `projects//locations/global/keys/`. For example: `projects/12345686
+   * 7718/locations/global/keys/b7ff1f9f-8275-410a-94dd-3855ee9b5dd2` NOTE: Key is
+   * a global resource; hence the only supported value for location is `global`.
    * @param V2Key $postBody
    * @param array $optParams Optional parameters.
    *
    * @opt_param string updateMask The field mask specifies which fields to be
    * updated as part of this request. All other fields are ignored. Mutable fields
-   * are: `display_name`,`restrictions` and `annotations`. If an update mask is
+   * are: `display_name`, `restrictions`, and `annotations`. If an update mask is
    * not provided, the service treats it as an implied mask equivalent to all
    * allowed fields that are set on the wire. If the field mask has a special
    * value "*", the service treats it equivalent to replace all allowed mutable
    * fields.
    * @return Operation
+   * @throws \Google\Service\Exception
    */
   public function patch($name, V2Key $postBody, $optParams = [])
   {
@@ -164,6 +169,7 @@ class ProjectsLocationsKeys extends \Google\Service\Resource
    * @param V2UndeleteKeyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Operation
+   * @throws \Google\Service\Exception
    */
   public function undelete($name, V2UndeleteKeyRequest $postBody, $optParams = [])
   {

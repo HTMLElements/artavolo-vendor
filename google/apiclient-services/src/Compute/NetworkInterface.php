@@ -57,11 +57,19 @@ class NetworkInterface extends \Google\Collection
   /**
    * @var string
    */
+  public $networkAttachment;
+  /**
+   * @var string
+   */
   public $networkIP;
   /**
    * @var string
    */
   public $nicType;
+  /**
+   * @var string
+   */
+  public $parentNicName;
   /**
    * @var int
    */
@@ -74,6 +82,10 @@ class NetworkInterface extends \Google\Collection
    * @var string
    */
   public $subnetwork;
+  /**
+   * @var int
+   */
+  public $vlan;
 
   /**
    * @param AccessConfig[]
@@ -218,6 +230,20 @@ class NetworkInterface extends \Google\Collection
   /**
    * @param string
    */
+  public function setNetworkAttachment($networkAttachment)
+  {
+    $this->networkAttachment = $networkAttachment;
+  }
+  /**
+   * @return string
+   */
+  public function getNetworkAttachment()
+  {
+    return $this->networkAttachment;
+  }
+  /**
+   * @param string
+   */
   public function setNetworkIP($networkIP)
   {
     $this->networkIP = $networkIP;
@@ -242,6 +268,20 @@ class NetworkInterface extends \Google\Collection
   public function getNicType()
   {
     return $this->nicType;
+  }
+  /**
+   * @param string
+   */
+  public function setParentNicName($parentNicName)
+  {
+    $this->parentNicName = $parentNicName;
+  }
+  /**
+   * @return string
+   */
+  public function getParentNicName()
+  {
+    return $this->parentNicName;
   }
   /**
    * @param int
@@ -284,6 +324,20 @@ class NetworkInterface extends \Google\Collection
   public function getSubnetwork()
   {
     return $this->subnetwork;
+  }
+  /**
+   * @param int
+   */
+  public function setVlan($vlan)
+  {
+    $this->vlan = $vlan;
+  }
+  /**
+   * @return int
+   */
+  public function getVlan()
+  {
+    return $this->vlan;
   }
 }
 

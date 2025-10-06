@@ -44,6 +44,7 @@ class ResourceRecordSets extends \Google\Service\Resource
    * optional identifier specified by the client. Must be unique for operation
    * resources in the Operations collection.
    * @return ResourceRecordSet
+   * @throws \Google\Service\Exception
    */
   public function create($project, $managedZone, ResourceRecordSet $postBody, $optParams = [])
   {
@@ -65,6 +66,7 @@ class ResourceRecordSets extends \Google\Service\Resource
    * optional identifier specified by the client. Must be unique for operation
    * resources in the Operations collection.
    * @return ResourceRecordSetsDeleteResponse
+   * @throws \Google\Service\Exception
    */
   public function delete($project, $managedZone, $name, $type, $optParams = [])
   {
@@ -87,6 +89,7 @@ class ResourceRecordSets extends \Google\Service\Resource
    * optional identifier specified by the client. Must be unique for operation
    * resources in the Operations collection.
    * @return ResourceRecordSet
+   * @throws \Google\Service\Exception
    */
   public function get($project, $managedZone, $name, $type, $optParams = [])
   {
@@ -106,13 +109,16 @@ class ResourceRecordSets extends \Google\Service\Resource
    * @opt_param int maxResults Optional. Maximum number of results to be returned.
    * If unspecified, the server decides how many results to return.
    * @opt_param string name Restricts the list to return only records with this
-   * fully qualified domain name.
+   * fully qualified domain name. Mutually exclusive with the {@code filter}
+   * field.
    * @opt_param string pageToken Optional. A tag returned by a previous list
    * request that was truncated. Use this parameter to continue a previous list
    * request.
    * @opt_param string type Restricts the list to return only records of this
-   * type. If present, the "name" parameter must also be present.
+   * type. If present, the "name" parameter must also be present. Mutually
+   * exclusive with the {@code filter} field.
    * @return ResourceRecordSetsListResponse
+   * @throws \Google\Service\Exception
    */
   public function listResourceRecordSets($project, $managedZone, $optParams = [])
   {
@@ -136,6 +142,7 @@ class ResourceRecordSets extends \Google\Service\Resource
    * optional identifier specified by the client. Must be unique for operation
    * resources in the Operations collection.
    * @return ResourceRecordSet
+   * @throws \Google\Service\Exception
    */
   public function patch($project, $managedZone, $name, $type, ResourceRecordSet $postBody, $optParams = [])
   {

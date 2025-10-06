@@ -22,12 +22,38 @@ class TelephonyInfo extends \Google\Model
   /**
    * @var string
    */
+  public $activationState;
+  /**
+   * @var string
+   */
   public $carrierName;
+  /**
+   * @var string
+   */
+  public $configMode;
+  /**
+   * @var string
+   */
+  public $iccId;
   /**
    * @var string
    */
   public $phoneNumber;
 
+  /**
+   * @param string
+   */
+  public function setActivationState($activationState)
+  {
+    $this->activationState = $activationState;
+  }
+  /**
+   * @return string
+   */
+  public function getActivationState()
+  {
+    return $this->activationState;
+  }
   /**
    * @param string
    */
@@ -41,6 +67,34 @@ class TelephonyInfo extends \Google\Model
   public function getCarrierName()
   {
     return $this->carrierName;
+  }
+  /**
+   * @param string
+   */
+  public function setConfigMode($configMode)
+  {
+    $this->configMode = $configMode;
+  }
+  /**
+   * @return string
+   */
+  public function getConfigMode()
+  {
+    return $this->configMode;
+  }
+  /**
+   * @param string
+   */
+  public function setIccId($iccId)
+  {
+    $this->iccId = $iccId;
+  }
+  /**
+   * @return string
+   */
+  public function getIccId()
+  {
+    return $this->iccId;
   }
   /**
    * @param string

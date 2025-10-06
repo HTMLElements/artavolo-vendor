@@ -378,7 +378,7 @@ class AccessPackageAssignmentPolicy extends Entity
 
     /**
     * Gets the accessPackage
-    * Access package containing this policy. Read-only.
+    * Access package containing this policy. Read-only.  Supports $expand.
     *
     * @return AccessPackage|null The accessPackage
     */
@@ -397,7 +397,7 @@ class AccessPackageAssignmentPolicy extends Entity
 
     /**
     * Sets the accessPackage
-    * Access package containing this policy. Read-only.
+    * Access package containing this policy. Read-only.  Supports $expand.
     *
     * @param AccessPackage $val The accessPackage
     *
@@ -439,6 +439,66 @@ class AccessPackageAssignmentPolicy extends Entity
     public function setCatalog($val)
     {
         $this->_propDict["catalog"] = $val;
+        return $this;
+    }
+
+
+     /**
+     * Gets the customExtensionStageSettings
+    * The collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
+     *
+     * @return array|null The customExtensionStageSettings
+     */
+    public function getCustomExtensionStageSettings()
+    {
+        if (array_key_exists("customExtensionStageSettings", $this->_propDict)) {
+           return $this->_propDict["customExtensionStageSettings"];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+    * Sets the customExtensionStageSettings
+    * The collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
+    *
+    * @param CustomExtensionStageSetting[] $val The customExtensionStageSettings
+    *
+    * @return AccessPackageAssignmentPolicy
+    */
+    public function setCustomExtensionStageSettings($val)
+    {
+        $this->_propDict["customExtensionStageSettings"] = $val;
+        return $this;
+    }
+
+
+     /**
+     * Gets the questions
+    * Questions that are posed to the  requestor.
+     *
+     * @return array|null The questions
+     */
+    public function getQuestions()
+    {
+        if (array_key_exists("questions", $this->_propDict)) {
+           return $this->_propDict["questions"];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+    * Sets the questions
+    * Questions that are posed to the  requestor.
+    *
+    * @param AccessPackageQuestion[] $val The questions
+    *
+    * @return AccessPackageAssignmentPolicy
+    */
+    public function setQuestions($val)
+    {
+        $this->_propDict["questions"] = $val;
         return $this;
     }
 

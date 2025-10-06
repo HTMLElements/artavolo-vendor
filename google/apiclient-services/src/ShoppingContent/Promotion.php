@@ -19,7 +19,7 @@ namespace Google\Service\ShoppingContent;
 
 class Promotion extends \Google\Collection
 {
-  protected $collection_key = 'shippingServiceNames';
+  protected $collection_key = 'storeCodeExclusion';
   /**
    * @var string[]
    */
@@ -36,6 +36,10 @@ class Promotion extends \Google\Collection
    * @var string
    */
   public $couponValueType;
+  /**
+   * @var string
+   */
+  public $customRedemptionRestriction;
   /**
    * @var string
    */
@@ -84,6 +88,8 @@ class Promotion extends \Google\Collection
    * @var string
    */
   public $longTitle;
+  protected $maxDiscountAmountType = PriceAmount::class;
+  protected $maxDiscountAmountDataType = '';
   protected $minimumPurchaseAmountType = PriceAmount::class;
   protected $minimumPurchaseAmountDataType = '';
   /**
@@ -138,14 +144,36 @@ class Promotion extends \Google\Collection
    * @var string
    */
   public $promotionId;
+  protected $promotionStatusType = PromotionPromotionStatus::class;
+  protected $promotionStatusDataType = '';
+  /**
+   * @var string
+   */
+  public $promotionUrl;
   /**
    * @var string[]
    */
   public $redemptionChannel;
   /**
+   * @var string
+   */
+  public $redemptionRestriction;
+  /**
    * @var string[]
    */
   public $shippingServiceNames;
+  /**
+   * @var string
+   */
+  public $storeApplicability;
+  /**
+   * @var string[]
+   */
+  public $storeCode;
+  /**
+   * @var string[]
+   */
+  public $storeCodeExclusion;
   /**
    * @var string
    */
@@ -206,6 +234,20 @@ class Promotion extends \Google\Collection
   public function getCouponValueType()
   {
     return $this->couponValueType;
+  }
+  /**
+   * @param string
+   */
+  public function setCustomRedemptionRestriction($customRedemptionRestriction)
+  {
+    $this->customRedemptionRestriction = $customRedemptionRestriction;
+  }
+  /**
+   * @return string
+   */
+  public function getCustomRedemptionRestriction()
+  {
+    return $this->customRedemptionRestriction;
   }
   /**
    * @param string
@@ -388,6 +430,20 @@ class Promotion extends \Google\Collection
   public function getLongTitle()
   {
     return $this->longTitle;
+  }
+  /**
+   * @param PriceAmount
+   */
+  public function setMaxDiscountAmount(PriceAmount $maxDiscountAmount)
+  {
+    $this->maxDiscountAmount = $maxDiscountAmount;
+  }
+  /**
+   * @return PriceAmount
+   */
+  public function getMaxDiscountAmount()
+  {
+    return $this->maxDiscountAmount;
   }
   /**
    * @param PriceAmount
@@ -614,6 +670,34 @@ class Promotion extends \Google\Collection
     return $this->promotionId;
   }
   /**
+   * @param PromotionPromotionStatus
+   */
+  public function setPromotionStatus(PromotionPromotionStatus $promotionStatus)
+  {
+    $this->promotionStatus = $promotionStatus;
+  }
+  /**
+   * @return PromotionPromotionStatus
+   */
+  public function getPromotionStatus()
+  {
+    return $this->promotionStatus;
+  }
+  /**
+   * @param string
+   */
+  public function setPromotionUrl($promotionUrl)
+  {
+    $this->promotionUrl = $promotionUrl;
+  }
+  /**
+   * @return string
+   */
+  public function getPromotionUrl()
+  {
+    return $this->promotionUrl;
+  }
+  /**
    * @param string[]
    */
   public function setRedemptionChannel($redemptionChannel)
@@ -628,6 +712,20 @@ class Promotion extends \Google\Collection
     return $this->redemptionChannel;
   }
   /**
+   * @param string
+   */
+  public function setRedemptionRestriction($redemptionRestriction)
+  {
+    $this->redemptionRestriction = $redemptionRestriction;
+  }
+  /**
+   * @return string
+   */
+  public function getRedemptionRestriction()
+  {
+    return $this->redemptionRestriction;
+  }
+  /**
    * @param string[]
    */
   public function setShippingServiceNames($shippingServiceNames)
@@ -640,6 +738,48 @@ class Promotion extends \Google\Collection
   public function getShippingServiceNames()
   {
     return $this->shippingServiceNames;
+  }
+  /**
+   * @param string
+   */
+  public function setStoreApplicability($storeApplicability)
+  {
+    $this->storeApplicability = $storeApplicability;
+  }
+  /**
+   * @return string
+   */
+  public function getStoreApplicability()
+  {
+    return $this->storeApplicability;
+  }
+  /**
+   * @param string[]
+   */
+  public function setStoreCode($storeCode)
+  {
+    $this->storeCode = $storeCode;
+  }
+  /**
+   * @return string[]
+   */
+  public function getStoreCode()
+  {
+    return $this->storeCode;
+  }
+  /**
+   * @param string[]
+   */
+  public function setStoreCodeExclusion($storeCodeExclusion)
+  {
+    $this->storeCodeExclusion = $storeCodeExclusion;
+  }
+  /**
+   * @return string[]
+   */
+  public function getStoreCodeExclusion()
+  {
+    return $this->storeCodeExclusion;
   }
   /**
    * @param string

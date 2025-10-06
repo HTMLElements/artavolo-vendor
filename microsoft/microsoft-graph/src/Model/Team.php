@@ -369,6 +369,7 @@ class Team extends Entity
 
     /**
     * Gets the summary
+    * Contains summary information about the team, including number of owners, members, and guests.
     *
     * @return TeamSummary|null The summary
     */
@@ -387,6 +388,7 @@ class Team extends Entity
 
     /**
     * Sets the summary
+    * Contains summary information about the team, including number of owners, members, and guests.
     *
     * @param TeamSummary $val The summary
     *
@@ -400,7 +402,7 @@ class Team extends Entity
 
     /**
     * Gets the tenantId
-    * The ID of the Azure Active Directory tenant.
+    * The ID of the Microsoft Entra tenant.
     *
     * @return string|null The tenantId
     */
@@ -415,7 +417,7 @@ class Team extends Entity
 
     /**
     * Sets the tenantId
-    * The ID of the Azure Active Directory tenant.
+    * The ID of the Microsoft Entra tenant.
     *
     * @param string $val The tenantId
     *
@@ -697,6 +699,36 @@ class Team extends Entity
     public function setOperations($val)
     {
         $this->_propDict["operations"] = $val;
+        return $this;
+    }
+
+
+     /**
+     * Gets the permissionGrants
+    * A collection of permissions granted to apps to access the team.
+     *
+     * @return array|null The permissionGrants
+     */
+    public function getPermissionGrants()
+    {
+        if (array_key_exists("permissionGrants", $this->_propDict)) {
+           return $this->_propDict["permissionGrants"];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+    * Sets the permissionGrants
+    * A collection of permissions granted to apps to access the team.
+    *
+    * @param ResourceSpecificPermissionGrant[] $val The permissionGrants
+    *
+    * @return Team
+    */
+    public function setPermissionGrants($val)
+    {
+        $this->_propDict["permissionGrants"] = $val;
         return $this;
     }
 

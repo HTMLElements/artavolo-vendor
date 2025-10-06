@@ -38,6 +38,7 @@ class Operations extends \Google\Service\Resource
    * @param string $name The name of the operation resource.
    * @param array $optParams Optional parameters.
    * @return Operation
+   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -47,14 +48,8 @@ class Operations extends \Google\Service\Resource
   }
   /**
    * Lists operations that match the specified filter in the request. If the
-   * server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the
-   * `name` binding allows API services to override the binding to use different
-   * resource name schemes, such as `users/operations`. To override the binding,
-   * API services can add a binding such as `"/v1/{name=users}/operations"` to
-   * their service configuration. For backwards compatibility, the default name
-   * includes the operations collection id, however overriding users must ensure
-   * the name binding is the parent resource, without the operations collection
-   * id. (operations.listOperations)
+   * server doesn't support this method, it returns `UNIMPLEMENTED`.
+   * (operations.listOperations)
    *
    * @param array $optParams Optional parameters.
    *
@@ -62,7 +57,15 @@ class Operations extends \Google\Service\Resource
    * @opt_param string name The name of the operation's parent resource.
    * @opt_param int pageSize The standard list page size.
    * @opt_param string pageToken The standard list page token.
+   * @opt_param bool returnPartialSuccess When set to `true`, operations that are
+   * reachable are returned as normal, and those that are unreachable are returned
+   * in the [ListOperationsResponse.unreachable] field. This can only be `true`
+   * when reading across collections e.g. when `parent` is set to
+   * `"projects/example/locations/-"`. This field is not by default supported and
+   * will result in an `UNIMPLEMENTED` error if set unless explicitly documented
+   * otherwise in service or product specific documentation.
    * @return ListOperationsResponse
+   * @throws \Google\Service\Exception
    */
   public function listOperations($optParams = [])
   {

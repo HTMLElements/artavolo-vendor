@@ -22,6 +22,16 @@ class ClusterConfig extends \Google\Collection
   protected $collection_key = 'initializationActions';
   protected $autoscalingConfigType = AutoscalingConfig::class;
   protected $autoscalingConfigDataType = '';
+  protected $auxiliaryNodeGroupsType = AuxiliaryNodeGroup::class;
+  protected $auxiliaryNodeGroupsDataType = 'array';
+  /**
+   * @var string
+   */
+  public $clusterTier;
+  /**
+   * @var string
+   */
+  public $clusterType;
   /**
    * @var string
    */
@@ -70,6 +80,48 @@ class ClusterConfig extends \Google\Collection
   public function getAutoscalingConfig()
   {
     return $this->autoscalingConfig;
+  }
+  /**
+   * @param AuxiliaryNodeGroup[]
+   */
+  public function setAuxiliaryNodeGroups($auxiliaryNodeGroups)
+  {
+    $this->auxiliaryNodeGroups = $auxiliaryNodeGroups;
+  }
+  /**
+   * @return AuxiliaryNodeGroup[]
+   */
+  public function getAuxiliaryNodeGroups()
+  {
+    return $this->auxiliaryNodeGroups;
+  }
+  /**
+   * @param string
+   */
+  public function setClusterTier($clusterTier)
+  {
+    $this->clusterTier = $clusterTier;
+  }
+  /**
+   * @return string
+   */
+  public function getClusterTier()
+  {
+    return $this->clusterTier;
+  }
+  /**
+   * @param string
+   */
+  public function setClusterType($clusterType)
+  {
+    $this->clusterType = $clusterType;
+  }
+  /**
+   * @return string
+   */
+  public function getClusterType()
+  {
+    return $this->clusterType;
   }
   /**
    * @param string

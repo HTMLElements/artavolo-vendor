@@ -42,6 +42,8 @@ class DriveFile extends \Google\Collection
    * @var string
    */
   public $description;
+  protected $downloadRestrictionsType = DownloadRestrictionsMetadata::class;
+  protected $downloadRestrictionsDataType = '';
   /**
    * @var string
    */
@@ -91,11 +93,17 @@ class DriveFile extends \Google\Collection
   /**
    * @var bool
    */
+  public $inheritedPermissionsDisabled;
+  /**
+   * @var bool
+   */
   public $isAppAuthorized;
   /**
    * @var string
    */
   public $kind;
+  protected $labelInfoType = DriveFileLabelInfo::class;
+  protected $labelInfoDataType = '';
   protected $lastModifyingUserType = User::class;
   protected $lastModifyingUserDataType = '';
   protected $linkShareMetadataType = DriveFileLinkShareMetadata::class;
@@ -156,6 +164,14 @@ class DriveFile extends \Google\Collection
    * @var string
    */
   public $resourceKey;
+  /**
+   * @var string
+   */
+  public $sha1Checksum;
+  /**
+   * @var string
+   */
+  public $sha256Checksum;
   /**
    * @var bool
    */
@@ -332,6 +348,20 @@ class DriveFile extends \Google\Collection
     return $this->description;
   }
   /**
+   * @param DownloadRestrictionsMetadata
+   */
+  public function setDownloadRestrictions(DownloadRestrictionsMetadata $downloadRestrictions)
+  {
+    $this->downloadRestrictions = $downloadRestrictions;
+  }
+  /**
+   * @return DownloadRestrictionsMetadata
+   */
+  public function getDownloadRestrictions()
+  {
+    return $this->downloadRestrictions;
+  }
+  /**
    * @param string
    */
   public function setDriveId($driveId)
@@ -502,6 +532,20 @@ class DriveFile extends \Google\Collection
   /**
    * @param bool
    */
+  public function setInheritedPermissionsDisabled($inheritedPermissionsDisabled)
+  {
+    $this->inheritedPermissionsDisabled = $inheritedPermissionsDisabled;
+  }
+  /**
+   * @return bool
+   */
+  public function getInheritedPermissionsDisabled()
+  {
+    return $this->inheritedPermissionsDisabled;
+  }
+  /**
+   * @param bool
+   */
   public function setIsAppAuthorized($isAppAuthorized)
   {
     $this->isAppAuthorized = $isAppAuthorized;
@@ -526,6 +570,20 @@ class DriveFile extends \Google\Collection
   public function getKind()
   {
     return $this->kind;
+  }
+  /**
+   * @param DriveFileLabelInfo
+   */
+  public function setLabelInfo(DriveFileLabelInfo $labelInfo)
+  {
+    $this->labelInfo = $labelInfo;
+  }
+  /**
+   * @return DriveFileLabelInfo
+   */
+  public function getLabelInfo()
+  {
+    return $this->labelInfo;
   }
   /**
    * @param User
@@ -764,6 +822,34 @@ class DriveFile extends \Google\Collection
   public function getResourceKey()
   {
     return $this->resourceKey;
+  }
+  /**
+   * @param string
+   */
+  public function setSha1Checksum($sha1Checksum)
+  {
+    $this->sha1Checksum = $sha1Checksum;
+  }
+  /**
+   * @return string
+   */
+  public function getSha1Checksum()
+  {
+    return $this->sha1Checksum;
+  }
+  /**
+   * @param string
+   */
+  public function setSha256Checksum($sha256Checksum)
+  {
+    $this->sha256Checksum = $sha256Checksum;
+  }
+  /**
+   * @return string
+   */
+  public function getSha256Checksum()
+  {
+    return $this->sha256Checksum;
   }
   /**
    * @param bool

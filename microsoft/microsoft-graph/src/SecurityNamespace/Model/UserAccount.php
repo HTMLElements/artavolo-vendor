@@ -25,7 +25,7 @@ class UserAccount extends \Microsoft\Graph\Model\Entity
 {
     /**
     * Gets the accountName
-    * The user account's displayed name.
+    * The displayed name of the user account.
     *
     * @return string|null The accountName
     */
@@ -40,7 +40,7 @@ class UserAccount extends \Microsoft\Graph\Model\Entity
 
     /**
     * Sets the accountName
-    * The user account's displayed name.
+    * The displayed name of the user account.
     *
     * @param string $val The value of the accountName
     *
@@ -53,7 +53,7 @@ class UserAccount extends \Microsoft\Graph\Model\Entity
     }
     /**
     * Gets the azureAdUserId
-    * The user object identifier in Azure AD.
+    * The user object identifier in Microsoft Entra ID.
     *
     * @return string|null The azureAdUserId
     */
@@ -68,7 +68,7 @@ class UserAccount extends \Microsoft\Graph\Model\Entity
 
     /**
     * Sets the azureAdUserId
-    * The user object identifier in Azure AD.
+    * The user object identifier in Microsoft Entra ID.
     *
     * @param string $val The value of the azureAdUserId
     *
@@ -77,6 +77,34 @@ class UserAccount extends \Microsoft\Graph\Model\Entity
     public function setAzureAdUserId($val)
     {
         $this->_propDict["azureAdUserId"] = $val;
+        return $this;
+    }
+    /**
+    * Gets the displayName
+    * The user display name in Microsoft Entra ID.
+    *
+    * @return string|null The displayName
+    */
+    public function getDisplayName()
+    {
+        if (array_key_exists("displayName", $this->_propDict)) {
+            return $this->_propDict["displayName"];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+    * Sets the displayName
+    * The user display name in Microsoft Entra ID.
+    *
+    * @param string $val The value of the displayName
+    *
+    * @return UserAccount
+    */
+    public function setDisplayName($val)
+    {
+        $this->_propDict["displayName"] = $val;
         return $this;
     }
     /**
@@ -109,7 +137,7 @@ class UserAccount extends \Microsoft\Graph\Model\Entity
     }
     /**
     * Gets the userPrincipalName
-    * The user principal name of the account in Azure AD.
+    * The user principal name of the account in Microsoft Entra ID.
     *
     * @return string|null The userPrincipalName
     */
@@ -124,7 +152,7 @@ class UserAccount extends \Microsoft\Graph\Model\Entity
 
     /**
     * Sets the userPrincipalName
-    * The user principal name of the account in Azure AD.
+    * The user principal name of the account in Microsoft Entra ID.
     *
     * @param string $val The value of the userPrincipalName
     *

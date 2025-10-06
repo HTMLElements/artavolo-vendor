@@ -20,6 +20,12 @@ namespace Google\Service\Dataproc;
 class ExecutionConfig extends \Google\Collection
 {
   protected $collection_key = 'networkTags';
+  protected $authenticationConfigType = AuthenticationConfig::class;
+  protected $authenticationConfigDataType = '';
+  /**
+   * @var string
+   */
+  public $idleTtl;
   /**
    * @var string
    */
@@ -39,8 +45,44 @@ class ExecutionConfig extends \Google\Collection
   /**
    * @var string
    */
+  public $stagingBucket;
+  /**
+   * @var string
+   */
   public $subnetworkUri;
+  /**
+   * @var string
+   */
+  public $ttl;
 
+  /**
+   * @param AuthenticationConfig
+   */
+  public function setAuthenticationConfig(AuthenticationConfig $authenticationConfig)
+  {
+    $this->authenticationConfig = $authenticationConfig;
+  }
+  /**
+   * @return AuthenticationConfig
+   */
+  public function getAuthenticationConfig()
+  {
+    return $this->authenticationConfig;
+  }
+  /**
+   * @param string
+   */
+  public function setIdleTtl($idleTtl)
+  {
+    $this->idleTtl = $idleTtl;
+  }
+  /**
+   * @return string
+   */
+  public function getIdleTtl()
+  {
+    return $this->idleTtl;
+  }
   /**
    * @param string
    */
@@ -100,6 +142,20 @@ class ExecutionConfig extends \Google\Collection
   /**
    * @param string
    */
+  public function setStagingBucket($stagingBucket)
+  {
+    $this->stagingBucket = $stagingBucket;
+  }
+  /**
+   * @return string
+   */
+  public function getStagingBucket()
+  {
+    return $this->stagingBucket;
+  }
+  /**
+   * @param string
+   */
   public function setSubnetworkUri($subnetworkUri)
   {
     $this->subnetworkUri = $subnetworkUri;
@@ -110,6 +166,20 @@ class ExecutionConfig extends \Google\Collection
   public function getSubnetworkUri()
   {
     return $this->subnetworkUri;
+  }
+  /**
+   * @param string
+   */
+  public function setTtl($ttl)
+  {
+    $this->ttl = $ttl;
+  }
+  /**
+   * @return string
+   */
+  public function getTtl()
+  {
+    return $this->ttl;
   }
 }
 

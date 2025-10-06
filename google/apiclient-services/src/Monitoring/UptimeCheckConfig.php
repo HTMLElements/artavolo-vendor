@@ -27,6 +27,10 @@ class UptimeCheckConfig extends \Google\Collection
   protected $contentMatchersType = ContentMatcher::class;
   protected $contentMatchersDataType = 'array';
   /**
+   * @var bool
+   */
+  public $disabled;
+  /**
    * @var string
    */
   public $displayName;
@@ -38,6 +42,10 @@ class UptimeCheckConfig extends \Google\Collection
    * @var bool
    */
   public $isInternal;
+  /**
+   * @var bool
+   */
+  public $logCheckFailures;
   protected $monitoredResourceType = MonitoredResource::class;
   protected $monitoredResourceDataType = '';
   /**
@@ -54,12 +62,18 @@ class UptimeCheckConfig extends \Google\Collection
    * @var string[]
    */
   public $selectedRegions;
+  protected $syntheticMonitorType = SyntheticMonitorTarget::class;
+  protected $syntheticMonitorDataType = '';
   protected $tcpCheckType = TcpCheck::class;
   protected $tcpCheckDataType = '';
   /**
    * @var string
    */
   public $timeout;
+  /**
+   * @var string[]
+   */
+  public $userLabels;
 
   /**
    * @param string
@@ -88,6 +102,20 @@ class UptimeCheckConfig extends \Google\Collection
   public function getContentMatchers()
   {
     return $this->contentMatchers;
+  }
+  /**
+   * @param bool
+   */
+  public function setDisabled($disabled)
+  {
+    $this->disabled = $disabled;
+  }
+  /**
+   * @return bool
+   */
+  public function getDisabled()
+  {
+    return $this->disabled;
   }
   /**
    * @param string
@@ -144,6 +172,20 @@ class UptimeCheckConfig extends \Google\Collection
   public function getIsInternal()
   {
     return $this->isInternal;
+  }
+  /**
+   * @param bool
+   */
+  public function setLogCheckFailures($logCheckFailures)
+  {
+    $this->logCheckFailures = $logCheckFailures;
+  }
+  /**
+   * @return bool
+   */
+  public function getLogCheckFailures()
+  {
+    return $this->logCheckFailures;
   }
   /**
    * @param MonitoredResource
@@ -216,6 +258,20 @@ class UptimeCheckConfig extends \Google\Collection
     return $this->selectedRegions;
   }
   /**
+   * @param SyntheticMonitorTarget
+   */
+  public function setSyntheticMonitor(SyntheticMonitorTarget $syntheticMonitor)
+  {
+    $this->syntheticMonitor = $syntheticMonitor;
+  }
+  /**
+   * @return SyntheticMonitorTarget
+   */
+  public function getSyntheticMonitor()
+  {
+    return $this->syntheticMonitor;
+  }
+  /**
    * @param TcpCheck
    */
   public function setTcpCheck(TcpCheck $tcpCheck)
@@ -242,6 +298,20 @@ class UptimeCheckConfig extends \Google\Collection
   public function getTimeout()
   {
     return $this->timeout;
+  }
+  /**
+   * @param string[]
+   */
+  public function setUserLabels($userLabels)
+  {
+    $this->userLabels = $userLabels;
+  }
+  /**
+   * @return string[]
+   */
+  public function getUserLabels()
+  {
+    return $this->userLabels;
   }
 }
 

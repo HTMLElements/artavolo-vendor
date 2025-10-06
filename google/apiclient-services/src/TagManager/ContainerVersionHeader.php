@@ -50,15 +50,15 @@ class ContainerVersionHeader extends \Google\Model
   /**
    * @var string
    */
-  public $numMacros;
-  /**
-   * @var string
-   */
-  public $numRules;
+  public $numGtagConfigs;
   /**
    * @var string
    */
   public $numTags;
+  /**
+   * @var string
+   */
+  public $numTransformations;
   /**
    * @var string
    */
@@ -177,30 +177,16 @@ class ContainerVersionHeader extends \Google\Model
   /**
    * @param string
    */
-  public function setNumMacros($numMacros)
+  public function setNumGtagConfigs($numGtagConfigs)
   {
-    $this->numMacros = $numMacros;
+    $this->numGtagConfigs = $numGtagConfigs;
   }
   /**
    * @return string
    */
-  public function getNumMacros()
+  public function getNumGtagConfigs()
   {
-    return $this->numMacros;
-  }
-  /**
-   * @param string
-   */
-  public function setNumRules($numRules)
-  {
-    $this->numRules = $numRules;
-  }
-  /**
-   * @return string
-   */
-  public function getNumRules()
-  {
-    return $this->numRules;
+    return $this->numGtagConfigs;
   }
   /**
    * @param string
@@ -215,6 +201,20 @@ class ContainerVersionHeader extends \Google\Model
   public function getNumTags()
   {
     return $this->numTags;
+  }
+  /**
+   * @param string
+   */
+  public function setNumTransformations($numTransformations)
+  {
+    $this->numTransformations = $numTransformations;
+  }
+  /**
+   * @return string
+   */
+  public function getNumTransformations()
+  {
+    return $this->numTransformations;
   }
   /**
    * @param string

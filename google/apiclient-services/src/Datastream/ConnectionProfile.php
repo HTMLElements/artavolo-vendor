@@ -19,6 +19,8 @@ namespace Google\Service\Datastream;
 
 class ConnectionProfile extends \Google\Model
 {
+  protected $bigqueryProfileType = BigQueryProfile::class;
+  protected $bigqueryProfileDataType = '';
   /**
    * @var string
    */
@@ -35,6 +37,8 @@ class ConnectionProfile extends \Google\Model
    * @var string[]
    */
   public $labels;
+  protected $mongodbProfileType = MongodbProfile::class;
+  protected $mongodbProfileDataType = '';
   protected $mysqlProfileType = MysqlProfile::class;
   protected $mysqlProfileDataType = '';
   /**
@@ -43,8 +47,22 @@ class ConnectionProfile extends \Google\Model
   public $name;
   protected $oracleProfileType = OracleProfile::class;
   protected $oracleProfileDataType = '';
+  protected $postgresqlProfileType = PostgresqlProfile::class;
+  protected $postgresqlProfileDataType = '';
   protected $privateConnectivityType = PrivateConnectivity::class;
   protected $privateConnectivityDataType = '';
+  protected $salesforceProfileType = SalesforceProfile::class;
+  protected $salesforceProfileDataType = '';
+  /**
+   * @var bool
+   */
+  public $satisfiesPzi;
+  /**
+   * @var bool
+   */
+  public $satisfiesPzs;
+  protected $sqlServerProfileType = SqlServerProfile::class;
+  protected $sqlServerProfileDataType = '';
   protected $staticServiceIpConnectivityType = StaticServiceIpConnectivity::class;
   protected $staticServiceIpConnectivityDataType = '';
   /**
@@ -52,6 +70,20 @@ class ConnectionProfile extends \Google\Model
    */
   public $updateTime;
 
+  /**
+   * @param BigQueryProfile
+   */
+  public function setBigqueryProfile(BigQueryProfile $bigqueryProfile)
+  {
+    $this->bigqueryProfile = $bigqueryProfile;
+  }
+  /**
+   * @return BigQueryProfile
+   */
+  public function getBigqueryProfile()
+  {
+    return $this->bigqueryProfile;
+  }
   /**
    * @param string
    */
@@ -123,6 +155,20 @@ class ConnectionProfile extends \Google\Model
     return $this->labels;
   }
   /**
+   * @param MongodbProfile
+   */
+  public function setMongodbProfile(MongodbProfile $mongodbProfile)
+  {
+    $this->mongodbProfile = $mongodbProfile;
+  }
+  /**
+   * @return MongodbProfile
+   */
+  public function getMongodbProfile()
+  {
+    return $this->mongodbProfile;
+  }
+  /**
    * @param MysqlProfile
    */
   public function setMysqlProfile(MysqlProfile $mysqlProfile)
@@ -165,6 +211,20 @@ class ConnectionProfile extends \Google\Model
     return $this->oracleProfile;
   }
   /**
+   * @param PostgresqlProfile
+   */
+  public function setPostgresqlProfile(PostgresqlProfile $postgresqlProfile)
+  {
+    $this->postgresqlProfile = $postgresqlProfile;
+  }
+  /**
+   * @return PostgresqlProfile
+   */
+  public function getPostgresqlProfile()
+  {
+    return $this->postgresqlProfile;
+  }
+  /**
    * @param PrivateConnectivity
    */
   public function setPrivateConnectivity(PrivateConnectivity $privateConnectivity)
@@ -177,6 +237,62 @@ class ConnectionProfile extends \Google\Model
   public function getPrivateConnectivity()
   {
     return $this->privateConnectivity;
+  }
+  /**
+   * @param SalesforceProfile
+   */
+  public function setSalesforceProfile(SalesforceProfile $salesforceProfile)
+  {
+    $this->salesforceProfile = $salesforceProfile;
+  }
+  /**
+   * @return SalesforceProfile
+   */
+  public function getSalesforceProfile()
+  {
+    return $this->salesforceProfile;
+  }
+  /**
+   * @param bool
+   */
+  public function setSatisfiesPzi($satisfiesPzi)
+  {
+    $this->satisfiesPzi = $satisfiesPzi;
+  }
+  /**
+   * @return bool
+   */
+  public function getSatisfiesPzi()
+  {
+    return $this->satisfiesPzi;
+  }
+  /**
+   * @param bool
+   */
+  public function setSatisfiesPzs($satisfiesPzs)
+  {
+    $this->satisfiesPzs = $satisfiesPzs;
+  }
+  /**
+   * @return bool
+   */
+  public function getSatisfiesPzs()
+  {
+    return $this->satisfiesPzs;
+  }
+  /**
+   * @param SqlServerProfile
+   */
+  public function setSqlServerProfile(SqlServerProfile $sqlServerProfile)
+  {
+    $this->sqlServerProfile = $sqlServerProfile;
+  }
+  /**
+   * @return SqlServerProfile
+   */
+  public function getSqlServerProfile()
+  {
+    return $this->sqlServerProfile;
   }
   /**
    * @param StaticServiceIpConnectivity

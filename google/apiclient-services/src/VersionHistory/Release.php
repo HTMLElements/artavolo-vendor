@@ -17,8 +17,9 @@
 
 namespace Google\Service\VersionHistory;
 
-class Release extends \Google\Model
+class Release extends \Google\Collection
 {
+  protected $collection_key = 'rolloutData';
   public $fraction;
   /**
    * @var string
@@ -28,6 +29,12 @@ class Release extends \Google\Model
    * @var string
    */
   public $name;
+  /**
+   * @var bool
+   */
+  public $pinnable;
+  protected $rolloutDataType = RolloutData::class;
+  protected $rolloutDataDataType = 'array';
   protected $servingType = Interval::class;
   protected $servingDataType = '';
   /**
@@ -70,6 +77,34 @@ class Release extends \Google\Model
   public function getName()
   {
     return $this->name;
+  }
+  /**
+   * @param bool
+   */
+  public function setPinnable($pinnable)
+  {
+    $this->pinnable = $pinnable;
+  }
+  /**
+   * @return bool
+   */
+  public function getPinnable()
+  {
+    return $this->pinnable;
+  }
+  /**
+   * @param RolloutData[]
+   */
+  public function setRolloutData($rolloutData)
+  {
+    $this->rolloutData = $rolloutData;
+  }
+  /**
+   * @return RolloutData[]
+   */
+  public function getRolloutData()
+  {
+    return $this->rolloutData;
   }
   /**
    * @param Interval

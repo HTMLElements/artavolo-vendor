@@ -25,6 +25,10 @@ class PersonalUsagePolicies extends \Google\Collection
    */
   public $accountTypesWithManagementDisabled;
   /**
+   * @var string
+   */
+  public $bluetoothSharing;
+  /**
    * @var bool
    */
   public $cameraDisabled;
@@ -38,6 +42,10 @@ class PersonalUsagePolicies extends \Google\Collection
    * @var string
    */
   public $personalPlayStoreMode;
+  /**
+   * @var string
+   */
+  public $privateSpacePolicy;
   /**
    * @var bool
    */
@@ -56,6 +64,20 @@ class PersonalUsagePolicies extends \Google\Collection
   public function getAccountTypesWithManagementDisabled()
   {
     return $this->accountTypesWithManagementDisabled;
+  }
+  /**
+   * @param string
+   */
+  public function setBluetoothSharing($bluetoothSharing)
+  {
+    $this->bluetoothSharing = $bluetoothSharing;
+  }
+  /**
+   * @return string
+   */
+  public function getBluetoothSharing()
+  {
+    return $this->bluetoothSharing;
   }
   /**
    * @param bool
@@ -112,6 +134,20 @@ class PersonalUsagePolicies extends \Google\Collection
   public function getPersonalPlayStoreMode()
   {
     return $this->personalPlayStoreMode;
+  }
+  /**
+   * @param string
+   */
+  public function setPrivateSpacePolicy($privateSpacePolicy)
+  {
+    $this->privateSpacePolicy = $privateSpacePolicy;
+  }
+  /**
+   * @return string
+   */
+  public function getPrivateSpacePolicy()
+  {
+    return $this->privateSpacePolicy;
   }
   /**
    * @param bool

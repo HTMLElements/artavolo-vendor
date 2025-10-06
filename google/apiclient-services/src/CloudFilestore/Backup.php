@@ -36,6 +36,14 @@ class Backup extends \Google\Model
    */
   public $downloadBytes;
   /**
+   * @var string
+   */
+  public $fileSystemProtocol;
+  /**
+   * @var string
+   */
+  public $kmsKey;
+  /**
    * @var string[]
    */
   public $labels;
@@ -43,6 +51,10 @@ class Backup extends \Google\Model
    * @var string
    */
   public $name;
+  /**
+   * @var bool
+   */
+  public $satisfiesPzi;
   /**
    * @var bool
    */
@@ -67,6 +79,10 @@ class Backup extends \Google\Model
    * @var string
    */
   public $storageBytes;
+  /**
+   * @var string[]
+   */
+  public $tags;
 
   /**
    * @param string
@@ -125,6 +141,34 @@ class Backup extends \Google\Model
     return $this->downloadBytes;
   }
   /**
+   * @param string
+   */
+  public function setFileSystemProtocol($fileSystemProtocol)
+  {
+    $this->fileSystemProtocol = $fileSystemProtocol;
+  }
+  /**
+   * @return string
+   */
+  public function getFileSystemProtocol()
+  {
+    return $this->fileSystemProtocol;
+  }
+  /**
+   * @param string
+   */
+  public function setKmsKey($kmsKey)
+  {
+    $this->kmsKey = $kmsKey;
+  }
+  /**
+   * @return string
+   */
+  public function getKmsKey()
+  {
+    return $this->kmsKey;
+  }
+  /**
    * @param string[]
    */
   public function setLabels($labels)
@@ -151,6 +195,20 @@ class Backup extends \Google\Model
   public function getName()
   {
     return $this->name;
+  }
+  /**
+   * @param bool
+   */
+  public function setSatisfiesPzi($satisfiesPzi)
+  {
+    $this->satisfiesPzi = $satisfiesPzi;
+  }
+  /**
+   * @return bool
+   */
+  public function getSatisfiesPzi()
+  {
+    return $this->satisfiesPzi;
   }
   /**
    * @param bool
@@ -235,6 +293,20 @@ class Backup extends \Google\Model
   public function getStorageBytes()
   {
     return $this->storageBytes;
+  }
+  /**
+   * @param string[]
+   */
+  public function setTags($tags)
+  {
+    $this->tags = $tags;
+  }
+  /**
+   * @return string[]
+   */
+  public function getTags()
+  {
+    return $this->tags;
   }
 }
 

@@ -25,9 +25,17 @@ class Placement extends \Google\Collection
    */
   public $accountId;
   /**
+   * @var string
+   */
+  public $activeStatus;
+  /**
    * @var bool
    */
   public $adBlockingOptOut;
+  /**
+   * @var string
+   */
+  public $adServingPlatformId;
   protected $additionalSizesType = Size::class;
   protected $additionalSizesDataType = 'array';
   /**
@@ -39,7 +47,7 @@ class Placement extends \Google\Collection
   /**
    * @var bool
    */
-  public $archived;
+  public $allowOnYoutube;
   /**
    * @var string
    */
@@ -58,6 +66,8 @@ class Placement extends \Google\Collection
    * @var string
    */
   public $contentCategoryId;
+  protected $conversionDomainOverrideType = PlacementConversionDomainOverride::class;
+  protected $conversionDomainOverrideDataType = '';
   protected $createInfoType = LastModifiedInfo::class;
   protected $createInfoDataType = '';
   /**
@@ -126,6 +136,10 @@ class Placement extends \Google\Collection
   public $siteId;
   protected $siteIdDimensionValueType = DimensionValue::class;
   protected $siteIdDimensionValueDataType = '';
+  /**
+   * @var bool
+   */
+  public $siteServed;
   protected $sizeType = Size::class;
   protected $sizeDataType = '';
   /**
@@ -160,6 +174,8 @@ class Placement extends \Google\Collection
    * @var bool
    */
   public $wrappingOptOut;
+  protected $youtubeSettingsType = YoutubeSettings::class;
+  protected $youtubeSettingsDataType = '';
 
   /**
    * @param string
@@ -176,6 +192,20 @@ class Placement extends \Google\Collection
     return $this->accountId;
   }
   /**
+   * @param string
+   */
+  public function setActiveStatus($activeStatus)
+  {
+    $this->activeStatus = $activeStatus;
+  }
+  /**
+   * @return string
+   */
+  public function getActiveStatus()
+  {
+    return $this->activeStatus;
+  }
+  /**
    * @param bool
    */
   public function setAdBlockingOptOut($adBlockingOptOut)
@@ -188,6 +218,20 @@ class Placement extends \Google\Collection
   public function getAdBlockingOptOut()
   {
     return $this->adBlockingOptOut;
+  }
+  /**
+   * @param string
+   */
+  public function setAdServingPlatformId($adServingPlatformId)
+  {
+    $this->adServingPlatformId = $adServingPlatformId;
+  }
+  /**
+   * @return string
+   */
+  public function getAdServingPlatformId()
+  {
+    return $this->adServingPlatformId;
   }
   /**
    * @param Size[]
@@ -234,16 +278,16 @@ class Placement extends \Google\Collection
   /**
    * @param bool
    */
-  public function setArchived($archived)
+  public function setAllowOnYoutube($allowOnYoutube)
   {
-    $this->archived = $archived;
+    $this->allowOnYoutube = $allowOnYoutube;
   }
   /**
    * @return bool
    */
-  public function getArchived()
+  public function getAllowOnYoutube()
   {
-    return $this->archived;
+    return $this->allowOnYoutube;
   }
   /**
    * @param string
@@ -314,6 +358,20 @@ class Placement extends \Google\Collection
   public function getContentCategoryId()
   {
     return $this->contentCategoryId;
+  }
+  /**
+   * @param PlacementConversionDomainOverride
+   */
+  public function setConversionDomainOverride(PlacementConversionDomainOverride $conversionDomainOverride)
+  {
+    $this->conversionDomainOverride = $conversionDomainOverride;
+  }
+  /**
+   * @return PlacementConversionDomainOverride
+   */
+  public function getConversionDomainOverride()
+  {
+    return $this->conversionDomainOverride;
   }
   /**
    * @param LastModifiedInfo
@@ -624,6 +682,20 @@ class Placement extends \Google\Collection
     return $this->siteIdDimensionValue;
   }
   /**
+   * @param bool
+   */
+  public function setSiteServed($siteServed)
+  {
+    $this->siteServed = $siteServed;
+  }
+  /**
+   * @return bool
+   */
+  public function getSiteServed()
+  {
+    return $this->siteServed;
+  }
+  /**
    * @param Size
    */
   public function setSize(Size $size)
@@ -762,6 +834,20 @@ class Placement extends \Google\Collection
   public function getWrappingOptOut()
   {
     return $this->wrappingOptOut;
+  }
+  /**
+   * @param YoutubeSettings
+   */
+  public function setYoutubeSettings(YoutubeSettings $youtubeSettings)
+  {
+    $this->youtubeSettings = $youtubeSettings;
+  }
+  /**
+   * @return YoutubeSettings
+   */
+  public function getYoutubeSettings()
+  {
+    return $this->youtubeSettings;
   }
 }
 

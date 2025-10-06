@@ -19,7 +19,7 @@ namespace Google\Service\AndroidManagement;
 
 class ApplicationPolicy extends \Google\Collection
 {
-  protected $collection_key = 'permissionGrants';
+  protected $collection_key = 'signingKeyCerts';
   /**
    * @var string[]
    */
@@ -39,6 +39,12 @@ class ApplicationPolicy extends \Google\Collection
   /**
    * @var string
    */
+  public $credentialProviderPolicy;
+  protected $customAppConfigType = CustomAppConfig::class;
+  protected $customAppConfigDataType = '';
+  /**
+   * @var string
+   */
   public $defaultPermissionPolicy;
   /**
    * @var string[]
@@ -50,6 +56,12 @@ class ApplicationPolicy extends \Google\Collection
   public $disabled;
   protected $extensionConfigType = ExtensionConfig::class;
   protected $extensionConfigDataType = '';
+  protected $installConstraintType = InstallConstraint::class;
+  protected $installConstraintDataType = 'array';
+  /**
+   * @var int
+   */
+  public $installPriority;
   /**
    * @var string
    */
@@ -74,6 +86,22 @@ class ApplicationPolicy extends \Google\Collection
   public $packageName;
   protected $permissionGrantsType = PermissionGrant::class;
   protected $permissionGrantsDataType = 'array';
+  /**
+   * @var string
+   */
+  public $preferentialNetworkId;
+  protected $rolesType = Role::class;
+  protected $rolesDataType = 'array';
+  protected $signingKeyCertsType = ApplicationSigningKeyCert::class;
+  protected $signingKeyCertsDataType = 'array';
+  /**
+   * @var string
+   */
+  public $userControlSettings;
+  /**
+   * @var string
+   */
+  public $workProfileWidgets;
 
   /**
    * @param string[]
@@ -134,6 +162,34 @@ class ApplicationPolicy extends \Google\Collection
   /**
    * @param string
    */
+  public function setCredentialProviderPolicy($credentialProviderPolicy)
+  {
+    $this->credentialProviderPolicy = $credentialProviderPolicy;
+  }
+  /**
+   * @return string
+   */
+  public function getCredentialProviderPolicy()
+  {
+    return $this->credentialProviderPolicy;
+  }
+  /**
+   * @param CustomAppConfig
+   */
+  public function setCustomAppConfig(CustomAppConfig $customAppConfig)
+  {
+    $this->customAppConfig = $customAppConfig;
+  }
+  /**
+   * @return CustomAppConfig
+   */
+  public function getCustomAppConfig()
+  {
+    return $this->customAppConfig;
+  }
+  /**
+   * @param string
+   */
   public function setDefaultPermissionPolicy($defaultPermissionPolicy)
   {
     $this->defaultPermissionPolicy = $defaultPermissionPolicy;
@@ -186,6 +242,34 @@ class ApplicationPolicy extends \Google\Collection
   public function getExtensionConfig()
   {
     return $this->extensionConfig;
+  }
+  /**
+   * @param InstallConstraint[]
+   */
+  public function setInstallConstraint($installConstraint)
+  {
+    $this->installConstraint = $installConstraint;
+  }
+  /**
+   * @return InstallConstraint[]
+   */
+  public function getInstallConstraint()
+  {
+    return $this->installConstraint;
+  }
+  /**
+   * @param int
+   */
+  public function setInstallPriority($installPriority)
+  {
+    $this->installPriority = $installPriority;
+  }
+  /**
+   * @return int
+   */
+  public function getInstallPriority()
+  {
+    return $this->installPriority;
   }
   /**
    * @param string
@@ -284,6 +368,76 @@ class ApplicationPolicy extends \Google\Collection
   public function getPermissionGrants()
   {
     return $this->permissionGrants;
+  }
+  /**
+   * @param string
+   */
+  public function setPreferentialNetworkId($preferentialNetworkId)
+  {
+    $this->preferentialNetworkId = $preferentialNetworkId;
+  }
+  /**
+   * @return string
+   */
+  public function getPreferentialNetworkId()
+  {
+    return $this->preferentialNetworkId;
+  }
+  /**
+   * @param Role[]
+   */
+  public function setRoles($roles)
+  {
+    $this->roles = $roles;
+  }
+  /**
+   * @return Role[]
+   */
+  public function getRoles()
+  {
+    return $this->roles;
+  }
+  /**
+   * @param ApplicationSigningKeyCert[]
+   */
+  public function setSigningKeyCerts($signingKeyCerts)
+  {
+    $this->signingKeyCerts = $signingKeyCerts;
+  }
+  /**
+   * @return ApplicationSigningKeyCert[]
+   */
+  public function getSigningKeyCerts()
+  {
+    return $this->signingKeyCerts;
+  }
+  /**
+   * @param string
+   */
+  public function setUserControlSettings($userControlSettings)
+  {
+    $this->userControlSettings = $userControlSettings;
+  }
+  /**
+   * @return string
+   */
+  public function getUserControlSettings()
+  {
+    return $this->userControlSettings;
+  }
+  /**
+   * @param string
+   */
+  public function setWorkProfileWidgets($workProfileWidgets)
+  {
+    $this->workProfileWidgets = $workProfileWidgets;
+  }
+  /**
+   * @return string
+   */
+  public function getWorkProfileWidgets()
+  {
+    return $this->workProfileWidgets;
   }
 }
 

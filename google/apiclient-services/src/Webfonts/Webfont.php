@@ -20,10 +20,16 @@ namespace Google\Service\Webfonts;
 class Webfont extends \Google\Collection
 {
   protected $collection_key = 'variants';
+  protected $axesType = Axis::class;
+  protected $axesDataType = 'array';
   /**
    * @var string
    */
   public $category;
+  /**
+   * @var string[]
+   */
+  public $colorCapabilities;
   /**
    * @var string
    */
@@ -41,9 +47,15 @@ class Webfont extends \Google\Collection
    */
   public $lastModified;
   /**
+   * @var string
+   */
+  public $menu;
+  /**
    * @var string[]
    */
   public $subsets;
+  protected $tagsType = Tag::class;
+  protected $tagsDataType = 'array';
   /**
    * @var string[]
    */
@@ -53,6 +65,20 @@ class Webfont extends \Google\Collection
    */
   public $version;
 
+  /**
+   * @param Axis[]
+   */
+  public function setAxes($axes)
+  {
+    $this->axes = $axes;
+  }
+  /**
+   * @return Axis[]
+   */
+  public function getAxes()
+  {
+    return $this->axes;
+  }
   /**
    * @param string
    */
@@ -66,6 +92,20 @@ class Webfont extends \Google\Collection
   public function getCategory()
   {
     return $this->category;
+  }
+  /**
+   * @param string[]
+   */
+  public function setColorCapabilities($colorCapabilities)
+  {
+    $this->colorCapabilities = $colorCapabilities;
+  }
+  /**
+   * @return string[]
+   */
+  public function getColorCapabilities()
+  {
+    return $this->colorCapabilities;
   }
   /**
    * @param string
@@ -124,6 +164,20 @@ class Webfont extends \Google\Collection
     return $this->lastModified;
   }
   /**
+   * @param string
+   */
+  public function setMenu($menu)
+  {
+    $this->menu = $menu;
+  }
+  /**
+   * @return string
+   */
+  public function getMenu()
+  {
+    return $this->menu;
+  }
+  /**
    * @param string[]
    */
   public function setSubsets($subsets)
@@ -136,6 +190,20 @@ class Webfont extends \Google\Collection
   public function getSubsets()
   {
     return $this->subsets;
+  }
+  /**
+   * @param Tag[]
+   */
+  public function setTags($tags)
+  {
+    $this->tags = $tags;
+  }
+  /**
+   * @return Tag[]
+   */
+  public function getTags()
+  {
+    return $this->tags;
   }
   /**
    * @param string[]

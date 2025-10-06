@@ -58,7 +58,7 @@ class AccessReviewScheduleSettings extends Entity
     }
     /**
     * Gets the autoApplyDecisionsEnabled
-    * Indicates whether decisions are automatically applied. When set to false, an admin must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.
+    * Indicates whether decisions are automatically applied. When set to false, an admin must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.  CAUTION: If both autoApplyDecisionsEnabled and defaultDecisionEnabled are true, all access for the principals to the resource risks being revoked if the reviewers fail to respond.
     *
     * @return bool|null The autoApplyDecisionsEnabled
     */
@@ -73,7 +73,7 @@ class AccessReviewScheduleSettings extends Entity
 
     /**
     * Sets the autoApplyDecisionsEnabled
-    * Indicates whether decisions are automatically applied. When set to false, an admin must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.
+    * Indicates whether decisions are automatically applied. When set to false, an admin must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.  CAUTION: If both autoApplyDecisionsEnabled and defaultDecisionEnabled are true, all access for the principals to the resource risks being revoked if the reviewers fail to respond.
     *
     * @param bool $val The value of the autoApplyDecisionsEnabled
     *
@@ -142,7 +142,7 @@ class AccessReviewScheduleSettings extends Entity
     }
     /**
     * Gets the defaultDecisionEnabled
-    * Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.
+    * Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.  CAUTION: If both autoApplyDecisionsEnabled and defaultDecisionEnabled are true, all access for the principals to the resource risks being revoked if the reviewers fail to respond.
     *
     * @return bool|null The defaultDecisionEnabled
     */
@@ -157,7 +157,7 @@ class AccessReviewScheduleSettings extends Entity
 
     /**
     * Sets the defaultDecisionEnabled
-    * Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.
+    * Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.  CAUTION: If both autoApplyDecisionsEnabled and defaultDecisionEnabled are true, all access for the principals to the resource risks being revoked if the reviewers fail to respond.
     *
     * @param bool $val The value of the defaultDecisionEnabled
     *
@@ -288,7 +288,7 @@ class AccessReviewScheduleSettings extends Entity
 
     /**
     * Gets the recommendationLookBackDuration
-    * Optional field. Indicates the period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look-back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationLookBackDuration setting will be used instead of the value of this property.
+    * Optional field. Indicates the period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look-back duration. For reviews of groups and Microsoft Entra roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationLookBackDuration setting will be used instead of the value of this property.
     *
     * @return \DateInterval|null The recommendationLookBackDuration
     */
@@ -307,7 +307,7 @@ class AccessReviewScheduleSettings extends Entity
 
     /**
     * Sets the recommendationLookBackDuration
-    * Optional field. Indicates the period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look-back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationLookBackDuration setting will be used instead of the value of this property.
+    * Optional field. Indicates the period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look-back duration. For reviews of groups and Microsoft Entra roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationLookBackDuration setting will be used instead of the value of this property.
     *
     * @param \DateInterval $val The value to assign to the recommendationLookBackDuration
     *

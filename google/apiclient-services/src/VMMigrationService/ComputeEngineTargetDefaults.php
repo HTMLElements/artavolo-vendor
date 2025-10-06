@@ -20,6 +20,8 @@ namespace Google\Service\VMMigrationService;
 class ComputeEngineTargetDefaults extends \Google\Collection
 {
   protected $collection_key = 'networkTags';
+  protected $adaptationModifiersType = AdaptationModifier::class;
+  protected $adaptationModifiersDataType = 'array';
   /**
    * @var string[]
    */
@@ -29,13 +31,31 @@ class ComputeEngineTargetDefaults extends \Google\Collection
   /**
    * @var string
    */
+  public $bootConversion;
+  /**
+   * @var string
+   */
   public $bootOption;
   protected $computeSchedulingType = ComputeScheduling::class;
   protected $computeSchedulingDataType = '';
   /**
+   * @var string[]
+   */
+  public $diskReplicaZones;
+  /**
    * @var string
    */
   public $diskType;
+  /**
+   * @var bool
+   */
+  public $enableIntegrityMonitoring;
+  /**
+   * @var bool
+   */
+  public $enableVtpm;
+  protected $encryptionType = Encryption::class;
+  protected $encryptionDataType = '';
   /**
    * @var string
    */
@@ -88,6 +108,20 @@ class ComputeEngineTargetDefaults extends \Google\Collection
   public $zone;
 
   /**
+   * @param AdaptationModifier[]
+   */
+  public function setAdaptationModifiers($adaptationModifiers)
+  {
+    $this->adaptationModifiers = $adaptationModifiers;
+  }
+  /**
+   * @return AdaptationModifier[]
+   */
+  public function getAdaptationModifiers()
+  {
+    return $this->adaptationModifiers;
+  }
+  /**
    * @param string[]
    */
   public function setAdditionalLicenses($additionalLicenses)
@@ -118,6 +152,20 @@ class ComputeEngineTargetDefaults extends \Google\Collection
   /**
    * @param string
    */
+  public function setBootConversion($bootConversion)
+  {
+    $this->bootConversion = $bootConversion;
+  }
+  /**
+   * @return string
+   */
+  public function getBootConversion()
+  {
+    return $this->bootConversion;
+  }
+  /**
+   * @param string
+   */
   public function setBootOption($bootOption)
   {
     $this->bootOption = $bootOption;
@@ -144,6 +192,20 @@ class ComputeEngineTargetDefaults extends \Google\Collection
     return $this->computeScheduling;
   }
   /**
+   * @param string[]
+   */
+  public function setDiskReplicaZones($diskReplicaZones)
+  {
+    $this->diskReplicaZones = $diskReplicaZones;
+  }
+  /**
+   * @return string[]
+   */
+  public function getDiskReplicaZones()
+  {
+    return $this->diskReplicaZones;
+  }
+  /**
    * @param string
    */
   public function setDiskType($diskType)
@@ -156,6 +218,48 @@ class ComputeEngineTargetDefaults extends \Google\Collection
   public function getDiskType()
   {
     return $this->diskType;
+  }
+  /**
+   * @param bool
+   */
+  public function setEnableIntegrityMonitoring($enableIntegrityMonitoring)
+  {
+    $this->enableIntegrityMonitoring = $enableIntegrityMonitoring;
+  }
+  /**
+   * @return bool
+   */
+  public function getEnableIntegrityMonitoring()
+  {
+    return $this->enableIntegrityMonitoring;
+  }
+  /**
+   * @param bool
+   */
+  public function setEnableVtpm($enableVtpm)
+  {
+    $this->enableVtpm = $enableVtpm;
+  }
+  /**
+   * @return bool
+   */
+  public function getEnableVtpm()
+  {
+    return $this->enableVtpm;
+  }
+  /**
+   * @param Encryption
+   */
+  public function setEncryption(Encryption $encryption)
+  {
+    $this->encryption = $encryption;
+  }
+  /**
+   * @return Encryption
+   */
+  public function getEncryption()
+  {
+    return $this->encryption;
   }
   /**
    * @param string

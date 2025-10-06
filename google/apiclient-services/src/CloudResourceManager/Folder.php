@@ -17,8 +17,13 @@
 
 namespace Google\Service\CloudResourceManager;
 
-class Folder extends \Google\Model
+class Folder extends \Google\Collection
 {
+  protected $collection_key = 'configuredCapabilities';
+  /**
+   * @var string[]
+   */
+  public $configuredCapabilities;
   /**
    * @var string
    */
@@ -38,6 +43,10 @@ class Folder extends \Google\Model
   /**
    * @var string
    */
+  public $managementProject;
+  /**
+   * @var string
+   */
   public $name;
   /**
    * @var string
@@ -48,10 +57,28 @@ class Folder extends \Google\Model
    */
   public $state;
   /**
+   * @var string[]
+   */
+  public $tags;
+  /**
    * @var string
    */
   public $updateTime;
 
+  /**
+   * @param string[]
+   */
+  public function setConfiguredCapabilities($configuredCapabilities)
+  {
+    $this->configuredCapabilities = $configuredCapabilities;
+  }
+  /**
+   * @return string[]
+   */
+  public function getConfiguredCapabilities()
+  {
+    return $this->configuredCapabilities;
+  }
   /**
    * @param string
    */
@@ -111,6 +138,20 @@ class Folder extends \Google\Model
   /**
    * @param string
    */
+  public function setManagementProject($managementProject)
+  {
+    $this->managementProject = $managementProject;
+  }
+  /**
+   * @return string
+   */
+  public function getManagementProject()
+  {
+    return $this->managementProject;
+  }
+  /**
+   * @param string
+   */
   public function setName($name)
   {
     $this->name = $name;
@@ -149,6 +190,20 @@ class Folder extends \Google\Model
   public function getState()
   {
     return $this->state;
+  }
+  /**
+   * @param string[]
+   */
+  public function setTags($tags)
+  {
+    $this->tags = $tags;
+  }
+  /**
+   * @return string[]
+   */
+  public function getTags()
+  {
+    return $this->tags;
   }
   /**
    * @param string

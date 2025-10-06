@@ -19,11 +19,19 @@ namespace Google\Service\Bigquery;
 
 class TrainingOptions extends \Google\Collection
 {
-  protected $collection_key = 'timeSeriesIdColumns';
+  protected $collection_key = 'vertexAiModelVersionAliases';
+  /**
+   * @var string
+   */
+  public $activationFn;
   /**
    * @var bool
    */
   public $adjustStepChanges;
+  /**
+   * @var bool
+   */
+  public $approxGlobalFeatureContrib;
   /**
    * @var bool
    */
@@ -35,22 +43,43 @@ class TrainingOptions extends \Google\Collection
   /**
    * @var string
    */
+  public $autoArimaMinOrder;
+  /**
+   * @var bool
+   */
+  public $autoClassWeights;
+  /**
+   * @var string
+   */
   public $batchSize;
   /**
    * @var string
    */
   public $boosterType;
+  public $budgetHours;
   /**
    * @var bool
    */
   public $calculatePValues;
   /**
+   * @var string
+   */
+  public $categoryEncodingMethod;
+  /**
    * @var bool
    */
   public $cleanSpikesAndDips;
+  /**
+   * @var string
+   */
+  public $colorSpace;
   public $colsampleBylevel;
   public $colsampleBynode;
   public $colsampleBytree;
+  /**
+   * @var string
+   */
+  public $contributionMetric;
   /**
    * @var string
    */
@@ -73,6 +102,10 @@ class TrainingOptions extends \Google\Collection
    */
   public $decomposeTimeSeries;
   /**
+   * @var string[]
+   */
+  public $dimensionIdColumns;
+  /**
    * @var string
    */
   public $distanceType;
@@ -88,7 +121,17 @@ class TrainingOptions extends \Google\Collection
   /**
    * @var string
    */
+  public $endpointIdleTtl;
+  /**
+   * @var string
+   */
   public $feedbackType;
+  /**
+   * @var bool
+   */
+  public $fitIntercept;
+  public $forecastLimitLowerBound;
+  public $forecastLimitUpperBound;
   /**
    * @var string[]
    */
@@ -98,6 +141,10 @@ class TrainingOptions extends \Google\Collection
    */
   public $holidayRegion;
   /**
+   * @var string[]
+   */
+  public $holidayRegions;
+  /**
    * @var string
    */
   public $horizon;
@@ -105,6 +152,10 @@ class TrainingOptions extends \Google\Collection
    * @var string[]
    */
   public $hparamTuningObjectives;
+  /**
+   * @var string
+   */
+  public $huggingFaceModelId;
   /**
    * @var bool
    */
@@ -117,7 +168,15 @@ class TrainingOptions extends \Google\Collection
   /**
    * @var string
    */
+  public $instanceWeightColumn;
+  /**
+   * @var string
+   */
   public $integratedGradientsNumSteps;
+  /**
+   * @var string
+   */
+  public $isTestColumn;
   /**
    * @var string
    */
@@ -130,6 +189,7 @@ class TrainingOptions extends \Google\Collection
    * @var string
    */
   public $kmeansInitializationMethod;
+  public $l1RegActivation;
   public $l1Regularization;
   public $l2Regularization;
   public $labelClassWeights;
@@ -145,6 +205,10 @@ class TrainingOptions extends \Google\Collection
   /**
    * @var string
    */
+  public $machineType;
+  /**
+   * @var string
+   */
   public $maxIterations;
   /**
    * @var string
@@ -153,13 +217,38 @@ class TrainingOptions extends \Google\Collection
   /**
    * @var string
    */
+  public $maxReplicaCount;
+  /**
+   * @var string
+   */
+  public $maxTimeSeriesLength;
+  /**
+   * @var string
+   */
   public $maxTreeDepth;
+  public $minAprioriSupport;
   public $minRelativeProgress;
+  /**
+   * @var string
+   */
+  public $minReplicaCount;
   public $minSplitLoss;
   /**
    * @var string
    */
+  public $minTimeSeriesLength;
+  /**
+   * @var string
+   */
   public $minTreeChildWeight;
+  /**
+   * @var string
+   */
+  public $modelGardenModelName;
+  /**
+   * @var string
+   */
+  public $modelRegistry;
   /**
    * @var string
    */
@@ -181,20 +270,53 @@ class TrainingOptions extends \Google\Collection
   /**
    * @var string
    */
+  public $numPrincipalComponents;
+  /**
+   * @var string
+   */
   public $numTrials;
   /**
    * @var string
    */
   public $optimizationStrategy;
   /**
-   * @var bool
+   * @var string
    */
-  public $preserveInputStructs;
+  public $optimizer;
+  public $pcaExplainedVarianceRatio;
+  /**
+   * @var string
+   */
+  public $pcaSolver;
+  /**
+   * @var string
+   */
+  public $reservationAffinityKey;
+  /**
+   * @var string
+   */
+  public $reservationAffinityType;
+  /**
+   * @var string[]
+   */
+  public $reservationAffinityValues;
   /**
    * @var string
    */
   public $sampledShapleyNumPaths;
+  /**
+   * @var bool
+   */
+  public $scaleFeatures;
+  /**
+   * @var bool
+   */
+  public $standardizeFeatures;
   public $subsample;
+  /**
+   * @var string
+   */
+  public $tfVersion;
   /**
    * @var string
    */
@@ -207,6 +329,7 @@ class TrainingOptions extends \Google\Collection
    * @var string[]
    */
   public $timeSeriesIdColumns;
+  public $timeSeriesLengthFraction;
   /**
    * @var string
    */
@@ -218,13 +341,39 @@ class TrainingOptions extends \Google\Collection
   /**
    * @var string
    */
+  public $trendSmoothingWindowSize;
+  /**
+   * @var string
+   */
   public $userColumn;
+  /**
+   * @var string[]
+   */
+  public $vertexAiModelVersionAliases;
   public $walsAlpha;
   /**
    * @var bool
    */
   public $warmStart;
+  /**
+   * @var string
+   */
+  public $xgboostVersion;
 
+  /**
+   * @param string
+   */
+  public function setActivationFn($activationFn)
+  {
+    $this->activationFn = $activationFn;
+  }
+  /**
+   * @return string
+   */
+  public function getActivationFn()
+  {
+    return $this->activationFn;
+  }
   /**
    * @param bool
    */
@@ -238,6 +387,20 @@ class TrainingOptions extends \Google\Collection
   public function getAdjustStepChanges()
   {
     return $this->adjustStepChanges;
+  }
+  /**
+   * @param bool
+   */
+  public function setApproxGlobalFeatureContrib($approxGlobalFeatureContrib)
+  {
+    $this->approxGlobalFeatureContrib = $approxGlobalFeatureContrib;
+  }
+  /**
+   * @return bool
+   */
+  public function getApproxGlobalFeatureContrib()
+  {
+    return $this->approxGlobalFeatureContrib;
   }
   /**
    * @param bool
@@ -270,6 +433,34 @@ class TrainingOptions extends \Google\Collection
   /**
    * @param string
    */
+  public function setAutoArimaMinOrder($autoArimaMinOrder)
+  {
+    $this->autoArimaMinOrder = $autoArimaMinOrder;
+  }
+  /**
+   * @return string
+   */
+  public function getAutoArimaMinOrder()
+  {
+    return $this->autoArimaMinOrder;
+  }
+  /**
+   * @param bool
+   */
+  public function setAutoClassWeights($autoClassWeights)
+  {
+    $this->autoClassWeights = $autoClassWeights;
+  }
+  /**
+   * @return bool
+   */
+  public function getAutoClassWeights()
+  {
+    return $this->autoClassWeights;
+  }
+  /**
+   * @param string
+   */
   public function setBatchSize($batchSize)
   {
     $this->batchSize = $batchSize;
@@ -295,6 +486,14 @@ class TrainingOptions extends \Google\Collection
   {
     return $this->boosterType;
   }
+  public function setBudgetHours($budgetHours)
+  {
+    $this->budgetHours = $budgetHours;
+  }
+  public function getBudgetHours()
+  {
+    return $this->budgetHours;
+  }
   /**
    * @param bool
    */
@@ -310,6 +509,20 @@ class TrainingOptions extends \Google\Collection
     return $this->calculatePValues;
   }
   /**
+   * @param string
+   */
+  public function setCategoryEncodingMethod($categoryEncodingMethod)
+  {
+    $this->categoryEncodingMethod = $categoryEncodingMethod;
+  }
+  /**
+   * @return string
+   */
+  public function getCategoryEncodingMethod()
+  {
+    return $this->categoryEncodingMethod;
+  }
+  /**
    * @param bool
    */
   public function setCleanSpikesAndDips($cleanSpikesAndDips)
@@ -322,6 +535,20 @@ class TrainingOptions extends \Google\Collection
   public function getCleanSpikesAndDips()
   {
     return $this->cleanSpikesAndDips;
+  }
+  /**
+   * @param string
+   */
+  public function setColorSpace($colorSpace)
+  {
+    $this->colorSpace = $colorSpace;
+  }
+  /**
+   * @return string
+   */
+  public function getColorSpace()
+  {
+    return $this->colorSpace;
   }
   public function setColsampleBylevel($colsampleBylevel)
   {
@@ -346,6 +573,20 @@ class TrainingOptions extends \Google\Collection
   public function getColsampleBytree()
   {
     return $this->colsampleBytree;
+  }
+  /**
+   * @param string
+   */
+  public function setContributionMetric($contributionMetric)
+  {
+    $this->contributionMetric = $contributionMetric;
+  }
+  /**
+   * @return string
+   */
+  public function getContributionMetric()
+  {
+    return $this->contributionMetric;
   }
   /**
    * @param string
@@ -426,6 +667,20 @@ class TrainingOptions extends \Google\Collection
     return $this->decomposeTimeSeries;
   }
   /**
+   * @param string[]
+   */
+  public function setDimensionIdColumns($dimensionIdColumns)
+  {
+    $this->dimensionIdColumns = $dimensionIdColumns;
+  }
+  /**
+   * @return string[]
+   */
+  public function getDimensionIdColumns()
+  {
+    return $this->dimensionIdColumns;
+  }
+  /**
    * @param string
    */
   public function setDistanceType($distanceType)
@@ -478,6 +733,20 @@ class TrainingOptions extends \Google\Collection
   /**
    * @param string
    */
+  public function setEndpointIdleTtl($endpointIdleTtl)
+  {
+    $this->endpointIdleTtl = $endpointIdleTtl;
+  }
+  /**
+   * @return string
+   */
+  public function getEndpointIdleTtl()
+  {
+    return $this->endpointIdleTtl;
+  }
+  /**
+   * @param string
+   */
   public function setFeedbackType($feedbackType)
   {
     $this->feedbackType = $feedbackType;
@@ -488,6 +757,36 @@ class TrainingOptions extends \Google\Collection
   public function getFeedbackType()
   {
     return $this->feedbackType;
+  }
+  /**
+   * @param bool
+   */
+  public function setFitIntercept($fitIntercept)
+  {
+    $this->fitIntercept = $fitIntercept;
+  }
+  /**
+   * @return bool
+   */
+  public function getFitIntercept()
+  {
+    return $this->fitIntercept;
+  }
+  public function setForecastLimitLowerBound($forecastLimitLowerBound)
+  {
+    $this->forecastLimitLowerBound = $forecastLimitLowerBound;
+  }
+  public function getForecastLimitLowerBound()
+  {
+    return $this->forecastLimitLowerBound;
+  }
+  public function setForecastLimitUpperBound($forecastLimitUpperBound)
+  {
+    $this->forecastLimitUpperBound = $forecastLimitUpperBound;
+  }
+  public function getForecastLimitUpperBound()
+  {
+    return $this->forecastLimitUpperBound;
   }
   /**
    * @param string[]
@@ -518,6 +817,20 @@ class TrainingOptions extends \Google\Collection
     return $this->holidayRegion;
   }
   /**
+   * @param string[]
+   */
+  public function setHolidayRegions($holidayRegions)
+  {
+    $this->holidayRegions = $holidayRegions;
+  }
+  /**
+   * @return string[]
+   */
+  public function getHolidayRegions()
+  {
+    return $this->holidayRegions;
+  }
+  /**
    * @param string
    */
   public function setHorizon($horizon)
@@ -544,6 +857,20 @@ class TrainingOptions extends \Google\Collection
   public function getHparamTuningObjectives()
   {
     return $this->hparamTuningObjectives;
+  }
+  /**
+   * @param string
+   */
+  public function setHuggingFaceModelId($huggingFaceModelId)
+  {
+    $this->huggingFaceModelId = $huggingFaceModelId;
+  }
+  /**
+   * @return string
+   */
+  public function getHuggingFaceModelId()
+  {
+    return $this->huggingFaceModelId;
   }
   /**
    * @param bool
@@ -584,6 +911,20 @@ class TrainingOptions extends \Google\Collection
   /**
    * @param string
    */
+  public function setInstanceWeightColumn($instanceWeightColumn)
+  {
+    $this->instanceWeightColumn = $instanceWeightColumn;
+  }
+  /**
+   * @return string
+   */
+  public function getInstanceWeightColumn()
+  {
+    return $this->instanceWeightColumn;
+  }
+  /**
+   * @param string
+   */
   public function setIntegratedGradientsNumSteps($integratedGradientsNumSteps)
   {
     $this->integratedGradientsNumSteps = $integratedGradientsNumSteps;
@@ -594,6 +935,20 @@ class TrainingOptions extends \Google\Collection
   public function getIntegratedGradientsNumSteps()
   {
     return $this->integratedGradientsNumSteps;
+  }
+  /**
+   * @param string
+   */
+  public function setIsTestColumn($isTestColumn)
+  {
+    $this->isTestColumn = $isTestColumn;
+  }
+  /**
+   * @return string
+   */
+  public function getIsTestColumn()
+  {
+    return $this->isTestColumn;
   }
   /**
    * @param string
@@ -636,6 +991,14 @@ class TrainingOptions extends \Google\Collection
   public function getKmeansInitializationMethod()
   {
     return $this->kmeansInitializationMethod;
+  }
+  public function setL1RegActivation($l1RegActivation)
+  {
+    $this->l1RegActivation = $l1RegActivation;
+  }
+  public function getL1RegActivation()
+  {
+    return $this->l1RegActivation;
   }
   public function setL1Regularization($l1Regularization)
   {
@@ -700,6 +1063,20 @@ class TrainingOptions extends \Google\Collection
   /**
    * @param string
    */
+  public function setMachineType($machineType)
+  {
+    $this->machineType = $machineType;
+  }
+  /**
+   * @return string
+   */
+  public function getMachineType()
+  {
+    return $this->machineType;
+  }
+  /**
+   * @param string
+   */
   public function setMaxIterations($maxIterations)
   {
     $this->maxIterations = $maxIterations;
@@ -728,6 +1105,34 @@ class TrainingOptions extends \Google\Collection
   /**
    * @param string
    */
+  public function setMaxReplicaCount($maxReplicaCount)
+  {
+    $this->maxReplicaCount = $maxReplicaCount;
+  }
+  /**
+   * @return string
+   */
+  public function getMaxReplicaCount()
+  {
+    return $this->maxReplicaCount;
+  }
+  /**
+   * @param string
+   */
+  public function setMaxTimeSeriesLength($maxTimeSeriesLength)
+  {
+    $this->maxTimeSeriesLength = $maxTimeSeriesLength;
+  }
+  /**
+   * @return string
+   */
+  public function getMaxTimeSeriesLength()
+  {
+    return $this->maxTimeSeriesLength;
+  }
+  /**
+   * @param string
+   */
   public function setMaxTreeDepth($maxTreeDepth)
   {
     $this->maxTreeDepth = $maxTreeDepth;
@@ -739,6 +1144,14 @@ class TrainingOptions extends \Google\Collection
   {
     return $this->maxTreeDepth;
   }
+  public function setMinAprioriSupport($minAprioriSupport)
+  {
+    $this->minAprioriSupport = $minAprioriSupport;
+  }
+  public function getMinAprioriSupport()
+  {
+    return $this->minAprioriSupport;
+  }
   public function setMinRelativeProgress($minRelativeProgress)
   {
     $this->minRelativeProgress = $minRelativeProgress;
@@ -747,6 +1160,20 @@ class TrainingOptions extends \Google\Collection
   {
     return $this->minRelativeProgress;
   }
+  /**
+   * @param string
+   */
+  public function setMinReplicaCount($minReplicaCount)
+  {
+    $this->minReplicaCount = $minReplicaCount;
+  }
+  /**
+   * @return string
+   */
+  public function getMinReplicaCount()
+  {
+    return $this->minReplicaCount;
+  }
   public function setMinSplitLoss($minSplitLoss)
   {
     $this->minSplitLoss = $minSplitLoss;
@@ -754,6 +1181,20 @@ class TrainingOptions extends \Google\Collection
   public function getMinSplitLoss()
   {
     return $this->minSplitLoss;
+  }
+  /**
+   * @param string
+   */
+  public function setMinTimeSeriesLength($minTimeSeriesLength)
+  {
+    $this->minTimeSeriesLength = $minTimeSeriesLength;
+  }
+  /**
+   * @return string
+   */
+  public function getMinTimeSeriesLength()
+  {
+    return $this->minTimeSeriesLength;
   }
   /**
    * @param string
@@ -768,6 +1209,34 @@ class TrainingOptions extends \Google\Collection
   public function getMinTreeChildWeight()
   {
     return $this->minTreeChildWeight;
+  }
+  /**
+   * @param string
+   */
+  public function setModelGardenModelName($modelGardenModelName)
+  {
+    $this->modelGardenModelName = $modelGardenModelName;
+  }
+  /**
+   * @return string
+   */
+  public function getModelGardenModelName()
+  {
+    return $this->modelGardenModelName;
+  }
+  /**
+   * @param string
+   */
+  public function setModelRegistry($modelRegistry)
+  {
+    $this->modelRegistry = $modelRegistry;
+  }
+  /**
+   * @return string
+   */
+  public function getModelRegistry()
+  {
+    return $this->modelRegistry;
   }
   /**
    * @param string
@@ -842,6 +1311,20 @@ class TrainingOptions extends \Google\Collection
   /**
    * @param string
    */
+  public function setNumPrincipalComponents($numPrincipalComponents)
+  {
+    $this->numPrincipalComponents = $numPrincipalComponents;
+  }
+  /**
+   * @return string
+   */
+  public function getNumPrincipalComponents()
+  {
+    return $this->numPrincipalComponents;
+  }
+  /**
+   * @param string
+   */
   public function setNumTrials($numTrials)
   {
     $this->numTrials = $numTrials;
@@ -868,18 +1351,82 @@ class TrainingOptions extends \Google\Collection
     return $this->optimizationStrategy;
   }
   /**
-   * @param bool
+   * @param string
    */
-  public function setPreserveInputStructs($preserveInputStructs)
+  public function setOptimizer($optimizer)
   {
-    $this->preserveInputStructs = $preserveInputStructs;
+    $this->optimizer = $optimizer;
   }
   /**
-   * @return bool
+   * @return string
    */
-  public function getPreserveInputStructs()
+  public function getOptimizer()
   {
-    return $this->preserveInputStructs;
+    return $this->optimizer;
+  }
+  public function setPcaExplainedVarianceRatio($pcaExplainedVarianceRatio)
+  {
+    $this->pcaExplainedVarianceRatio = $pcaExplainedVarianceRatio;
+  }
+  public function getPcaExplainedVarianceRatio()
+  {
+    return $this->pcaExplainedVarianceRatio;
+  }
+  /**
+   * @param string
+   */
+  public function setPcaSolver($pcaSolver)
+  {
+    $this->pcaSolver = $pcaSolver;
+  }
+  /**
+   * @return string
+   */
+  public function getPcaSolver()
+  {
+    return $this->pcaSolver;
+  }
+  /**
+   * @param string
+   */
+  public function setReservationAffinityKey($reservationAffinityKey)
+  {
+    $this->reservationAffinityKey = $reservationAffinityKey;
+  }
+  /**
+   * @return string
+   */
+  public function getReservationAffinityKey()
+  {
+    return $this->reservationAffinityKey;
+  }
+  /**
+   * @param string
+   */
+  public function setReservationAffinityType($reservationAffinityType)
+  {
+    $this->reservationAffinityType = $reservationAffinityType;
+  }
+  /**
+   * @return string
+   */
+  public function getReservationAffinityType()
+  {
+    return $this->reservationAffinityType;
+  }
+  /**
+   * @param string[]
+   */
+  public function setReservationAffinityValues($reservationAffinityValues)
+  {
+    $this->reservationAffinityValues = $reservationAffinityValues;
+  }
+  /**
+   * @return string[]
+   */
+  public function getReservationAffinityValues()
+  {
+    return $this->reservationAffinityValues;
   }
   /**
    * @param string
@@ -895,6 +1442,34 @@ class TrainingOptions extends \Google\Collection
   {
     return $this->sampledShapleyNumPaths;
   }
+  /**
+   * @param bool
+   */
+  public function setScaleFeatures($scaleFeatures)
+  {
+    $this->scaleFeatures = $scaleFeatures;
+  }
+  /**
+   * @return bool
+   */
+  public function getScaleFeatures()
+  {
+    return $this->scaleFeatures;
+  }
+  /**
+   * @param bool
+   */
+  public function setStandardizeFeatures($standardizeFeatures)
+  {
+    $this->standardizeFeatures = $standardizeFeatures;
+  }
+  /**
+   * @return bool
+   */
+  public function getStandardizeFeatures()
+  {
+    return $this->standardizeFeatures;
+  }
   public function setSubsample($subsample)
   {
     $this->subsample = $subsample;
@@ -902,6 +1477,20 @@ class TrainingOptions extends \Google\Collection
   public function getSubsample()
   {
     return $this->subsample;
+  }
+  /**
+   * @param string
+   */
+  public function setTfVersion($tfVersion)
+  {
+    $this->tfVersion = $tfVersion;
+  }
+  /**
+   * @return string
+   */
+  public function getTfVersion()
+  {
+    return $this->tfVersion;
   }
   /**
    * @param string
@@ -945,6 +1534,14 @@ class TrainingOptions extends \Google\Collection
   {
     return $this->timeSeriesIdColumns;
   }
+  public function setTimeSeriesLengthFraction($timeSeriesLengthFraction)
+  {
+    $this->timeSeriesLengthFraction = $timeSeriesLengthFraction;
+  }
+  public function getTimeSeriesLengthFraction()
+  {
+    return $this->timeSeriesLengthFraction;
+  }
   /**
    * @param string
    */
@@ -976,6 +1573,20 @@ class TrainingOptions extends \Google\Collection
   /**
    * @param string
    */
+  public function setTrendSmoothingWindowSize($trendSmoothingWindowSize)
+  {
+    $this->trendSmoothingWindowSize = $trendSmoothingWindowSize;
+  }
+  /**
+   * @return string
+   */
+  public function getTrendSmoothingWindowSize()
+  {
+    return $this->trendSmoothingWindowSize;
+  }
+  /**
+   * @param string
+   */
   public function setUserColumn($userColumn)
   {
     $this->userColumn = $userColumn;
@@ -986,6 +1597,20 @@ class TrainingOptions extends \Google\Collection
   public function getUserColumn()
   {
     return $this->userColumn;
+  }
+  /**
+   * @param string[]
+   */
+  public function setVertexAiModelVersionAliases($vertexAiModelVersionAliases)
+  {
+    $this->vertexAiModelVersionAliases = $vertexAiModelVersionAliases;
+  }
+  /**
+   * @return string[]
+   */
+  public function getVertexAiModelVersionAliases()
+  {
+    return $this->vertexAiModelVersionAliases;
   }
   public function setWalsAlpha($walsAlpha)
   {
@@ -1008,6 +1633,20 @@ class TrainingOptions extends \Google\Collection
   public function getWarmStart()
   {
     return $this->warmStart;
+  }
+  /**
+   * @param string
+   */
+  public function setXgboostVersion($xgboostVersion)
+  {
+    $this->xgboostVersion = $xgboostVersion;
+  }
+  /**
+   * @return string
+   */
+  public function getXgboostVersion()
+  {
+    return $this->xgboostVersion;
   }
 }
 

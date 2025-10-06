@@ -42,12 +42,24 @@ class MachineImage extends \Google\Collection
    * @var string
    */
   public $kind;
+  /**
+   * @var string
+   */
+  public $labelFingerprint;
+  /**
+   * @var string[]
+   */
+  public $labels;
   protected $machineImageEncryptionKeyType = CustomerEncryptionKey::class;
   protected $machineImageEncryptionKeyDataType = '';
   /**
    * @var string
    */
   public $name;
+  /**
+   * @var bool
+   */
+  public $satisfiesPzi;
   /**
    * @var bool
    */
@@ -164,6 +176,34 @@ class MachineImage extends \Google\Collection
     return $this->kind;
   }
   /**
+   * @param string
+   */
+  public function setLabelFingerprint($labelFingerprint)
+  {
+    $this->labelFingerprint = $labelFingerprint;
+  }
+  /**
+   * @return string
+   */
+  public function getLabelFingerprint()
+  {
+    return $this->labelFingerprint;
+  }
+  /**
+   * @param string[]
+   */
+  public function setLabels($labels)
+  {
+    $this->labels = $labels;
+  }
+  /**
+   * @return string[]
+   */
+  public function getLabels()
+  {
+    return $this->labels;
+  }
+  /**
    * @param CustomerEncryptionKey
    */
   public function setMachineImageEncryptionKey(CustomerEncryptionKey $machineImageEncryptionKey)
@@ -190,6 +230,20 @@ class MachineImage extends \Google\Collection
   public function getName()
   {
     return $this->name;
+  }
+  /**
+   * @param bool
+   */
+  public function setSatisfiesPzi($satisfiesPzi)
+  {
+    $this->satisfiesPzi = $satisfiesPzi;
+  }
+  /**
+   * @return bool
+   */
+  public function getSatisfiesPzi()
+  {
+    return $this->satisfiesPzi;
   }
   /**
    * @param bool

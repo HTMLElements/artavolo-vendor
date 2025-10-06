@@ -22,16 +22,40 @@ class CrossProfilePolicies extends \Google\Model
   /**
    * @var string
    */
+  public $crossProfileAppFunctions;
+  /**
+   * @var string
+   */
   public $crossProfileCopyPaste;
   /**
    * @var string
    */
   public $crossProfileDataSharing;
+  protected $exemptionsToShowWorkContactsInPersonalProfileType = PackageNameList::class;
+  protected $exemptionsToShowWorkContactsInPersonalProfileDataType = '';
   /**
    * @var string
    */
   public $showWorkContactsInPersonalProfile;
+  /**
+   * @var string
+   */
+  public $workProfileWidgetsDefault;
 
+  /**
+   * @param string
+   */
+  public function setCrossProfileAppFunctions($crossProfileAppFunctions)
+  {
+    $this->crossProfileAppFunctions = $crossProfileAppFunctions;
+  }
+  /**
+   * @return string
+   */
+  public function getCrossProfileAppFunctions()
+  {
+    return $this->crossProfileAppFunctions;
+  }
   /**
    * @param string
    */
@@ -61,6 +85,20 @@ class CrossProfilePolicies extends \Google\Model
     return $this->crossProfileDataSharing;
   }
   /**
+   * @param PackageNameList
+   */
+  public function setExemptionsToShowWorkContactsInPersonalProfile(PackageNameList $exemptionsToShowWorkContactsInPersonalProfile)
+  {
+    $this->exemptionsToShowWorkContactsInPersonalProfile = $exemptionsToShowWorkContactsInPersonalProfile;
+  }
+  /**
+   * @return PackageNameList
+   */
+  public function getExemptionsToShowWorkContactsInPersonalProfile()
+  {
+    return $this->exemptionsToShowWorkContactsInPersonalProfile;
+  }
+  /**
    * @param string
    */
   public function setShowWorkContactsInPersonalProfile($showWorkContactsInPersonalProfile)
@@ -73,6 +111,20 @@ class CrossProfilePolicies extends \Google\Model
   public function getShowWorkContactsInPersonalProfile()
   {
     return $this->showWorkContactsInPersonalProfile;
+  }
+  /**
+   * @param string
+   */
+  public function setWorkProfileWidgetsDefault($workProfileWidgetsDefault)
+  {
+    $this->workProfileWidgetsDefault = $workProfileWidgetsDefault;
+  }
+  /**
+   * @return string
+   */
+  public function getWorkProfileWidgetsDefault()
+  {
+    return $this->workProfileWidgetsDefault;
   }
 }
 

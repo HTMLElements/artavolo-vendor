@@ -19,11 +19,15 @@ namespace Google\Service\Dataflow;
 
 class RuntimeEnvironment extends \Google\Collection
 {
-  protected $collection_key = 'additionalExperiments';
+  protected $collection_key = 'additionalPipelineOptions';
   /**
    * @var string[]
    */
   public $additionalExperiments;
+  /**
+   * @var string[]
+   */
+  public $additionalPipelineOptions;
   /**
    * @var string[]
    */
@@ -32,6 +36,10 @@ class RuntimeEnvironment extends \Google\Collection
    * @var bool
    */
   public $bypassTempDirValidation;
+  /**
+   * @var int
+   */
+  public $diskSizeGb;
   /**
    * @var bool
    */
@@ -64,6 +72,10 @@ class RuntimeEnvironment extends \Google\Collection
    * @var string
    */
   public $serviceAccountEmail;
+  /**
+   * @var string
+   */
+  public $streamingMode;
   /**
    * @var string
    */
@@ -102,6 +114,20 @@ class RuntimeEnvironment extends \Google\Collection
   /**
    * @param string[]
    */
+  public function setAdditionalPipelineOptions($additionalPipelineOptions)
+  {
+    $this->additionalPipelineOptions = $additionalPipelineOptions;
+  }
+  /**
+   * @return string[]
+   */
+  public function getAdditionalPipelineOptions()
+  {
+    return $this->additionalPipelineOptions;
+  }
+  /**
+   * @param string[]
+   */
   public function setAdditionalUserLabels($additionalUserLabels)
   {
     $this->additionalUserLabels = $additionalUserLabels;
@@ -126,6 +152,20 @@ class RuntimeEnvironment extends \Google\Collection
   public function getBypassTempDirValidation()
   {
     return $this->bypassTempDirValidation;
+  }
+  /**
+   * @param int
+   */
+  public function setDiskSizeGb($diskSizeGb)
+  {
+    $this->diskSizeGb = $diskSizeGb;
+  }
+  /**
+   * @return int
+   */
+  public function getDiskSizeGb()
+  {
+    return $this->diskSizeGb;
   }
   /**
    * @param bool
@@ -238,6 +278,20 @@ class RuntimeEnvironment extends \Google\Collection
   public function getServiceAccountEmail()
   {
     return $this->serviceAccountEmail;
+  }
+  /**
+   * @param string
+   */
+  public function setStreamingMode($streamingMode)
+  {
+    $this->streamingMode = $streamingMode;
+  }
+  /**
+   * @return string
+   */
+  public function getStreamingMode()
+  {
+    return $this->streamingMode;
   }
   /**
    * @param string

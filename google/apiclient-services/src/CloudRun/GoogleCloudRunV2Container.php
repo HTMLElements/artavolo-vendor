@@ -25,15 +25,27 @@ class GoogleCloudRunV2Container extends \Google\Collection
    */
   public $args;
   /**
+   * @var string
+   */
+  public $baseImageUri;
+  protected $buildInfoType = GoogleCloudRunV2BuildInfo::class;
+  protected $buildInfoDataType = '';
+  /**
    * @var string[]
    */
   public $command;
+  /**
+   * @var string[]
+   */
+  public $dependsOn;
   protected $envType = GoogleCloudRunV2EnvVar::class;
   protected $envDataType = 'array';
   /**
    * @var string
    */
   public $image;
+  protected $livenessProbeType = GoogleCloudRunV2Probe::class;
+  protected $livenessProbeDataType = '';
   /**
    * @var string
    */
@@ -42,8 +54,14 @@ class GoogleCloudRunV2Container extends \Google\Collection
   protected $portsDataType = 'array';
   protected $resourcesType = GoogleCloudRunV2ResourceRequirements::class;
   protected $resourcesDataType = '';
+  protected $startupProbeType = GoogleCloudRunV2Probe::class;
+  protected $startupProbeDataType = '';
   protected $volumeMountsType = GoogleCloudRunV2VolumeMount::class;
   protected $volumeMountsDataType = 'array';
+  /**
+   * @var string
+   */
+  public $workingDir;
 
   /**
    * @param string[]
@@ -60,6 +78,34 @@ class GoogleCloudRunV2Container extends \Google\Collection
     return $this->args;
   }
   /**
+   * @param string
+   */
+  public function setBaseImageUri($baseImageUri)
+  {
+    $this->baseImageUri = $baseImageUri;
+  }
+  /**
+   * @return string
+   */
+  public function getBaseImageUri()
+  {
+    return $this->baseImageUri;
+  }
+  /**
+   * @param GoogleCloudRunV2BuildInfo
+   */
+  public function setBuildInfo(GoogleCloudRunV2BuildInfo $buildInfo)
+  {
+    $this->buildInfo = $buildInfo;
+  }
+  /**
+   * @return GoogleCloudRunV2BuildInfo
+   */
+  public function getBuildInfo()
+  {
+    return $this->buildInfo;
+  }
+  /**
    * @param string[]
    */
   public function setCommand($command)
@@ -72,6 +118,20 @@ class GoogleCloudRunV2Container extends \Google\Collection
   public function getCommand()
   {
     return $this->command;
+  }
+  /**
+   * @param string[]
+   */
+  public function setDependsOn($dependsOn)
+  {
+    $this->dependsOn = $dependsOn;
+  }
+  /**
+   * @return string[]
+   */
+  public function getDependsOn()
+  {
+    return $this->dependsOn;
   }
   /**
    * @param GoogleCloudRunV2EnvVar[]
@@ -100,6 +160,20 @@ class GoogleCloudRunV2Container extends \Google\Collection
   public function getImage()
   {
     return $this->image;
+  }
+  /**
+   * @param GoogleCloudRunV2Probe
+   */
+  public function setLivenessProbe(GoogleCloudRunV2Probe $livenessProbe)
+  {
+    $this->livenessProbe = $livenessProbe;
+  }
+  /**
+   * @return GoogleCloudRunV2Probe
+   */
+  public function getLivenessProbe()
+  {
+    return $this->livenessProbe;
   }
   /**
    * @param string
@@ -144,6 +218,20 @@ class GoogleCloudRunV2Container extends \Google\Collection
     return $this->resources;
   }
   /**
+   * @param GoogleCloudRunV2Probe
+   */
+  public function setStartupProbe(GoogleCloudRunV2Probe $startupProbe)
+  {
+    $this->startupProbe = $startupProbe;
+  }
+  /**
+   * @return GoogleCloudRunV2Probe
+   */
+  public function getStartupProbe()
+  {
+    return $this->startupProbe;
+  }
+  /**
    * @param GoogleCloudRunV2VolumeMount[]
    */
   public function setVolumeMounts($volumeMounts)
@@ -156,6 +244,20 @@ class GoogleCloudRunV2Container extends \Google\Collection
   public function getVolumeMounts()
   {
     return $this->volumeMounts;
+  }
+  /**
+   * @param string
+   */
+  public function setWorkingDir($workingDir)
+  {
+    $this->workingDir = $workingDir;
+  }
+  /**
+   * @return string
+   */
+  public function getWorkingDir()
+  {
+    return $this->workingDir;
   }
 }
 

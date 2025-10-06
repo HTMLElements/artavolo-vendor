@@ -49,9 +49,11 @@ class Adsense extends \Google\Service
   public $accounts_adclients_urlchannels;
   public $accounts_alerts;
   public $accounts_payments;
+  public $accounts_policyIssues;
   public $accounts_reports;
   public $accounts_reports_saved;
   public $accounts_sites;
+  public $rootUrlTemplate;
 
   /**
    * Constructs the internal representation of the Adsense service.
@@ -64,6 +66,7 @@ class Adsense extends \Google\Service
   {
     parent::__construct($clientOrConfig);
     $this->rootUrl = $rootUrl ?: 'https://adsense.googleapis.com/';
+    $this->rootUrlTemplate = $rootUrl ?: 'https://adsense.UNIVERSE_DOMAIN/';
     $this->servicePath = '';
     $this->batchPath = 'batch';
     $this->version = 'v2';
@@ -77,6 +80,16 @@ class Adsense extends \Google\Service
           'methods' => [
             'get' => [
               'path' => 'v2/{+name}',
+              'httpMethod' => 'GET',
+              'parameters' => [
+                'name' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+              ],
+            ],'getAdBlockingRecoveryTag' => [
+              'path' => 'v2/{+name}/adBlockingRecoveryTag',
               'httpMethod' => 'GET',
               'parameters' => [
                 'name' => [
@@ -174,7 +187,17 @@ class Adsense extends \Google\Service
         'adunits',
         [
           'methods' => [
-            'get' => [
+            'create' => [
+              'path' => 'v2/{+parent}/adunits',
+              'httpMethod' => 'POST',
+              'parameters' => [
+                'parent' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+              ],
+            ],'get' => [
               'path' => 'v2/{+name}',
               'httpMethod' => 'GET',
               'parameters' => [
@@ -230,6 +253,20 @@ class Adsense extends \Google\Service
                   'type' => 'string',
                 ],
               ],
+            ],'patch' => [
+              'path' => 'v2/{+name}',
+              'httpMethod' => 'PATCH',
+              'parameters' => [
+                'name' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+                'updateMask' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
+              ],
             ],
           ]
         ]
@@ -240,7 +277,27 @@ class Adsense extends \Google\Service
         'customchannels',
         [
           'methods' => [
-            'get' => [
+            'create' => [
+              'path' => 'v2/{+parent}/customchannels',
+              'httpMethod' => 'POST',
+              'parameters' => [
+                'parent' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+              ],
+            ],'delete' => [
+              'path' => 'v2/{+name}',
+              'httpMethod' => 'DELETE',
+              'parameters' => [
+                'name' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+              ],
+            ],'get' => [
               'path' => 'v2/{+name}',
               'httpMethod' => 'GET',
               'parameters' => [
@@ -282,6 +339,20 @@ class Adsense extends \Google\Service
                   'type' => 'integer',
                 ],
                 'pageToken' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
+              ],
+            ],'patch' => [
+              'path' => 'v2/{+name}',
+              'httpMethod' => 'PATCH',
+              'parameters' => [
+                'name' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+                'updateMask' => [
                   'location' => 'query',
                   'type' => 'string',
                 ],
@@ -366,6 +437,44 @@ class Adsense extends \Google\Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
+                ],
+              ],
+            ],
+          ]
+        ]
+    );
+    $this->accounts_policyIssues = new Adsense\Resource\AccountsPolicyIssues(
+        $this,
+        $this->serviceName,
+        'policyIssues',
+        [
+          'methods' => [
+            'get' => [
+              'path' => 'v2/{+name}',
+              'httpMethod' => 'GET',
+              'parameters' => [
+                'name' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+              ],
+            ],'list' => [
+              'path' => 'v2/{+parent}/policyIssues',
+              'httpMethod' => 'GET',
+              'parameters' => [
+                'parent' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+                'pageSize' => [
+                  'location' => 'query',
+                  'type' => 'integer',
+                ],
+                'pageToken' => [
+                  'location' => 'query',
+                  'type' => 'string',
                 ],
               ],
             ],

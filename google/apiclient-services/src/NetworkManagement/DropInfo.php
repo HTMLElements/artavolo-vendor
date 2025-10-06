@@ -26,7 +26,27 @@ class DropInfo extends \Google\Model
   /**
    * @var string
    */
+  public $destinationGeolocationCode;
+  /**
+   * @var string
+   */
+  public $destinationIp;
+  /**
+   * @var string
+   */
+  public $region;
+  /**
+   * @var string
+   */
   public $resourceUri;
+  /**
+   * @var string
+   */
+  public $sourceGeolocationCode;
+  /**
+   * @var string
+   */
+  public $sourceIp;
 
   /**
    * @param string
@@ -45,6 +65,48 @@ class DropInfo extends \Google\Model
   /**
    * @param string
    */
+  public function setDestinationGeolocationCode($destinationGeolocationCode)
+  {
+    $this->destinationGeolocationCode = $destinationGeolocationCode;
+  }
+  /**
+   * @return string
+   */
+  public function getDestinationGeolocationCode()
+  {
+    return $this->destinationGeolocationCode;
+  }
+  /**
+   * @param string
+   */
+  public function setDestinationIp($destinationIp)
+  {
+    $this->destinationIp = $destinationIp;
+  }
+  /**
+   * @return string
+   */
+  public function getDestinationIp()
+  {
+    return $this->destinationIp;
+  }
+  /**
+   * @param string
+   */
+  public function setRegion($region)
+  {
+    $this->region = $region;
+  }
+  /**
+   * @return string
+   */
+  public function getRegion()
+  {
+    return $this->region;
+  }
+  /**
+   * @param string
+   */
   public function setResourceUri($resourceUri)
   {
     $this->resourceUri = $resourceUri;
@@ -55,6 +117,34 @@ class DropInfo extends \Google\Model
   public function getResourceUri()
   {
     return $this->resourceUri;
+  }
+  /**
+   * @param string
+   */
+  public function setSourceGeolocationCode($sourceGeolocationCode)
+  {
+    $this->sourceGeolocationCode = $sourceGeolocationCode;
+  }
+  /**
+   * @return string
+   */
+  public function getSourceGeolocationCode()
+  {
+    return $this->sourceGeolocationCode;
+  }
+  /**
+   * @param string
+   */
+  public function setSourceIp($sourceIp)
+  {
+    $this->sourceIp = $sourceIp;
+  }
+  /**
+   * @return string
+   */
+  public function getSourceIp()
+  {
+    return $this->sourceIp;
   }
 }
 

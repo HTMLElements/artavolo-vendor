@@ -25,8 +25,8 @@ class Report extends \Google\Model
   public $accountId;
   protected $criteriaType = ReportCriteria::class;
   protected $criteriaDataType = '';
-  protected $crossDimensionReachCriteriaType = ReportCrossDimensionReachCriteria::class;
-  protected $crossDimensionReachCriteriaDataType = '';
+  protected $crossMediaReachCriteriaType = ReportCrossMediaReachCriteria::class;
+  protected $crossMediaReachCriteriaDataType = '';
   protected $deliveryType = ReportDelivery::class;
   protected $deliveryDataType = '';
   /**
@@ -63,10 +63,6 @@ class Report extends \Google\Model
    * @var string
    */
   public $ownerProfileId;
-  protected $pathAttributionCriteriaType = ReportPathAttributionCriteria::class;
-  protected $pathAttributionCriteriaDataType = '';
-  protected $pathCriteriaType = ReportPathCriteria::class;
-  protected $pathCriteriaDataType = '';
   protected $pathToConversionCriteriaType = ReportPathToConversionCriteria::class;
   protected $pathToConversionCriteriaDataType = '';
   protected $reachCriteriaType = ReportReachCriteria::class;
@@ -111,18 +107,18 @@ class Report extends \Google\Model
     return $this->criteria;
   }
   /**
-   * @param ReportCrossDimensionReachCriteria
+   * @param ReportCrossMediaReachCriteria
    */
-  public function setCrossDimensionReachCriteria(ReportCrossDimensionReachCriteria $crossDimensionReachCriteria)
+  public function setCrossMediaReachCriteria(ReportCrossMediaReachCriteria $crossMediaReachCriteria)
   {
-    $this->crossDimensionReachCriteria = $crossDimensionReachCriteria;
+    $this->crossMediaReachCriteria = $crossMediaReachCriteria;
   }
   /**
-   * @return ReportCrossDimensionReachCriteria
+   * @return ReportCrossMediaReachCriteria
    */
-  public function getCrossDimensionReachCriteria()
+  public function getCrossMediaReachCriteria()
   {
-    return $this->crossDimensionReachCriteria;
+    return $this->crossMediaReachCriteria;
   }
   /**
    * @param ReportDelivery
@@ -263,34 +259,6 @@ class Report extends \Google\Model
   public function getOwnerProfileId()
   {
     return $this->ownerProfileId;
-  }
-  /**
-   * @param ReportPathAttributionCriteria
-   */
-  public function setPathAttributionCriteria(ReportPathAttributionCriteria $pathAttributionCriteria)
-  {
-    $this->pathAttributionCriteria = $pathAttributionCriteria;
-  }
-  /**
-   * @return ReportPathAttributionCriteria
-   */
-  public function getPathAttributionCriteria()
-  {
-    return $this->pathAttributionCriteria;
-  }
-  /**
-   * @param ReportPathCriteria
-   */
-  public function setPathCriteria(ReportPathCriteria $pathCriteria)
-  {
-    $this->pathCriteria = $pathCriteria;
-  }
-  /**
-   * @return ReportPathCriteria
-   */
-  public function getPathCriteria()
-  {
-    return $this->pathCriteria;
   }
   /**
    * @param ReportPathToConversionCriteria

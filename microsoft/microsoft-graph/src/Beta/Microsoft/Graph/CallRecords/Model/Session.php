@@ -156,6 +156,35 @@ class Session extends \Beta\Microsoft\Graph\Model\Entity
         return $this;
     }
 
+    /**
+    * Gets the isTest
+    * Specifies whether the session is a test.
+    *
+    * @return bool|null The isTest
+    */
+    public function getIsTest()
+    {
+        if (array_key_exists("isTest", $this->_propDict)) {
+            return $this->_propDict["isTest"];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+    * Sets the isTest
+    * Specifies whether the session is a test.
+    *
+    * @param bool $val The isTest
+    *
+    * @return Session
+    */
+    public function setIsTest($val)
+    {
+        $this->_propDict["isTest"] = boolval($val);
+        return $this;
+    }
+
 
      /**
      * Gets the modalities
@@ -188,7 +217,7 @@ class Session extends \Beta\Microsoft\Graph\Model\Entity
 
     /**
     * Gets the startDateTime
-    * UTC fime when the first user joined the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    * UTC time when the first user joined the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     *
     * @return \DateTime|null The startDateTime
     */
@@ -207,7 +236,7 @@ class Session extends \Beta\Microsoft\Graph\Model\Entity
 
     /**
     * Sets the startDateTime
-    * UTC fime when the first user joined the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    * UTC time when the first user joined the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     *
     * @param \DateTime $val The startDateTime
     *

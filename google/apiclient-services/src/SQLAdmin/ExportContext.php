@@ -20,6 +20,8 @@ namespace Google\Service\SQLAdmin;
 class ExportContext extends \Google\Collection
 {
   protected $collection_key = 'databases';
+  protected $bakExportOptionsType = ExportContextBakExportOptions::class;
+  protected $bakExportOptionsDataType = '';
   protected $csvExportOptionsType = ExportContextCsvExportOptions::class;
   protected $csvExportOptionsDataType = '';
   /**
@@ -40,11 +42,27 @@ class ExportContext extends \Google\Collection
   public $offload;
   protected $sqlExportOptionsType = ExportContextSqlExportOptions::class;
   protected $sqlExportOptionsDataType = '';
+  protected $tdeExportOptionsType = ExportContextTdeExportOptions::class;
+  protected $tdeExportOptionsDataType = '';
   /**
    * @var string
    */
   public $uri;
 
+  /**
+   * @param ExportContextBakExportOptions
+   */
+  public function setBakExportOptions(ExportContextBakExportOptions $bakExportOptions)
+  {
+    $this->bakExportOptions = $bakExportOptions;
+  }
+  /**
+   * @return ExportContextBakExportOptions
+   */
+  public function getBakExportOptions()
+  {
+    return $this->bakExportOptions;
+  }
   /**
    * @param ExportContextCsvExportOptions
    */
@@ -128,6 +146,20 @@ class ExportContext extends \Google\Collection
   public function getSqlExportOptions()
   {
     return $this->sqlExportOptions;
+  }
+  /**
+   * @param ExportContextTdeExportOptions
+   */
+  public function setTdeExportOptions(ExportContextTdeExportOptions $tdeExportOptions)
+  {
+    $this->tdeExportOptions = $tdeExportOptions;
+  }
+  /**
+   * @return ExportContextTdeExportOptions
+   */
+  public function getTdeExportOptions()
+  {
+    return $this->tdeExportOptions;
   }
   /**
    * @param string

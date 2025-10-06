@@ -24,10 +24,16 @@ class NodeConfig extends \Google\Collection
   protected $acceleratorsDataType = 'array';
   protected $advancedMachineFeaturesType = AdvancedMachineFeatures::class;
   protected $advancedMachineFeaturesDataType = '';
+  protected $bootDiskType = BootDisk::class;
+  protected $bootDiskDataType = '';
   /**
    * @var string
    */
   public $bootDiskKmsKey;
+  protected $confidentialNodesType = ConfidentialNodes::class;
+  protected $confidentialNodesDataType = '';
+  protected $containerdConfigType = ContainerdConfig::class;
+  protected $containerdConfigDataType = '';
   /**
    * @var int
    */
@@ -36,6 +42,22 @@ class NodeConfig extends \Google\Collection
    * @var string
    */
   public $diskType;
+  /**
+   * @var string
+   */
+  public $effectiveCgroupMode;
+  /**
+   * @var bool
+   */
+  public $enableConfidentialStorage;
+  protected $ephemeralStorageLocalSsdConfigType = EphemeralStorageLocalSsdConfig::class;
+  protected $ephemeralStorageLocalSsdConfigDataType = '';
+  protected $fastSocketType = FastSocket::class;
+  protected $fastSocketDataType = '';
+  /**
+   * @var bool
+   */
+  public $flexStart;
   protected $gcfsConfigType = GcfsConfig::class;
   protected $gcfsConfigDataType = '';
   protected $gvnicType = VirtualNIC::class;
@@ -52,6 +74,8 @@ class NodeConfig extends \Google\Collection
   public $labels;
   protected $linuxNodeConfigType = LinuxNodeConfig::class;
   protected $linuxNodeConfigDataType = '';
+  protected $localNvmeSsdBlockConfigType = LocalNvmeSsdBlockConfig::class;
+  protected $localNvmeSsdBlockConfigDataType = '';
   /**
    * @var int
    */
@@ -59,7 +83,17 @@ class NodeConfig extends \Google\Collection
   /**
    * @var string
    */
+  public $localSsdEncryptionMode;
+  protected $loggingConfigType = NodePoolLoggingConfig::class;
+  protected $loggingConfigDataType = '';
+  /**
+   * @var string
+   */
   public $machineType;
+  /**
+   * @var string
+   */
+  public $maxRunDuration;
   /**
    * @var string[]
    */
@@ -82,14 +116,26 @@ class NodeConfig extends \Google\Collection
   public $preemptible;
   protected $reservationAffinityType = ReservationAffinity::class;
   protected $reservationAffinityDataType = '';
+  /**
+   * @var string[]
+   */
+  public $resourceLabels;
+  protected $resourceManagerTagsType = ResourceManagerTags::class;
+  protected $resourceManagerTagsDataType = '';
   protected $sandboxConfigType = SandboxConfig::class;
   protected $sandboxConfigDataType = '';
+  protected $secondaryBootDiskUpdateStrategyType = SecondaryBootDiskUpdateStrategy::class;
+  protected $secondaryBootDiskUpdateStrategyDataType = '';
+  protected $secondaryBootDisksType = SecondaryBootDisk::class;
+  protected $secondaryBootDisksDataType = 'array';
   /**
    * @var string
    */
   public $serviceAccount;
   protected $shieldedInstanceConfigType = ShieldedInstanceConfig::class;
   protected $shieldedInstanceConfigDataType = '';
+  protected $soleTenantConfigType = SoleTenantConfig::class;
+  protected $soleTenantConfigDataType = '';
   /**
    * @var bool
    */
@@ -97,9 +143,15 @@ class NodeConfig extends \Google\Collection
   /**
    * @var string[]
    */
+  public $storagePools;
+  /**
+   * @var string[]
+   */
   public $tags;
   protected $taintsType = NodeTaint::class;
   protected $taintsDataType = 'array';
+  protected $windowsNodeConfigType = WindowsNodeConfig::class;
+  protected $windowsNodeConfigDataType = '';
   protected $workloadMetadataConfigType = WorkloadMetadataConfig::class;
   protected $workloadMetadataConfigDataType = '';
 
@@ -132,6 +184,20 @@ class NodeConfig extends \Google\Collection
     return $this->advancedMachineFeatures;
   }
   /**
+   * @param BootDisk
+   */
+  public function setBootDisk(BootDisk $bootDisk)
+  {
+    $this->bootDisk = $bootDisk;
+  }
+  /**
+   * @return BootDisk
+   */
+  public function getBootDisk()
+  {
+    return $this->bootDisk;
+  }
+  /**
    * @param string
    */
   public function setBootDiskKmsKey($bootDiskKmsKey)
@@ -144,6 +210,34 @@ class NodeConfig extends \Google\Collection
   public function getBootDiskKmsKey()
   {
     return $this->bootDiskKmsKey;
+  }
+  /**
+   * @param ConfidentialNodes
+   */
+  public function setConfidentialNodes(ConfidentialNodes $confidentialNodes)
+  {
+    $this->confidentialNodes = $confidentialNodes;
+  }
+  /**
+   * @return ConfidentialNodes
+   */
+  public function getConfidentialNodes()
+  {
+    return $this->confidentialNodes;
+  }
+  /**
+   * @param ContainerdConfig
+   */
+  public function setContainerdConfig(ContainerdConfig $containerdConfig)
+  {
+    $this->containerdConfig = $containerdConfig;
+  }
+  /**
+   * @return ContainerdConfig
+   */
+  public function getContainerdConfig()
+  {
+    return $this->containerdConfig;
   }
   /**
    * @param int
@@ -172,6 +266,76 @@ class NodeConfig extends \Google\Collection
   public function getDiskType()
   {
     return $this->diskType;
+  }
+  /**
+   * @param string
+   */
+  public function setEffectiveCgroupMode($effectiveCgroupMode)
+  {
+    $this->effectiveCgroupMode = $effectiveCgroupMode;
+  }
+  /**
+   * @return string
+   */
+  public function getEffectiveCgroupMode()
+  {
+    return $this->effectiveCgroupMode;
+  }
+  /**
+   * @param bool
+   */
+  public function setEnableConfidentialStorage($enableConfidentialStorage)
+  {
+    $this->enableConfidentialStorage = $enableConfidentialStorage;
+  }
+  /**
+   * @return bool
+   */
+  public function getEnableConfidentialStorage()
+  {
+    return $this->enableConfidentialStorage;
+  }
+  /**
+   * @param EphemeralStorageLocalSsdConfig
+   */
+  public function setEphemeralStorageLocalSsdConfig(EphemeralStorageLocalSsdConfig $ephemeralStorageLocalSsdConfig)
+  {
+    $this->ephemeralStorageLocalSsdConfig = $ephemeralStorageLocalSsdConfig;
+  }
+  /**
+   * @return EphemeralStorageLocalSsdConfig
+   */
+  public function getEphemeralStorageLocalSsdConfig()
+  {
+    return $this->ephemeralStorageLocalSsdConfig;
+  }
+  /**
+   * @param FastSocket
+   */
+  public function setFastSocket(FastSocket $fastSocket)
+  {
+    $this->fastSocket = $fastSocket;
+  }
+  /**
+   * @return FastSocket
+   */
+  public function getFastSocket()
+  {
+    return $this->fastSocket;
+  }
+  /**
+   * @param bool
+   */
+  public function setFlexStart($flexStart)
+  {
+    $this->flexStart = $flexStart;
+  }
+  /**
+   * @return bool
+   */
+  public function getFlexStart()
+  {
+    return $this->flexStart;
   }
   /**
    * @param GcfsConfig
@@ -258,6 +422,20 @@ class NodeConfig extends \Google\Collection
     return $this->linuxNodeConfig;
   }
   /**
+   * @param LocalNvmeSsdBlockConfig
+   */
+  public function setLocalNvmeSsdBlockConfig(LocalNvmeSsdBlockConfig $localNvmeSsdBlockConfig)
+  {
+    $this->localNvmeSsdBlockConfig = $localNvmeSsdBlockConfig;
+  }
+  /**
+   * @return LocalNvmeSsdBlockConfig
+   */
+  public function getLocalNvmeSsdBlockConfig()
+  {
+    return $this->localNvmeSsdBlockConfig;
+  }
+  /**
    * @param int
    */
   public function setLocalSsdCount($localSsdCount)
@@ -274,6 +452,34 @@ class NodeConfig extends \Google\Collection
   /**
    * @param string
    */
+  public function setLocalSsdEncryptionMode($localSsdEncryptionMode)
+  {
+    $this->localSsdEncryptionMode = $localSsdEncryptionMode;
+  }
+  /**
+   * @return string
+   */
+  public function getLocalSsdEncryptionMode()
+  {
+    return $this->localSsdEncryptionMode;
+  }
+  /**
+   * @param NodePoolLoggingConfig
+   */
+  public function setLoggingConfig(NodePoolLoggingConfig $loggingConfig)
+  {
+    $this->loggingConfig = $loggingConfig;
+  }
+  /**
+   * @return NodePoolLoggingConfig
+   */
+  public function getLoggingConfig()
+  {
+    return $this->loggingConfig;
+  }
+  /**
+   * @param string
+   */
   public function setMachineType($machineType)
   {
     $this->machineType = $machineType;
@@ -284,6 +490,20 @@ class NodeConfig extends \Google\Collection
   public function getMachineType()
   {
     return $this->machineType;
+  }
+  /**
+   * @param string
+   */
+  public function setMaxRunDuration($maxRunDuration)
+  {
+    $this->maxRunDuration = $maxRunDuration;
+  }
+  /**
+   * @return string
+   */
+  public function getMaxRunDuration()
+  {
+    return $this->maxRunDuration;
   }
   /**
    * @param string[]
@@ -370,6 +590,34 @@ class NodeConfig extends \Google\Collection
     return $this->reservationAffinity;
   }
   /**
+   * @param string[]
+   */
+  public function setResourceLabels($resourceLabels)
+  {
+    $this->resourceLabels = $resourceLabels;
+  }
+  /**
+   * @return string[]
+   */
+  public function getResourceLabels()
+  {
+    return $this->resourceLabels;
+  }
+  /**
+   * @param ResourceManagerTags
+   */
+  public function setResourceManagerTags(ResourceManagerTags $resourceManagerTags)
+  {
+    $this->resourceManagerTags = $resourceManagerTags;
+  }
+  /**
+   * @return ResourceManagerTags
+   */
+  public function getResourceManagerTags()
+  {
+    return $this->resourceManagerTags;
+  }
+  /**
    * @param SandboxConfig
    */
   public function setSandboxConfig(SandboxConfig $sandboxConfig)
@@ -382,6 +630,34 @@ class NodeConfig extends \Google\Collection
   public function getSandboxConfig()
   {
     return $this->sandboxConfig;
+  }
+  /**
+   * @param SecondaryBootDiskUpdateStrategy
+   */
+  public function setSecondaryBootDiskUpdateStrategy(SecondaryBootDiskUpdateStrategy $secondaryBootDiskUpdateStrategy)
+  {
+    $this->secondaryBootDiskUpdateStrategy = $secondaryBootDiskUpdateStrategy;
+  }
+  /**
+   * @return SecondaryBootDiskUpdateStrategy
+   */
+  public function getSecondaryBootDiskUpdateStrategy()
+  {
+    return $this->secondaryBootDiskUpdateStrategy;
+  }
+  /**
+   * @param SecondaryBootDisk[]
+   */
+  public function setSecondaryBootDisks($secondaryBootDisks)
+  {
+    $this->secondaryBootDisks = $secondaryBootDisks;
+  }
+  /**
+   * @return SecondaryBootDisk[]
+   */
+  public function getSecondaryBootDisks()
+  {
+    return $this->secondaryBootDisks;
   }
   /**
    * @param string
@@ -412,6 +688,20 @@ class NodeConfig extends \Google\Collection
     return $this->shieldedInstanceConfig;
   }
   /**
+   * @param SoleTenantConfig
+   */
+  public function setSoleTenantConfig(SoleTenantConfig $soleTenantConfig)
+  {
+    $this->soleTenantConfig = $soleTenantConfig;
+  }
+  /**
+   * @return SoleTenantConfig
+   */
+  public function getSoleTenantConfig()
+  {
+    return $this->soleTenantConfig;
+  }
+  /**
    * @param bool
    */
   public function setSpot($spot)
@@ -424,6 +714,20 @@ class NodeConfig extends \Google\Collection
   public function getSpot()
   {
     return $this->spot;
+  }
+  /**
+   * @param string[]
+   */
+  public function setStoragePools($storagePools)
+  {
+    $this->storagePools = $storagePools;
+  }
+  /**
+   * @return string[]
+   */
+  public function getStoragePools()
+  {
+    return $this->storagePools;
   }
   /**
    * @param string[]
@@ -452,6 +756,20 @@ class NodeConfig extends \Google\Collection
   public function getTaints()
   {
     return $this->taints;
+  }
+  /**
+   * @param WindowsNodeConfig
+   */
+  public function setWindowsNodeConfig(WindowsNodeConfig $windowsNodeConfig)
+  {
+    $this->windowsNodeConfig = $windowsNodeConfig;
+  }
+  /**
+   * @return WindowsNodeConfig
+   */
+  public function getWindowsNodeConfig()
+  {
+    return $this->windowsNodeConfig;
   }
   /**
    * @param WorkloadMetadataConfig

@@ -30,11 +30,25 @@ class CloudSqlSettings extends \Google\Model
   /**
    * @var string
    */
+  public $availabilityType;
+  /**
+   * @var string
+   */
   public $cmekKeyName;
   /**
    * @var string
    */
   public $collation;
+  protected $dataCacheConfigType = DataCacheConfig::class;
+  protected $dataCacheConfigDataType = '';
+  /**
+   * @var string
+   */
+  public $dataDiskProvisionedIops;
+  /**
+   * @var string
+   */
+  public $dataDiskProvisionedThroughput;
   /**
    * @var string
    */
@@ -51,6 +65,14 @@ class CloudSqlSettings extends \Google\Model
    * @var string
    */
   public $databaseVersion;
+  /**
+   * @var string
+   */
+  public $databaseVersionName;
+  /**
+   * @var string
+   */
+  public $edition;
   protected $ipConfigType = SqlIpConfig::class;
   protected $ipConfigDataType = '';
   /**
@@ -61,6 +83,10 @@ class CloudSqlSettings extends \Google\Model
    * @var bool
    */
   public $rootPasswordSet;
+  /**
+   * @var string
+   */
+  public $secondaryZone;
   /**
    * @var string
    */
@@ -113,6 +139,20 @@ class CloudSqlSettings extends \Google\Model
   /**
    * @param string
    */
+  public function setAvailabilityType($availabilityType)
+  {
+    $this->availabilityType = $availabilityType;
+  }
+  /**
+   * @return string
+   */
+  public function getAvailabilityType()
+  {
+    return $this->availabilityType;
+  }
+  /**
+   * @param string
+   */
   public function setCmekKeyName($cmekKeyName)
   {
     $this->cmekKeyName = $cmekKeyName;
@@ -137,6 +177,48 @@ class CloudSqlSettings extends \Google\Model
   public function getCollation()
   {
     return $this->collation;
+  }
+  /**
+   * @param DataCacheConfig
+   */
+  public function setDataCacheConfig(DataCacheConfig $dataCacheConfig)
+  {
+    $this->dataCacheConfig = $dataCacheConfig;
+  }
+  /**
+   * @return DataCacheConfig
+   */
+  public function getDataCacheConfig()
+  {
+    return $this->dataCacheConfig;
+  }
+  /**
+   * @param string
+   */
+  public function setDataDiskProvisionedIops($dataDiskProvisionedIops)
+  {
+    $this->dataDiskProvisionedIops = $dataDiskProvisionedIops;
+  }
+  /**
+   * @return string
+   */
+  public function getDataDiskProvisionedIops()
+  {
+    return $this->dataDiskProvisionedIops;
+  }
+  /**
+   * @param string
+   */
+  public function setDataDiskProvisionedThroughput($dataDiskProvisionedThroughput)
+  {
+    $this->dataDiskProvisionedThroughput = $dataDiskProvisionedThroughput;
+  }
+  /**
+   * @return string
+   */
+  public function getDataDiskProvisionedThroughput()
+  {
+    return $this->dataDiskProvisionedThroughput;
   }
   /**
    * @param string
@@ -195,6 +277,34 @@ class CloudSqlSettings extends \Google\Model
     return $this->databaseVersion;
   }
   /**
+   * @param string
+   */
+  public function setDatabaseVersionName($databaseVersionName)
+  {
+    $this->databaseVersionName = $databaseVersionName;
+  }
+  /**
+   * @return string
+   */
+  public function getDatabaseVersionName()
+  {
+    return $this->databaseVersionName;
+  }
+  /**
+   * @param string
+   */
+  public function setEdition($edition)
+  {
+    $this->edition = $edition;
+  }
+  /**
+   * @return string
+   */
+  public function getEdition()
+  {
+    return $this->edition;
+  }
+  /**
    * @param SqlIpConfig
    */
   public function setIpConfig(SqlIpConfig $ipConfig)
@@ -235,6 +345,20 @@ class CloudSqlSettings extends \Google\Model
   public function getRootPasswordSet()
   {
     return $this->rootPasswordSet;
+  }
+  /**
+   * @param string
+   */
+  public function setSecondaryZone($secondaryZone)
+  {
+    $this->secondaryZone = $secondaryZone;
+  }
+  /**
+   * @return string
+   */
+  public function getSecondaryZone()
+  {
+    return $this->secondaryZone;
   }
   /**
    * @param string

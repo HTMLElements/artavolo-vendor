@@ -20,8 +20,20 @@ namespace Google\Service\Firestore;
 class GoogleFirestoreAdminV1Index extends \Google\Collection
 {
   protected $collection_key = 'fields';
+  /**
+   * @var string
+   */
+  public $apiScope;
+  /**
+   * @var string
+   */
+  public $density;
   protected $fieldsType = GoogleFirestoreAdminV1IndexField::class;
   protected $fieldsDataType = 'array';
+  /**
+   * @var bool
+   */
+  public $multikey;
   /**
    * @var string
    */
@@ -31,10 +43,46 @@ class GoogleFirestoreAdminV1Index extends \Google\Collection
    */
   public $queryScope;
   /**
+   * @var int
+   */
+  public $shardCount;
+  /**
    * @var string
    */
   public $state;
+  /**
+   * @var bool
+   */
+  public $unique;
 
+  /**
+   * @param string
+   */
+  public function setApiScope($apiScope)
+  {
+    $this->apiScope = $apiScope;
+  }
+  /**
+   * @return string
+   */
+  public function getApiScope()
+  {
+    return $this->apiScope;
+  }
+  /**
+   * @param string
+   */
+  public function setDensity($density)
+  {
+    $this->density = $density;
+  }
+  /**
+   * @return string
+   */
+  public function getDensity()
+  {
+    return $this->density;
+  }
   /**
    * @param GoogleFirestoreAdminV1IndexField[]
    */
@@ -48,6 +96,20 @@ class GoogleFirestoreAdminV1Index extends \Google\Collection
   public function getFields()
   {
     return $this->fields;
+  }
+  /**
+   * @param bool
+   */
+  public function setMultikey($multikey)
+  {
+    $this->multikey = $multikey;
+  }
+  /**
+   * @return bool
+   */
+  public function getMultikey()
+  {
+    return $this->multikey;
   }
   /**
    * @param string
@@ -78,6 +140,20 @@ class GoogleFirestoreAdminV1Index extends \Google\Collection
     return $this->queryScope;
   }
   /**
+   * @param int
+   */
+  public function setShardCount($shardCount)
+  {
+    $this->shardCount = $shardCount;
+  }
+  /**
+   * @return int
+   */
+  public function getShardCount()
+  {
+    return $this->shardCount;
+  }
+  /**
    * @param string
    */
   public function setState($state)
@@ -90,6 +166,20 @@ class GoogleFirestoreAdminV1Index extends \Google\Collection
   public function getState()
   {
     return $this->state;
+  }
+  /**
+   * @param bool
+   */
+  public function setUnique($unique)
+  {
+    $this->unique = $unique;
+  }
+  /**
+   * @return bool
+   */
+  public function getUnique()
+  {
+    return $this->unique;
   }
 }
 

@@ -24,7 +24,7 @@ use Google\Service\CloudDataplex\GoogleCloudDataplexV1ListActionsResponse;
  * Typical usage is:
  *  <code>
  *   $dataplexService = new Google\Service\CloudDataplex(...);
- *   $actions = $dataplexService->actions;
+ *   $actions = $dataplexService->projects_locations_lakes_zones_actions;
  *  </code>
  */
 class ProjectsLocationsLakesZonesActions extends \Google\Service\Resource
@@ -34,7 +34,7 @@ class ProjectsLocationsLakesZonesActions extends \Google\Service\Resource
    * (actions.listProjectsLocationsLakesZonesActions)
    *
    * @param string $parent Required. The resource name of the parent zone: project
-   * s/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}
+   * s/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}.
    * @param array $optParams Optional parameters.
    *
    * @opt_param int pageSize Optional. Maximum number of actions to return. The
@@ -46,6 +46,7 @@ class ProjectsLocationsLakesZonesActions extends \Google\Service\Resource
    * paginating, all other parameters provided to ListZoneActions must match the
    * call that provided the page token.
    * @return GoogleCloudDataplexV1ListActionsResponse
+   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsLakesZonesActions($parent, $optParams = [])
   {

@@ -17,8 +17,13 @@
 
 namespace Google\Service\OnDemandScanning;
 
-class DiscoveryOccurrence extends \Google\Model
+class DiscoveryOccurrence extends \Google\Collection
 {
+  protected $collection_key = 'files';
+  protected $analysisCompletedType = AnalysisCompleted::class;
+  protected $analysisCompletedDataType = '';
+  protected $analysisErrorType = Status::class;
+  protected $analysisErrorDataType = 'array';
   /**
    * @var string
    */
@@ -37,11 +42,43 @@ class DiscoveryOccurrence extends \Google\Model
    * @var string
    */
   public $cpe;
+  protected $filesType = OndemandscanningFile::class;
+  protected $filesDataType = 'array';
   /**
    * @var string
    */
   public $lastScanTime;
+  protected $sbomStatusType = SBOMStatus::class;
+  protected $sbomStatusDataType = '';
 
+  /**
+   * @param AnalysisCompleted
+   */
+  public function setAnalysisCompleted(AnalysisCompleted $analysisCompleted)
+  {
+    $this->analysisCompleted = $analysisCompleted;
+  }
+  /**
+   * @return AnalysisCompleted
+   */
+  public function getAnalysisCompleted()
+  {
+    return $this->analysisCompleted;
+  }
+  /**
+   * @param Status[]
+   */
+  public function setAnalysisError($analysisError)
+  {
+    $this->analysisError = $analysisError;
+  }
+  /**
+   * @return Status[]
+   */
+  public function getAnalysisError()
+  {
+    return $this->analysisError;
+  }
   /**
    * @param string
    */
@@ -113,6 +150,20 @@ class DiscoveryOccurrence extends \Google\Model
     return $this->cpe;
   }
   /**
+   * @param OndemandscanningFile[]
+   */
+  public function setFiles($files)
+  {
+    $this->files = $files;
+  }
+  /**
+   * @return OndemandscanningFile[]
+   */
+  public function getFiles()
+  {
+    return $this->files;
+  }
+  /**
    * @param string
    */
   public function setLastScanTime($lastScanTime)
@@ -125,6 +176,20 @@ class DiscoveryOccurrence extends \Google\Model
   public function getLastScanTime()
   {
     return $this->lastScanTime;
+  }
+  /**
+   * @param SBOMStatus
+   */
+  public function setSbomStatus(SBOMStatus $sbomStatus)
+  {
+    $this->sbomStatus = $sbomStatus;
+  }
+  /**
+   * @return SBOMStatus
+   */
+  public function getSbomStatus()
+  {
+    return $this->sbomStatus;
   }
 }
 

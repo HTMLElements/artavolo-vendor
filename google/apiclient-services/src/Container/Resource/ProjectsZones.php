@@ -24,7 +24,7 @@ use Google\Service\Container\ServerConfig;
  * Typical usage is:
  *  <code>
  *   $containerService = new Google\Service\Container(...);
- *   $zones = $containerService->zones;
+ *   $zones = $containerService->projects_zones;
  *  </code>
  */
 class ProjectsZones extends \Google\Service\Resource
@@ -34,18 +34,20 @@ class ProjectsZones extends \Google\Service\Resource
    * (zones.getServerconfig)
    *
    * @param string $projectId Deprecated. The Google Developers Console [project
-   * ID or project number](https://cloud.google.com/resource-manager/docs
-   * /creating-managing-projects). This field has been deprecated and replaced by
-   * the name field.
-   * @param string $zone Deprecated. The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) to return
-   * operations for. This field has been deprecated and replaced by the name
-   * field.
+   * ID or project
+   * number](https://{$universe.dns_names.final_documentation_domain}/resource-
+   * manager/docs/creating-managing-projects). This field has been deprecated and
+   * replaced by the name field.
+   * @param string $zone Deprecated. The name of the Google Compute Engine [zone](
+   * https://{$universe.dns_names.final_documentation_domain}/compute/docs/zones#a
+   * vailable) to return operations for. This field has been deprecated and
+   * replaced by the name field.
    * @param array $optParams Optional parameters.
    *
    * @opt_param string name The name (project and location) of the server config
    * to get, specified in the format `projects/locations`.
    * @return ServerConfig
+   * @throws \Google\Service\Exception
    */
   public function getServerconfig($projectId, $zone, $optParams = [])
   {

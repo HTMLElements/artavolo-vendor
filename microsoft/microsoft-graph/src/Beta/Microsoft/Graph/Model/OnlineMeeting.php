@@ -116,6 +116,97 @@ class OnlineMeeting extends Entity
     }
 
     /**
+    * Gets the allowMeetingChat
+    * Specifies the mode of meeting chat.
+    *
+    * @return MeetingChatMode|null The allowMeetingChat
+    */
+    public function getAllowMeetingChat()
+    {
+        if (array_key_exists("allowMeetingChat", $this->_propDict)) {
+            if (is_a($this->_propDict["allowMeetingChat"], "\Beta\Microsoft\Graph\Model\MeetingChatMode") || is_null($this->_propDict["allowMeetingChat"])) {
+                return $this->_propDict["allowMeetingChat"];
+            } else {
+                $this->_propDict["allowMeetingChat"] = new MeetingChatMode($this->_propDict["allowMeetingChat"]);
+                return $this->_propDict["allowMeetingChat"];
+            }
+        }
+        return null;
+    }
+
+    /**
+    * Sets the allowMeetingChat
+    * Specifies the mode of meeting chat.
+    *
+    * @param MeetingChatMode $val The allowMeetingChat
+    *
+    * @return OnlineMeeting
+    */
+    public function setAllowMeetingChat($val)
+    {
+        $this->_propDict["allowMeetingChat"] = $val;
+        return $this;
+    }
+
+    /**
+    * Gets the allowParticipantsToChangeName
+    * Specifies if participants are allowed to rename themselves in an instance of the meeting.
+    *
+    * @return bool|null The allowParticipantsToChangeName
+    */
+    public function getAllowParticipantsToChangeName()
+    {
+        if (array_key_exists("allowParticipantsToChangeName", $this->_propDict)) {
+            return $this->_propDict["allowParticipantsToChangeName"];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+    * Sets the allowParticipantsToChangeName
+    * Specifies if participants are allowed to rename themselves in an instance of the meeting.
+    *
+    * @param bool $val The allowParticipantsToChangeName
+    *
+    * @return OnlineMeeting
+    */
+    public function setAllowParticipantsToChangeName($val)
+    {
+        $this->_propDict["allowParticipantsToChangeName"] = boolval($val);
+        return $this;
+    }
+
+    /**
+    * Gets the allowRecording
+    * Indicates whether recording is enabled for the meeting.
+    *
+    * @return bool|null The allowRecording
+    */
+    public function getAllowRecording()
+    {
+        if (array_key_exists("allowRecording", $this->_propDict)) {
+            return $this->_propDict["allowRecording"];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+    * Sets the allowRecording
+    * Indicates whether recording is enabled for the meeting.
+    *
+    * @param bool $val The allowRecording
+    *
+    * @return OnlineMeeting
+    */
+    public function setAllowRecording($val)
+    {
+        $this->_propDict["allowRecording"] = boolval($val);
+        return $this;
+    }
+
+    /**
     * Gets the allowTeamworkReactions
     * Indicates if Teams reactions are enabled for the meeting.
     *
@@ -145,8 +236,36 @@ class OnlineMeeting extends Entity
     }
 
     /**
+    * Gets the allowTranscription
+    * Indicates whether transcription is enabled for the meeting.
+    *
+    * @return bool|null The allowTranscription
+    */
+    public function getAllowTranscription()
+    {
+        if (array_key_exists("allowTranscription", $this->_propDict)) {
+            return $this->_propDict["allowTranscription"];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+    * Sets the allowTranscription
+    * Indicates whether transcription is enabled for the meeting.
+    *
+    * @param bool $val The allowTranscription
+    *
+    * @return OnlineMeeting
+    */
+    public function setAllowTranscription($val)
+    {
+        $this->_propDict["allowTranscription"] = boolval($val);
+        return $this;
+    }
+
+    /**
     * Gets the alternativeRecording
-    * The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
     *
     * @return \GuzzleHttp\Psr7\Stream|null The alternativeRecording
     */
@@ -165,7 +284,6 @@ class OnlineMeeting extends Entity
 
     /**
     * Sets the alternativeRecording
-    * The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
     *
     * @param \GuzzleHttp\Psr7\Stream $val The alternativeRecording
     *
@@ -180,6 +298,7 @@ class OnlineMeeting extends Entity
 
      /**
      * Gets the anonymizeIdentityForRoles
+    * Specifies whose identity will be anonymized in the meeting. Possible values are: attendee. The attendee value cannot be removed through a PATCH operation once added.
      *
      * @return array|null The anonymizeIdentityForRoles
      */
@@ -194,6 +313,7 @@ class OnlineMeeting extends Entity
 
     /**
     * Sets the anonymizeIdentityForRoles
+    * Specifies whose identity will be anonymized in the meeting. Possible values are: attendee. The attendee value cannot be removed through a PATCH operation once added.
     *
     * @param OnlineMeetingRole[] $val The anonymizeIdentityForRoles
     *
@@ -207,7 +327,6 @@ class OnlineMeeting extends Entity
 
     /**
     * Gets the attendeeReport
-    * The content stream of the attendee report of a Teams live event. Read-only.
     *
     * @return \GuzzleHttp\Psr7\Stream|null The attendeeReport
     */
@@ -226,7 +345,6 @@ class OnlineMeeting extends Entity
 
     /**
     * Sets the attendeeReport
-    * The content stream of the attendee report of a Teams live event. Read-only.
     *
     * @param \GuzzleHttp\Psr7\Stream $val The attendeeReport
     *
@@ -272,8 +390,38 @@ class OnlineMeeting extends Entity
     }
 
     /**
+    * Gets the broadcastRecording
+    *
+    * @return \GuzzleHttp\Psr7\Stream|null The broadcastRecording
+    */
+    public function getBroadcastRecording()
+    {
+        if (array_key_exists("broadcastRecording", $this->_propDict)) {
+            if (is_a($this->_propDict["broadcastRecording"], "\GuzzleHttp\Psr7\Stream") || is_null($this->_propDict["broadcastRecording"])) {
+                return $this->_propDict["broadcastRecording"];
+            } else {
+                $this->_propDict["broadcastRecording"] = \GuzzleHttp\Psr7\Utils::streamFor($this->_propDict["broadcastRecording"]);
+                return $this->_propDict["broadcastRecording"];
+            }
+        }
+        return null;
+    }
+
+    /**
+    * Sets the broadcastRecording
+    *
+    * @param \GuzzleHttp\Psr7\Stream $val The broadcastRecording
+    *
+    * @return OnlineMeeting
+    */
+    public function setBroadcastRecording($val)
+    {
+        $this->_propDict["broadcastRecording"] = $val;
+        return $this;
+    }
+
+    /**
     * Gets the broadcastSettings
-    * Settings related to a live event.
     *
     * @return BroadcastMeetingSettings|null The broadcastSettings
     */
@@ -292,7 +440,6 @@ class OnlineMeeting extends Entity
 
     /**
     * Sets the broadcastSettings
-    * Settings related to a live event.
     *
     * @param BroadcastMeetingSettings $val The broadcastSettings
     *
@@ -362,6 +509,37 @@ class OnlineMeeting extends Entity
     public function setChatInfo($val)
     {
         $this->_propDict["chatInfo"] = $val;
+        return $this;
+    }
+
+    /**
+    * Gets the chatRestrictions
+    *
+    * @return ChatRestrictions|null The chatRestrictions
+    */
+    public function getChatRestrictions()
+    {
+        if (array_key_exists("chatRestrictions", $this->_propDict)) {
+            if (is_a($this->_propDict["chatRestrictions"], "\Beta\Microsoft\Graph\Model\ChatRestrictions") || is_null($this->_propDict["chatRestrictions"])) {
+                return $this->_propDict["chatRestrictions"];
+            } else {
+                $this->_propDict["chatRestrictions"] = new ChatRestrictions($this->_propDict["chatRestrictions"]);
+                return $this->_propDict["chatRestrictions"];
+            }
+        }
+        return null;
+    }
+
+    /**
+    * Sets the chatRestrictions
+    *
+    * @param ChatRestrictions $val The chatRestrictions
+    *
+    * @return OnlineMeeting
+    */
+    public function setChatRestrictions($val)
+    {
+        $this->_propDict["chatRestrictions"] = $val;
         return $this;
     }
 
@@ -462,7 +640,6 @@ class OnlineMeeting extends Entity
 
     /**
     * Gets the isBroadcast
-    * Indicates whether this is a Teams live event.
     *
     * @return bool|null The isBroadcast
     */
@@ -477,7 +654,6 @@ class OnlineMeeting extends Entity
 
     /**
     * Sets the isBroadcast
-    * Indicates whether this is a Teams live event.
     *
     * @param bool $val The isBroadcast
     *
@@ -486,6 +662,33 @@ class OnlineMeeting extends Entity
     public function setIsBroadcast($val)
     {
         $this->_propDict["isBroadcast"] = boolval($val);
+        return $this;
+    }
+
+    /**
+    * Gets the isEndToEndEncryptionEnabled
+    *
+    * @return bool|null The isEndToEndEncryptionEnabled
+    */
+    public function getIsEndToEndEncryptionEnabled()
+    {
+        if (array_key_exists("isEndToEndEncryptionEnabled", $this->_propDict)) {
+            return $this->_propDict["isEndToEndEncryptionEnabled"];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+    * Sets the isEndToEndEncryptionEnabled
+    *
+    * @param bool $val The isEndToEndEncryptionEnabled
+    *
+    * @return OnlineMeeting
+    */
+    public function setIsEndToEndEncryptionEnabled($val)
+    {
+        $this->_propDict["isEndToEndEncryptionEnabled"] = boolval($val);
         return $this;
     }
 
@@ -553,7 +756,7 @@ class OnlineMeeting extends Entity
 
     /**
     * Gets the joinMeetingIdSettings
-    * Specifies the joinMeetingId, the meeting passcode, and the requirement for the passcode.
+    * Specifies the joinMeetingId, the meeting passcode, and the requirement for the passcode. Once an onlineMeeting is created, the joinMeetingIdSettings cannot be modified. To make any changes to this property, the meeting needs to be canceled and a new one needs to be created.
     *
     * @return JoinMeetingIdSettings|null The joinMeetingIdSettings
     */
@@ -572,7 +775,7 @@ class OnlineMeeting extends Entity
 
     /**
     * Sets the joinMeetingIdSettings
-    * Specifies the joinMeetingId, the meeting passcode, and the requirement for the passcode.
+    * Specifies the joinMeetingId, the meeting passcode, and the requirement for the passcode. Once an onlineMeeting is created, the joinMeetingIdSettings cannot be modified. To make any changes to this property, the meeting needs to be canceled and a new one needs to be created.
     *
     * @param JoinMeetingIdSettings $val The joinMeetingIdSettings
     *
@@ -737,7 +940,6 @@ class OnlineMeeting extends Entity
 
     /**
     * Gets the recording
-    * The content stream of the recording of a Teams live event. Read-only.
     *
     * @return \GuzzleHttp\Psr7\Stream|null The recording
     */
@@ -756,7 +958,6 @@ class OnlineMeeting extends Entity
 
     /**
     * Sets the recording
-    * The content stream of the recording of a Teams live event. Read-only.
     *
     * @param \GuzzleHttp\Psr7\Stream $val The recording
     *
@@ -765,6 +966,39 @@ class OnlineMeeting extends Entity
     public function setRecording($val)
     {
         $this->_propDict["recording"] = $val;
+        return $this;
+    }
+
+    /**
+    * Gets the shareMeetingChatHistoryDefault
+    * Specifies whether meeting chat history is shared with participants.  Possible values are: all, none, unknownFutureValue.
+    *
+    * @return MeetingChatHistoryDefaultMode|null The shareMeetingChatHistoryDefault
+    */
+    public function getShareMeetingChatHistoryDefault()
+    {
+        if (array_key_exists("shareMeetingChatHistoryDefault", $this->_propDict)) {
+            if (is_a($this->_propDict["shareMeetingChatHistoryDefault"], "\Beta\Microsoft\Graph\Model\MeetingChatHistoryDefaultMode") || is_null($this->_propDict["shareMeetingChatHistoryDefault"])) {
+                return $this->_propDict["shareMeetingChatHistoryDefault"];
+            } else {
+                $this->_propDict["shareMeetingChatHistoryDefault"] = new MeetingChatHistoryDefaultMode($this->_propDict["shareMeetingChatHistoryDefault"]);
+                return $this->_propDict["shareMeetingChatHistoryDefault"];
+            }
+        }
+        return null;
+    }
+
+    /**
+    * Sets the shareMeetingChatHistoryDefault
+    * Specifies whether meeting chat history is shared with participants.  Possible values are: all, none, unknownFutureValue.
+    *
+    * @param MeetingChatHistoryDefaultMode $val The shareMeetingChatHistoryDefault
+    *
+    * @return OnlineMeeting
+    */
+    public function setShareMeetingChatHistoryDefault($val)
+    {
+        $this->_propDict["shareMeetingChatHistoryDefault"] = $val;
         return $this;
     }
 
@@ -860,33 +1094,35 @@ class OnlineMeeting extends Entity
     }
 
     /**
-    * Gets the virtualAppointment
+    * Gets the watermarkProtection
+    * Specifies whether a watermark should be applied to a content type by the client application.
     *
-    * @return VirtualAppointment|null The virtualAppointment
+    * @return WatermarkProtectionValues|null The watermarkProtection
     */
-    public function getVirtualAppointment()
+    public function getWatermarkProtection()
     {
-        if (array_key_exists("virtualAppointment", $this->_propDict)) {
-            if (is_a($this->_propDict["virtualAppointment"], "\Beta\Microsoft\Graph\Model\VirtualAppointment") || is_null($this->_propDict["virtualAppointment"])) {
-                return $this->_propDict["virtualAppointment"];
+        if (array_key_exists("watermarkProtection", $this->_propDict)) {
+            if (is_a($this->_propDict["watermarkProtection"], "\Beta\Microsoft\Graph\Model\WatermarkProtectionValues") || is_null($this->_propDict["watermarkProtection"])) {
+                return $this->_propDict["watermarkProtection"];
             } else {
-                $this->_propDict["virtualAppointment"] = new VirtualAppointment($this->_propDict["virtualAppointment"]);
-                return $this->_propDict["virtualAppointment"];
+                $this->_propDict["watermarkProtection"] = new WatermarkProtectionValues($this->_propDict["watermarkProtection"]);
+                return $this->_propDict["watermarkProtection"];
             }
         }
         return null;
     }
 
     /**
-    * Sets the virtualAppointment
+    * Sets the watermarkProtection
+    * Specifies whether a watermark should be applied to a content type by the client application.
     *
-    * @param VirtualAppointment $val The virtualAppointment
+    * @param WatermarkProtectionValues $val The watermarkProtection
     *
     * @return OnlineMeeting
     */
-    public function setVirtualAppointment($val)
+    public function setWatermarkProtection($val)
     {
-        $this->_propDict["virtualAppointment"] = $val;
+        $this->_propDict["watermarkProtection"] = $val;
         return $this;
     }
 
@@ -981,6 +1217,36 @@ class OnlineMeeting extends Entity
     public function setRegistration($val)
     {
         $this->_propDict["registration"] = $val;
+        return $this;
+    }
+
+
+     /**
+     * Gets the recordings
+    * The recordings of an online meeting. Read-only.
+     *
+     * @return array|null The recordings
+     */
+    public function getRecordings()
+    {
+        if (array_key_exists("recordings", $this->_propDict)) {
+           return $this->_propDict["recordings"];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+    * Sets the recordings
+    * The recordings of an online meeting. Read-only.
+    *
+    * @param CallRecording[] $val The recordings
+    *
+    * @return OnlineMeeting
+    */
+    public function setRecordings($val)
+    {
+        $this->_propDict["recordings"] = $val;
         return $this;
     }
 

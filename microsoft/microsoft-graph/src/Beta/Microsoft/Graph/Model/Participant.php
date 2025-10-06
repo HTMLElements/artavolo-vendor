@@ -202,6 +202,35 @@ class Participant extends Entity
     }
 
     /**
+    * Gets the preferredDisplayName
+    * The participant's preferred display name that overrides the original display name.
+    *
+    * @return string|null The preferredDisplayName
+    */
+    public function getPreferredDisplayName()
+    {
+        if (array_key_exists("preferredDisplayName", $this->_propDict)) {
+            return $this->_propDict["preferredDisplayName"];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+    * Sets the preferredDisplayName
+    * The participant's preferred display name that overrides the original display name.
+    *
+    * @param string $val The preferredDisplayName
+    *
+    * @return Participant
+    */
+    public function setPreferredDisplayName($val)
+    {
+        $this->_propDict["preferredDisplayName"] = $val;
+        return $this;
+    }
+
+    /**
     * Gets the recordingInfo
     * Information on whether the participant has recording capability.
     *
@@ -231,6 +260,101 @@ class Participant extends Entity
     public function setRecordingInfo($val)
     {
         $this->_propDict["recordingInfo"] = $val;
+        return $this;
+    }
+
+    /**
+    * Gets the removedState
+    * Indicates the reason why the participant was removed from the roster.
+    *
+    * @return RemovedState|null The removedState
+    */
+    public function getRemovedState()
+    {
+        if (array_key_exists("removedState", $this->_propDict)) {
+            if (is_a($this->_propDict["removedState"], "\Beta\Microsoft\Graph\Model\RemovedState") || is_null($this->_propDict["removedState"])) {
+                return $this->_propDict["removedState"];
+            } else {
+                $this->_propDict["removedState"] = new RemovedState($this->_propDict["removedState"]);
+                return $this->_propDict["removedState"];
+            }
+        }
+        return null;
+    }
+
+    /**
+    * Sets the removedState
+    * Indicates the reason why the participant was removed from the roster.
+    *
+    * @param RemovedState $val The removedState
+    *
+    * @return Participant
+    */
+    public function setRemovedState($val)
+    {
+        $this->_propDict["removedState"] = $val;
+        return $this;
+    }
+
+    /**
+    * Gets the restrictedExperience
+    * Indicates the reason or reasons why media content from this participant is restricted.
+    *
+    * @return OnlineMeetingRestricted|null The restrictedExperience
+    */
+    public function getRestrictedExperience()
+    {
+        if (array_key_exists("restrictedExperience", $this->_propDict)) {
+            if (is_a($this->_propDict["restrictedExperience"], "\Beta\Microsoft\Graph\Model\OnlineMeetingRestricted") || is_null($this->_propDict["restrictedExperience"])) {
+                return $this->_propDict["restrictedExperience"];
+            } else {
+                $this->_propDict["restrictedExperience"] = new OnlineMeetingRestricted($this->_propDict["restrictedExperience"]);
+                return $this->_propDict["restrictedExperience"];
+            }
+        }
+        return null;
+    }
+
+    /**
+    * Sets the restrictedExperience
+    * Indicates the reason or reasons why media content from this participant is restricted.
+    *
+    * @param OnlineMeetingRestricted $val The restrictedExperience
+    *
+    * @return Participant
+    */
+    public function setRestrictedExperience($val)
+    {
+        $this->_propDict["restrictedExperience"] = $val;
+        return $this;
+    }
+
+    /**
+    * Gets the rosterSequenceNumber
+    * Indicates the roster sequence number the participant was last updated in.
+    *
+    * @return int|null The rosterSequenceNumber
+    */
+    public function getRosterSequenceNumber()
+    {
+        if (array_key_exists("rosterSequenceNumber", $this->_propDict)) {
+            return $this->_propDict["rosterSequenceNumber"];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+    * Sets the rosterSequenceNumber
+    * Indicates the roster sequence number the participant was last updated in.
+    *
+    * @param int $val The rosterSequenceNumber
+    *
+    * @return Participant
+    */
+    public function setRosterSequenceNumber($val)
+    {
+        $this->_propDict["rosterSequenceNumber"] = intval($val);
         return $this;
     }
 

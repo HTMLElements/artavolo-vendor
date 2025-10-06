@@ -19,7 +19,9 @@ namespace Google\Service\DLP;
 
 class GooglePrivacyDlpV2InfoTypeDescription extends \Google\Collection
 {
-  protected $collection_key = 'supportedBy';
+  protected $collection_key = 'versions';
+  protected $categoriesType = GooglePrivacyDlpV2InfoTypeCategory::class;
+  protected $categoriesDataType = 'array';
   /**
    * @var string
    */
@@ -31,12 +33,40 @@ class GooglePrivacyDlpV2InfoTypeDescription extends \Google\Collection
   /**
    * @var string
    */
+  public $example;
+  protected $locationSupportType = GooglePrivacyDlpV2LocationSupport::class;
+  protected $locationSupportDataType = '';
+  /**
+   * @var string
+   */
   public $name;
+  protected $sensitivityScoreType = GooglePrivacyDlpV2SensitivityScore::class;
+  protected $sensitivityScoreDataType = '';
+  /**
+   * @var string[]
+   */
+  public $specificInfoTypes;
   /**
    * @var string[]
    */
   public $supportedBy;
+  protected $versionsType = GooglePrivacyDlpV2VersionDescription::class;
+  protected $versionsDataType = 'array';
 
+  /**
+   * @param GooglePrivacyDlpV2InfoTypeCategory[]
+   */
+  public function setCategories($categories)
+  {
+    $this->categories = $categories;
+  }
+  /**
+   * @return GooglePrivacyDlpV2InfoTypeCategory[]
+   */
+  public function getCategories()
+  {
+    return $this->categories;
+  }
   /**
    * @param string
    */
@@ -68,6 +98,34 @@ class GooglePrivacyDlpV2InfoTypeDescription extends \Google\Collection
   /**
    * @param string
    */
+  public function setExample($example)
+  {
+    $this->example = $example;
+  }
+  /**
+   * @return string
+   */
+  public function getExample()
+  {
+    return $this->example;
+  }
+  /**
+   * @param GooglePrivacyDlpV2LocationSupport
+   */
+  public function setLocationSupport(GooglePrivacyDlpV2LocationSupport $locationSupport)
+  {
+    $this->locationSupport = $locationSupport;
+  }
+  /**
+   * @return GooglePrivacyDlpV2LocationSupport
+   */
+  public function getLocationSupport()
+  {
+    return $this->locationSupport;
+  }
+  /**
+   * @param string
+   */
   public function setName($name)
   {
     $this->name = $name;
@@ -78,6 +136,34 @@ class GooglePrivacyDlpV2InfoTypeDescription extends \Google\Collection
   public function getName()
   {
     return $this->name;
+  }
+  /**
+   * @param GooglePrivacyDlpV2SensitivityScore
+   */
+  public function setSensitivityScore(GooglePrivacyDlpV2SensitivityScore $sensitivityScore)
+  {
+    $this->sensitivityScore = $sensitivityScore;
+  }
+  /**
+   * @return GooglePrivacyDlpV2SensitivityScore
+   */
+  public function getSensitivityScore()
+  {
+    return $this->sensitivityScore;
+  }
+  /**
+   * @param string[]
+   */
+  public function setSpecificInfoTypes($specificInfoTypes)
+  {
+    $this->specificInfoTypes = $specificInfoTypes;
+  }
+  /**
+   * @return string[]
+   */
+  public function getSpecificInfoTypes()
+  {
+    return $this->specificInfoTypes;
   }
   /**
    * @param string[]
@@ -92,6 +178,20 @@ class GooglePrivacyDlpV2InfoTypeDescription extends \Google\Collection
   public function getSupportedBy()
   {
     return $this->supportedBy;
+  }
+  /**
+   * @param GooglePrivacyDlpV2VersionDescription[]
+   */
+  public function setVersions($versions)
+  {
+    $this->versions = $versions;
+  }
+  /**
+   * @return GooglePrivacyDlpV2VersionDescription[]
+   */
+  public function getVersions()
+  {
+    return $this->versions;
   }
 }
 

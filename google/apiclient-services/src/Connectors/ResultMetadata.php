@@ -24,13 +24,23 @@ class ResultMetadata extends \Google\Model
    */
   public $dataType;
   /**
-   * @var string
+   * @var array
    */
-  public $description;
+  public $defaultValue;
   /**
    * @var string
    */
-  public $field;
+  public $description;
+  protected $jsonSchemaType = JsonSchema::class;
+  protected $jsonSchemaDataType = '';
+  /**
+   * @var string
+   */
+  public $name;
+  /**
+   * @var bool
+   */
+  public $nullable;
 
   /**
    * @param string
@@ -47,6 +57,20 @@ class ResultMetadata extends \Google\Model
     return $this->dataType;
   }
   /**
+   * @param array
+   */
+  public function setDefaultValue($defaultValue)
+  {
+    $this->defaultValue = $defaultValue;
+  }
+  /**
+   * @return array
+   */
+  public function getDefaultValue()
+  {
+    return $this->defaultValue;
+  }
+  /**
    * @param string
    */
   public function setDescription($description)
@@ -61,18 +85,46 @@ class ResultMetadata extends \Google\Model
     return $this->description;
   }
   /**
+   * @param JsonSchema
+   */
+  public function setJsonSchema(JsonSchema $jsonSchema)
+  {
+    $this->jsonSchema = $jsonSchema;
+  }
+  /**
+   * @return JsonSchema
+   */
+  public function getJsonSchema()
+  {
+    return $this->jsonSchema;
+  }
+  /**
    * @param string
    */
-  public function setField($field)
+  public function setName($name)
   {
-    $this->field = $field;
+    $this->name = $name;
   }
   /**
    * @return string
    */
-  public function getField()
+  public function getName()
   {
-    return $this->field;
+    return $this->name;
+  }
+  /**
+   * @param bool
+   */
+  public function setNullable($nullable)
+  {
+    $this->nullable = $nullable;
+  }
+  /**
+   * @return bool
+   */
+  public function getNullable()
+  {
+    return $this->nullable;
   }
 }
 

@@ -38,7 +38,17 @@ class PrivateEnvironmentConfig extends \Google\Model
   /**
    * @var bool
    */
+  public $enablePrivateBuildsOnly;
+  /**
+   * @var bool
+   */
   public $enablePrivateEnvironment;
+  /**
+   * @var bool
+   */
+  public $enablePrivatelyUsedPublicIps;
+  protected $networkingConfigType = NetworkingConfig::class;
+  protected $networkingConfigDataType = '';
   protected $privateClusterConfigType = PrivateClusterConfig::class;
   protected $privateClusterConfigDataType = '';
   /**
@@ -109,6 +119,20 @@ class PrivateEnvironmentConfig extends \Google\Model
   /**
    * @param bool
    */
+  public function setEnablePrivateBuildsOnly($enablePrivateBuildsOnly)
+  {
+    $this->enablePrivateBuildsOnly = $enablePrivateBuildsOnly;
+  }
+  /**
+   * @return bool
+   */
+  public function getEnablePrivateBuildsOnly()
+  {
+    return $this->enablePrivateBuildsOnly;
+  }
+  /**
+   * @param bool
+   */
   public function setEnablePrivateEnvironment($enablePrivateEnvironment)
   {
     $this->enablePrivateEnvironment = $enablePrivateEnvironment;
@@ -119,6 +143,34 @@ class PrivateEnvironmentConfig extends \Google\Model
   public function getEnablePrivateEnvironment()
   {
     return $this->enablePrivateEnvironment;
+  }
+  /**
+   * @param bool
+   */
+  public function setEnablePrivatelyUsedPublicIps($enablePrivatelyUsedPublicIps)
+  {
+    $this->enablePrivatelyUsedPublicIps = $enablePrivatelyUsedPublicIps;
+  }
+  /**
+   * @return bool
+   */
+  public function getEnablePrivatelyUsedPublicIps()
+  {
+    return $this->enablePrivatelyUsedPublicIps;
+  }
+  /**
+   * @param NetworkingConfig
+   */
+  public function setNetworkingConfig(NetworkingConfig $networkingConfig)
+  {
+    $this->networkingConfig = $networkingConfig;
+  }
+  /**
+   * @return NetworkingConfig
+   */
+  public function getNetworkingConfig()
+  {
+    return $this->networkingConfig;
   }
   /**
    * @param PrivateClusterConfig

@@ -31,6 +31,10 @@ class GoogleChromeManagementV1ChromeAppInfo extends \Google\Collection
   /**
    * @var bool
    */
+  public $isExtensionPolicySupported;
+  /**
+   * @var bool
+   */
   public $isKioskOnly;
   /**
    * @var bool
@@ -40,6 +44,10 @@ class GoogleChromeManagementV1ChromeAppInfo extends \Google\Collection
    * @var bool
    */
   public $kioskEnabled;
+  /**
+   * @var string
+   */
+  public $manifestVersion;
   /**
    * @var int
    */
@@ -52,6 +60,10 @@ class GoogleChromeManagementV1ChromeAppInfo extends \Google\Collection
    * @var bool
    */
   public $supportEnabled;
+  /**
+   * @var string
+   */
+  public $type;
 
   /**
    * @param bool
@@ -80,6 +92,20 @@ class GoogleChromeManagementV1ChromeAppInfo extends \Google\Collection
   public function getIsCwsHosted()
   {
     return $this->isCwsHosted;
+  }
+  /**
+   * @param bool
+   */
+  public function setIsExtensionPolicySupported($isExtensionPolicySupported)
+  {
+    $this->isExtensionPolicySupported = $isExtensionPolicySupported;
+  }
+  /**
+   * @return bool
+   */
+  public function getIsExtensionPolicySupported()
+  {
+    return $this->isExtensionPolicySupported;
   }
   /**
    * @param bool
@@ -122,6 +148,20 @@ class GoogleChromeManagementV1ChromeAppInfo extends \Google\Collection
   public function getKioskEnabled()
   {
     return $this->kioskEnabled;
+  }
+  /**
+   * @param string
+   */
+  public function setManifestVersion($manifestVersion)
+  {
+    $this->manifestVersion = $manifestVersion;
+  }
+  /**
+   * @return string
+   */
+  public function getManifestVersion()
+  {
+    return $this->manifestVersion;
   }
   /**
    * @param int
@@ -178,6 +218,20 @@ class GoogleChromeManagementV1ChromeAppInfo extends \Google\Collection
   public function getSupportEnabled()
   {
     return $this->supportEnabled;
+  }
+  /**
+   * @param string
+   */
+  public function setType($type)
+  {
+    $this->type = $type;
+  }
+  /**
+   * @return string
+   */
+  public function getType()
+  {
+    return $this->type;
   }
 }
 

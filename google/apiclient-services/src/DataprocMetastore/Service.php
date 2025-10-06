@@ -31,6 +31,10 @@ class Service extends \Google\Model
    * @var string
    */
   public $databaseType;
+  /**
+   * @var bool
+   */
+  public $deletionProtection;
   protected $encryptionConfigType = EncryptionConfig::class;
   protected $encryptionConfigDataType = '';
   /**
@@ -67,6 +71,10 @@ class Service extends \Google\Model
    * @var string
    */
   public $releaseChannel;
+  protected $scalingConfigType = ScalingConfig::class;
+  protected $scalingConfigDataType = '';
+  protected $scheduledBackupType = ScheduledBackup::class;
+  protected $scheduledBackupDataType = '';
   /**
    * @var string
    */
@@ -75,6 +83,8 @@ class Service extends \Google\Model
    * @var string
    */
   public $stateMessage;
+  protected $telemetryConfigType = TelemetryConfig::class;
+  protected $telemetryConfigDataType = '';
   /**
    * @var string
    */
@@ -129,6 +139,20 @@ class Service extends \Google\Model
   public function getDatabaseType()
   {
     return $this->databaseType;
+  }
+  /**
+   * @param bool
+   */
+  public function setDeletionProtection($deletionProtection)
+  {
+    $this->deletionProtection = $deletionProtection;
+  }
+  /**
+   * @return bool
+   */
+  public function getDeletionProtection()
+  {
+    return $this->deletionProtection;
   }
   /**
    * @param EncryptionConfig
@@ -299,6 +323,34 @@ class Service extends \Google\Model
     return $this->releaseChannel;
   }
   /**
+   * @param ScalingConfig
+   */
+  public function setScalingConfig(ScalingConfig $scalingConfig)
+  {
+    $this->scalingConfig = $scalingConfig;
+  }
+  /**
+   * @return ScalingConfig
+   */
+  public function getScalingConfig()
+  {
+    return $this->scalingConfig;
+  }
+  /**
+   * @param ScheduledBackup
+   */
+  public function setScheduledBackup(ScheduledBackup $scheduledBackup)
+  {
+    $this->scheduledBackup = $scheduledBackup;
+  }
+  /**
+   * @return ScheduledBackup
+   */
+  public function getScheduledBackup()
+  {
+    return $this->scheduledBackup;
+  }
+  /**
    * @param string
    */
   public function setState($state)
@@ -325,6 +377,20 @@ class Service extends \Google\Model
   public function getStateMessage()
   {
     return $this->stateMessage;
+  }
+  /**
+   * @param TelemetryConfig
+   */
+  public function setTelemetryConfig(TelemetryConfig $telemetryConfig)
+  {
+    $this->telemetryConfig = $telemetryConfig;
+  }
+  /**
+   * @return TelemetryConfig
+   */
+  public function getTelemetryConfig()
+  {
+    return $this->telemetryConfig;
   }
   /**
    * @param string

@@ -46,6 +46,8 @@ class Router extends \Google\Collection
    * @var string
    */
   public $kind;
+  protected $md5AuthenticationKeysType = RouterMd5AuthenticationKey::class;
+  protected $md5AuthenticationKeysDataType = 'array';
   /**
    * @var string
    */
@@ -56,6 +58,8 @@ class Router extends \Google\Collection
    * @var string
    */
   public $network;
+  protected $paramsType = RouterParams::class;
+  protected $paramsDataType = '';
   /**
    * @var string
    */
@@ -178,6 +182,20 @@ class Router extends \Google\Collection
     return $this->kind;
   }
   /**
+   * @param RouterMd5AuthenticationKey[]
+   */
+  public function setMd5AuthenticationKeys($md5AuthenticationKeys)
+  {
+    $this->md5AuthenticationKeys = $md5AuthenticationKeys;
+  }
+  /**
+   * @return RouterMd5AuthenticationKey[]
+   */
+  public function getMd5AuthenticationKeys()
+  {
+    return $this->md5AuthenticationKeys;
+  }
+  /**
    * @param string
    */
   public function setName($name)
@@ -218,6 +236,20 @@ class Router extends \Google\Collection
   public function getNetwork()
   {
     return $this->network;
+  }
+  /**
+   * @param RouterParams
+   */
+  public function setParams(RouterParams $params)
+  {
+    $this->params = $params;
+  }
+  /**
+   * @return RouterParams
+   */
+  public function getParams()
+  {
+    return $this->params;
   }
   /**
    * @param string

@@ -22,11 +22,19 @@ class User extends \Google\Model
   /**
    * @var string
    */
+  public $dualPasswordType;
+  /**
+   * @var string
+   */
   public $etag;
   /**
    * @var string
    */
   public $host;
+  /**
+   * @var string
+   */
+  public $iamStatus;
   /**
    * @var string
    */
@@ -59,6 +67,20 @@ class User extends \Google\Model
   /**
    * @param string
    */
+  public function setDualPasswordType($dualPasswordType)
+  {
+    $this->dualPasswordType = $dualPasswordType;
+  }
+  /**
+   * @return string
+   */
+  public function getDualPasswordType()
+  {
+    return $this->dualPasswordType;
+  }
+  /**
+   * @param string
+   */
   public function setEtag($etag)
   {
     $this->etag = $etag;
@@ -83,6 +105,20 @@ class User extends \Google\Model
   public function getHost()
   {
     return $this->host;
+  }
+  /**
+   * @param string
+   */
+  public function setIamStatus($iamStatus)
+  {
+    $this->iamStatus = $iamStatus;
+  }
+  /**
+   * @return string
+   */
+  public function getIamStatus()
+  {
+    return $this->iamStatus;
   }
   /**
    * @param string

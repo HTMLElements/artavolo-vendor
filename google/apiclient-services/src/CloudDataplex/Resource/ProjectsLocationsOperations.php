@@ -27,7 +27,7 @@ use Google\Service\CloudDataplex\GoogleLongrunningOperation;
  * Typical usage is:
  *  <code>
  *   $dataplexService = new Google\Service\CloudDataplex(...);
- *   $operations = $dataplexService->operations;
+ *   $operations = $dataplexService->projects_locations_operations;
  *  </code>
  */
 class ProjectsLocationsOperations extends \Google\Service\Resource
@@ -47,6 +47,7 @@ class ProjectsLocationsOperations extends \Google\Service\Resource
    * @param GoogleLongrunningCancelOperationRequest $postBody
    * @param array $optParams Optional parameters.
    * @return DataplexEmpty
+   * @throws \Google\Service\Exception
    */
   public function cancel($name, GoogleLongrunningCancelOperationRequest $postBody, $optParams = [])
   {
@@ -63,6 +64,7 @@ class ProjectsLocationsOperations extends \Google\Service\Resource
    * @param string $name The name of the operation resource to be deleted.
    * @param array $optParams Optional parameters.
    * @return DataplexEmpty
+   * @throws \Google\Service\Exception
    */
   public function delete($name, $optParams = [])
   {
@@ -78,6 +80,7 @@ class ProjectsLocationsOperations extends \Google\Service\Resource
    * @param string $name The name of the operation resource.
    * @param array $optParams Optional parameters.
    * @return GoogleLongrunningOperation
+   * @throws \Google\Service\Exception
    */
   public function get($name, $optParams = [])
   {
@@ -87,13 +90,7 @@ class ProjectsLocationsOperations extends \Google\Service\Resource
   }
   /**
    * Lists operations that match the specified filter in the request. If the
-   * server doesn't support this method, it returns UNIMPLEMENTED.NOTE: the name
-   * binding allows API services to override the binding to use different resource
-   * name schemes, such as users/operations. To override the binding, API services
-   * can add a binding such as "/v1/{name=users}/operations" to their service
-   * configuration. For backwards compatibility, the default name includes the
-   * operations collection id, however overriding users must ensure the name
-   * binding is the parent resource, without the operations collection id.
+   * server doesn't support this method, it returns UNIMPLEMENTED.
    * (operations.listProjectsLocationsOperations)
    *
    * @param string $name The name of the operation's parent resource.
@@ -102,7 +99,15 @@ class ProjectsLocationsOperations extends \Google\Service\Resource
    * @opt_param string filter The standard list filter.
    * @opt_param int pageSize The standard list page size.
    * @opt_param string pageToken The standard list page token.
+   * @opt_param bool returnPartialSuccess When set to true, operations that are
+   * reachable are returned as normal, and those that are unreachable are returned
+   * in the ListOperationsResponse.unreachable field.This can only be true when
+   * reading across collections e.g. when parent is set to
+   * "projects/example/locations/-".This field is not by default supported and
+   * will result in an UNIMPLEMENTED error if set unless explicitly documented
+   * otherwise in service or product specific documentation.
    * @return GoogleLongrunningListOperationsResponse
+   * @throws \Google\Service\Exception
    */
   public function listProjectsLocationsOperations($name, $optParams = [])
   {

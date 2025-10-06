@@ -28,6 +28,12 @@ class AzureBlobStorageData extends \Google\Model
   /**
    * @var string
    */
+  public $credentialsSecret;
+  protected $federatedIdentityConfigType = FederatedIdentityConfig::class;
+  protected $federatedIdentityConfigDataType = '';
+  /**
+   * @var string
+   */
   public $path;
   /**
    * @var string
@@ -61,6 +67,34 @@ class AzureBlobStorageData extends \Google\Model
   public function getContainer()
   {
     return $this->container;
+  }
+  /**
+   * @param string
+   */
+  public function setCredentialsSecret($credentialsSecret)
+  {
+    $this->credentialsSecret = $credentialsSecret;
+  }
+  /**
+   * @return string
+   */
+  public function getCredentialsSecret()
+  {
+    return $this->credentialsSecret;
+  }
+  /**
+   * @param FederatedIdentityConfig
+   */
+  public function setFederatedIdentityConfig(FederatedIdentityConfig $federatedIdentityConfig)
+  {
+    $this->federatedIdentityConfig = $federatedIdentityConfig;
+  }
+  /**
+   * @return FederatedIdentityConfig
+   */
+  public function getFederatedIdentityConfig()
+  {
+    return $this->federatedIdentityConfig;
   }
   /**
    * @param string

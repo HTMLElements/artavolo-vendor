@@ -33,10 +33,18 @@ class DiscoverConnectionProfileRequest extends \Google\Model
    * @var int
    */
   public $hierarchyDepth;
+  protected $mongodbClusterType = MongodbCluster::class;
+  protected $mongodbClusterDataType = '';
   protected $mysqlRdbmsType = MysqlRdbms::class;
   protected $mysqlRdbmsDataType = '';
   protected $oracleRdbmsType = OracleRdbms::class;
   protected $oracleRdbmsDataType = '';
+  protected $postgresqlRdbmsType = PostgresqlRdbms::class;
+  protected $postgresqlRdbmsDataType = '';
+  protected $salesforceOrgType = SalesforceOrg::class;
+  protected $salesforceOrgDataType = '';
+  protected $sqlServerRdbmsType = SqlServerRdbms::class;
+  protected $sqlServerRdbmsDataType = '';
 
   /**
    * @param ConnectionProfile
@@ -95,6 +103,20 @@ class DiscoverConnectionProfileRequest extends \Google\Model
     return $this->hierarchyDepth;
   }
   /**
+   * @param MongodbCluster
+   */
+  public function setMongodbCluster(MongodbCluster $mongodbCluster)
+  {
+    $this->mongodbCluster = $mongodbCluster;
+  }
+  /**
+   * @return MongodbCluster
+   */
+  public function getMongodbCluster()
+  {
+    return $this->mongodbCluster;
+  }
+  /**
    * @param MysqlRdbms
    */
   public function setMysqlRdbms(MysqlRdbms $mysqlRdbms)
@@ -121,6 +143,48 @@ class DiscoverConnectionProfileRequest extends \Google\Model
   public function getOracleRdbms()
   {
     return $this->oracleRdbms;
+  }
+  /**
+   * @param PostgresqlRdbms
+   */
+  public function setPostgresqlRdbms(PostgresqlRdbms $postgresqlRdbms)
+  {
+    $this->postgresqlRdbms = $postgresqlRdbms;
+  }
+  /**
+   * @return PostgresqlRdbms
+   */
+  public function getPostgresqlRdbms()
+  {
+    return $this->postgresqlRdbms;
+  }
+  /**
+   * @param SalesforceOrg
+   */
+  public function setSalesforceOrg(SalesforceOrg $salesforceOrg)
+  {
+    $this->salesforceOrg = $salesforceOrg;
+  }
+  /**
+   * @return SalesforceOrg
+   */
+  public function getSalesforceOrg()
+  {
+    return $this->salesforceOrg;
+  }
+  /**
+   * @param SqlServerRdbms
+   */
+  public function setSqlServerRdbms(SqlServerRdbms $sqlServerRdbms)
+  {
+    $this->sqlServerRdbms = $sqlServerRdbms;
+  }
+  /**
+   * @return SqlServerRdbms
+   */
+  public function getSqlServerRdbms()
+  {
+    return $this->sqlServerRdbms;
   }
 }
 

@@ -29,6 +29,10 @@ class GoogleCloudChannelV1alpha1Entitlement extends \Google\Collection
   /**
    * @var string
    */
+  public $billingAccount;
+  /**
+   * @var string
+   */
   public $channelPartnerId;
   protected $commitmentSettingsType = GoogleCloudChannelV1alpha1CommitmentSettings::class;
   protected $commitmentSettingsDataType = '';
@@ -54,6 +58,10 @@ class GoogleCloudChannelV1alpha1Entitlement extends \Google\Collection
   public $offer;
   protected $parametersType = GoogleCloudChannelV1alpha1Parameter::class;
   protected $parametersDataType = 'array';
+  /**
+   * @var string
+   */
+  public $priceReferenceId;
   protected $provisionedServiceType = GoogleCloudChannelV1alpha1ProvisionedService::class;
   protected $provisionedServiceDataType = '';
   /**
@@ -102,6 +110,20 @@ class GoogleCloudChannelV1alpha1Entitlement extends \Google\Collection
   public function getAssociationInfo()
   {
     return $this->associationInfo;
+  }
+  /**
+   * @param string
+   */
+  public function setBillingAccount($billingAccount)
+  {
+    $this->billingAccount = $billingAccount;
+  }
+  /**
+   * @return string
+   */
+  public function getBillingAccount()
+  {
+    return $this->billingAccount;
   }
   /**
    * @param string
@@ -214,6 +236,20 @@ class GoogleCloudChannelV1alpha1Entitlement extends \Google\Collection
   public function getParameters()
   {
     return $this->parameters;
+  }
+  /**
+   * @param string
+   */
+  public function setPriceReferenceId($priceReferenceId)
+  {
+    $this->priceReferenceId = $priceReferenceId;
+  }
+  /**
+   * @return string
+   */
+  public function getPriceReferenceId()
+  {
+    return $this->priceReferenceId;
   }
   /**
    * @param GoogleCloudChannelV1alpha1ProvisionedService

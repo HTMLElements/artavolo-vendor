@@ -10,6 +10,112 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 
+## [4.7.1] - 2025-06-06
+
+### Updated
+
+- Updated the ISO and Crypto currencies
+
+
+## [4.7.0] - 2025-04-03
+
+### Added
+
+- Subtypes of InvalidArgumentException
+
+
+## [4.6.0] - 2024-11-22
+
+### Added
+
+- PHP 8.4 support
+
+
+## [4.5.0] - 2024-02-15
+
+### Fixed
+
+- PHPUnit 10 support
+- Update currencies
+- Updated doctrine/coding-standard
+- Updated other dev dependencies
+
+### Removed
+
+- PHP 8.0 support
+
+
+## [4.4.0] - 2024-01-24
+
+### Added
+
+- Extended support for psr/cache, now version 1.0.1 up until 3.0 is supported.
+
+
+## [4.3.0] - 2023-11-22
+
+### Added
+
+- Support for PHP 8.3
+- Allow divisor in mod to be a number as well
+
+### Removed
+
+- PHPSpec tests, we are using PHPUnit only now
+
+
+## [4.2.0] - 2023-08-16
+
+### Added
+
+- Teller object to help legacy applications
+
+
+## [4.1.1] - 2023-04-11
+
+### Fixed
+
+- Optimized result representation for BcMathCalculator
+- Use sprintf for float to string conversion in swap exchange
+- Fix rounding to unit with value between 10 and 49
+- Return type for DecimalMoneyFormatter::format is numeric-string
+- Money::ratioOf throws exception if currencies don't match.
+- Updated currencies: added SLE and VED, removed HRK.
+- Do not let php-http/discovery change composer.json.
+
+
+## [4.1.0] - 2022-12-19
+
+### Added
+
+- Full PHP8.2 compatibility
+
+### Fixed
+
+- Fix parsing amounts with leading zero's
+- Fix invalid exception message in DecimalMoneyParser
+- Upgrade enchant to newer version
+- Support Psalm 5.3
+- Fix ROUND_UP and ROUND_DOWN in roundToUnit
+
+### Changes
+
+- `composer.lock` is not committed anymore
+- MoneyFactory now also contains crypto-currencies
+
+### Added
+
+- `CryptoCurrencies` class that serves crypto-currencies from [moneyphp/crypto-currencies](https://github.com/moneyphp/crypto-currencies)
+
+
+## [4.0.5] - 2022-08-11
+
+### Fixed
+
+- Enabled zend.assertions during CI
+- Fixed invalid assertions
+
+
 ## [4.0.4] - 2022-05-18
 
 ### Added
@@ -415,7 +521,18 @@ convert a float to string (e.g. `sprintf('%.14F', $float)`) before calling the c
 - 2013-01-08 Use vendor/autoload.php instead of lib/bootstrap.php (or use PSR-0 autolaoding)
 - 2012-12-10 Renamed Money::getUnits() to Money::getAmount()
 
-[Unreleased]: https://github.com/moneyphp/money/compare/v4.0.3...HEAD
+[Unreleased]: https://github.com/moneyphp/money/compare/v4.4.0...HEAD
+[4.7.1]: https://github.com/moneyphp/money/compare/v4.7.0...v4.7.1
+[4.7.0]: https://github.com/moneyphp/money/compare/v4.6.0...v4.7.0
+[4.6.0]: https://github.com/moneyphp/money/compare/v4.5.0...v4.6.0
+[4.5.0]: https://github.com/moneyphp/money/compare/v4.4.0...v4.5.0
+[4.4.0]: https://github.com/moneyphp/money/compare/v4.3.0...v4.4.0
+[4.3.0]: https://github.com/moneyphp/money/compare/v4.2.0...v4.3.0
+[4.2.0]: https://github.com/moneyphp/money/compare/v4.1.1...v4.2.0
+[4.1.1]: https://github.com/moneyphp/money/compare/v4.1.0...v4.1.1
+[4.1.0]: https://github.com/moneyphp/money/compare/v4.0.5...v4.1.0
+[4.0.5]: https://github.com/moneyphp/money/compare/v4.0.4...v4.0.5
+[4.0.4]: https://github.com/moneyphp/money/compare/v4.0.3...v4.0.4
 [4.0.3]: https://github.com/moneyphp/money/compare/v4.0.2...v4.0.3
 [4.0.2]: https://github.com/moneyphp/money/compare/v4.0.1...v4.0.2
 [4.0.1]: https://github.com/moneyphp/money/compare/v4.0.0...v4.0.1

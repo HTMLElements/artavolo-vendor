@@ -19,6 +19,10 @@ namespace Google\Service\SQLAdmin;
 
 class Operation extends \Google\Model
 {
+  protected $acquireSsrsLeaseContextType = AcquireSsrsLeaseContext::class;
+  protected $acquireSsrsLeaseContextDataType = '';
+  protected $apiWarningType = ApiWarning::class;
+  protected $apiWarningDataType = '';
   protected $backupContextType = BackupContext::class;
   protected $backupContextDataType = '';
   /**
@@ -47,6 +51,8 @@ class Operation extends \Google\Model
    * @var string
    */
   public $operationType;
+  protected $preCheckMajorVersionUpgradeContextType = PreCheckMajorVersionUpgradeContext::class;
+  protected $preCheckMajorVersionUpgradeContextDataType = '';
   /**
    * @var string
    */
@@ -59,6 +65,8 @@ class Operation extends \Google\Model
    * @var string
    */
   public $status;
+  protected $subOperationTypeType = SqlSubOperationType::class;
+  protected $subOperationTypeDataType = '';
   /**
    * @var string
    */
@@ -76,6 +84,34 @@ class Operation extends \Google\Model
    */
   public $user;
 
+  /**
+   * @param AcquireSsrsLeaseContext
+   */
+  public function setAcquireSsrsLeaseContext(AcquireSsrsLeaseContext $acquireSsrsLeaseContext)
+  {
+    $this->acquireSsrsLeaseContext = $acquireSsrsLeaseContext;
+  }
+  /**
+   * @return AcquireSsrsLeaseContext
+   */
+  public function getAcquireSsrsLeaseContext()
+  {
+    return $this->acquireSsrsLeaseContext;
+  }
+  /**
+   * @param ApiWarning
+   */
+  public function setApiWarning(ApiWarning $apiWarning)
+  {
+    $this->apiWarning = $apiWarning;
+  }
+  /**
+   * @return ApiWarning
+   */
+  public function getApiWarning()
+  {
+    return $this->apiWarning;
+  }
   /**
    * @param BackupContext
    */
@@ -203,6 +239,20 @@ class Operation extends \Google\Model
     return $this->operationType;
   }
   /**
+   * @param PreCheckMajorVersionUpgradeContext
+   */
+  public function setPreCheckMajorVersionUpgradeContext(PreCheckMajorVersionUpgradeContext $preCheckMajorVersionUpgradeContext)
+  {
+    $this->preCheckMajorVersionUpgradeContext = $preCheckMajorVersionUpgradeContext;
+  }
+  /**
+   * @return PreCheckMajorVersionUpgradeContext
+   */
+  public function getPreCheckMajorVersionUpgradeContext()
+  {
+    return $this->preCheckMajorVersionUpgradeContext;
+  }
+  /**
    * @param string
    */
   public function setSelfLink($selfLink)
@@ -243,6 +293,20 @@ class Operation extends \Google\Model
   public function getStatus()
   {
     return $this->status;
+  }
+  /**
+   * @param SqlSubOperationType
+   */
+  public function setSubOperationType(SqlSubOperationType $subOperationType)
+  {
+    $this->subOperationType = $subOperationType;
+  }
+  /**
+   * @return SqlSubOperationType
+   */
+  public function getSubOperationType()
+  {
+    return $this->subOperationType;
   }
   /**
    * @param string

@@ -27,7 +27,7 @@ use Google\Service\Container\Operation;
  * Typical usage is:
  *  <code>
  *   $containerService = new Google\Service\Container(...);
- *   $operations = $containerService->operations;
+ *   $operations = $containerService->projects_zones_operations;
  *  </code>
  */
 class ProjectsZonesOperations extends \Google\Service\Resource
@@ -36,18 +36,20 @@ class ProjectsZonesOperations extends \Google\Service\Resource
    * Cancels the specified operation. (operations.cancel)
    *
    * @param string $projectId Deprecated. The Google Developers Console [project
-   * ID or project number](https://cloud.google.com/resource-manager/docs
-   * /creating-managing-projects). This field has been deprecated and replaced by
-   * the name field.
-   * @param string $zone Deprecated. The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-   * operation resides. This field has been deprecated and replaced by the name
-   * field.
+   * ID or project
+   * number](https://{$universe.dns_names.final_documentation_domain}/resource-
+   * manager/docs/creating-managing-projects). This field has been deprecated and
+   * replaced by the name field.
+   * @param string $zone Deprecated. The name of the Google Compute Engine [zone](
+   * https://{$universe.dns_names.final_documentation_domain}/compute/docs/zones#a
+   * vailable) in which the operation resides. This field has been deprecated and
+   * replaced by the name field.
    * @param string $operationId Deprecated. The server-assigned `name` of the
    * operation. This field has been deprecated and replaced by the name field.
    * @param CancelOperationRequest $postBody
    * @param array $optParams Optional parameters.
    * @return ContainerEmpty
+   * @throws \Google\Service\Exception
    */
   public function cancel($projectId, $zone, $operationId, CancelOperationRequest $postBody, $optParams = [])
   {
@@ -59,13 +61,14 @@ class ProjectsZonesOperations extends \Google\Service\Resource
    * Gets the specified operation. (operations.get)
    *
    * @param string $projectId Deprecated. The Google Developers Console [project
-   * ID or project number](https://cloud.google.com/resource-manager/docs
-   * /creating-managing-projects). This field has been deprecated and replaced by
-   * the name field.
-   * @param string $zone Deprecated. The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-   * cluster resides. This field has been deprecated and replaced by the name
-   * field.
+   * ID or project
+   * number](https://{$universe.dns_names.final_documentation_domain}/resource-
+   * manager/docs/creating-managing-projects). This field has been deprecated and
+   * replaced by the name field.
+   * @param string $zone Deprecated. The name of the Google Compute Engine [zone](
+   * https://{$universe.dns_names.final_documentation_domain}/compute/docs/zones#a
+   * vailable) in which the cluster resides. This field has been deprecated and
+   * replaced by the name field.
    * @param string $operationId Deprecated. The server-assigned `name` of the
    * operation. This field has been deprecated and replaced by the name field.
    * @param array $optParams Optional parameters.
@@ -73,6 +76,7 @@ class ProjectsZonesOperations extends \Google\Service\Resource
    * @opt_param string name The name (project, location, operation id) of the
    * operation to get. Specified in the format `projects/locations/operations`.
    * @return Operation
+   * @throws \Google\Service\Exception
    */
   public function get($projectId, $zone, $operationId, $optParams = [])
   {
@@ -85,19 +89,21 @@ class ProjectsZonesOperations extends \Google\Service\Resource
    * (operations.listProjectsZonesOperations)
    *
    * @param string $projectId Deprecated. The Google Developers Console [project
-   * ID or project number](https://cloud.google.com/resource-manager/docs
-   * /creating-managing-projects). This field has been deprecated and replaced by
-   * the parent field.
-   * @param string $zone Deprecated. The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) to return
-   * operations for, or `-` for all zones. This field has been deprecated and
+   * ID or project
+   * number](https://{$universe.dns_names.final_documentation_domain}/resource-
+   * manager/docs/creating-managing-projects). This field has been deprecated and
    * replaced by the parent field.
+   * @param string $zone Deprecated. The name of the Google Compute Engine [zone](
+   * https://{$universe.dns_names.final_documentation_domain}/compute/docs/zones#a
+   * vailable) to return operations for, or `-` for all zones. This field has been
+   * deprecated and replaced by the parent field.
    * @param array $optParams Optional parameters.
    *
    * @opt_param string parent The parent (project and location) where the
    * operations will be listed. Specified in the format `projects/locations`.
    * Location "-" matches all zones and all regions.
    * @return ListOperationsResponse
+   * @throws \Google\Service\Exception
    */
   public function listProjectsZonesOperations($projectId, $zone, $optParams = [])
   {

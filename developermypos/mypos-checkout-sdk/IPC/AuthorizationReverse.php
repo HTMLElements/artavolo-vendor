@@ -87,6 +87,9 @@ class AuthorizationReverse extends Base
         
         $this->_addPostParam('OutputFormat', $this->getOutputFormat());
 
+        $this->_addPostParam('ApplicationID', $this->getCnf()->getApplicationID());
+        $this->_addPostParam('PartnerID', $this->getCnf()->getPartnerID());
+
         return $this->_processPost();
     }
 
@@ -115,7 +118,17 @@ class AuthorizationReverse extends Base
         if ($this->getAmount() === null || !Helper::isValidAmount($this->getAmount())) {
             throw new IPC_Exception('Empty or invalid amount');
         }
-        
+
+        if ($this->getCnf()->getVersion() === '1.4.1') {
+            if ($this->getCnf()->getPartnerID() == null) {
+                throw new IPC_Exception('Required parameter: Partner ID');
+            }
+
+            if ($this->getCnf()->getApplicationID() == null) {
+                throw new IPC_Exception('Required parameter: Application ID');
+            }
+        }
+
         return true;
     }
 

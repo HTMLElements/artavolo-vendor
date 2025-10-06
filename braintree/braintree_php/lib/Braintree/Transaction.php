@@ -41,6 +41,7 @@ namespace Braintree;
  *     'company' => 'Braintree',
  *     'email' => 'dan@example.com',
  *     'phone' => '419-555-1234',
+ *     'internationalPhone' => array('countryCode' => '1', 'nationalNumber' => '3121234567'),
  *     'fax' => '419-555-1235',
  *     'website' => 'http://braintreepayments.com'
  *    ),
@@ -53,7 +54,9 @@ namespace Braintree;
  *      'locality' => 'Chicago',
  *      'region' => 'IL',
  *      'postalCode' => '60622',
- *      'countryName' => 'United States of America'
+ *      'countryName' => 'United States of America',
+ *      'phoneNumber' => '312-123-4567',
+ *      'internationalPhone' => array('countryCode' => '1', 'nationalNumber' => '3121234567')
  *    ),
  *    'shipping' => array(
  *      'firstName'    => 'Andrew',
@@ -64,7 +67,9 @@ namespace Braintree;
  *      'locality'    => 'Bartlett',
  *      'region'    => 'IL',
  *      'postalCode'    => '60103',
- *      'countryName'    => 'United States of America'
+ *      'countryName'    => 'United States of America',
+ *      'phoneNumber' => '312-123-4567',
+ *      'internationalPhone' => array('countryCode' => '1', 'nationalNumber' => '3121234567')
  *    ),
  *    'customFields'    => array(
  *      'birthdate'    => '11/13/1954'
@@ -155,13 +160,6 @@ class Transaction extends Base
     const SETTLEMENT_PENDING       = 'settlement_pending';
     const SETTLEMENT_CONFIRMED     = 'settlement_confirmed';
 
-    // Transaction Escrow Status
-    const ESCROW_HOLD_PENDING    = 'hold_pending';
-    const ESCROW_HELD            = 'held';
-    const ESCROW_RELEASE_PENDING = 'release_pending';
-    const ESCROW_RELEASED        = 'released';
-    const ESCROW_REFUNDED        = 'refunded';
-
     // Transaction Types
     const SALE   = 'sale';
     const CREDIT = 'credit';
@@ -176,14 +174,15 @@ class Transaction extends Base
     const RECURRING     = 'recurring';
 
     // Gateway Rejection Reason
-    const AVS            = 'avs';
-    const AVS_AND_CVV    = 'avs_and_cvv';
-    const CVV            = 'cvv';
-    const DUPLICATE      = 'duplicate';
-    const FRAUD          = 'fraud';
-    const RISK_THRESHOLD = 'risk_threshold';
-    const THREE_D_SECURE = 'three_d_secure';
-    const TOKEN_ISSUANCE = 'token_issuance';
+    const AVS                    = 'avs';
+    const AVS_AND_CVV            = 'avs_and_cvv';
+    const CVV                    = 'cvv';
+    const DUPLICATE              = 'duplicate';
+    const EXCESSIVE_RETRY        = 'excessive_retry';
+    const FRAUD                  = 'fraud';
+    const RISK_THRESHOLD         = 'risk_threshold';
+    const THREE_D_SECURE         = 'three_d_secure';
+    const TOKEN_ISSUANCE         = 'token_issuance';
     const APPLICATION_INCOMPLETE = 'application_incomplete';
 
     // Industry Types
@@ -198,6 +197,14 @@ class Transaction extends Base
     const TELEPHONE  = 'telephone';
     const LAUNDRY    = 'laundry';
     const OTHER      = 'other';
+
+    // Debit network
+    const ACCEL = "ACCEL";
+    const MAESTRO_DEBIT_NETWORK = "MAESTRO";
+    const NYCE = "NYCE";
+    const PULSE = "PULSE";
+    const STAR = "STAR";
+    const STAR_ACCESS = "STAR_ACCESS";
 
     // Reason Codes
     const TRANSACTION_REASON_CODE = 'any_reason_code';
@@ -232,6 +239,24 @@ class Transaction extends Base
             );
         }
 
+        if (isset($transactionAttribs['metaCheckoutCard'])) {
+            $this->_set(
+                'metaCheckoutCardDetails',
+                new Transaction\MetaCheckoutCardDetails(
+                    $transactionAttribs['metaCheckoutCard']
+                )
+            );
+        }
+
+        if (isset($transactionAttribs['metaCheckoutToken'])) {
+            $this->_set(
+                'metaCheckoutTokenDetails',
+                new Transaction\MetaCheckoutTokenDetails(
+                    $transactionAttribs['metaCheckoutToken']
+                )
+            );
+        }
+
         if (isset($transactionAttribs['visaCheckoutCard'])) {
             $this->_set(
                 'visaCheckoutCardDetails',
@@ -241,6 +266,7 @@ class Transaction extends Base
             );
         }
 
+        // NEXT_MAJOR_VERSION remove samsungPayCard
         if (isset($transactionAttribs['samsungPayCard'])) {
             $this->_set(
                 'samsungPayCardDetails',
@@ -273,6 +299,15 @@ class Transaction extends Base
                 'usBankAccount',
                 new Transaction\UsBankAccountDetails(
                     $transactionAttribs['usBankAccount']
+                )
+            );
+        }
+
+        if (isset($transactionAttribs['sepaDebitAccountDetail'])) {
+            $this->_set(
+                'sepaDirectDebitAccountDetails',
+                new Transaction\SepaDirectDebitAccountDetails(
+                    $transactionAttribs['sepaDebitAccountDetail']
                 )
             );
         }
@@ -373,6 +408,15 @@ class Transaction extends Base
         }
 
         $this->_set('statusHistory', $statusHistory);
+
+        $packages = [];
+        if (isset($transactionAttribs['shipments'])) {
+            foreach ($transactionAttribs['shipments'] as $package) {
+                $packages[] = new Transaction\PackageDetails($package);
+            }
+        }
+
+        $this->_set('packages', $packages);
 
         $addOnArray = [];
         if (isset($transactionAttribs['addOns'])) {
@@ -640,7 +684,7 @@ class Transaction extends Base
     /**
      * Static methods redirecting to gateway class
      *
-     * @param string $transactionId unque identifier of the transaction to be voided
+     * @param string $transactionId unique identifier of the transaction to be voided
      *
      * @see TransactionGateway::void()
      *
@@ -654,7 +698,7 @@ class Transaction extends Base
     /**
      * Static methods redirecting to gateway class
      *
-     * @param string $transactionId unque identifier of the transaction to be voided
+     * @param string $transactionId unique identifier of the transaction to be voided
      *
      * @see TransactionGateway::voidNoValidate()
      *
@@ -668,7 +712,7 @@ class Transaction extends Base
     /**
      * Static methods redirecting to gateway class
      *
-     * @param string $transactionId unque identifier of the transaction to be submitted for settlement
+     * @param string $transactionId unique identifier of the transaction to be submitted for settlement
      * @param string $amount        optional
      * @param mixed  $attribs       any additional request parameters
      *
@@ -684,7 +728,7 @@ class Transaction extends Base
     /**
      * Static methods redirecting to gateway class
      *
-     * @param string $transactionId unque identifier of the transaction to be submitted for settlement
+     * @param string $transactionId unique identifier of the transaction to be submitted for settlement
      * @param string $amount        optional
      * @param mixed  $attribs       any additional request parameters
      *
@@ -716,7 +760,7 @@ class Transaction extends Base
     /**
      * Static methods redirecting to gateway class
      *
-     * @param string $transactionId unque identifier of the transaction to be submitted for settlement
+     * @param string $transactionId unique identifier of the transaction to be submitted for settlement
      * @param string $amount        optional
      * @param mixed  $attribs       any additional request parameters
      *
@@ -732,35 +776,22 @@ class Transaction extends Base
     /**
      * Static methods redirecting to gateway class
      *
-     * @param string $transactionId unque identifier of the transaction to be held in escrow
+     * @param string $transactionId unique identifier of the transaction to be submitted for settlement
+     * @param array  $attribs       package tracking request attributes
      *
-     * @see TransactionGateway::holdInEscrow()
+     * @see TransactionGateway::packageTracking()
      *
      * @return Result\Successful|Exception\NotFound
      */
-    public static function holdInEscrow($transactionId)
+    public static function packageTracking($transactionId, $attribs = [])
     {
-        return Configuration::gateway()->transaction()->holdInEscrow($transactionId);
+        return Configuration::gateway()->transaction()->packageTracking($transactionId, $attribs);
     }
 
     /**
      * Static methods redirecting to gateway class
      *
-     * @param string $transactionId unque identifier of the transaction to be released from escrow
-     *
-     * @see TransactionGateway::releaseFromEscrow()
-     *
-     * @return Result\Successful|Exception\NotFound
-     */
-    public static function releaseFromEscrow($transactionId)
-    {
-        return Configuration::gateway()->transaction()->releaseFromEscrow($transactionId);
-    }
-
-    /**
-     * Static methods redirecting to gateway class
-     *
-     * @param string $transactionId unque identifier of the transaction whose escrow release is to be canceled
+     * @param string $transactionId unique identifier of the transaction whose escrow release is to be canceled
      *
      * @see TransactionGateway::cancelRelease()
      *
@@ -774,7 +805,7 @@ class Transaction extends Base
     /**
      * Static methods redirecting to gateway class
      *
-     * @param string $transactionId unque identifier of the transaction to be refunded
+     * @param string $transactionId unique identifier of the transaction to be refunded
      * @param string $amount        to be refunded, optional
      *
      * @see TransactionGateway::refund()
@@ -784,5 +815,22 @@ class Transaction extends Base
     public static function refund($transactionId, $amount = null)
     {
         return Configuration::gateway()->transaction()->refund($transactionId, $amount);
+    }
+
+    /**
+     * All debit networks in an array
+     *
+     * @return array
+     */
+    public static function allDebitNetworks()
+    {
+        return [
+            Transaction::ACCEL,
+            Transaction::MAESTRO_DEBIT_NETWORK,
+            Transaction::NYCE,
+            Transaction::PULSE,
+            Transaction::STAR,
+            Transaction::STAR_ACCESS
+        ];
     }
 }

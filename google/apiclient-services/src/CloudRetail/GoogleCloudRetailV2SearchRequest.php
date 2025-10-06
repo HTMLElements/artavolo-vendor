@@ -30,8 +30,14 @@ class GoogleCloudRetailV2SearchRequest extends \Google\Collection
    * @var string
    */
   public $canonicalFilter;
+  protected $conversationalSearchSpecType = GoogleCloudRetailV2SearchRequestConversationalSearchSpec::class;
+  protected $conversationalSearchSpecDataType = '';
   protected $dynamicFacetSpecType = GoogleCloudRetailV2SearchRequestDynamicFacetSpec::class;
   protected $dynamicFacetSpecDataType = '';
+  /**
+   * @var string
+   */
+  public $entity;
   protected $facetSpecsType = GoogleCloudRetailV2SearchRequestFacetSpec::class;
   protected $facetSpecsDataType = 'array';
   /**
@@ -42,6 +48,10 @@ class GoogleCloudRetailV2SearchRequest extends \Google\Collection
    * @var string[]
    */
   public $labels;
+  /**
+   * @var string
+   */
+  public $languageCode;
   /**
    * @var int
    */
@@ -67,15 +77,27 @@ class GoogleCloudRetailV2SearchRequest extends \Google\Collection
   /**
    * @var string
    */
+  public $placeId;
+  /**
+   * @var string
+   */
   public $query;
   protected $queryExpansionSpecType = GoogleCloudRetailV2SearchRequestQueryExpansionSpec::class;
   protected $queryExpansionSpecDataType = '';
   /**
    * @var string
    */
+  public $regionCode;
+  /**
+   * @var string
+   */
   public $searchMode;
   protected $spellCorrectionSpecType = GoogleCloudRetailV2SearchRequestSpellCorrectionSpec::class;
   protected $spellCorrectionSpecDataType = '';
+  protected $tileNavigationSpecType = GoogleCloudRetailV2SearchRequestTileNavigationSpec::class;
+  protected $tileNavigationSpecDataType = '';
+  protected $userAttributesType = GoogleCloudRetailV2StringList::class;
+  protected $userAttributesDataType = 'map';
   protected $userInfoType = GoogleCloudRetailV2UserInfo::class;
   protected $userInfoDataType = '';
   /**
@@ -130,6 +152,20 @@ class GoogleCloudRetailV2SearchRequest extends \Google\Collection
     return $this->canonicalFilter;
   }
   /**
+   * @param GoogleCloudRetailV2SearchRequestConversationalSearchSpec
+   */
+  public function setConversationalSearchSpec(GoogleCloudRetailV2SearchRequestConversationalSearchSpec $conversationalSearchSpec)
+  {
+    $this->conversationalSearchSpec = $conversationalSearchSpec;
+  }
+  /**
+   * @return GoogleCloudRetailV2SearchRequestConversationalSearchSpec
+   */
+  public function getConversationalSearchSpec()
+  {
+    return $this->conversationalSearchSpec;
+  }
+  /**
    * @param GoogleCloudRetailV2SearchRequestDynamicFacetSpec
    */
   public function setDynamicFacetSpec(GoogleCloudRetailV2SearchRequestDynamicFacetSpec $dynamicFacetSpec)
@@ -142,6 +178,20 @@ class GoogleCloudRetailV2SearchRequest extends \Google\Collection
   public function getDynamicFacetSpec()
   {
     return $this->dynamicFacetSpec;
+  }
+  /**
+   * @param string
+   */
+  public function setEntity($entity)
+  {
+    $this->entity = $entity;
+  }
+  /**
+   * @return string
+   */
+  public function getEntity()
+  {
+    return $this->entity;
   }
   /**
    * @param GoogleCloudRetailV2SearchRequestFacetSpec[]
@@ -184,6 +234,20 @@ class GoogleCloudRetailV2SearchRequest extends \Google\Collection
   public function getLabels()
   {
     return $this->labels;
+  }
+  /**
+   * @param string
+   */
+  public function setLanguageCode($languageCode)
+  {
+    $this->languageCode = $languageCode;
+  }
+  /**
+   * @return string
+   */
+  public function getLanguageCode()
+  {
+    return $this->languageCode;
   }
   /**
    * @param int
@@ -272,6 +336,20 @@ class GoogleCloudRetailV2SearchRequest extends \Google\Collection
   /**
    * @param string
    */
+  public function setPlaceId($placeId)
+  {
+    $this->placeId = $placeId;
+  }
+  /**
+   * @return string
+   */
+  public function getPlaceId()
+  {
+    return $this->placeId;
+  }
+  /**
+   * @param string
+   */
   public function setQuery($query)
   {
     $this->query = $query;
@@ -300,6 +378,20 @@ class GoogleCloudRetailV2SearchRequest extends \Google\Collection
   /**
    * @param string
    */
+  public function setRegionCode($regionCode)
+  {
+    $this->regionCode = $regionCode;
+  }
+  /**
+   * @return string
+   */
+  public function getRegionCode()
+  {
+    return $this->regionCode;
+  }
+  /**
+   * @param string
+   */
   public function setSearchMode($searchMode)
   {
     $this->searchMode = $searchMode;
@@ -324,6 +416,34 @@ class GoogleCloudRetailV2SearchRequest extends \Google\Collection
   public function getSpellCorrectionSpec()
   {
     return $this->spellCorrectionSpec;
+  }
+  /**
+   * @param GoogleCloudRetailV2SearchRequestTileNavigationSpec
+   */
+  public function setTileNavigationSpec(GoogleCloudRetailV2SearchRequestTileNavigationSpec $tileNavigationSpec)
+  {
+    $this->tileNavigationSpec = $tileNavigationSpec;
+  }
+  /**
+   * @return GoogleCloudRetailV2SearchRequestTileNavigationSpec
+   */
+  public function getTileNavigationSpec()
+  {
+    return $this->tileNavigationSpec;
+  }
+  /**
+   * @param GoogleCloudRetailV2StringList[]
+   */
+  public function setUserAttributes($userAttributes)
+  {
+    $this->userAttributes = $userAttributes;
+  }
+  /**
+   * @return GoogleCloudRetailV2StringList[]
+   */
+  public function getUserAttributes()
+  {
+    return $this->userAttributes;
   }
   /**
    * @param GoogleCloudRetailV2UserInfo

@@ -24,6 +24,8 @@ class Trigger extends \Google\Collection
    * @var string
    */
   public $channel;
+  protected $conditionsType = StateCondition::class;
+  protected $conditionsDataType = 'map';
   /**
    * @var string
    */
@@ -34,6 +36,10 @@ class Trigger extends \Google\Collection
    * @var string
    */
   public $etag;
+  /**
+   * @var string
+   */
+  public $eventDataContentType;
   protected $eventFiltersType = EventFilter::class;
   protected $eventFiltersDataType = 'array';
   /**
@@ -44,6 +50,10 @@ class Trigger extends \Google\Collection
    * @var string
    */
   public $name;
+  /**
+   * @var bool
+   */
+  public $satisfiesPzs;
   /**
    * @var string
    */
@@ -72,6 +82,20 @@ class Trigger extends \Google\Collection
   public function getChannel()
   {
     return $this->channel;
+  }
+  /**
+   * @param StateCondition[]
+   */
+  public function setConditions($conditions)
+  {
+    $this->conditions = $conditions;
+  }
+  /**
+   * @return StateCondition[]
+   */
+  public function getConditions()
+  {
+    return $this->conditions;
   }
   /**
    * @param string
@@ -116,6 +140,20 @@ class Trigger extends \Google\Collection
     return $this->etag;
   }
   /**
+   * @param string
+   */
+  public function setEventDataContentType($eventDataContentType)
+  {
+    $this->eventDataContentType = $eventDataContentType;
+  }
+  /**
+   * @return string
+   */
+  public function getEventDataContentType()
+  {
+    return $this->eventDataContentType;
+  }
+  /**
    * @param EventFilter[]
    */
   public function setEventFilters($eventFilters)
@@ -156,6 +194,20 @@ class Trigger extends \Google\Collection
   public function getName()
   {
     return $this->name;
+  }
+  /**
+   * @param bool
+   */
+  public function setSatisfiesPzs($satisfiesPzs)
+  {
+    $this->satisfiesPzs = $satisfiesPzs;
+  }
+  /**
+   * @return bool
+   */
+  public function getSatisfiesPzs()
+  {
+    return $this->satisfiesPzs;
   }
   /**
    * @param string

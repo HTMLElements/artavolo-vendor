@@ -27,17 +27,35 @@ class GoogleCloudDialogflowCxV3QueryParameters extends \Google\Collection
   /**
    * @var string
    */
+  public $channel;
+  /**
+   * @var string
+   */
   public $currentPage;
+  /**
+   * @var string
+   */
+  public $currentPlaybook;
   /**
    * @var bool
    */
   public $disableWebhook;
+  /**
+   * @var array[]
+   */
+  public $endUserMetadata;
   /**
    * @var string[]
    */
   public $flowVersions;
   protected $geoLocationType = GoogleTypeLatLng::class;
   protected $geoLocationDataType = '';
+  protected $llmModelSettingsType = GoogleCloudDialogflowCxV3LlmModelSettings::class;
+  protected $llmModelSettingsDataType = '';
+  /**
+   * @var string
+   */
+  public $parameterScope;
   /**
    * @var array[]
    */
@@ -46,8 +64,18 @@ class GoogleCloudDialogflowCxV3QueryParameters extends \Google\Collection
    * @var array[]
    */
   public $payload;
+  /**
+   * @var bool
+   */
+  public $populateDataStoreConnectionSignals;
+  protected $searchConfigType = GoogleCloudDialogflowCxV3SearchConfig::class;
+  protected $searchConfigDataType = '';
   protected $sessionEntityTypesType = GoogleCloudDialogflowCxV3SessionEntityType::class;
   protected $sessionEntityTypesDataType = 'array';
+  /**
+   * @var string
+   */
+  public $sessionTtl;
   /**
    * @var string
    */
@@ -74,6 +102,20 @@ class GoogleCloudDialogflowCxV3QueryParameters extends \Google\Collection
   /**
    * @param string
    */
+  public function setChannel($channel)
+  {
+    $this->channel = $channel;
+  }
+  /**
+   * @return string
+   */
+  public function getChannel()
+  {
+    return $this->channel;
+  }
+  /**
+   * @param string
+   */
   public function setCurrentPage($currentPage)
   {
     $this->currentPage = $currentPage;
@@ -84,6 +126,20 @@ class GoogleCloudDialogflowCxV3QueryParameters extends \Google\Collection
   public function getCurrentPage()
   {
     return $this->currentPage;
+  }
+  /**
+   * @param string
+   */
+  public function setCurrentPlaybook($currentPlaybook)
+  {
+    $this->currentPlaybook = $currentPlaybook;
+  }
+  /**
+   * @return string
+   */
+  public function getCurrentPlaybook()
+  {
+    return $this->currentPlaybook;
   }
   /**
    * @param bool
@@ -98,6 +154,20 @@ class GoogleCloudDialogflowCxV3QueryParameters extends \Google\Collection
   public function getDisableWebhook()
   {
     return $this->disableWebhook;
+  }
+  /**
+   * @param array[]
+   */
+  public function setEndUserMetadata($endUserMetadata)
+  {
+    $this->endUserMetadata = $endUserMetadata;
+  }
+  /**
+   * @return array[]
+   */
+  public function getEndUserMetadata()
+  {
+    return $this->endUserMetadata;
   }
   /**
    * @param string[]
@@ -128,6 +198,34 @@ class GoogleCloudDialogflowCxV3QueryParameters extends \Google\Collection
     return $this->geoLocation;
   }
   /**
+   * @param GoogleCloudDialogflowCxV3LlmModelSettings
+   */
+  public function setLlmModelSettings(GoogleCloudDialogflowCxV3LlmModelSettings $llmModelSettings)
+  {
+    $this->llmModelSettings = $llmModelSettings;
+  }
+  /**
+   * @return GoogleCloudDialogflowCxV3LlmModelSettings
+   */
+  public function getLlmModelSettings()
+  {
+    return $this->llmModelSettings;
+  }
+  /**
+   * @param string
+   */
+  public function setParameterScope($parameterScope)
+  {
+    $this->parameterScope = $parameterScope;
+  }
+  /**
+   * @return string
+   */
+  public function getParameterScope()
+  {
+    return $this->parameterScope;
+  }
+  /**
    * @param array[]
    */
   public function setParameters($parameters)
@@ -156,6 +254,34 @@ class GoogleCloudDialogflowCxV3QueryParameters extends \Google\Collection
     return $this->payload;
   }
   /**
+   * @param bool
+   */
+  public function setPopulateDataStoreConnectionSignals($populateDataStoreConnectionSignals)
+  {
+    $this->populateDataStoreConnectionSignals = $populateDataStoreConnectionSignals;
+  }
+  /**
+   * @return bool
+   */
+  public function getPopulateDataStoreConnectionSignals()
+  {
+    return $this->populateDataStoreConnectionSignals;
+  }
+  /**
+   * @param GoogleCloudDialogflowCxV3SearchConfig
+   */
+  public function setSearchConfig(GoogleCloudDialogflowCxV3SearchConfig $searchConfig)
+  {
+    $this->searchConfig = $searchConfig;
+  }
+  /**
+   * @return GoogleCloudDialogflowCxV3SearchConfig
+   */
+  public function getSearchConfig()
+  {
+    return $this->searchConfig;
+  }
+  /**
    * @param GoogleCloudDialogflowCxV3SessionEntityType[]
    */
   public function setSessionEntityTypes($sessionEntityTypes)
@@ -168,6 +294,20 @@ class GoogleCloudDialogflowCxV3QueryParameters extends \Google\Collection
   public function getSessionEntityTypes()
   {
     return $this->sessionEntityTypes;
+  }
+  /**
+   * @param string
+   */
+  public function setSessionTtl($sessionTtl)
+  {
+    $this->sessionTtl = $sessionTtl;
+  }
+  /**
+   * @return string
+   */
+  public function getSessionTtl()
+  {
+    return $this->sessionTtl;
   }
   /**
    * @param string

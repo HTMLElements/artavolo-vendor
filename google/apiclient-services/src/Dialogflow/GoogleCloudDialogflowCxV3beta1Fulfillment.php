@@ -20,8 +20,16 @@ namespace Google\Service\Dialogflow;
 class GoogleCloudDialogflowCxV3beta1Fulfillment extends \Google\Collection
 {
   protected $collection_key = 'setParameterActions';
+  protected $advancedSettingsType = GoogleCloudDialogflowCxV3beta1AdvancedSettings::class;
+  protected $advancedSettingsDataType = '';
   protected $conditionalCasesType = GoogleCloudDialogflowCxV3beta1FulfillmentConditionalCases::class;
   protected $conditionalCasesDataType = 'array';
+  /**
+   * @var bool
+   */
+  public $enableGenerativeFallback;
+  protected $generatorsType = GoogleCloudDialogflowCxV3beta1FulfillmentGeneratorSettings::class;
+  protected $generatorsDataType = 'array';
   protected $messagesType = GoogleCloudDialogflowCxV3beta1ResponseMessage::class;
   protected $messagesDataType = 'array';
   /**
@@ -40,6 +48,20 @@ class GoogleCloudDialogflowCxV3beta1Fulfillment extends \Google\Collection
   public $webhook;
 
   /**
+   * @param GoogleCloudDialogflowCxV3beta1AdvancedSettings
+   */
+  public function setAdvancedSettings(GoogleCloudDialogflowCxV3beta1AdvancedSettings $advancedSettings)
+  {
+    $this->advancedSettings = $advancedSettings;
+  }
+  /**
+   * @return GoogleCloudDialogflowCxV3beta1AdvancedSettings
+   */
+  public function getAdvancedSettings()
+  {
+    return $this->advancedSettings;
+  }
+  /**
    * @param GoogleCloudDialogflowCxV3beta1FulfillmentConditionalCases[]
    */
   public function setConditionalCases($conditionalCases)
@@ -52,6 +74,34 @@ class GoogleCloudDialogflowCxV3beta1Fulfillment extends \Google\Collection
   public function getConditionalCases()
   {
     return $this->conditionalCases;
+  }
+  /**
+   * @param bool
+   */
+  public function setEnableGenerativeFallback($enableGenerativeFallback)
+  {
+    $this->enableGenerativeFallback = $enableGenerativeFallback;
+  }
+  /**
+   * @return bool
+   */
+  public function getEnableGenerativeFallback()
+  {
+    return $this->enableGenerativeFallback;
+  }
+  /**
+   * @param GoogleCloudDialogflowCxV3beta1FulfillmentGeneratorSettings[]
+   */
+  public function setGenerators($generators)
+  {
+    $this->generators = $generators;
+  }
+  /**
+   * @return GoogleCloudDialogflowCxV3beta1FulfillmentGeneratorSettings[]
+   */
+  public function getGenerators()
+  {
+    return $this->generators;
   }
   /**
    * @param GoogleCloudDialogflowCxV3beta1ResponseMessage[]

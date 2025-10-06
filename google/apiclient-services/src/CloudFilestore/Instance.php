@@ -23,7 +23,23 @@ class Instance extends \Google\Collection
   /**
    * @var string
    */
+  public $capacityStepSizeGb;
+  /**
+   * @var string
+   */
   public $createTime;
+  /**
+   * @var bool
+   */
+  public $customPerformanceSupported;
+  /**
+   * @var bool
+   */
+  public $deletionProtectionEnabled;
+  /**
+   * @var string
+   */
+  public $deletionProtectionReason;
   /**
    * @var string
    */
@@ -45,9 +61,31 @@ class Instance extends \Google\Collection
   /**
    * @var string
    */
+  public $maxCapacityGb;
+  /**
+   * @var string
+   */
+  public $minCapacityGb;
+  /**
+   * @var string
+   */
   public $name;
   protected $networksType = NetworkConfig::class;
   protected $networksDataType = 'array';
+  protected $performanceConfigType = PerformanceConfig::class;
+  protected $performanceConfigDataType = '';
+  protected $performanceLimitsType = PerformanceLimits::class;
+  protected $performanceLimitsDataType = '';
+  /**
+   * @var string
+   */
+  public $protocol;
+  protected $replicationType = Replication::class;
+  protected $replicationDataType = '';
+  /**
+   * @var bool
+   */
+  public $satisfiesPzi;
   /**
    * @var bool
    */
@@ -65,10 +103,28 @@ class Instance extends \Google\Collection
    */
   public $suspensionReasons;
   /**
+   * @var string[]
+   */
+  public $tags;
+  /**
    * @var string
    */
   public $tier;
 
+  /**
+   * @param string
+   */
+  public function setCapacityStepSizeGb($capacityStepSizeGb)
+  {
+    $this->capacityStepSizeGb = $capacityStepSizeGb;
+  }
+  /**
+   * @return string
+   */
+  public function getCapacityStepSizeGb()
+  {
+    return $this->capacityStepSizeGb;
+  }
   /**
    * @param string
    */
@@ -82,6 +138,48 @@ class Instance extends \Google\Collection
   public function getCreateTime()
   {
     return $this->createTime;
+  }
+  /**
+   * @param bool
+   */
+  public function setCustomPerformanceSupported($customPerformanceSupported)
+  {
+    $this->customPerformanceSupported = $customPerformanceSupported;
+  }
+  /**
+   * @return bool
+   */
+  public function getCustomPerformanceSupported()
+  {
+    return $this->customPerformanceSupported;
+  }
+  /**
+   * @param bool
+   */
+  public function setDeletionProtectionEnabled($deletionProtectionEnabled)
+  {
+    $this->deletionProtectionEnabled = $deletionProtectionEnabled;
+  }
+  /**
+   * @return bool
+   */
+  public function getDeletionProtectionEnabled()
+  {
+    return $this->deletionProtectionEnabled;
+  }
+  /**
+   * @param string
+   */
+  public function setDeletionProtectionReason($deletionProtectionReason)
+  {
+    $this->deletionProtectionReason = $deletionProtectionReason;
+  }
+  /**
+   * @return string
+   */
+  public function getDeletionProtectionReason()
+  {
+    return $this->deletionProtectionReason;
   }
   /**
    * @param string
@@ -156,6 +254,34 @@ class Instance extends \Google\Collection
   /**
    * @param string
    */
+  public function setMaxCapacityGb($maxCapacityGb)
+  {
+    $this->maxCapacityGb = $maxCapacityGb;
+  }
+  /**
+   * @return string
+   */
+  public function getMaxCapacityGb()
+  {
+    return $this->maxCapacityGb;
+  }
+  /**
+   * @param string
+   */
+  public function setMinCapacityGb($minCapacityGb)
+  {
+    $this->minCapacityGb = $minCapacityGb;
+  }
+  /**
+   * @return string
+   */
+  public function getMinCapacityGb()
+  {
+    return $this->minCapacityGb;
+  }
+  /**
+   * @param string
+   */
   public function setName($name)
   {
     $this->name = $name;
@@ -180,6 +306,76 @@ class Instance extends \Google\Collection
   public function getNetworks()
   {
     return $this->networks;
+  }
+  /**
+   * @param PerformanceConfig
+   */
+  public function setPerformanceConfig(PerformanceConfig $performanceConfig)
+  {
+    $this->performanceConfig = $performanceConfig;
+  }
+  /**
+   * @return PerformanceConfig
+   */
+  public function getPerformanceConfig()
+  {
+    return $this->performanceConfig;
+  }
+  /**
+   * @param PerformanceLimits
+   */
+  public function setPerformanceLimits(PerformanceLimits $performanceLimits)
+  {
+    $this->performanceLimits = $performanceLimits;
+  }
+  /**
+   * @return PerformanceLimits
+   */
+  public function getPerformanceLimits()
+  {
+    return $this->performanceLimits;
+  }
+  /**
+   * @param string
+   */
+  public function setProtocol($protocol)
+  {
+    $this->protocol = $protocol;
+  }
+  /**
+   * @return string
+   */
+  public function getProtocol()
+  {
+    return $this->protocol;
+  }
+  /**
+   * @param Replication
+   */
+  public function setReplication(Replication $replication)
+  {
+    $this->replication = $replication;
+  }
+  /**
+   * @return Replication
+   */
+  public function getReplication()
+  {
+    return $this->replication;
+  }
+  /**
+   * @param bool
+   */
+  public function setSatisfiesPzi($satisfiesPzi)
+  {
+    $this->satisfiesPzi = $satisfiesPzi;
+  }
+  /**
+   * @return bool
+   */
+  public function getSatisfiesPzi()
+  {
+    return $this->satisfiesPzi;
   }
   /**
    * @param bool
@@ -236,6 +432,20 @@ class Instance extends \Google\Collection
   public function getSuspensionReasons()
   {
     return $this->suspensionReasons;
+  }
+  /**
+   * @param string[]
+   */
+  public function setTags($tags)
+  {
+    $this->tags = $tags;
+  }
+  /**
+   * @return string[]
+   */
+  public function getTags()
+  {
+    return $this->tags;
   }
   /**
    * @param string

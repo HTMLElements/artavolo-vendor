@@ -17,8 +17,9 @@
 
 namespace Google\Service\BackupforGKE;
 
-class Restore extends \Google\Model
+class Restore extends \Google\Collection
 {
+  protected $collection_key = 'volumeDataRestorePolicyOverrides';
   /**
    * @var string
    */
@@ -43,6 +44,8 @@ class Restore extends \Google\Model
    * @var string
    */
   public $etag;
+  protected $filterType = Filter::class;
+  protected $filterDataType = '';
   /**
    * @var string[]
    */
@@ -73,6 +76,8 @@ class Restore extends \Google\Model
    * @var string
    */
   public $stateReason;
+  protected $troubleshootingInfoType = TroubleshootingInfo::class;
+  protected $troubleshootingInfoDataType = '';
   /**
    * @var string
    */
@@ -81,6 +86,8 @@ class Restore extends \Google\Model
    * @var string
    */
   public $updateTime;
+  protected $volumeDataRestorePolicyOverridesType = VolumeDataRestorePolicyOverride::class;
+  protected $volumeDataRestorePolicyOverridesDataType = 'array';
   /**
    * @var int
    */
@@ -169,6 +176,20 @@ class Restore extends \Google\Model
   public function getEtag()
   {
     return $this->etag;
+  }
+  /**
+   * @param Filter
+   */
+  public function setFilter(Filter $filter)
+  {
+    $this->filter = $filter;
+  }
+  /**
+   * @return Filter
+   */
+  public function getFilter()
+  {
+    return $this->filter;
   }
   /**
    * @param string[]
@@ -283,6 +304,20 @@ class Restore extends \Google\Model
     return $this->stateReason;
   }
   /**
+   * @param TroubleshootingInfo
+   */
+  public function setTroubleshootingInfo(TroubleshootingInfo $troubleshootingInfo)
+  {
+    $this->troubleshootingInfo = $troubleshootingInfo;
+  }
+  /**
+   * @return TroubleshootingInfo
+   */
+  public function getTroubleshootingInfo()
+  {
+    return $this->troubleshootingInfo;
+  }
+  /**
    * @param string
    */
   public function setUid($uid)
@@ -309,6 +344,20 @@ class Restore extends \Google\Model
   public function getUpdateTime()
   {
     return $this->updateTime;
+  }
+  /**
+   * @param VolumeDataRestorePolicyOverride[]
+   */
+  public function setVolumeDataRestorePolicyOverrides($volumeDataRestorePolicyOverrides)
+  {
+    $this->volumeDataRestorePolicyOverrides = $volumeDataRestorePolicyOverrides;
+  }
+  /**
+   * @return VolumeDataRestorePolicyOverride[]
+   */
+  public function getVolumeDataRestorePolicyOverrides()
+  {
+    return $this->volumeDataRestorePolicyOverrides;
   }
   /**
    * @param int

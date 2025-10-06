@@ -19,10 +19,28 @@ namespace Google\Service\NetworkManagement;
 
 class Endpoint extends \Google\Model
 {
+  protected $appEngineVersionType = AppEngineVersionEndpoint::class;
+  protected $appEngineVersionDataType = '';
+  protected $cloudFunctionType = CloudFunctionEndpoint::class;
+  protected $cloudFunctionDataType = '';
+  protected $cloudRunRevisionType = CloudRunRevisionEndpoint::class;
+  protected $cloudRunRevisionDataType = '';
   /**
    * @var string
    */
   public $cloudSqlInstance;
+  /**
+   * @var string
+   */
+  public $forwardingRule;
+  /**
+   * @var string
+   */
+  public $forwardingRuleTarget;
+  /**
+   * @var string
+   */
+  public $fqdn;
   /**
    * @var string
    */
@@ -35,6 +53,14 @@ class Endpoint extends \Google\Model
    * @var string
    */
   public $ipAddress;
+  /**
+   * @var string
+   */
+  public $loadBalancerId;
+  /**
+   * @var string
+   */
+  public $loadBalancerType;
   /**
    * @var string
    */
@@ -51,7 +77,57 @@ class Endpoint extends \Google\Model
    * @var string
    */
   public $projectId;
+  /**
+   * @var string
+   */
+  public $redisCluster;
+  /**
+   * @var string
+   */
+  public $redisInstance;
 
+  /**
+   * @param AppEngineVersionEndpoint
+   */
+  public function setAppEngineVersion(AppEngineVersionEndpoint $appEngineVersion)
+  {
+    $this->appEngineVersion = $appEngineVersion;
+  }
+  /**
+   * @return AppEngineVersionEndpoint
+   */
+  public function getAppEngineVersion()
+  {
+    return $this->appEngineVersion;
+  }
+  /**
+   * @param CloudFunctionEndpoint
+   */
+  public function setCloudFunction(CloudFunctionEndpoint $cloudFunction)
+  {
+    $this->cloudFunction = $cloudFunction;
+  }
+  /**
+   * @return CloudFunctionEndpoint
+   */
+  public function getCloudFunction()
+  {
+    return $this->cloudFunction;
+  }
+  /**
+   * @param CloudRunRevisionEndpoint
+   */
+  public function setCloudRunRevision(CloudRunRevisionEndpoint $cloudRunRevision)
+  {
+    $this->cloudRunRevision = $cloudRunRevision;
+  }
+  /**
+   * @return CloudRunRevisionEndpoint
+   */
+  public function getCloudRunRevision()
+  {
+    return $this->cloudRunRevision;
+  }
   /**
    * @param string
    */
@@ -65,6 +141,48 @@ class Endpoint extends \Google\Model
   public function getCloudSqlInstance()
   {
     return $this->cloudSqlInstance;
+  }
+  /**
+   * @param string
+   */
+  public function setForwardingRule($forwardingRule)
+  {
+    $this->forwardingRule = $forwardingRule;
+  }
+  /**
+   * @return string
+   */
+  public function getForwardingRule()
+  {
+    return $this->forwardingRule;
+  }
+  /**
+   * @param string
+   */
+  public function setForwardingRuleTarget($forwardingRuleTarget)
+  {
+    $this->forwardingRuleTarget = $forwardingRuleTarget;
+  }
+  /**
+   * @return string
+   */
+  public function getForwardingRuleTarget()
+  {
+    return $this->forwardingRuleTarget;
+  }
+  /**
+   * @param string
+   */
+  public function setFqdn($fqdn)
+  {
+    $this->fqdn = $fqdn;
+  }
+  /**
+   * @return string
+   */
+  public function getFqdn()
+  {
+    return $this->fqdn;
   }
   /**
    * @param string
@@ -107,6 +225,34 @@ class Endpoint extends \Google\Model
   public function getIpAddress()
   {
     return $this->ipAddress;
+  }
+  /**
+   * @param string
+   */
+  public function setLoadBalancerId($loadBalancerId)
+  {
+    $this->loadBalancerId = $loadBalancerId;
+  }
+  /**
+   * @return string
+   */
+  public function getLoadBalancerId()
+  {
+    return $this->loadBalancerId;
+  }
+  /**
+   * @param string
+   */
+  public function setLoadBalancerType($loadBalancerType)
+  {
+    $this->loadBalancerType = $loadBalancerType;
+  }
+  /**
+   * @return string
+   */
+  public function getLoadBalancerType()
+  {
+    return $this->loadBalancerType;
   }
   /**
    * @param string
@@ -163,6 +309,34 @@ class Endpoint extends \Google\Model
   public function getProjectId()
   {
     return $this->projectId;
+  }
+  /**
+   * @param string
+   */
+  public function setRedisCluster($redisCluster)
+  {
+    $this->redisCluster = $redisCluster;
+  }
+  /**
+   * @return string
+   */
+  public function getRedisCluster()
+  {
+    return $this->redisCluster;
+  }
+  /**
+   * @param string
+   */
+  public function setRedisInstance($redisInstance)
+  {
+    $this->redisInstance = $redisInstance;
+  }
+  /**
+   * @return string
+   */
+  public function getRedisInstance()
+  {
+    return $this->redisInstance;
   }
 }
 

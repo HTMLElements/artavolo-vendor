@@ -20,6 +20,12 @@ namespace Google\Service\AndroidManagement;
 class Command extends \Google\Collection
 {
   protected $collection_key = 'resetPasswordFlags';
+  protected $addEsimParamsType = AddEsimParams::class;
+  protected $addEsimParamsDataType = '';
+  protected $clearAppsDataParamsType = ClearAppsDataParams::class;
+  protected $clearAppsDataParamsDataType = '';
+  protected $clearAppsDataStatusType = ClearAppsDataStatus::class;
+  protected $clearAppsDataStatusDataType = '';
   /**
    * @var string
    */
@@ -32,14 +38,30 @@ class Command extends \Google\Collection
    * @var string
    */
   public $errorCode;
+  protected $esimStatusType = EsimCommandStatus::class;
+  protected $esimStatusDataType = '';
   /**
    * @var string
    */
   public $newPassword;
+  protected $removeEsimParamsType = RemoveEsimParams::class;
+  protected $removeEsimParamsDataType = '';
+  protected $requestDeviceInfoParamsType = RequestDeviceInfoParams::class;
+  protected $requestDeviceInfoParamsDataType = '';
+  protected $requestDeviceInfoStatusType = RequestDeviceInfoStatus::class;
+  protected $requestDeviceInfoStatusDataType = '';
   /**
    * @var string[]
    */
   public $resetPasswordFlags;
+  protected $startLostModeParamsType = StartLostModeParams::class;
+  protected $startLostModeParamsDataType = '';
+  protected $startLostModeStatusType = StartLostModeStatus::class;
+  protected $startLostModeStatusDataType = '';
+  protected $stopLostModeParamsType = StopLostModeParams::class;
+  protected $stopLostModeParamsDataType = '';
+  protected $stopLostModeStatusType = StopLostModeStatus::class;
+  protected $stopLostModeStatusDataType = '';
   /**
    * @var string
    */
@@ -48,7 +70,51 @@ class Command extends \Google\Collection
    * @var string
    */
   public $userName;
+  protected $wipeParamsType = WipeParams::class;
+  protected $wipeParamsDataType = '';
 
+  /**
+   * @param AddEsimParams
+   */
+  public function setAddEsimParams(AddEsimParams $addEsimParams)
+  {
+    $this->addEsimParams = $addEsimParams;
+  }
+  /**
+   * @return AddEsimParams
+   */
+  public function getAddEsimParams()
+  {
+    return $this->addEsimParams;
+  }
+  /**
+   * @param ClearAppsDataParams
+   */
+  public function setClearAppsDataParams(ClearAppsDataParams $clearAppsDataParams)
+  {
+    $this->clearAppsDataParams = $clearAppsDataParams;
+  }
+  /**
+   * @return ClearAppsDataParams
+   */
+  public function getClearAppsDataParams()
+  {
+    return $this->clearAppsDataParams;
+  }
+  /**
+   * @param ClearAppsDataStatus
+   */
+  public function setClearAppsDataStatus(ClearAppsDataStatus $clearAppsDataStatus)
+  {
+    $this->clearAppsDataStatus = $clearAppsDataStatus;
+  }
+  /**
+   * @return ClearAppsDataStatus
+   */
+  public function getClearAppsDataStatus()
+  {
+    return $this->clearAppsDataStatus;
+  }
   /**
    * @param string
    */
@@ -92,6 +158,20 @@ class Command extends \Google\Collection
     return $this->errorCode;
   }
   /**
+   * @param EsimCommandStatus
+   */
+  public function setEsimStatus(EsimCommandStatus $esimStatus)
+  {
+    $this->esimStatus = $esimStatus;
+  }
+  /**
+   * @return EsimCommandStatus
+   */
+  public function getEsimStatus()
+  {
+    return $this->esimStatus;
+  }
+  /**
    * @param string
    */
   public function setNewPassword($newPassword)
@@ -106,6 +186,48 @@ class Command extends \Google\Collection
     return $this->newPassword;
   }
   /**
+   * @param RemoveEsimParams
+   */
+  public function setRemoveEsimParams(RemoveEsimParams $removeEsimParams)
+  {
+    $this->removeEsimParams = $removeEsimParams;
+  }
+  /**
+   * @return RemoveEsimParams
+   */
+  public function getRemoveEsimParams()
+  {
+    return $this->removeEsimParams;
+  }
+  /**
+   * @param RequestDeviceInfoParams
+   */
+  public function setRequestDeviceInfoParams(RequestDeviceInfoParams $requestDeviceInfoParams)
+  {
+    $this->requestDeviceInfoParams = $requestDeviceInfoParams;
+  }
+  /**
+   * @return RequestDeviceInfoParams
+   */
+  public function getRequestDeviceInfoParams()
+  {
+    return $this->requestDeviceInfoParams;
+  }
+  /**
+   * @param RequestDeviceInfoStatus
+   */
+  public function setRequestDeviceInfoStatus(RequestDeviceInfoStatus $requestDeviceInfoStatus)
+  {
+    $this->requestDeviceInfoStatus = $requestDeviceInfoStatus;
+  }
+  /**
+   * @return RequestDeviceInfoStatus
+   */
+  public function getRequestDeviceInfoStatus()
+  {
+    return $this->requestDeviceInfoStatus;
+  }
+  /**
    * @param string[]
    */
   public function setResetPasswordFlags($resetPasswordFlags)
@@ -118,6 +240,62 @@ class Command extends \Google\Collection
   public function getResetPasswordFlags()
   {
     return $this->resetPasswordFlags;
+  }
+  /**
+   * @param StartLostModeParams
+   */
+  public function setStartLostModeParams(StartLostModeParams $startLostModeParams)
+  {
+    $this->startLostModeParams = $startLostModeParams;
+  }
+  /**
+   * @return StartLostModeParams
+   */
+  public function getStartLostModeParams()
+  {
+    return $this->startLostModeParams;
+  }
+  /**
+   * @param StartLostModeStatus
+   */
+  public function setStartLostModeStatus(StartLostModeStatus $startLostModeStatus)
+  {
+    $this->startLostModeStatus = $startLostModeStatus;
+  }
+  /**
+   * @return StartLostModeStatus
+   */
+  public function getStartLostModeStatus()
+  {
+    return $this->startLostModeStatus;
+  }
+  /**
+   * @param StopLostModeParams
+   */
+  public function setStopLostModeParams(StopLostModeParams $stopLostModeParams)
+  {
+    $this->stopLostModeParams = $stopLostModeParams;
+  }
+  /**
+   * @return StopLostModeParams
+   */
+  public function getStopLostModeParams()
+  {
+    return $this->stopLostModeParams;
+  }
+  /**
+   * @param StopLostModeStatus
+   */
+  public function setStopLostModeStatus(StopLostModeStatus $stopLostModeStatus)
+  {
+    $this->stopLostModeStatus = $stopLostModeStatus;
+  }
+  /**
+   * @return StopLostModeStatus
+   */
+  public function getStopLostModeStatus()
+  {
+    return $this->stopLostModeStatus;
   }
   /**
    * @param string
@@ -146,6 +324,20 @@ class Command extends \Google\Collection
   public function getUserName()
   {
     return $this->userName;
+  }
+  /**
+   * @param WipeParams
+   */
+  public function setWipeParams(WipeParams $wipeParams)
+  {
+    $this->wipeParams = $wipeParams;
+  }
+  /**
+   * @return WipeParams
+   */
+  public function getWipeParams()
+  {
+    return $this->wipeParams;
   }
 }
 

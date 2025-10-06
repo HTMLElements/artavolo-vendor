@@ -17,8 +17,9 @@
 
 namespace Google\Service\CloudHealthcare;
 
-class DicomStore extends \Google\Model
+class DicomStore extends \Google\Collection
 {
+  protected $collection_key = 'streamConfigs';
   /**
    * @var string[]
    */
@@ -29,6 +30,10 @@ class DicomStore extends \Google\Model
   public $name;
   protected $notificationConfigType = NotificationConfig::class;
   protected $notificationConfigDataType = '';
+  protected $notificationConfigsType = DicomNotificationConfig::class;
+  protected $notificationConfigsDataType = 'array';
+  protected $streamConfigsType = GoogleCloudHealthcareV1DicomStreamConfig::class;
+  protected $streamConfigsDataType = 'array';
 
   /**
    * @param string[]
@@ -71,6 +76,34 @@ class DicomStore extends \Google\Model
   public function getNotificationConfig()
   {
     return $this->notificationConfig;
+  }
+  /**
+   * @param DicomNotificationConfig[]
+   */
+  public function setNotificationConfigs($notificationConfigs)
+  {
+    $this->notificationConfigs = $notificationConfigs;
+  }
+  /**
+   * @return DicomNotificationConfig[]
+   */
+  public function getNotificationConfigs()
+  {
+    return $this->notificationConfigs;
+  }
+  /**
+   * @param GoogleCloudHealthcareV1DicomStreamConfig[]
+   */
+  public function setStreamConfigs($streamConfigs)
+  {
+    $this->streamConfigs = $streamConfigs;
+  }
+  /**
+   * @return GoogleCloudHealthcareV1DicomStreamConfig[]
+   */
+  public function getStreamConfigs()
+  {
+    return $this->streamConfigs;
   }
 }
 

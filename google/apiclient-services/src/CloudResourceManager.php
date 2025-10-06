@@ -44,7 +44,10 @@ class CloudResourceManager extends \Google\Service
 
   public $effectiveTags;
   public $folders;
+  public $folders_capabilities;
   public $liens;
+  public $locations_effectiveTagBindingCollections;
+  public $locations_tagBindingCollections;
   public $operations;
   public $organizations;
   public $projects;
@@ -52,6 +55,7 @@ class CloudResourceManager extends \Google\Service
   public $tagKeys;
   public $tagValues;
   public $tagValues_tagHolds;
+  public $rootUrlTemplate;
 
   /**
    * Constructs the internal representation of the CloudResourceManager service.
@@ -64,6 +68,7 @@ class CloudResourceManager extends \Google\Service
   {
     parent::__construct($clientOrConfig);
     $this->rootUrl = $rootUrl ?: 'https://cloudresourcemanager.googleapis.com/';
+    $this->rootUrlTemplate = $rootUrl ?: 'https://cloudresourcemanager.UNIVERSE_DOMAIN/';
     $this->servicePath = '';
     $this->batchPath = 'batch';
     $this->version = 'v3';
@@ -232,6 +237,40 @@ class CloudResourceManager extends \Google\Service
           ]
         ]
     );
+    $this->folders_capabilities = new CloudResourceManager\Resource\FoldersCapabilities(
+        $this,
+        $this->serviceName,
+        'capabilities',
+        [
+          'methods' => [
+            'get' => [
+              'path' => 'v3/{+name}',
+              'httpMethod' => 'GET',
+              'parameters' => [
+                'name' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+              ],
+            ],'patch' => [
+              'path' => 'v3/{+name}',
+              'httpMethod' => 'PATCH',
+              'parameters' => [
+                'name' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+                'updateMask' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
+              ],
+            ],
+          ]
+        ]
+    );
     $this->liens = new CloudResourceManager\Resource\Liens(
         $this,
         $this->serviceName,
@@ -277,6 +316,56 @@ class CloudResourceManager extends \Google\Service
                 'parent' => [
                   'location' => 'query',
                   'type' => 'string',
+                ],
+              ],
+            ],
+          ]
+        ]
+    );
+    $this->locations_effectiveTagBindingCollections = new CloudResourceManager\Resource\LocationsEffectiveTagBindingCollections(
+        $this,
+        $this->serviceName,
+        'effectiveTagBindingCollections',
+        [
+          'methods' => [
+            'get' => [
+              'path' => 'v3/{+name}',
+              'httpMethod' => 'GET',
+              'parameters' => [
+                'name' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+              ],
+            ],
+          ]
+        ]
+    );
+    $this->locations_tagBindingCollections = new CloudResourceManager\Resource\LocationsTagBindingCollections(
+        $this,
+        $this->serviceName,
+        'tagBindingCollections',
+        [
+          'methods' => [
+            'get' => [
+              'path' => 'v3/{+name}',
+              'httpMethod' => 'GET',
+              'parameters' => [
+                'name' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+              ],
+            ],'update' => [
+              'path' => 'v3/{+name}',
+              'httpMethod' => 'PUT',
+              'parameters' => [
+                'name' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
                 ],
               ],
             ],
@@ -605,6 +694,15 @@ class CloudResourceManager extends \Google\Service
                   'required' => true,
                 ],
               ],
+            ],'getNamespaced' => [
+              'path' => 'v3/tagKeys/namespaced',
+              'httpMethod' => 'GET',
+              'parameters' => [
+                'name' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
+              ],
             ],'list' => [
               'path' => 'v3/tagKeys',
               'httpMethod' => 'GET',
@@ -715,6 +813,15 @@ class CloudResourceManager extends \Google\Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
+                ],
+              ],
+            ],'getNamespaced' => [
+              'path' => 'v3/tagValues/namespaced',
+              'httpMethod' => 'GET',
+              'parameters' => [
+                'name' => [
+                  'location' => 'query',
+                  'type' => 'string',
                 ],
               ],
             ],'list' => [

@@ -26,7 +26,7 @@ class ManagedAndroidLobApp extends ManagedMobileLobApp
 {
     /**
     * Gets the identityName
-    * The Identity Name.
+    * The Identity Name. This property is being deprecated in 2302(February 2023).
     *
     * @return string|null The identityName
     */
@@ -41,7 +41,7 @@ class ManagedAndroidLobApp extends ManagedMobileLobApp
 
     /**
     * Sets the identityName
-    * The Identity Name.
+    * The Identity Name. This property is being deprecated in 2302(February 2023).
     *
     * @param string $val The identityName
     *
@@ -55,7 +55,7 @@ class ManagedAndroidLobApp extends ManagedMobileLobApp
 
     /**
     * Gets the identityVersion
-    * The identity version.
+    * The identity version. This property is being deprecated in 2302(February 2023).
     *
     * @return string|null The identityVersion
     */
@@ -70,7 +70,7 @@ class ManagedAndroidLobApp extends ManagedMobileLobApp
 
     /**
     * Sets the identityVersion
-    * The identity version.
+    * The identity version. This property is being deprecated in 2302(February 2023).
     *
     * @param string $val The identityVersion
     *
@@ -141,6 +141,39 @@ class ManagedAndroidLobApp extends ManagedMobileLobApp
     public function setPackageId($val)
     {
         $this->_propDict["packageId"] = $val;
+        return $this;
+    }
+
+    /**
+    * Gets the targetedPlatforms
+    * The platforms to which the application can be targeted. If not specified, will defauilt to Android Device Administrator. Possible values are: androidDeviceAdministrator, androidOpenSourceProject, unknownFutureValue.
+    *
+    * @return AndroidTargetedPlatforms|null The targetedPlatforms
+    */
+    public function getTargetedPlatforms()
+    {
+        if (array_key_exists("targetedPlatforms", $this->_propDict)) {
+            if (is_a($this->_propDict["targetedPlatforms"], "\Beta\Microsoft\Graph\Model\AndroidTargetedPlatforms") || is_null($this->_propDict["targetedPlatforms"])) {
+                return $this->_propDict["targetedPlatforms"];
+            } else {
+                $this->_propDict["targetedPlatforms"] = new AndroidTargetedPlatforms($this->_propDict["targetedPlatforms"]);
+                return $this->_propDict["targetedPlatforms"];
+            }
+        }
+        return null;
+    }
+
+    /**
+    * Sets the targetedPlatforms
+    * The platforms to which the application can be targeted. If not specified, will defauilt to Android Device Administrator. Possible values are: androidDeviceAdministrator, androidOpenSourceProject, unknownFutureValue.
+    *
+    * @param AndroidTargetedPlatforms $val The targetedPlatforms
+    *
+    * @return ManagedAndroidLobApp
+    */
+    public function setTargetedPlatforms($val)
+    {
+        $this->_propDict["targetedPlatforms"] = $val;
         return $this;
     }
 
