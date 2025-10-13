@@ -1,6 +1,6 @@
 <?php return array(
     'root' => array(
-        'name' => 'artavolo/cms',
+        'name' => 'site/cms',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
         'reference' => 'b08b4ac667a0f282f42579b3dd1d64ef2f9b4aef',
@@ -10,15 +10,6 @@
         'dev' => true,
     ),
     'versions' => array(
-        'artavolo/cms' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
-            'reference' => 'b08b4ac667a0f282f42579b3dd1d64ef2f9b4aef',
-            'type' => 'application',
-            'install_path' => __DIR__ . '/../../',
-            'aliases' => array(),
-            'dev_requirement' => false,
-        ),
         'bacon/bacon-qr-code' => array(
             'pretty_version' => '2.0.8',
             'version' => '2.0.8.0',
@@ -460,6 +451,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'pcloud/pcloud-php-sdk' => array(
+            'pretty_version' => '3.0.0',
+            'version' => '3.0.0.0',
+            'reference' => '61fb9b98ca2db11ead4423ef16ce0ac5ea16225b',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../pcloud/pcloud-php-sdk',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'php-http/async-client-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
@@ -726,6 +726,15 @@
             'reference' => '120b605dfeb996808c31b6477290a714d356e822',
             'type' => 'library',
             'install_path' => __DIR__ . '/../ralouphie/getallheaders',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'site/cms' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => 'b08b4ac667a0f282f42579b3dd1d64ef2f9b4aef',
+            'type' => 'application',
+            'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
             'dev_requirement' => false,
         ),

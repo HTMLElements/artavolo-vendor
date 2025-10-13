@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'phpseclib3\\' => array($vendorDir . '/phpseclib/phpseclib/phpseclib'),
+    'pCloud\\Sdk\\' => array($vendorDir . '/pcloud/pcloud-php-sdk/lib'),
     'ZipStream\\' => array($vendorDir . '/maennchen/zipstream-php/src'),
     'Workerman\\' => array($vendorDir . '/workerman/workerman'),
     'Twilio\\' => array($vendorDir . '/twilio/sdk/src/Twilio'),

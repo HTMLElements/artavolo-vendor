@@ -31,6 +31,7 @@ class ComposerStaticInit80b0e0f002a2ecb8069939e615ebfbc4
         'p' => 
         array (
             'phpseclib3\\' => 11,
+            'pCloud\\Sdk\\' => 11,
         ),
         'Z' => 
         array (
@@ -169,6 +170,10 @@ class ComposerStaticInit80b0e0f002a2ecb8069939e615ebfbc4
         'phpseclib3\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib',
+        ),
+        'pCloud\\Sdk\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/pcloud/pcloud-php-sdk/lib',
         ),
         'ZipStream\\' => 
         array (
