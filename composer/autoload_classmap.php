@@ -6,6 +6,7 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'DateError' => $vendorDir . '/symfony/polyfill-php83/Resources/stubs/DateError.php',
     'DateException' => $vendorDir . '/symfony/polyfill-php83/Resources/stubs/DateException.php',
@@ -16,9 +17,11 @@ return array(
     'DateMalformedStringException' => $vendorDir . '/symfony/polyfill-php83/Resources/stubs/DateMalformedStringException.php',
     'DateObjectError' => $vendorDir . '/symfony/polyfill-php83/Resources/stubs/DateObjectError.php',
     'DateRangeError' => $vendorDir . '/symfony/polyfill-php83/Resources/stubs/DateRangeError.php',
+    'Deprecated' => $vendorDir . '/symfony/polyfill-php84/Resources/stubs/Deprecated.php',
     'Google_AccessToken_Revoke' => $vendorDir . '/google/apiclient/src/aliases.php',
     'Google_AccessToken_Verify' => $vendorDir . '/google/apiclient/src/aliases.php',
     'Google_AuthHandler_AuthHandlerFactory' => $vendorDir . '/google/apiclient/src/aliases.php',
+    'Google_AuthHandler_Guzzle5AuthHandler' => $vendorDir . '/google/apiclient/src/aliases.php',
     'Google_AuthHandler_Guzzle6AuthHandler' => $vendorDir . '/google/apiclient/src/aliases.php',
     'Google_AuthHandler_Guzzle7AuthHandler' => $vendorDir . '/google/apiclient/src/aliases.php',
     'Google_Client' => $vendorDir . '/google/apiclient/src/aliases.php',
@@ -38,8 +41,13 @@ return array(
     'Google_Utils_UriTemplate' => $vendorDir . '/google/apiclient/src/aliases.php',
     'Omnipay\\Omnipay' => $vendorDir . '/omnipay/common/src/Omnipay.php',
     'Override' => $vendorDir . '/symfony/polyfill-php83/Resources/stubs/Override.php',
+    'PhpToken' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/PhpToken.php',
+    'ReflectionConstant' => $vendorDir . '/symfony/polyfill-php84/Resources/stubs/ReflectionConstant.php',
     'SQLite3Exception' => $vendorDir . '/symfony/polyfill-php83/Resources/stubs/SQLite3Exception.php',
     'Securimage' => $vendorDir . '/dapphp/securimage/securimage.php',
     'Securimage_Color' => $vendorDir . '/dapphp/securimage/securimage.php',
+    'Stringable' => $vendorDir . '/myclabs/php-enum/stubs/Stringable.php',
+    'UnhandledMatchError' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
+    'ValueError' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
     'imageLib' => $vendorDir . '/pyovchevski/php-image-magician/php_image_magician.php',
 );

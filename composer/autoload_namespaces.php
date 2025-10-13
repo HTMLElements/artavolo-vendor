@@ -6,6 +6,9 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'stringEncode' => array($vendorDir . '/paquettg/string-encode/src'),
+    'Rs\\Json' => array($vendorDir . '/php-jsonpointer/php-jsonpointer/src'),
     'PayPal' => array($vendorDir . '/paypal/rest-api-sdk-php/lib'),
+    'ICal' => array($vendorDir . '/johngrogg/ics-parser/src'),
     'HTMLPurifier' => array($vendorDir . '/ezyang/htmlpurifier/library'),
 );
